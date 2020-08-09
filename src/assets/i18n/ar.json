@@ -1,38 +1,6 @@
 {
   "crinfo": {
-    "CrInfoData": "بيانات السجل التجاري",
-    "CrName": "الاسم التجاري",
-    "CrNumber": "رقم السجل",
-    "IsMain": "نوع السجل",
-    "Main": "رئيسي",
-    "Branch": "فرعي",
-    "Activities": "النشاط",
-    "CrBusType": "نوع المنشأة",
-    "CrStatus": "حالة السجل",
-    "ExpireDate": "تاريخ الإنتهاء",
-    "Ecommerce": "بيانات التجارة الإلكترونية",
-    "WebSite": "الموقع الإلكتروني",
-    "Maaroof": "رابط المتجر  على منصة التوثيق (معروف)",
-    "Phone": "رقم الهاتف",
-    "Location": "الموقع",
-    "Address": "العنوان",
-    "Persons": "الأشخاص المرتبطين بالسجل",
-    "PersonName": "الاسم",
-    "Relation": "العلاقة",
-    "Manager": "مدير السجل",
-    "Owner": "مالك السجل",
-    "NationalNumber": "الرقم الموحد للمنشأة "
-
-  },
-  "eltizamInfo": {
-    "EltizamInfo": "بيانات التزام",
-    "EltizamName": "اسم الشهادة",
-    "EltizamStatus": "الحالة",
-    "EstablishmentStatistics": "نطاقات",
-    "EstablishmentStatisticsStatus": "شهادة السعودة",
-    "Chambers": "اشتراك الغرفة التجارية",
-    "ZakatCertificate": "شهادة الزكاة",
-    "MOMRAShopLicenses": "رخصة البلدية"
+    "CrInfoData": "بيانات السجل التجاري"
   },
   "footer": {
     "copyRights": "جميع الحقوق محفوظة وزارة التجارة والاستثمار © 2019"

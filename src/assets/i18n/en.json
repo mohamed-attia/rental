@@ -1,37 +1,6 @@
 {
   "crinfo": {
-    "CrInfoData": "Commercial Register Info",
-    "CrName": "Commercial Register Name",
-    "CrNumber": "Commercial Register Number",
-    "IsMain": "Commercial Register Type ",
-    "Main": "Main",
-    "Branch": "Branch",
-    "Activities": "Activities",
-    "CrBusType": "Institution type",
-    "CrStatus": "Commercial Register Status",
-    "ExpireDate": "Date of Expire",
-    "Ecommerce": "E-commerce Information",
-    "WebSite": "Website",
-    "Maaroof": "Authorized link (Maroof)",
-    "Phone": "Telephone No.",
-    "Location": "Location",
-    "Address": "Address",
-    "Persons": "Associated people with the Commercial Register",
-    "PersonName": "Name",
-    "Relation": "Relation",
-    "Manager": "Manager",
-    "Owner": "Owner",
-    "NationalNumber": "Unified number of Organization"
-  },
-  "eltizamInfo": {
-    "EltizamInfo": "Commitment Data",
-    "EltizamName": "Organization Name",
-    "EltizamStatus": "Status",
-    "EstablishmentStatistics": "Ministry of Labor and Social Development - Nitaqat",
-    "EstablishmentStatisticsStatus": "Saudization Certificate",
-    "Chambers": "Chamber of commerce membership ",
-    "ZakatCertificate": "Zakat / Tax Certificate",
-    "MOMRAShopLicenses": "MOMRA Certificate"
+    "CrInfoData": "Commercial Register Info"
   },
   "footer": {
     "copyRights": "© 2019 Ministry of Commerce and Investment"
