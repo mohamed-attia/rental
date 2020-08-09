@@ -1,0 +1,25 @@
+// =====> main sass partial style
+// DONT  remove OR   edit  
+
+//  custom  refrances  
+@import "../core/variables";  
+@import "../core/colors";  
+
+@import "../core/bootstrapOverride";
+
+@import "directionConfig";
+@import "../core/directionVariables"; 
+
+
+@import "defaultBootsrtapVariables"; // this default referance  
+@import "utilities";
+
+
+// background:
+// url(sweettexture.jpg)    /* image */
+// top center / 200px 200px /* position / size */
+// no-repeat                /* repeat */
+// fixed                    /* attachment */
+// padding-box              /* origin */
+// content-box              /* clip */
+// red;                     /* color */

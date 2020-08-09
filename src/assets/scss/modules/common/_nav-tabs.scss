@@ -1,0 +1,92 @@
+.nav {
+    cursor: pointer;
+    font-family: 'DroidArabicKufiRegular';
+    background-color: #fff;
+    .nav__first-element {
+        margin-#{$left}:137px;
+        @include bp (sm) {
+            margin-#{$left}:137px;
+
+        }
+
+        @include bp (md) {
+            margin-#{$left}:137px;
+
+        }
+
+        @include bp (lg) {
+            margin-#{$left}:137px;
+
+        }
+
+        @include bp (isMobile) {
+            margin-#{$left}:0px;
+
+        }
+
+        @include bp (isTablet) {
+            margin-#{$left}:0px;
+
+        }
+    }
+}
+div .container {
+    display: block;
+}
+section {
+    max-width: 1415px !important;
+    background-color:#F6F9F8
+
+}
+
+.nav-tabs .nav-link {
+    border:0px;
+    font-size: 13px;
+}
+.nav-tabs .nav-link:hover { 
+    border-top-#{$left}-radius: 0px;
+    border-top-#{$right}-radius: 0px;
+}
+.nav-tabs {
+    border-bottom: 0px;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link  { 
+    color: #0D8A86;
+    border-bottom: 3px solid red;
+    border-color : #0D8A86;
+    background-color:#fff;
+
+}
+
+a  {
+     color: #58636F;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content : ">";
+    color: #CCCED0;
+    padding-#{$right}: 20px;
+    font-weight: bold;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0);
+}
+.item-color {
+   color:  #0E8A86;
+
+   padding-#{$right}: 20px
+}
+.breadcrumb {
+
+    background-color :#F6F9F8
+}
+
+.first-item-breadcrump {
+    margin-#{$left}: 345px;
+    @include bp (isMobile) {
+        margin-#{$left}:0px;
+
+    }
+    @include bp(md) {
+        margin-#{$left}: 345px;
+    }
+}

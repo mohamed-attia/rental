@@ -1,0 +1,7 @@
+<ng-conatiner class="app-switcher">
+  <ng-template ngFor [ngForOf]="languages" let-i="index" let-lang>
+    <a *ngIf="currentang !== lang" (click)="changeLang(lang)" aria-label='change language' >
+      {{ "lang_switcher.currentLang" | translate }}
+    </a>
+  </ng-template>
+</ng-conatiner>

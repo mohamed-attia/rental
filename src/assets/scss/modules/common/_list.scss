@@ -1,0 +1,183 @@
+.border-spliter1 {
+    height: 48px;
+    width: 1px;
+    background-color: #ECECEC;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2), 0 0 10px 0 rgba(0, 0, 0, 0);
+}
+
+.border-spliter2 {
+    height: 58px;
+    width: 1px;
+    background-color: #CDDAD8;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2), 0 0 10px 0 rgba(0, 0, 0, 0);
+}
+
+.border-spliter3 {
+    height: 68px;
+    width: 1px;
+    background-color: #ECECEC;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2), 0 0 10px 0 rgba(0, 0, 0, 0);
+}
+
+.lists {
+    border-radius: 4px;
+    padding-bottom: 12px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+    color: $primary;
+    .lists__lic__name {
+
+        width: 52px;
+        opacity: 0.5;
+        color: #353C43;
+        font-family: Midan;
+        font-size: 18px;
+        line-height: 26px;
+        text-align: center;
+    }
+
+    .lists__lic__text {
+
+        color: $primary;
+        font-family: Midan;
+        font-size: 20px;
+        font-weight: 900;
+        line-height: 26px;
+        text-align: center;
+    }
+
+    .lists__state {
+
+        width: 123px;
+        border-radius: 100px;
+        background-color: #E18431;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2), 0 0 10px 0 rgba(0, 0, 0, 0);
+        .lists__state__text {
+   
+            // width: 107px;
+            color: #FFFFFF;
+            font-family: Midan;
+            font-size: 17px;
+            font-weight: 900;
+            line-height: 13px;
+            text-align: center;
+        }
+
+        .lists__state__bg {
+            .lists__state__market-name {
+  
+                // width: 193px;
+                color: #353C43;
+                font-family: Midan;
+                font-size: 20px;
+                font-weight: 900;
+                line-height: 26px;
+                text-align: #{$right};
+            }
+        }
+
+    }
+
+    .lists__date {
+
+        // width: 40px;
+        color: #353C43;
+        font-family: Midan;
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 26px;
+        text-align: #{$right};
+    }
+
+    .lists__date-value {
+
+        // width: 70px;
+        color: #353C43;
+        font-family: Midan;
+        font-size: 22px;
+        line-height: 26px;
+        text-align: #{$right};
+    }
+
+    .lists__time {
+
+        // width: 38px;
+        opacity: 0.5;
+        color: #353C43;
+        font-family: Midan;
+        font-size: 17px;
+        line-height: 16px;
+        flex-flow: column;
+        float: #{$left};
+    }
+
+    .lists__icon {
+
+        width: 16px;
+        background-color: #FFFFFF;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0);
+        line-height: 20px
+    }
+
+    .lists__photo {
+  
+        width: 85px;
+        opacity: 0.2;
+        border-radius: 8px;
+        background-color: #CDDAD8;
+    }
+
+}
+
+// .time {
+//     height: 16px;
+//     width: 38px;
+//     opacity: 0.5;
+//     color: #353C43;
+//     font-family: Midan;
+//     font-size: 17px;
+//     line-height: 16px;
+// }
+
+.btn-bg {
+    // height: 19.2px;
+
+    width: 115px;
+    border-radius: 4px;
+    background-color: #0E8A86;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2), 0 0 10px 0 rgba(0, 0, 0, 0);
+    border:0;
+    line-height: 29px; 
+    .btn-content { 
+ 
+        width: 85px;
+        color: #FFFFFF;
+        font-family: Midan;
+        font-size: 17px;
+        font-weight: 900;
+        line-height: 16px;
+        text-align: #{$right};
+    }
+
+}
+
+.btn-bg2 {
+
+    width: 65px;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    border: 1px solid $border;
+    .btn-content2 {
+
+        width: 45px;
+        color: $secondary;
+        font-family: Midan;
+        font-size: 17px;
+        font-weight: 900;
+        line-height: 16px;
+        text-align: #{$right};
+    }
+}
+.mt-sm-3 span {
+    font-weight: normal
+}

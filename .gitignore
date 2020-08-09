@@ -1,0 +1,9 @@
+node_modules
+dist
+documentation
+universal.zip
+/.vs/slnx.sqlite
+.vs/MCI_CIFrontEnd/v16/.suo
+.vs/VSWorkspaceState.json
+.vs/slnx.sqlite
+.vs/CI_FrontEnd/v16/.suo

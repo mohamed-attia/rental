@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="124px" height="124px" viewBox="0 0 124 124" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 59 (101010) - https://sketch.com -->
+    <title>5E1BF20A-3BF3-4557-A36A-9979951249D5</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="124" height="124" rx="62"></rect>
+        <filter x="-12.1%" y="-12.1%" width="124.2%" height="124.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-v.4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="QR-Public-Errorpage-" transform="translate(-622.000000, -331.000000)">
+            <g id="Group" transform="translate(622.000000, 331.000000)">
+                <g id="BG-Copy">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#B74639" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <path d="M82.3336109,45.3976432 C83.3639483,44.3673103 83.3639774,42.6967815 82.333676,41.6664127 C81.3033745,40.6360439 79.6328967,40.6360147 78.6025593,41.6663476 L62,58.2688346 L45.3974407,41.6663476 C44.3671033,40.6360147 42.6966255,40.6360439 41.666324,41.6664127 C40.6360226,42.6967815 40.6360517,44.3673103 41.6663891,45.3976432 L58.2688183,62 L41.6663891,78.6023568 C40.6360517,79.6326897 40.6360226,81.3032185 41.666324,82.3335873 C42.6966255,83.3639561 44.3671033,83.3639853 45.3974407,82.3336524 L62,65.7311654 L78.6025593,82.3336524 C79.6328967,83.3639853 81.3033745,83.3639561 82.333676,82.3335873 C83.3639774,81.3032185 83.3639483,79.6326897 82.3336109,78.6023568 L65.7311817,62 L82.3336109,45.3976432 Z" id="Combined-Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

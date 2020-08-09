@@ -1,0 +1,38 @@
+.radio-btn-box {
+    border: 1px solid $primary;
+    display: inline-flex;
+    padding: 5px;
+    border-radius: $border-radius;
+    background: $light;
+}
+.radio-btn-box .custom-radio .custom-control-input:checked ~ .custom-control-label::after { 
+    background-image: url("../../images/icons/correct.svg");
+}
+.radio-btn-box .custom-control-input:checked ~ .custom-control-label::before {
+    color: #fff;
+    border-color: none;
+    background-color: #0D8A86;
+    width: 23px;
+    height: 23px;
+}
+.radio-btn-box .custom-control-label::before {
+    width: 23px;
+    height: 23px;
+    top: 4px;
+}
+.radio-btn-box .custom-control-label::after  {
+    top: 7px;
+    #{$left}: -20px;
+}
+.radio-btn-box .custom-control-label  {
+    color: $primary;
+    padding-#{$left}: 8px;
+}
+.radio-btn-box.radio-btn-box--disable {
+    background-color: #F6F9F8;
+    border: 1px solid #DFE5E4;
+}
+.radio-btn-box.radio-btn-box--disable .custom-control-label {
+    color: #8B9D9A;
+    cursor: not-allowed;
+}

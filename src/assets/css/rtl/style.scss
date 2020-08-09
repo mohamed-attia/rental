@@ -1,0 +1,20 @@
+/*!
+ * Thiqah Branding v4.1.1   (::)   Arabic language
+ * Copyright 2019 Thiqah Front-end Team
+ * Licensed under MIT (https://thiqah.sa/)
+ * LinkedIn:: in/elbazz :: Mail
+ */
+//-----------------------------------------------
+
+// =====> main sass key
+// $mainSiteLang : en;
+// active the next variable if you want arabic direction
+$mainSiteLang : ar;
+ 
+//-----------------------------------------------
+// =====> main sass partial style
+.rtl { 
+    direction: rtl; 
+    @import "../../scss/main";
+}
+

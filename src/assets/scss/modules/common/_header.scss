@@ -1,0 +1,283 @@
+.header-width {
+       max-width: 1440px !important;
+       .paddin-header {
+        padding-top:4px;
+  
+}
+}
+
+.header {
+        font-family: 'DroidArabicKufiRegular';
+        #{$left}: 0;
+        background-color: #0D8A86;
+        z-index: 100;
+ 
+        .header__split {
+
+                border-#{$right}: 1px solid white;
+        }
+
+        .header__logo2 {
+                height: 33px;
+                width: 60px;
+        }
+
+        .header__logo {
+                width: 150px;
+                height: 50px;
+        }
+
+        .header__name-logo {
+                height: 16px;
+                width: 16px;
+        }
+
+        .header__actions {
+                height: 19px;
+                width: 50px;
+        }
+
+        small>span {
+                padding-#{$right}: 5px;
+        }
+
+        .header__notify {
+                position: relative;
+                #{$left}: 1.2em;
+                bottom: .9em;
+                height: 20px;
+                width: 20px;
+                font-size: 12px;
+                padding-#{$right}: 2px;
+                padding-#{$left}: 3px;
+                background-color: #E28432;
+                border-radius: 2px;
+        }
+}
+
+.one {
+        position: relative;
+}
+
+.pop {
+        position: absolute;
+        #{$right}: 21.4em;
+        bottom: .8em;
+        display: none;
+
+        .pop__arrow {
+                #{$left}: 295px;
+        }
+
+        .pop__list {
+
+                background-color: #FFFFFF;
+                box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.1), 0 0 10px 0 rgba(0, 0, 0, 0);
+        }
+
+        .pop__botify-btn {
+                background-color:#F6F8F8;
+                border: 3px solid white;
+                width: 100%;
+
+                .pop__botify-btn__text {
+                        color: #0E8A86;
+                        font-size: 12px;
+                        font-weight: bolder;
+                        line-height: 26px;
+                        text-align: #{$right};
+                }
+        }
+
+        .width-flat {
+                width: 328px;
+                height: 227;
+        }
+
+        .popover {
+                max-width: 0px;
+                border: 0px;
+        }
+
+        .list-group-item .colored {
+                color: #0E8A86;
+
+        }
+
+        .width-flat > span :after {
+                
+                border-bottom: 1px solid;
+                box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1), 0 0 10px 0 rgba(0, 0, 0, 0);
+                content: "";
+                display: inherit;
+                width: 7%;
+                border-bottom: 3px solid #E28432;
+                border-radius: 15px;
+        }
+        .width-flat > span {
+                border:0px
+        }
+
+        ul>li {
+                border: 0px;
+
+                hr {
+                        margin-top: .5rem;
+                        border-top: 0px;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                        height: 3px;
+                }
+        }
+
+        ul>li h6 {
+                display: list-item;
+                list-style-type: square;
+                color: #E28432;
+                list-style-position: inside;
+                font-size: .8rem;
+
+        }
+
+        .offline {
+                color: #CDDAD8;
+        }
+
+        .aside-date {
+                float: #{$right};
+                color: #CDDAD8;
+                // font-family: "Lucida Grande";
+                font-size: 10px;
+                height: 16px;
+
+                line-height: 20px;
+                text-align: #{$left};
+
+
+        }
+
+
+        ul>li h6 span {
+                color: #324542;
+                font-size: 15px;
+                font-weight: bold
+        }
+
+        ul>li p {
+                color: rgba(50, 69, 66, 0.5);
+                font-size: 12px;
+                margin: 0px
+        }
+
+        .pop__scroller {
+                border-top-#{$right}-radius: 4px;
+                overflow: hidden;
+                overflow-y: scroll;
+                height: 210px;
+                border-radius: 2px;
+                border-top-#{$left}-radius: 4px;
+
+        }
+
+        .pop__colord-lable {
+                content: " __";
+                height: 3px;
+                width: 15px;
+                transform: scaleY(-1);
+                border-radius: 1.5px;
+                background-color: #E28432;
+                box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1), 0 0 10px 0 rgba(0, 0, 0, 0);
+
+        }
+
+        #scroller1::-webkit-scrollbar {
+                width: 3px;  
+                background-color: #F9F9FB;
+                border: 1px solid #F9F9FB;
+           
+        }
+
+        #scroller1::-webkit-scrollbar-thumb {
+                background-color: #CDDAD8;
+               
+
+              
+
+
+        }
+
+        .bord {
+
+                height: 3px;
+                width: 15px;
+                transform: scaleY(-1);
+                border-radius: 1.5px;
+                background-color: #E28432;
+                box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1), 0 0 10px 0 rgba(0, 0, 0, 0);
+
+        }
+}
+
+
+.navbar-light .navbar-nav .nav-link {
+        color: #FFFFFF;
+
+}
+
+.header .navbar-brand {
+        position: relative;
+        left: 11em;
+}
+
+.header .navbar-nav {
+        position: relative;
+        right: 4em;
+}
+
+
+@include bp (isMobile) {
+        .pop {
+                display: none;
+        }
+        .header  .navbar-brand {
+                position: static;
+              
+        }
+        .header  .navbar-nav {
+                position: static;
+       
+        }
+
+}
+
+@include bp (isTablet) {
+        .pop {
+                display: none;
+        }
+        .header  .navbar-brand {
+                position: static;
+              
+        }
+        .header  .navbar-nav {
+                position: static;
+       
+        }
+
+
+
+}
+
+@include bp (isTabletPro) {
+        .pop {
+                display: none;
+        }
+        .header  .navbar-brand {
+                position: static;
+              
+        }
+        .header  .navbar-nav {
+                position: static;
+       
+        }
+
+
+}

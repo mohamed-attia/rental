@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "thiqahuilist": {
+      "hosting": {
+        "angular.io-example": [
+          "thiqahuilist"
+        ]
+      }
+    }
+  }
+}

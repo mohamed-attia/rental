@@ -1,0 +1,56 @@
+// /*
+// * Thiqah branding 
+// * Author  :: Ahmed elbaz
+// * Version :: 4.1.4
+// * LinkedIn:: in/elbazz
+// * Mail    :: ahmed.elbazz.2010@gmail.com
+// */ 
+// ### =======================  [ Configrations ] ========================== ### //     
+// $mainSiteLang : ar; // active the next variable if you want arabic direction
+// ### ===================================================================== ### //   
+// ### =============================  [ Base ] ============================= ### //  
+@import "../scss/base/initial";       // ::=> Set this partail to defined new style  
+@import "../scss/base/base";     // ::=> Dont repeat this partail  
+ 
+// ### ===================================================================== ### // 
+// ### ============================  [ Vendors ] =========================== ### //  
+// [^\$](left|right|rtl|ltr)[^\}]                     // Partail Author  - MM-DD-YY
+@import "../scss/Vendors/dynamicBootstrap-4.3.1/bootstrap";
+@import "../scss/Vendors/bootstrap-override/base";
+// @import "vendors/swiper-4.5.0/swiper";
+// @import "vendors/fontawesome-5/base";
+ 
+// ### ===================================================================== ### // 
+// ### ============================  [ Layouts ] =========================== ### // 
+// @import "layouts/homePage";                          // Ahmed Elbaz  - 7-11-2018 
+
+ 
+// ### ===================================================================== ### // 
+// ### ============================  [ Modules ] =========================== ### // 
+// ###  ============  [ Common ]  
+// @import "modules/common/productCard";                  // Ahmed Elbaz  - 05-18-2018
+
+// ###  ============  [ Master page ]  
+@import "../scss/modules/common/header";    // mohamed attia
+@import "../scss/modules/common/login-card";    //ahmed gaber
+@import "../scss/modules/common//data-table" ;                  //ahmed gaber
+                         
+
+// ###  ============  [ Master page ]  
+@import "../scss/modules/common/footer";                             // mohamed attia
+
+// ###  ============  [ Master page ]  
+// @import "modules/common/list";                               // ahmed gaber
+// @import "modules/common/table";                              // ahmed gaber
+@import "../scss/modules/common/search-box";                         // mohamed attia
+// @import "modules/common/radio-btn";                         // mohamed attia
+@import "../scss/modules/common/nav-tabs";                         // ahmed gaber
+// @import "modules/common/popups";                           // Ahmed A. Mahmoud
+// @import "modules/component-status";                           // Ahmed A. Mahmoud
+// @import "modules/side-menu";                           // Ahmed A. Mahmoud
+// ###  ============  [ Home page ]  
+// @import "modules/hero";                               // Ahmed Elbaz  - 05-18-2018
+
+// ###  ============  [ Product details page ]  
+// @import "modules/topBids";                            // Hany hassan  
+

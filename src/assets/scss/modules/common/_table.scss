@@ -1,0 +1,31 @@
+.paging  {
+        height: 54.88px;
+        width: 1038px;
+        background-color: #EBF3F1;
+        box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2), 0 0 10px 0 rgba(0,0,0,0);
+}
+
+.tables {
+  
+    .tables__thead {
+        background-color:#0E8A86;
+    }
+    .tables__thead__th {
+        color: #ffffff;
+    }
+}
+
+.nav-paging {
+    float: #{$left};
+}
+.tables .tables__thead {
+    background-color:rgba(130,165,160,0.1);
+}
+.tables .tables__thead__th {
+    color: $primary;
+}
+.table__col--dark {
+    color: #324542;
+}
+.table__col--light
+{color: #708B87; }
