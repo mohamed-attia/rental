@@ -65,10 +65,6 @@
   margin: 0 10px;
 }
 
-.mci-ci .commercial-data-section ul li ul.activities-list p {
-  word-break: break-all;
-}
-
 .mci-ci .commercial-data-section ul li ul.activities-list > li {
   padding-bottom: 5px;
   color: #324542;
@@ -211,7 +207,6 @@
   color: #fff !important;
   text-align: center;
   vertical-align: baseline;
-  max-height: 40px;
 }
 
 .mci-ci .danger-box {
@@ -237,6 +232,10 @@
 
 .rtl .mci-ci .content-wrapper {
   text-align: right;
+}
+
+.rtl .comercial-data-section__value p, .rtl .activities-list p {
+  word-break: break-word;
 }
 
 .ltr .mci-ci .content-wrapper {
