@@ -1,0 +1,32 @@
+.container-fluid {
+  .row {
+    .col-md-5 {
+      .content-border {
+        .register{
+          span{
+            color: #aaa;
+          }
+        }
+      }
+      .phone,
+      .password {
+          input{
+              border-radius: 30px;
+              border: 0;
+              background-color: #eee;
+              box-shadow: unset !important;
+          }
+          
+      .visibility-icon{
+        top: 5px;
+        right: 12px;
+      }
+      }
+      .SignIn {
+        button {
+          border-radius: 30px;
+        }
+      }
+    }
+  }
+}

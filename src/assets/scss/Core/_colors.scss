@@ -2,11 +2,11 @@
 //
 // Settings for the `<body>` element. 
 $body-bg: #f5f8f7;
-$body-color: #0D8A86;
+$body-color: #000;
 
 // Links
 // Style anchor elements.
-$link-color: #0E8A86;
+$link-color: #5058a6;
 $link-decoration: none;
 $link-hover-color: darken($link-color, 15%);
 $link-hover-decoration: underline;
@@ -23,7 +23,7 @@ $light: #f8f9fa; // ==== light     ====
 $dark: #343a40; // ==== dark      ==== 
 
 // ====================  Projects Colors 
-$primary: #0D8A86; //##// $primary
+$primary: #5058a6; //##// $primary
 $secondary: #F26350;; //##// secondary:
 $border: #DFE5E4;
 $light:#fff;

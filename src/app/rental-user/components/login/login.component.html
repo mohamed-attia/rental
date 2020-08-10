@@ -1,29 +1,33 @@
 <div class="container-fluid mt-5">
   <div class="row">
-    <div class="col-md-6 mx-auto">
-      <h2 class="mb-3">Login</h2>
+    <div class="col-md-5 mx-auto">
+      <h2 class="mb-4">LogIn</h2>
       <div class="phone">
-        <input class="form-control" type="text" placeholder="E-mail or phone number">
+        <input autocomplete="off" class="form-control" type="text" placeholder="E-mail or phone number">
       </div>
-      <div class="password mt-3">
-        <input class="form-control" type="password" placeholder="Password">
+      <div class="password mt-3 position-relative">
+        <input autocomplete="off" class="form-control" type="password" placeholder="Password">
+        <a href="#" class="position-absolute visibility-icon"><img width="15px" height="15px" src="assets/icons/visibility.svg" alt=""></a>
       </div>
       <div class="forget-password mt-2 text-capitalize mb-4">
         <a href="#">forget password</a>
       </div>
       <div class="SignIn">
-        <button type="button" class="btn btn-primary w-100">Sign in</button>
+        <button type="button" class="btn btn-primary w-100">SignIn</button>
       </div>
-      <div class="or">
-        or
+      <div class="register mt-3">
+        <span class="text-capitalize">don't have account? <a href="#">register</a></span>
       </div>
-      <div class="social-links text-center">
-        <a href="#" class="mr-2"><img width="30px" height="30px" src="assets/icons/facebook.svg" alt="facebook"></a>
-        <a href="#" class="mr-2"><img width="30px" height="30px" src="assets/icons/instagram.svg" alt="instagram"></a>
-        <a href="#" class="mr-2"><img width="30px" height="30px" src="assets/icons/google-plus.svg" alt="google-plus"></a>
-      </div>
-      <div class="register">
-        <span class="text-capitalize">don't have account? <a href="#">register now</a></span>
+      <hr>
+      <div class="content-border">
+        <div class="register text-center">
+          <span class="text-capitalize">or login with</span>
+        </div>
+        <div class="social-links text-center mt-1">
+          <a href="#"><img width="30px" height="30px" src="assets/icons/facebook.svg" alt="facebook"></a>
+          <a href="#" class="ml-3 mr-3"><img width="30px" height="30px" src="assets/icons/instagram.svg" alt="instagram"></a>
+          <a href="#"><img width="30px" height="30px" src="assets/icons/google-plus.svg" alt="google-plus"></a>
+        </div>
       </div>
     </div>
   </div>
