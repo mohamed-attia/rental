@@ -1,6 +1,31 @@
 {
-  "crinfo": {
-    "CrInfoData": "بيانات السجل التجاري"
+  "login": {
+    "title": "تسجيل الدخول",
+    "Email-PhoneNumber":"البريد الإلكتروني أو رقم الهاتف",
+    "Password":"كلمه السر",
+    "forget-Password":"هل نسيت كلمة المرور",
+    "SignIn":"تسجيل الدخول",
+    "login-with":"أو تسجيل الدخول باستخدام",
+    "dont-have-account":"ليس لديك حساب؟",
+    "register":"تسجيل",
+    "facebook":"موقع التواصل الاجتماعي الفيسبوك",
+    "instagram":"الانستقرام",
+    "google-plus":"جوجل بلس"
+  },
+  "Register":{
+    "title":"تسجيل",
+    "Email-PhoneNumber":"البريد الإلكتروني أو رقم الهاتف",
+    "New-Password":"كلمة سر جديدة",
+    "Confirm-Password":"تأكيد كلمة المرور",
+    "Creating-account":"من خلال إنشاء حساب فإنك توافق على",
+    "terms-condition":"أحكام وشروط",
+    "SignIn":"تسجيل الدخول",
+    "have-account":"لديك حساب بالفعل؟",
+    "logIn":"تسجيل الدخول",
+    "login-with":"أو تسجيل الدخول باستخدام",
+    "facebook":"موقع التواصل الاجتماعي الفيسبوك",
+    "instagram":"الانستقرام",
+    "google-plus":"جوجل بلس"
   },
   "footer": {
     "copyRights": "جميع الحقوق محفوظة وزارة التجارة والاستثمار © 2019"

@@ -1,6 +1,31 @@
 {
-  "crinfo": {
-    "CrInfoData": "Commercial Register Info"
+  "login": {
+    "title": "LogIn",
+    "Email-PhoneNumber":"E-mail or phone number",
+    "Password":"Password",
+    "forget-Password":"forget password",
+    "SignIn":"SignIn",
+    "login-with":"or login with",
+    "dont-have-account":"don't have account?",
+    "register":"register",
+    "facebook":"facebook",
+    "instagram":"instagram",
+    "google-plus":"google-plus"
+  },
+  "Register":{
+    "title":"Register",
+    "Email-PhoneNumber":"E-mail or phone number",
+    "New-Password":"New password",
+    "Confirm-Password":"Confirm password",
+    "Creating-account":"By creating an account you agree to our",
+    "terms-condition":"Terms and Condition",
+    "SignIn":"SignIn",
+    "have-account":"already have account?",
+    "logIn":"logIn",
+    "login-with":"or login with",
+    "facebook":"facebook",
+    "instagram":"instagram",
+    "google-plus":"google-plus"
   },
   "footer": {
     "copyRights": "© 2019 Ministry of Commerce and Investment"
