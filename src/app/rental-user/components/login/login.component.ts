@@ -1,10 +1,4 @@
-import { ActivatedRoute, NavigationEnd, Params, Router } from "@angular/router";
-import { Component, OnInit, Renderer2 } from "@angular/core";
-
-import { EndpointsService } from "src/app/shared/providers/endpoints/endpoints.service";
-import { SwUpdate } from "@angular/service-worker";
-import { Title } from '@angular/platform-browser';
-import { TranslateService } from "@ngx-translate/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-login",

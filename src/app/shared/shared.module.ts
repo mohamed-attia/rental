@@ -66,11 +66,6 @@ const sharedMComponents = [
     }),
   ],
   exports: [...sharedModules, sharedMComponents, ConvertGerogianToHijriPipe],
-  providers: [
-    ...services,
-    { provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
-  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SharedModule {
@@ -79,7 +74,11 @@ export class SharedModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: SharedModule,
-      providers: [...services],
+      providers: [
+        ...services,
+        { provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
+      ]
     };
   }
 }
