@@ -15,6 +15,8 @@ import { AppInterceptor } from "./providers/interceptor/interceptor.service";
 import { CommonModule } from "@angular/common";
 import { ConvertGerogianToHijriPipe } from "./pipes/convert-date.pipe";
 import { EndpointsService } from "./providers/endpoints/endpoints.service";
+import { FooterComponent } from "./components/footer/footer.component";
+import { HeaderComponent } from "./components/header/header.component";
 import { LanguageSwitcherComponent } from "./components/language-switcher/language-switcher.component";
 import { LanguageUpdateService } from "./providers/language/language.service";
 import { LoaderInterceptor } from "./providers/interceptor/loader-interceptor.service";
@@ -45,7 +47,11 @@ export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
 
-const sharedMComponents = [LanguageSwitcherComponent];
+const sharedMComponents = [
+  LanguageSwitcherComponent,
+  HeaderComponent,
+  FooterComponent,
+];
 
 @NgModule({
   declarations: [sharedMComponents, ConvertGerogianToHijriPipe],
