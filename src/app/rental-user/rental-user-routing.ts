@@ -1,8 +1,9 @@
 import { RouterModule, Routes } from "@angular/router";
 
 import { HomeRentalComponent } from "./components/home/home.component";
-import { Login } from "./components/login/login";
+import { LoginComponent } from "./components/login/login.component";
 import { NgModule } from "@angular/core";
+import {RegisterComponent} from './components/register/register.component'
 
 export const routes: Routes = [
   {
@@ -11,7 +12,11 @@ export const routes: Routes = [
     children: [
       {
         path: "login",
-        component: Login
+        component: LoginComponent
+      },
+      {
+        path: "register",
+        component: RegisterComponent
       }
     ]
     }

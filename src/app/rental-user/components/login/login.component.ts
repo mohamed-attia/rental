@@ -8,9 +8,9 @@ import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: "app-login",
-  templateUrl:'./login.html'
+  templateUrl:'./login.component.html'
 })
-export class Login implements OnInit {
+export class LoginComponent implements OnInit {
 
   constructor() {}
 
