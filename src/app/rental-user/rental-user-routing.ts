@@ -1,17 +1,14 @@
-import { CommericialRegSystemComponent } from "./components/commericial-reg-system/commericial-reg-system.component";
-import { HomeMciComponent } from "./components/home/home.component";
+import { RouterModule, Routes } from "@angular/router";
+
+import { HomeRentalComponent } from "./components/home/home.component";
 import { Login } from "./components/login/login";
-import { Routes } from "@angular/router";
+import { NgModule } from "@angular/core";
 
 export const routes: Routes = [
   {
-    path: "rental",
-    component: HomeMciComponent,
+    path: "user",
+    component: HomeRentalComponent,
     children: [
-      {
-        path: "home",
-        component: CommericialRegSystemComponent
-      },
       {
         path: "login",
         component: Login
@@ -19,3 +16,9 @@ export const routes: Routes = [
     ]
     }
 ];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class RentalUserRoutingModule {}

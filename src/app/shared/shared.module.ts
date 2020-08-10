@@ -1,12 +1,12 @@
 import {
   CUSTOM_ELEMENTS_SCHEMA,
   ModuleWithProviders,
-  NgModule
+  NgModule,
 } from "@angular/core";
 import {
   HTTP_INTERCEPTORS,
   HttpClient,
-  HttpClientModule
+  HttpClientModule,
 } from "@angular/common/http";
 import { NgbModule, NgbPaginationModule } from "@ng-bootstrap/ng-bootstrap";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
@@ -29,7 +29,7 @@ const services = [
   EndpointsService,
   LoaderService,
   UrlSerializerService,
-  LanguageUpdateService
+  LanguageUpdateService,
 ];
 
 const sharedModules = [
@@ -38,7 +38,7 @@ const sharedModules = [
   ReactiveFormsModule,
   NgbPaginationModule,
   NgbModule,
-  TranslateModule
+  TranslateModule,
 ];
 
 export function createTranslateLoader(http: HttpClient) {
@@ -55,25 +55,25 @@ const sharedMComponents = [LanguageSwitcherComponent];
       loader: {
         provide: TranslateLoader,
         useFactory: createTranslateLoader,
-        deps: [HttpClient]
-      }
-    })
+        deps: [HttpClient],
+      },
+    }),
   ],
   exports: [...sharedModules, sharedMComponents, ConvertGerogianToHijriPipe],
   providers: [
     ...services,
     { provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SharedModule {
-  constructor() { }
+  constructor() {}
 
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: SharedModule,
-      providers: [...services]
+      providers: [...services],
     };
   }
 }

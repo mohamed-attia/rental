@@ -11,7 +11,7 @@ import { TranslateService } from "@ngx-translate/core";
   template:`<router-outlet></router-outlet>
   `
 })
-export class HomeMciComponent implements OnInit {
+export class HomeRentalComponent implements OnInit {
 
   constructor() {}
 

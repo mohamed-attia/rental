@@ -1,15 +1,15 @@
-import { ActivatedRoute, NavigationEnd, Params, Router } from "@angular/router";
+import { ActivatedRoute, Params, Router } from "@angular/router";
 import { Component, OnInit, Renderer2 } from "@angular/core";
 
 import { EndpointsService } from "src/app/shared/providers/endpoints/endpoints.service";
 import { LanguageUpdateService } from "./shared/providers/language/language.service";
-import { Title } from '@angular/platform-browser';
+import { Title } from "@angular/platform-browser";
 import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"]
+  styleUrls: ["./app.component.scss"],
 })
 export class AppComponent implements OnInit {
   private q: string;
@@ -27,14 +27,12 @@ export class AppComponent implements OnInit {
     this.setDefautLanguage("ar");
   }
 
-    ngOnInit() {
-
+  ngOnInit() {
     this.router.queryParamMap.subscribe((param: Params) => {
       this.currLang = param.get("lang");
       this.q = param.get("q");
       if (this.currLang) {
         this.setDefautLanguage(this.currLang);
-         this.checkLangstatus(this.q);
         if (this.currLang === "ar") {
           this.changeHtmlAttr(true);
         } else if (this.currLang === "en") {
@@ -51,41 +49,32 @@ export class AppComponent implements OnInit {
     this.changeHtmlAttr(lang === "ar");
   }
 
-  /**
-   * @name changeHtmlAttr
-   * @memberof AppComponent
-   * @description set HTML tag attr language depending on the current language
-   * @param {boolean} isRtl flag to know if current status is rtl or ltr
-   * @returns {void}
-   */
   changeHtmlAttr(isRtl: boolean): void {
-      if (isRtl) {
-          this.titleService.setTitle('عربي');
-        this.renderer.addClass(document.querySelector("html"), "rtl");
-
+    if (isRtl) {
+      this.titleService.setTitle("عربي");
+      this.renderer.addClass(document.querySelector("html"), "rtl");
       this.renderer.removeClass(document.querySelector("html"), "ltr");
       this.renderer.setAttribute(document.querySelector("html"), "lang", "ar");
-      } else {
-
-          this.titleService.setTitle('english title');
-        this.renderer.addClass(document.querySelector("html"), "ltr");
+    } else {
+      this.titleService.setTitle("english title");
+      this.renderer.addClass(document.querySelector("html"), "ltr");
       this.renderer.removeClass(document.querySelector("html"), "rtl");
       this.renderer.setAttribute(document.querySelector("html"), "lang", "en");
     }
   }
 
-  checkLangstatus(q: string): void {
-    this.endpointsService.getCrInfoData(q).subscribe(res => {
-        if (res["body"] == null) {
-            this._router.navigateByUrl(`/info/review?lang=ar&q=${this.q}`);
-            this.renderer.removeClass(document.querySelector("html"), "ltr");
-            this.renderer.addClass(document.querySelector("html"), "rtl");
-        }
-      this.renderer.setAttribute(
-        document.querySelector("html"),
-        "lang",
-        this.currLang
-      );
-    });
-  }
+  // checkLangstatus(q: string): void {
+  //   this.endpointsService.getCrInfoData(q).subscribe(res => {
+  //       if (res["body"] == null) {
+  //           this._router.navigateByUrl(`/info/review?lang=ar&q=${this.q}`);
+  //           this.renderer.removeClass(document.querySelector("html"), "ltr");
+  //           this.renderer.addClass(document.querySelector("html"), "rtl");
+  //       }
+  //     this.renderer.setAttribute(
+  //       document.querySelector("html"),
+  //       "lang",
+  //       this.currLang
+  //     );
+  //   });
+  // }
 }

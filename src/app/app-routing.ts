@@ -1,7 +1,22 @@
+import { RouterModule, Routes } from "@angular/router";
+
+import { NgModule } from "@angular/core";
 import { NotFoundComponent } from "./shared/components/not-found/not-found.component";
-import { Routes } from "@angular/router";
 
 export const routes: Routes = [
-  { path: "", redirectTo: "rental/home", pathMatch: "full" },
-  { path: "**", component: NotFoundComponent }
+  { path: "", redirectTo: "user/login", pathMatch: "full" },
+  {
+    path: "user",
+    loadChildren: () =>
+      import("./rental-user/rental-user.module").then(
+        (mod) => mod.RentalUserModule
+      ),
+  },
+  { path: "**", component: NotFoundComponent },
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}
