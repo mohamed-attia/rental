@@ -15,6 +15,7 @@ import { isPlatformBrowser } from "@angular/common";
 
 import { SharedModule } from "./shared/shared.module";
 import { RentalUserModule } from "./rental-user/rental-user.module";
+import { RentalsModule } from "./rentals/rentals.module";
 
 import {AppRoutingModule} from './app-routing';
 import { AppComponent } from "./app.component";
@@ -33,6 +34,7 @@ import { map, catchError } from 'rxjs/operators';
     BrowserModule.withServerTransition({ appId: "thiqah-ng-template" }),
     SharedModule.forRoot(),
     RentalUserModule,
+    RentalsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
   ],

@@ -12,6 +12,13 @@ export const routes: Routes = [
         (mod) => mod.RentalUserModule
       ),
   },
+  {
+    path: "rentals",
+    loadChildren: () =>
+      import("./rentals/rentals.module").then(
+        (mod) => mod.RentalsModule
+      ),
+  },
   { path: "**", component: NotFoundComponent },
 ];
 
