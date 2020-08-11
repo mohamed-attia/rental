@@ -2,21 +2,23 @@
   <div class="row">
     <div class="col-md-5 mx-auto">
       <h2 class="mb-4">{{'login.title' | translate}}</h2>
-      <div class="phone">
-        <input autocomplete="off" class="form-control" type="text" placeholder="{{'login.Email-PhoneNumber' | translate}}">
-      </div>
-      <div class="password mt-3 position-relative">
-        <input autocomplete="off" class="form-control" type="password" placeholder="{{'login.Password' | translate}}">
-        <a href="#" class="position-absolute visibility-icon"><img width="15px" height="15px" src="assets/icons/visibility.svg" alt=""></a>
-      </div>
-      <div class="forget-password mt-2 text-capitalize mb-4">
-        <a href="#">{{'login.forget-Password' | translate}}</a>
-      </div>
-      <div class="SignIn">
-        <button type="button" class="btn btn-primary w-100">{{'login.SignIn' | translate}}</button>
-      </div>
+        <form #form="ngForm" [formGroup]="userLoginForm" (ngSubmit)="onSubmit(form)">
+          <div class="phone">
+            <input autocomplete="off" formControlName="userEmail" required class="form-control" type="text" placeholder="{{'login.Email-PhoneNumber' | translate}}">
+          </div>
+          <div class="password mt-3 position-relative">
+            <input autocomplete="off" formControlName="userPassword" required class="form-control" [type]="fieldTextType ? 'text' : 'password'" placeholder="{{'login.Password' | translate}}">
+            <a href="avascript:void(0)" (click)="fieldTextType = !fieldTextType" class="position-absolute visibility-icon"><img width="15px" height="15px" src="assets/icons/visibility.svg" alt=""></a>
+          </div>
+          <div class="forget-password mt-2 text-capitalize mb-4">
+            <a href="#">{{'login.forget-Password' | translate}}</a>
+          </div>
+          <div class="SignIn">
+            <button type="submit" class="btn btn-primary w-100">{{'login.SignIn' | translate}}</button>
+          </div>
+        </form>
       <div class="register mt-3">
-        <span class="text-capitalize">{{'login.dont-have-account' | translate}} <a href="#">{{'login.register' | translate}}</a></span>
+        <span class="text-capitalize">{{'login.dont-have-account' | translate}} <a [routerLink]="['../../user/register']" [queryParams]="{lang: 'en'}">{{'login.register' | translate}}</a></span>
       </div>
       <hr>
       <div class="content-border">

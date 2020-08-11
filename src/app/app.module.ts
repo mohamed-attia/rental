@@ -26,10 +26,12 @@ import { APP_INITIALIZER } from '@angular/core';
 import { ConfigService } from './config.service';
 import { of, Observable, ObservableInput } from '../../node_modules/rxjs';
 import { map, catchError } from 'rxjs/operators';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     HttpClientModule,
+    ReactiveFormsModule,
     BrowserModule.withServerTransition({ appId: "thiqah-ng-template" }),
     SharedModule.forRoot(),
     RentalUserModule,

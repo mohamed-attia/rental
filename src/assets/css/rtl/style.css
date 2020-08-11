@@ -10860,7 +10860,7 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
 .rtl .container-fluid .row .col-md-5 .phone .visibility-icon,
 .rtl .container-fluid .row .col-md-5 .password .visibility-icon {
   top: 5px;
-  right: 12px;
+  left: 12px;
 }
 
 .rtl .container-fluid .row .col-md-5 .SignIn button {

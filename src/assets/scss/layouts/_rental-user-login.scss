@@ -16,10 +16,10 @@
               background-color: #eee;
               box-shadow: unset !important;
           }
-          
+
       .visibility-icon{
         top: 5px;
-        right: 12px;
+        #{$right}: 12px;
       }
       }
       .SignIn {

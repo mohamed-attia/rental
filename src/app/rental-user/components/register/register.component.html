@@ -2,26 +2,28 @@
     <div class="row">
       <div class="col-md-5 mx-auto">
         <h2 class="mb-4">{{'Register.title' | translate}}</h2>
-        <div class="phone">
-          <input autocomplete="off" class="form-control" type="text" placeholder="{{'Register.Email-PhoneNumber' | translate}}">
-        </div>
-        <div class="password position-relative mt-3">
-          <input autocomplete="off" class="form-control" type="password" placeholder="{{'Register.New-Password' | translate}}">
-          <a href="#" class="position-absolute visibility-icon"><img width="15px" height="15px" src="assets/icons/visibility.svg" alt=""></a>
-        </div>
-        <div class="password position-relative mt-3">
-            <input autocomplete="off" class="form-control" type="password" placeholder="{{'Register.Confirm-Password' | translate}}">
-            <a href="#" class="position-absolute visibility-icon"><img width="15px" height="15px" src="assets/icons/visibility.svg" alt=""></a>
+        <form #form="ngForm" [formGroup]="userRegisterForm" (ngSubmit)="onSubmit(form)">
+          <div class="phone">
+            <input autocomplete="off" formControlName="userEmail" class="form-control" type="text" placeholder="{{'Register.Email-PhoneNumber' | translate}}">
           </div>
-        <div class="terms-condition mt-2 text-capitalize mb-4">
-            <input type="checkbox" name="" id="terms">
-            <label class="ml-2" for="terms">{{'Register.Creating-account' | translate}}<a class="ml-1" href="#">{{'Register.terms-condition' | translate}}</a></label>
-        </div>
-        <div class="SignIn">
-          <button type="button" class="btn btn-primary w-100">{{'Register.SignIn' | translate}}</button>
-        </div>
+          <div class="password position-relative mt-3">
+            <input autocomplete="off" formControlName="userPassword" class="form-control" [type]="password ? 'text' : 'password'" placeholder="{{'Register.New-Password' | translate}}">
+            <a href="avascript:void(0)" (click)="password = !password"  class="position-absolute visibility-icon"><img width="15px" height="15px" src="assets/icons/visibility.svg" alt=""></a>
+          </div>
+          <div class="password position-relative mt-3">
+              <input autocomplete="off" formControlName="userConfirmPassword" class="form-control" [type]="confirmpassword ? 'text' : 'password'" placeholder="{{'Register.Confirm-Password' | translate}}">
+              <a href="avascript:void(0)" (click)="confirmpassword = !confirmpassword"  class="position-absolute visibility-icon"><img width="15px" height="15px" src="assets/icons/visibility.svg" alt=""></a>
+            </div>
+          <div class="terms-condition mt-2 text-capitalize mb-4">
+              <input type="checkbox" name="" id="terms">
+              <label class="ml-2" for="terms">{{'Register.Creating-account' | translate}}<a class="ml-1" href="#">{{'Register.terms-condition' | translate}}</a></label>
+          </div>
+          <div class="SignIn">
+            <button type="submit" class="btn btn-primary w-100">{{'Register.SignIn' | translate}}</button>
+          </div>
+        </form>
         <div class="register mt-3">
-          <span class="text-capitalize">{{'Register.have-account' | translate}} <a href="#">{{'Register.logIn' | translate}}</a></span>
+          <span class="text-capitalize">{{'Register.have-account' | translate}} <a [routerLink]="['../../user/login']" [queryParams]="{lang: 'en'}">{{'Register.logIn' | translate}}</a></span>
         </div>
         <hr>
         <div class="content-border">

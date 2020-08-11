@@ -1,14 +1,14 @@
 import { RouterModule, Routes } from "@angular/router";
 
-import { HomeRentalComponent } from "./components/home/home.component";
 import { LoginComponent } from "./components/login/login.component";
 import { NgModule } from "@angular/core";
 import {RegisterComponent} from './components/register/register.component'
+import { UserLayoutComponent } from "./components/layout/user-layout.component";
 
 export const routes: Routes = [
   {
     path: "user",
-    component: HomeRentalComponent,
+    component: UserLayoutComponent,
     children: [
       {
         path: "login",
