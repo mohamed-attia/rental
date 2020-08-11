@@ -5,14 +5,26 @@
         <form #form="ngForm" [formGroup]="userRegisterForm" (ngSubmit)="onSubmit(form)">
           <div class="phone">
             <input autocomplete="off" formControlName="userEmail" class="form-control" type="text" placeholder="{{'Register.Email-PhoneNumber' | translate}}">
+            <ng-container *ngIf="userRegisterForm.controls['userEmail'].invalid &&
+            (userRegisterForm.controls['userEmail'].dirty || userRegisterForm.controls['userEmail'].touched)">
+             <span *ngIf="userRegisterForm.controls['userEmail'].errors.required">required</span>
+           </ng-container>
           </div>
           <div class="password position-relative mt-3">
             <input autocomplete="off" formControlName="userPassword" class="form-control" [type]="password ? 'text' : 'password'" placeholder="{{'Register.New-Password' | translate}}">
             <a href="avascript:void(0)" (click)="password = !password"  class="position-absolute visibility-icon"><img width="15px" height="15px" src="assets/icons/visibility.svg" alt=""></a>
+            <ng-container *ngIf="userRegisterForm.controls['userPassword'].invalid &&
+            (userRegisterForm.controls['userPassword'].dirty || userRegisterForm.controls['userPassword'].touched)">
+             <span *ngIf="userRegisterForm.controls['userPassword'].errors.required">required</span>
+           </ng-container>
           </div>
           <div class="password position-relative mt-3">
               <input autocomplete="off" formControlName="userConfirmPassword" class="form-control" [type]="confirmpassword ? 'text' : 'password'" placeholder="{{'Register.Confirm-Password' | translate}}">
               <a href="avascript:void(0)" (click)="confirmpassword = !confirmpassword"  class="position-absolute visibility-icon"><img width="15px" height="15px" src="assets/icons/visibility.svg" alt=""></a>
+              <ng-container *ngIf="userRegisterForm.controls['userConfirmPassword'].invalid &&
+              (userRegisterForm.controls['userConfirmPassword'].dirty || userRegisterForm.controls['userConfirmPassword'].touched)">
+               <span *ngIf="userRegisterForm.controls['userConfirmPassword'].errors.required">required</span>
+             </ng-container>
             </div>
           <div class="terms-condition mt-2 text-capitalize mb-4">
               <input type="checkbox" name="" id="terms">

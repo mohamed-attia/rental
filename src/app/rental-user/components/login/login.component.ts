@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, Validators } from "@angular/forms";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 
 import { FormBuilder } from "@angular/forms";
-import { RentalUserService } from '../../services/rental-user.service';
+import { RentalUserService } from "../../services/rental-user.service";
 
 @Component({
   selector: "app-login",
@@ -12,20 +12,31 @@ export class LoginComponent implements OnInit {
   public fieldTextType: boolean = false;
   public userLoginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private rentalUserService: RentalUserService) {}
-  // constructor(private fb: FormBuilder, private sendUserLoginData) {}
+  constructor(
+    private fb: FormBuilder,
+    private rentalUserService: RentalUserService
+  ) {
+    this.createForm();
+  }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  createForm() {
     this.userLoginForm = this.fb.group({
-      userEmail: ['', Validators.required],
-      userPassword: ['',Validators.required],
+      userEmail: ["", Validators.required],
+      userPassword: ["", Validators.required],
     });
   }
 
   onSubmit(form) {
-    this.rentalUserService.sendUserLoginData(this.userLoginForm.value).subscribe(res=>{
-      console.log(res)
-    })
-    console.log(this.userLoginForm.value);
+    if (this.userLoginForm.valid) {
+      this.rentalUserService
+        .sendUserLoginData(this.userLoginForm.value)
+        .subscribe((res) => {
+          console.log(res);
+        });
+    } else {
+      console.log("not valid");
+    }
   }
 }

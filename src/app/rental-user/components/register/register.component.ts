@@ -26,11 +26,15 @@ export class RegisterComponent implements OnInit {
     });
   }
   onSubmit(form) {
-    this.rentalUserService
+    if(this.userRegisterForm.valid) {
+      this.rentalUserService
       .sendUserLoginData(this.userRegisterForm.value)
       .subscribe((res) => {
         console.log(res);
       });
-    console.log(this.userRegisterForm.value);
+    }else {
+      console.log('not ok')
+    }
+
   }
 }
