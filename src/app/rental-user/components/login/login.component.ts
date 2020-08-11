@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
-import { FormBuilder } from "@angular/forms";
 import { RentalUserService } from "../../services/rental-user.service";
 
 @Component({

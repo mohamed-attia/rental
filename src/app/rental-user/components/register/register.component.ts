@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, Validators } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
-import { FormBuilder } from "@angular/forms";
 import { RentalUserService } from "../../services/rental-user.service";
 
 @Component({
@@ -26,15 +25,14 @@ export class RegisterComponent implements OnInit {
     });
   }
   onSubmit(form) {
-    if(this.userRegisterForm.valid) {
+    if (this.userRegisterForm.valid) {
       this.rentalUserService
-      .sendUserLoginData(this.userRegisterForm.value)
-      .subscribe((res) => {
-        console.log(res);
-      });
-    }else {
-      console.log('not ok')
+        .sendUserLoginData(this.userRegisterForm.value)
+        .subscribe((res) => {
+          console.log(res);
+        });
+    } else {
+      console.log("not ok");
     }
-
   }
 }
