@@ -15,9 +15,7 @@ export const routes: Routes = [
   {
     path: "rentals",
     loadChildren: () =>
-      import("./rentals/rentals.module").then(
-        (mod) => mod.RentalsModule
-      ),
+      import("./rentals/rentals.module").then((mod) => mod.RentalsModule),
   },
   { path: "**", component: NotFoundComponent },
 ];

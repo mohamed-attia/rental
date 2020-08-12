@@ -1,16 +1,22 @@
 import { Component, OnInit } from "@angular/core";
 
+import { GetRentalsListService } from '../../service/rental.service';
+import { RentalDtailsModel } from '../../models/rentals.model';
+
 @Component({
   selector: "app-rentals",
   templateUrl:'./rentals.component.html'
 })
 export class RentalsComponent implements OnInit {
+  public rentalsList:Array<RentalDtailsModel> = [];
 
-  constructor() {}
+  constructor(private getRentalsListService:GetRentalsListService) {}
 
-    ngOnInit() {}
+    ngOnInit() {
+      this.getRentals();
+    }
 
-    slides = [342, 453, 846];
+  slides = [342, 453, 846];
 
   slideConfig = {
     "slidesToShow": 1,
@@ -20,5 +26,11 @@ export class RentalsComponent implements OnInit {
     "dots": true,
     "infinite": true
   };
+
+  private getRentals() {
+    this.getRentalsListService.getRentasList().subscribe(rentals=>{
+        this.rentalsList = rentals
+    })
+  }
 
 }
