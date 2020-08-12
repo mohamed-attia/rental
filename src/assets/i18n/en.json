@@ -27,6 +27,10 @@
     "instagram":"instagram",
     "google-plus":"google-plus"
   },
+  "Validation":{
+    "required":"Required",
+    "passwordMatch":"Value not match Password"
+  },
   "footer": {
     "copyRights": "© 2019 Ministry of Commerce and Investment"
   },

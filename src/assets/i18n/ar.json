@@ -27,6 +27,10 @@
     "instagram":"الانستقرام",
     "google-plus":"جوجل بلس"
   },
+  "Validation":{
+    "required":"حقل مطلوب",
+    "passwordMatch":"لا تطابق كلمة المرور"
+  },
   "footer": {
     "copyRights": "جميع الحقوق محفوظة وزارة التجارة والاستثمار © 2019"
   },
