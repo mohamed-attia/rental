@@ -3,8 +3,11 @@ import { Component, OnInit } from "@angular/core";
 @Component({
   selector: "app-root",
   template:`
-  <router-outlet></router-outlet>
-  <footer>footer</footer>
+  <div class="content-wrapper">
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+    <app-menu>menu</app-menu>
+  </div>
   `
 })
 export class RentalsLayoutComponent implements OnInit {

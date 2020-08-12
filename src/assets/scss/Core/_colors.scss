@@ -1,12 +1,11 @@
 // Body
 //
 // Settings for the `<body>` element. 
-$body-bg: #f5f8f7;
-$body-color: #0D8A86;
+$body-bg: #eee;
 
 // Links
 // Style anchor elements.
-$link-color: #0E8A86;
+$link-color: #000;
 $link-decoration: none;
 $link-hover-color: darken($link-color, 15%);
 $link-hover-decoration: underline;

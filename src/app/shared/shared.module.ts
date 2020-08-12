@@ -25,6 +25,7 @@ import { QueryService } from "./providers/query-service/query.service";
 import { ReactiveFormsModule } from "@angular/forms";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { UrlSerializerService } from "./providers/urlSerializer/url-serializer.service";
+import { MenuComponent } from './components/menu/menu.component';
 
 const services = [
   QueryService,
@@ -51,6 +52,7 @@ const sharedMComponents = [
   LanguageSwitcherComponent,
   HeaderComponent,
   FooterComponent,
+  MenuComponent
 ];
 
 @NgModule({

@@ -1,61 +1,10 @@
-.header-comercial {
-  background-color: #0d8a86;
-  color: #fff;
-  padding: 15px 0;
-  line-height: 35px;
-}
-
-.header-comercial .vision-logo {
-  text-align: left;
-  line-height: 40px;
-}
-
-.header-comercial .text-left {
-  text-align: left !important;
-}
-
-.header-comercial .logo-name {
-  line-height: 39px;
-  text-align: right;
-}
-
-.header-comercial .logo-name:before {
-  content: "";
-  display: inline-block;
-  height: 30px;
-  width: 2px;
-  background: #fff;
-  position: absolute;
-  right: 1px;
+.bell-count {
+  font-size: 6px;
+  border: 0.3px solid #5058a6;
+  padding: 0 4px;
+  border-radius: 50px;
   top: 5px;
-}
-
-.rtl .header-comercial .vision-logo {
-  text-align: left;
-}
-
-.ltr .header-comercial .logo-name {
-  text-align: left;
-}
-
-.ltr .header-comercial .logo-name:before {
-  left: 1px;
-  right: auto;
-}
-
-.ltr .vision-logo {
-  text-align: right;
-}
-
-@media only screen and (max-width: 800px) {
-  .logo-name {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 800px) and (orientation: landscape) {
-  .header-comercial .vision-logo {
-    line-height: 56px;
-  }
+  left: 17px;
+  background-color: #fff;
 }
 /*# sourceMappingURL=header.component.css.map */

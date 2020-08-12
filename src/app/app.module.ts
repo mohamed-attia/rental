@@ -28,6 +28,8 @@ import { ConfigService } from './config.service';
 import { of, Observable, ObservableInput } from '../../node_modules/rxjs';
 import { map, catchError } from 'rxjs/operators';
 
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 @NgModule({
   imports: [
     HttpClientModule,
@@ -37,6 +39,7 @@ import { map, catchError } from 'rxjs/operators';
     RentalsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    SlickCarouselModule
   ],
   declarations: [LoaderComponent, AppComponent, NotFoundComponent],
   providers: [

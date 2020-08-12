@@ -10,4 +10,15 @@ export class RentalsComponent implements OnInit {
 
     ngOnInit() {}
 
+    slides = [342, 453, 846];
+
+  slideConfig = {
+    "slidesToShow": 1,
+    "slidesToScroll": 1,
+    "nextArrow": "",
+    "prevArrow": "",
+    "dots": true,
+    "infinite": true
+  };
+
 }

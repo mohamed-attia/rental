@@ -1,0 +1,71 @@
+.content-wrapper {
+  width: 45%;
+  margin: auto;
+  .slider {
+    .slick-dots{
+      top: 124px;
+    }
+    img {
+      border-radius: 10px;
+    }
+  }
+  .card-wrapper {
+    height: 479px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    .card-img{
+      flex: 1;
+    }
+    .card-content{
+      flex: 2;
+    }
+    .card {
+      border-radius: 10px;
+      img {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+      .card-title {
+        span:first-child {
+          font-weight: bold;
+          font-family: sans-serif;
+        }
+      }
+      .card-title,
+      .card-days,
+      .card-cost,
+      .card-members {
+        span {
+          font-size: 12px;
+        }
+      }
+
+      .card-days,
+      .card-cost {
+        span {
+          color: #5058a6;
+        }
+      }
+      .card-members {
+        button {
+          color: #5058a6;
+          font-size: 12px;
+          padding: 0 12px;
+        }
+      }
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
