@@ -10966,20 +10966,25 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   font-size: 12px;
 }
 
+.ltr .card-wrapper .from,
+.ltr .card-wrapper .to {
+  font-family: 'Roboto', 'sans-seirf';
+}
+
 .ltr .card-wrapper .card-details {
   background-color: #fafafa !important;
   padding: 10px;
   border-radius: 10px;
-  width: 98%;
+  width: 100%;
 }
 
-.ltr .card-wrapper .card-details .unit-name .title {
+.ltr .card-wrapper .card-details .title {
   font-size: 14px;
   font-family: 'Roboto', 'sans-seirf';
   font-weight: 500;
 }
 
-.ltr .card-wrapper .card-details .unit-name .title span {
+.ltr .card-wrapper .card-details .title span {
   font-family: 'Roboto', 'sans-seirf';
 }
 
@@ -11006,6 +11011,7 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 .ltr .card-wrapper .card-details .more .more-rental-details {
   font-size: 13px;
   color: #5058a6;
+  font-family: 'Roboto', 'sans-seirf';
 }
 
 .ltr .card-wrapper .card-details .content span {
@@ -11025,6 +11031,7 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   padding: 6px 22px !important;
   text-transform: capitalize;
   width: 102px;
+  font-family: 'Roboto', 'sans-seirf';
 }
 
 .ltr .card-wrapper .card-details .chat-btn,
@@ -11050,6 +11057,13 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   padding-left: 10px;
   padding-right: 10px;
   color: red;
+}
+
+@media (max-width: 768px) {
+  .ltr .content-wrapper {
+    width: 90%;
+    margin: auto;
+  }
 }
 
 .slick-dots li.slick-active button:before,

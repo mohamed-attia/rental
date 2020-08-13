@@ -45,20 +45,25 @@
             }
         }
     }
+    .from,
+    .to{
+        font-family: 'Roboto', 'sans-seirf';
+    }
     .card-details{
         background-color: #fafafa !important;
         padding: 10px;
         border-radius: 10px;
-        width: 98%;
-        .unit-name{
-            .title{
-                font-size: 14px;
+        width:100%;
+        
+        .title{
+            font-size: 14px;
+            font-family: 'Roboto', 'sans-seirf';
+            font-weight: 500;
+            span{
                 font-family: 'Roboto', 'sans-seirf';
-                font-weight: 500;
-                span{
-                    font-family: 'Roboto', 'sans-seirf';
-                }
             }
+        }
+        .unit-name{
             .location{
                 color: #909090;
                 font-size: 12px;
@@ -85,6 +90,7 @@
             .more-rental-details{
                 font-size: 13px;
                 color: #5058a6;
+                font-family: 'Roboto', 'sans-seirf';
             }
         }
         .content{
@@ -106,6 +112,7 @@
             padding: 6px 22px !important;
             text-transform: capitalize;
             width: 102px;
+            font-family: 'Roboto', 'sans-seirf';
         }
         .chat-btn,
         .call-btn{
