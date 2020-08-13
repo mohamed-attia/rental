@@ -21,24 +21,22 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     this.userRegisterForm = this.fb.group(
       {
-        userEmail: ["", Validators.required],
-        userPassword: ["", Validators.required],
+        userName: ["", Validators.required],
+        emailAddress:["", Validators.required],
+        phoneNumber:["", Validators.required],
+        password: ["", Validators.required],
         userConfirmPassword: ["", Validators.required],
+        tenantId:Number(localStorage.getItem('tenantId')),
         isAgree:["",Validators.required]
-      },
-      {
-        validator: this.ConfirmedValidator(
-          "userPassword",
-          "userConfirmPassword"
-        ),
       }
     );
   }
   public onSubmit(form: FormGroup) {
-    console.log("agree", this.agree)
-    if (this.userRegisterForm.valid) {
+    if (this.userRegisterForm.valid && (this.userRegisterForm.get('password').value === this.userRegisterForm.get('userConfirmPassword').value)) {
+      this.userRegisterForm.removeControl('userConfirmPassword');
+      this.userRegisterForm.removeControl('isAgree');
       this.rentalUserService
-        .sendUserLoginData(this.userRegisterForm.value)
+        .sendUserREgisterData(this.userRegisterForm.value)
         .subscribe((res) => {
           console.log(res);
         });
@@ -47,23 +45,23 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  private ConfirmedValidator(controlName: string, matchingControlName: string) {
-    return (formGroup: FormGroup) => {
-      const control = formGroup.controls[controlName];
-      const matchingControl = formGroup.controls[matchingControlName];
-      if (
-        matchingControl.errors &&
-        !matchingControl.errors.confirmedValidator
-      ) {
-        return;
-      }
-      if (control.value !== matchingControl.value) {
-        matchingControl.setErrors({ confirmedValidator: true });
-      } else {
-        matchingControl.setErrors(null);
-      }
-    };
-  }
+  // private ConfirmedValidator(controlName: string, matchingControlName: string) {
+  //   return (formGroup: FormGroup) => {
+  //     const control = formGroup.controls[controlName];
+  //     const matchingControl = formGroup.controls[matchingControlName];
+  //     if (
+  //       matchingControl.errors &&
+  //       !matchingControl.errors.confirmedValidator
+  //     ) {
+  //       return;
+  //     }
+  //     if (control.value !== matchingControl.value) {
+  //       matchingControl.setErrors({ confirmedValidator: true });
+  //     } else {
+  //       matchingControl.setErrors(null);
+  //     }
+  //   };
+  // }
   public formControls(controls) {
     return this.userRegisterForm.controls[controls];
   }

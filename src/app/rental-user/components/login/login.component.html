@@ -4,18 +4,18 @@
       <h2 class="mb-4">{{'login.title' | translate}}</h2>
         <form #form="ngForm" [formGroup]="userLoginForm" (ngSubmit)="onSubmit(form)" novalidate>
           <div class="phone">
-            <input autocomplete="off" formControlName="userEmail" required class="form-control" type="text" placeholder="{{'login.Email-PhoneNumber' | translate}}">
-            <ng-container *ngIf="form.submitted && userLoginForm.controls['userEmail'].invalid ||
-             (userLoginForm.controls['userEmail'].dirty || userLoginForm.controls['userEmail'].touched)">
-              <span *ngIf="userLoginForm.controls['userEmail']?.errors?.required">{{'Validation.required' | translate}}</span>
+            <input autocomplete="off" formControlName="userNameOrEmailAddress" required class="form-control" type="text" placeholder="{{'login.Email-PhoneNumber' | translate}}">
+            <ng-container *ngIf="form.submitted && userLoginForm.controls['userNameOrEmailAddress'].invalid ||
+             (userLoginForm.controls['userNameOrEmailAddress'].dirty || userLoginForm.controls['userNameOrEmailAddress'].touched)">
+              <span *ngIf="userLoginForm.controls['userNameOrEmailAddress']?.errors?.required">{{'Validation.required' | translate}}</span>
             </ng-container>
           </div>
           <div class="password mt-3 position-relative">
-            <input autocomplete="off" formControlName="userPassword" required class="form-control" [type]="fieldTextType ? 'text' : 'password'" placeholder="{{'login.Password' | translate}}">
+            <input autocomplete="off" formControlName="password" required class="form-control" [type]="fieldTextType ? 'text' : 'password'" placeholder="{{'login.Password' | translate}}">
             <a href="avascript:void(0)" (click)="fieldTextType = !fieldTextType" class="position-absolute visibility-icon"><img width="15px" height="15px" src="assets/icons/visibility.svg" alt=""></a>
-            <ng-container *ngIf="form.submitted && userLoginForm.controls['userPassword'].invalid ||
-             (userLoginForm.controls['userPassword'].dirty || userLoginForm.controls['userPassword'].touched)">
-              <span *ngIf="userLoginForm.controls['userPassword']?.errors?.required">{{'Validation.required' | translate}}</span>
+            <ng-container *ngIf="form.submitted && userLoginForm.controls['password'].invalid ||
+             (userLoginForm.controls['password'].dirty || userLoginForm.controls['password'].touched)">
+              <span *ngIf="userLoginForm.controls['password']?.errors?.required">{{'Validation.required' | translate}}</span>
             </ng-container>
           </div>
           <div class="forget-password mt-2 text-capitalize mb-4">

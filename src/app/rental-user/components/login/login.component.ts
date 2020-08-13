@@ -22,17 +22,17 @@ export class LoginComponent implements OnInit {
 
   createForm() {
     this.userLoginForm = this.fb.group({
-      userEmail: ["", Validators.required],
-      userPassword: ["", Validators.required],
+      userNameOrEmailAddress: ["", Validators.required],
+      password: ["", Validators.required],
     });
   }
 
-  onSubmit(form) {
+  onSubmit(form:FormGroup) {
     if (this.userLoginForm.valid) {
       this.rentalUserService
         .sendUserLoginData(this.userLoginForm.value)
         .subscribe((res) => {
-          console.log(res);
+          localStorage.setItem('accessToken','Bearer' + ' ' + res.result['accessToken'])
         });
     } else {
       console.log("not valid");
