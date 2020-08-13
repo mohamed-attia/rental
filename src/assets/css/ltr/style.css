@@ -10845,7 +10845,7 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 }
 
 .ltr .content-wrapper {
-  width: 45%;
+  width: 40%;
   margin: auto;
 }
 
@@ -10855,12 +10855,6 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 
 .ltr .content-wrapper .slider img {
   border-radius: 10px;
-}
-
-.ltr .content-wrapper .card-wrapper {
-  height: 479px;
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 
 .ltr .content-wrapper .card-wrapper .card-img {
@@ -10875,8 +10869,21 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
           flex: 2;
 }
 
+.ltr .content-wrapper .card-wrapper .card-content .unit-name {
+  font-size: 13px;
+  font-family: 'Roboto', sans-serif;
+}
+
 .ltr .content-wrapper .card-wrapper .card {
   border-radius: 10px;
+  width: 100%;
+}
+
+.ltr .content-wrapper .card-wrapper .card:hover {
+  -webkit-box-shadow: 0px 2px 7px #d9d9d9;
+          box-shadow: 0px 2px 7px #d9d9d9;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 .ltr .content-wrapper .card-wrapper .card img {
@@ -10884,9 +10891,12 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   border-bottom-left-radius: 10px;
 }
 
+.ltr .content-wrapper .card-wrapper .card .card-title .content {
+  margin-right: 2px;
+}
+
 .ltr .content-wrapper .card-wrapper .card .card-title span:first-child {
   font-weight: bold;
-  font-family: sans-serif;
 }
 
 .ltr .content-wrapper .card-wrapper .card .card-title span,
@@ -10894,33 +10904,38 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 .ltr .content-wrapper .card-wrapper .card .card-cost span,
 .ltr .content-wrapper .card-wrapper .card .card-members span {
   font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.ltr .content-wrapper .card-wrapper .card .card-days,
+.ltr .content-wrapper .card-wrapper .card .card-cost {
+  line-height: 19px;
+}
+
+.ltr .content-wrapper .card-wrapper .card .card-days img,
+.ltr .content-wrapper .card-wrapper .card .card-cost img {
+  margin-right: 2px;
 }
 
 .ltr .content-wrapper .card-wrapper .card .card-days span,
 .ltr .content-wrapper .card-wrapper .card .card-cost span {
   color: #5058a6;
+  font-weight: 500;
+}
+
+.ltr .content-wrapper .card-wrapper .card .card-members .parent {
+  line-height: 19px;
+}
+
+.ltr .content-wrapper .card-wrapper .card .card-members .parent img {
+  margin-right: 2px;
 }
 
 .ltr .content-wrapper .card-wrapper .card .card-members button {
   color: #5058a6;
   font-size: 12px;
   padding: 0 12px;
-}
-
-.ltr ::-webkit-scrollbar {
-  width: 6px;
-}
-
-.ltr ::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-.ltr ::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-.ltr ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  font-family: 'Roboto', sans-serif;
 }
 
 .ltr .bread-span {
@@ -10929,8 +10944,11 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   color: red;
 }
 
-body {
-  overflow: hidden;
+@media (max-width: 768px) {
+  .ltr .content-wrapper {
+    width: 90%;
+    margin: auto;
+  }
 }
 
 .slick-dots li.slick-active button:before,

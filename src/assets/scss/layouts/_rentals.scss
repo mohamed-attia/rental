@@ -1,5 +1,5 @@
 .content-wrapper {
-  width: 45%;
+  width: 40%;
   margin: auto;
   .slider {
     .slick-dots{
@@ -10,25 +10,33 @@
     }
   }
   .card-wrapper {
-    height: 479px;
-    overflow-y: scroll;
-    overflow-x: hidden;
     .card-img{
       flex: 1;
     }
     .card-content{
       flex: 2;
+      .unit-name{
+        font-size: 13px;
+        font-family: 'Roboto', sans-serif 
+      }
     }
     .card {
       border-radius: 10px;
+      width:100%;
+      &:hover{
+        box-shadow: 0px 2px 7px #d9d9d9;
+        transition: 2s;
+      }
       img {
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
       }
       .card-title {
+        .content{
+          margin-#{right}:2px;
+        }
         span:first-child {
           font-weight: bold;
-          font-family: sans-serif;
         }
       }
       .card-title,
@@ -37,35 +45,35 @@
       .card-members {
         span {
           font-size: 12px;
+          font-family: 'Roboto', sans-serif 
         }
       }
 
       .card-days,
       .card-cost {
+        line-height: 19px;
+        img{
+          margin-#{right}:2px;
+        }
         span {
           color: #5058a6;
+          font-weight: 500;
         }
       }
       .card-members {
+        .parent{
+          line-height: 19px;
+          img{
+            margin-#{right}:2px;
+          }
+        }
         button {
           color: #5058a6;
           font-size: 12px;
           padding: 0 12px;
+          font-family: 'Roboto', sans-serif 
         }
       }
     }
   }
-}
-
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
 }
