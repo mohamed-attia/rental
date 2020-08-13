@@ -26,18 +26,22 @@
         }
         .button{
             top: -23px;
-            right: 13px;
+            right: 21px;
             .images{
                 background-color: #5058a6 !important;
                 color: #fff !important;
                 border-radius: 20px;
                 text-transform: capitalize;
+                font-family: 'Roboto', 'sans-seirf';
+                font-size: 12px;
             }
             .video{
                 background-color: #fff !important;
                 color: #000 !important;
                 border-radius: 20px;
                 text-transform: capitalize;
+                font-family: 'Roboto', 'sans-seirf';
+                font-size: 12px;
             }
         }
     }
@@ -49,10 +53,16 @@
         .unit-name{
             .title{
                 font-size: 14px;
+                font-family: 'Roboto', 'sans-seirf';
+                font-weight: 500;
+                span{
+                    font-family: 'Roboto', 'sans-seirf';
+                }
             }
             .location{
                 color: #909090;
                 font-size: 12px;
+                font-family: 'Roboto', 'sans-seirf';
             }
         }
         .unit-descrption{
@@ -61,12 +71,14 @@
                 font-size: 13px;
                 color: #999;
                 width: 97%;
+                font-family: 'Roboto', 'sans-seirf';
             }
         }
         .unit-location{
             p{
                 font-size: 13px;
                 color: #5058a6;
+                font-family: 'Roboto', 'sans-seirf';
             }
         }
         .more{
@@ -100,6 +112,7 @@
             color: #000;
             background-color:#fff !important;
             border-radius:20px;
+            font-family: 'Roboto', 'sans-seirf';
             span{
                 text-transform: capitalize;
                 margin-left: 4px;

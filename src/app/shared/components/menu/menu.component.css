@@ -1,8 +1,5 @@
 .menu-wrapper {
   background-color: #fff;
-  position: absolute;
-  width: 45%;
-  bottom:-7px;
 }
 button {
   background-color: unset !important;
@@ -17,4 +14,4 @@ button {
     background-color: #5058a6;
     border-radius: 20px;
     padding: 2px 8px;
-}
+} 

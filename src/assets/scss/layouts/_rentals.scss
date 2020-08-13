@@ -1,5 +1,5 @@
 .content-wrapper {
-  width: 45%;
+  width: 40%;
   margin: auto;
   .slider {
     .slick-dots{
@@ -10,9 +10,6 @@
     }
   }
   .card-wrapper {
-    height: 479px;
-    overflow-y: scroll;
-    overflow-x: hidden;
     .card-img{
       flex: 1;
     }

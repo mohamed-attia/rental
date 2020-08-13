@@ -10845,7 +10845,7 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 }
 
 .ltr .content-wrapper {
-  width: 45%;
+  width: 40%;
   margin: auto;
 }
 
@@ -10855,12 +10855,6 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 
 .ltr .content-wrapper .slider img {
   border-radius: 10px;
-}
-
-.ltr .content-wrapper .card-wrapper {
-  height: 479px;
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 
 .ltr .content-wrapper .card-wrapper .card-img {
@@ -10951,7 +10945,7 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 
 .ltr .card-wrapper .imgs .button {
   top: -23px;
-  right: 13px;
+  right: 21px;
 }
 
 .ltr .card-wrapper .imgs .button .images {
@@ -10959,6 +10953,8 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   color: #fff !important;
   border-radius: 20px;
   text-transform: capitalize;
+  font-family: 'Roboto', 'sans-seirf';
+  font-size: 12px;
 }
 
 .ltr .card-wrapper .imgs .button .video {
@@ -10966,6 +10962,8 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   color: #000 !important;
   border-radius: 20px;
   text-transform: capitalize;
+  font-family: 'Roboto', 'sans-seirf';
+  font-size: 12px;
 }
 
 .ltr .card-wrapper .card-details {
@@ -10977,11 +10975,18 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 
 .ltr .card-wrapper .card-details .unit-name .title {
   font-size: 14px;
+  font-family: 'Roboto', 'sans-seirf';
+  font-weight: 500;
+}
+
+.ltr .card-wrapper .card-details .unit-name .title span {
+  font-family: 'Roboto', 'sans-seirf';
 }
 
 .ltr .card-wrapper .card-details .unit-name .location {
   color: #909090;
   font-size: 12px;
+  font-family: 'Roboto', 'sans-seirf';
 }
 
 .ltr .card-wrapper .card-details .unit-descrption p {
@@ -10989,11 +10994,13 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   font-size: 13px;
   color: #999;
   width: 97%;
+  font-family: 'Roboto', 'sans-seirf';
 }
 
 .ltr .card-wrapper .card-details .unit-location p {
   font-size: 13px;
   color: #5058a6;
+  font-family: 'Roboto', 'sans-seirf';
 }
 
 .ltr .card-wrapper .card-details .more .more-rental-details {
@@ -11025,6 +11032,7 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   color: #000;
   background-color: #fff !important;
   border-radius: 20px;
+  font-family: 'Roboto', 'sans-seirf';
 }
 
 .ltr .card-wrapper .card-details .chat-btn span,
@@ -11042,10 +11050,6 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   padding-left: 10px;
   padding-right: 10px;
   color: red;
-}
-
-body {
-  overflow: hidden;
 }
 
 .slick-dots li.slick-active button:before,
