@@ -5,12 +5,12 @@ button {
   background-color: unset !important;
   border: 0 !important;
   box-shadow: unset !important;
-  font-family: 'Roboto', sans-serif 
+  font-family: 'Roboto', sans-serif
 }
 .active-title{
     color: #5058a6;
     font-size: 9px;
-    font-family: 'Roboto', sans-serif 
+    font-family: 'Roboto', sans-serif
 }
 .active-icon{
     background-color: #5058a6;
