@@ -56,7 +56,7 @@
         </div>
         <div class="content">
             <div class="d-flex justify-content-around">
-                <div class="light text-center" *ngIf="rentalDetails.hasLight">
+                <div class="light text-center" *ngIf="rentalDetails?.hasLight">
                     <div class="img">
                         <img width="25px" height="22px" src="assets/images/light.PNG" alt="">
                     </div>
@@ -64,7 +64,7 @@
                         <span>light</span>
                     </div>
                 </div>
-                <div class="water text-center" *ngIf="rentalDetails.hasWater"
+                <div class="water text-center" *ngIf="rentalDetails?.hasWater">
                     <div class="img">
                         <img width="25px" height="22px" src="assets/images/water.PNG" alt="">
                     </div>
@@ -72,7 +72,7 @@
                         <span>water</span>
                     </div>
                 </div>
-                <div class="parking text-center" *ngIf="rentalDetails.hasParking">
+                <div class="parking text-center" *ngIf="rentalDetails?.hasParking">
                     <div class="img">
                         <img width="25px" height="22px" src="assets/images/Parking.PNG" alt="">
                     </div>
@@ -80,7 +80,7 @@
                         <span>parking</span>
                     </div>
                 </div>
-                <div class="internet text-center" *ngIf="rentalDetails.hasInternet">
+                <div class="internet text-center" *ngIf="rentalDetails?.hasInternet">
                     <div class="img">
                         <img width="25px" height="22px" src="assets/images/internet.PNG" alt="">
                     </div>
@@ -92,7 +92,7 @@
             <div class="see-more text-center mt-2">
                 <button class="btn btn-primary text-capitalize">see more</button>
             </div>
-        </div>
+    </div>
     </div>
     <div class="card-details card-details-bottom next mt-2 d-flex justify-content-around">
         <button class="btn chat-btn btn-primary">
@@ -105,4 +105,4 @@
             <span>call</span>
         </button>
     </div>
-</div>
+  </div>
