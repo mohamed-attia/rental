@@ -28,17 +28,15 @@
     </div>
     <div class="card-details mt-2">
         <div class="unit-name">
-            <span class="title text-capitalize">rental unit name</span>
-            <span class="location ml-2">Alahmadi,khiran</span>
+            <span class="title text-capitalize">{{rentalDetails.name}}</span>
+            <span class="location ml-2">{{rentalDetails.location}}</span>
         </div>
         <div class="unit-descrption">
-            <p class="mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                been
-                the industry's standard dummy text ever since the 1500s when an unknown printer took a galley</p>
+            <p class="mb-0">{{rentalDetails.description}}/p>
         </div>
         <div class="unit-location">
-            <p class="mb-0">430.36 KD/week Day</p>
-            <p class="mb-0">430.36 KD/week Day</p>
+            <p class="mb-0">{{rentalDetails.prices[0].dayPrice}} KD/week Day</p>
+            <p class="mb-0">{{rentalDetails.prices[0].dayPrice}} KD/week Day</p>
         </div>
         <div class="more d-flex justify-content-end">
             <button class="btn btn-primary text-capitalize more-rental-details p-0">more...</button>
@@ -58,7 +56,7 @@
         </div>
         <div class="content">
             <div class="d-flex justify-content-around">
-                <div class="light text-center">
+                <div class="light text-center" *ngIf="rentalDetails.hasLight">
                     <div class="img">
                         <img width="25px" height="22px" src="assets/images/light.PNG" alt="">
                     </div>
@@ -66,7 +64,7 @@
                         <span>light</span>
                     </div>
                 </div>
-                <div class="water text-center">
+                <div class="water text-center" *ngIf="rentalDetails.hasWater"
                     <div class="img">
                         <img width="25px" height="22px" src="assets/images/water.PNG" alt="">
                     </div>
@@ -74,7 +72,7 @@
                         <span>water</span>
                     </div>
                 </div>
-                <div class="parking text-center">
+                <div class="parking text-center" *ngIf="rentalDetails.hasParking">
                     <div class="img">
                         <img width="25px" height="22px" src="assets/images/Parking.PNG" alt="">
                     </div>
@@ -82,7 +80,7 @@
                         <span>parking</span>
                     </div>
                 </div>
-                <div class="internet text-center">
+                <div class="internet text-center" *ngIf="rentalDetails.hasInternet">
                     <div class="img">
                         <img width="25px" height="22px" src="assets/images/internet.PNG" alt="">
                     </div>

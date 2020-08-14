@@ -22,4 +22,10 @@ export class GetRentalsListService {
     return this.query.get();
   }
 
+  public getRentaDetailsById(rentalId:number): Observable<RentalModel> {
+    this.query.setURI(`services/app/Units/GetUnitForView?id=${rentalId}`);
+    this.query.setHeaders();
+    return this.query.get();
+  }
+
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 import { GetRentalsListService } from '../../service/rental.service';
 import { RentalModel } from '../../models/rentals.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-rentals",
@@ -10,7 +11,7 @@ import { RentalModel } from '../../models/rentals.model';
 export class RentalsComponent implements OnInit {
   public rentalsList:Array<RentalModel> = [];
 
-  constructor(private getRentalsListService:GetRentalsListService) {}
+  constructor(private getRentalsListService:GetRentalsListService, private router:Router) {}
 
     ngOnInit() {
       this.getRentals();
@@ -34,6 +35,10 @@ export class RentalsComponent implements OnInit {
         console.log(typeof this.rentalsList)
         console.log(typeof rentals['body']['result']['items'][0])
     })
+  }
+
+  public goRetalDetails (id:number) {
+    this.router.navigate(['/rentals', 2]);
   }
 
 }

@@ -10,10 +10,12 @@ interface RetnalDataModel {
   longitude: string;
   latitude: string;
   status: number;
+
   hasLight: boolean;
   hasWater: boolean;
   hasInternet: boolean;
   hasParking: boolean;
+
   isFamily: boolean;
   isSingle: boolean;
   unitGroupId: number;

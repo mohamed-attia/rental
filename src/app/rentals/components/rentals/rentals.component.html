@@ -35,7 +35,7 @@
                         <span *ngIf="rental.unit.isFamily && rental.unit.isSingle"> | </span>
                         <span class="text-capitalize" *ngIf="rental.unit.isSingle">{{'rentals.single' | translate}}</span>
                     </div>
-                    <button class="btn btn-primary text-capitalize">more...</button>
+                    <button class="btn btn-primary text-capitalize" (click)="goRetalDetails(rental.unit.id)">more...</button>
                 </div>
             </div>
         </div>
