@@ -6,7 +6,7 @@ import {
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { QueryService } from "../../shared/providers/query-service/query.service";
-import { RentalDtailsModel } from '../models/rentals.model';
+import { RentalModel } from '../models/rentals.model';
 
 @Injectable({
   providedIn: "root"
@@ -16,8 +16,8 @@ export class GetRentalsListService {
 
   constructor(private query: QueryService) {}
 
-  public getRentasList(): Observable<Array<RentalDtailsModel>> {
-    this.query.setURI(`EltizamInfoData`);
+  public getRentasList(): Observable<Array<RentalModel>> {
+    this.query.setURI(`services/app/Units/GetAll?StatusFilter=-1&HasLightFilter=-1&HasWaterFilter=-1&HasInternetFilter=-1&HasParkingFilter=-1`);
     this.query.setHeaders();
     return this.query.get();
   }

@@ -1,14 +1,14 @@
 import { Component, OnInit } from "@angular/core";
 
 import { GetRentalsListService } from '../../service/rental.service';
-import { RentalDtailsModel } from '../../models/rentals.model';
+import { RentalModel } from '../../models/rentals.model';
 
 @Component({
   selector: "app-rentals",
   templateUrl:'./rentals.component.html'
 })
 export class RentalsComponent implements OnInit {
-  public rentalsList:Array<RentalDtailsModel> = [];
+  public rentalsList:Array<RentalModel> = [];
 
   constructor(private getRentalsListService:GetRentalsListService) {}
 
@@ -29,7 +29,10 @@ export class RentalsComponent implements OnInit {
 
   private getRentals() {
     this.getRentalsListService.getRentasList().subscribe(rentals=>{
-        this.rentalsList = rentals
+        this.rentalsList = rentals['body']['result']['items']
+        console.log(rentals['body']['result']['items'][0])
+        console.log(typeof this.rentalsList)
+        console.log(typeof rentals['body']['result']['items'][0])
     })
   }
 
