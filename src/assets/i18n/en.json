@@ -5,6 +5,10 @@
   "footer": {
     "copyRights": "© 2019 Ministry of Commerce and Investment"
   },
+  "rentals":{
+    "family": "Family",
+    "single": "Family "
+  },
   "lang_switcher": {
     "currentLang": "ع"
   }

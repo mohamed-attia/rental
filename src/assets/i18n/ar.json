@@ -5,6 +5,10 @@
   "footer": {
     "copyRights": "جميع الحقوق محفوظة وزارة التجارة والاستثمار © 2019"
   },
+  "rentals":{
+    "family": "عائلي",
+    "single": "فردي "
+  },
   "lang_switcher": {
     "currentLang": "En"
   }
