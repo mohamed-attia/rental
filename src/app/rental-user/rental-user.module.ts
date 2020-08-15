@@ -4,10 +4,10 @@ import { NgModule } from "@angular/core";
 import { RegisterComponent } from "./components/register/register.component";
 import { RentalUserRoutingModule } from "./rental-user-routing";
 import { SharedModule } from "../shared/shared.module";
-import { UserLayoutComponent } from "./components/layout/user-layout.component";
+import { UserLayoutComponent } from "./components/layout/layout-user.component";
 
 @NgModule({
-  declarations: [UserLayoutComponent, LoginComponent,RegisterComponent ],
+  declarations: [UserLayoutComponent, LoginComponent,RegisterComponent,UserLayoutComponent ],
   imports: [CommonModule, SharedModule, RentalUserRoutingModule],
   providers: [],
 })
