@@ -1,6 +1,7 @@
 .content-wrapper {
-  width: 40%;
+  width: 50%;
   margin: auto;
+  min-height: calc(46.4vh - 70px);
   .slider {
     .slick-dots{
       top: 124px;
@@ -14,7 +15,7 @@
       flex: 1;
     }
     .card-content{
-      flex: 2;
+      flex: 3;
       .unit-name{
         font-size: 13px;
         font-family: 'Roboto', sans-serif 
@@ -28,15 +29,18 @@
         transition: 2s;
       }
       img {
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
+        border-top-#{$left}-radius: 10px;
+        border-bottom-#{$left}-radius: 10px;
       }
       .card-title {
         .content{
-          margin-#{right}:2px;
+          margin:0 2px;
+          span{
+            margin-#{$right}:6px;
+          }
         }
         span:first-child {
-          font-weight: bold;
+          font-weight: bold; 
         }
       }
       .card-title,
@@ -53,7 +57,7 @@
       .card-cost {
         line-height: 19px;
         img{
-          margin-#{right}:2px;
+          margin-#{$right}:2px;
         }
         span {
           color: #5058a6;
@@ -64,7 +68,7 @@
         .parent{
           line-height: 19px;
           img{
-            margin-#{right}:2px;
+            margin-#{$right}:2px;
           }
         }
         button {

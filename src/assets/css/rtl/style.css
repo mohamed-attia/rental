@@ -10845,8 +10845,9 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
 }
 
 .rtl .content-wrapper {
-  width: 40%;
+  width: 50%;
   margin: auto;
+  min-height: calc(46.4vh - 70px);
 }
 
 .rtl .content-wrapper .slider .slick-dots {
@@ -10864,9 +10865,9 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
 }
 
 .rtl .content-wrapper .card-wrapper .card-content {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
 }
 
 .rtl .content-wrapper .card-wrapper .card-content .unit-name {
@@ -10887,12 +10888,16 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
 }
 
 .rtl .content-wrapper .card-wrapper .card img {
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .rtl .content-wrapper .card-wrapper .card .card-title .content {
-  margin-right: 2px;
+  margin: 0 2px;
+}
+
+.rtl .content-wrapper .card-wrapper .card .card-title .content span {
+  margin-left: 6px;
 }
 
 .rtl .content-wrapper .card-wrapper .card .card-title span:first-child {
@@ -10914,7 +10919,7 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
 
 .rtl .content-wrapper .card-wrapper .card .card-days img,
 .rtl .content-wrapper .card-wrapper .card .card-cost img {
-  margin-right: 2px;
+  margin-left: 2px;
 }
 
 .rtl .content-wrapper .card-wrapper .card .card-days span,
@@ -10928,7 +10933,7 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
 }
 
 .rtl .content-wrapper .card-wrapper .card .card-members .parent img {
-  margin-right: 2px;
+  margin-left: 2px;
 }
 
 .rtl .content-wrapper .card-wrapper .card .card-members button {

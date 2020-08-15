@@ -10845,8 +10845,9 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 }
 
 .ltr .content-wrapper {
-  width: 40%;
+  width: 50%;
   margin: auto;
+  min-height: calc(46.4vh - 70px);
 }
 
 .ltr .content-wrapper .slider .slick-dots {
@@ -10864,9 +10865,9 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 }
 
 .ltr .content-wrapper .card-wrapper .card-content {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
 }
 
 .ltr .content-wrapper .card-wrapper .card-content .unit-name {
@@ -10892,7 +10893,11 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 }
 
 .ltr .content-wrapper .card-wrapper .card .card-title .content {
-  margin-right: 2px;
+  margin: 0 2px;
+}
+
+.ltr .content-wrapper .card-wrapper .card .card-title .content span {
+  margin-right: 6px;
 }
 
 .ltr .content-wrapper .card-wrapper .card .card-title span:first-child {
@@ -11090,6 +11095,7 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 .slick-dots li.slick-active button:before,
 .slick-dots li button:before {
   color: #fff !important;
+  font-size: 9px;
 }
 
 .slick-dots {
