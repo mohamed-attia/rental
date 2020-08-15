@@ -6,6 +6,13 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+  /* Hide the browser's default checkbox */
+  /* Create a custom checkbox */
+  /* On mouse-over, add a grey background color */
+  /* When the checkbox is checked, add a blue background */
+  /* Create the checkmark/indicator (hidden when not checked) */
+  /* Show the checkmark when checked */
+  /* Style the checkmark/indicator */
 }
 
 .ltr :root {
@@ -11219,17 +11226,90 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   top: 0px;
 }
 
+.ltr .checkcontainer {
+  display: block;
+  position: relative;
+  padding-left: 29px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  cursor: pointer;
+  font-size: 17px;
+  -webkit-user-select: none;
+  /* Chrome, Opera, Safari */
+  -moz-user-select: none;
+  /* Firefox 2+ */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Standard syntax */
+}
+
+.ltr .checkcontainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.ltr .checkmark {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 22px;
+  width: 22px;
+  background-color: #eee;
+  position: absolute;
+  border-radius: 5px;
+}
+
+.ltr .checkcontainer:hover input ~ .checkmark {
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+.ltr .checkcontainer input:checked ~ .checkmark {
+  background-color: #5058a6;
+  border-radius: 5px;
+}
+
+.ltr .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.ltr .checkcontainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.ltr .checkcontainer .checkmark:after {
+  left: 8px;
+  top: 6px;
+  width: 7px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.ltr .form-control,
+.ltr .btn-primary {
+  border-radius: 30px;
+  -webkit-box-shadow: unset !important;
+          box-shadow: unset !important;
+}
+
+.ltr .login-register-bg-color {
+  background-color: #5058a6 !important;
+  min-height: 100vh;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+}
+
 .ltr .bread-span {
   padding-left: 10px;
   padding-right: 10px;
   color: red;
-}
-
-@media (max-width: 768px) {
-  .ltr .content-wrapper {
-    width: 90%;
-    margin: auto;
-  }
 }
 
 @media (max-width: 768px) {
@@ -11242,6 +11322,14 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   }
   .ltr .terms-condition .checkcontainer {
     font-size: 10px;
+  }
+  .ltr .content-wrapper {
+    width: 90%;
+    margin: auto;
+  }
+  .ltr .calendar-time {
+    width: 90% !important;
+    margin: auto;
   }
 }
 
