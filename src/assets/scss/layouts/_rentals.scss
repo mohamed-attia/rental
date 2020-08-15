@@ -1,7 +1,6 @@
 .content-wrapper {
   width: 50%;
   margin: auto;
-  min-height: calc(46.4vh - 70px);
   .slider {
     .slick-dots{
       top: 124px;
@@ -11,6 +10,7 @@
     }
   }
   .card-wrapper {
+    min-height: calc(46.4vh - 70px);
     .card-img{
       flex: 1;
     }

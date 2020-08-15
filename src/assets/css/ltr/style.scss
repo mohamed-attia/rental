@@ -10,6 +10,10 @@ $mainSiteLang: en;
   @import "../../scss/main";
 }
 
+body{
+  background-color: #fcfcfc !important;
+}
+
 .slick-dots li.slick-active button:before,
 .slick-dots li button:before {
   color: #fff !important;

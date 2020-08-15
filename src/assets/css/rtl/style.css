@@ -10847,7 +10847,6 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
 .rtl .content-wrapper {
   width: 50%;
   margin: auto;
-  min-height: calc(46.4vh - 70px);
 }
 
 .rtl .content-wrapper .slider .slick-dots {
@@ -10856,6 +10855,10 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
 
 .rtl .content-wrapper .slider img {
   border-radius: 10px;
+}
+
+.rtl .content-wrapper .card-wrapper {
+  min-height: calc(46.4vh - 70px);
 }
 
 .rtl .content-wrapper .card-wrapper .card-img {
@@ -10943,81 +10946,90 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   font-family: 'Roboto', sans-serif;
 }
 
-.rtl .card-wrapper .imgs .img-block .left,
-.rtl .card-wrapper .imgs .img-block .right {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-.rtl .card-wrapper .imgs .img-block-3 .left,
-.rtl .card-wrapper .imgs .img-block-3 .center,
-.rtl .card-wrapper .imgs .img-block-3 .right {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-.rtl .card-wrapper .imgs .img-block-3 .right .counter {
-  width: 93%;
-  height: 141px;
-  background-color: #000;
-}
-
-.rtl .card-wrapper .imgs .img-block-3 .right .counter .count {
-  color: #fff;
-  font-size: 20px;
-}
-
-.rtl .card-wrapper .imgs .button {
-  top: -23px;
-  right: 21px;
-}
-
-.rtl .card-wrapper .imgs .button .images {
+.rtl .card-wrapper .card-button .images {
   background-color: #5058a6 !important;
   color: #fff !important;
   border-radius: 20px;
   text-transform: capitalize;
-  font-family: 'Roboto', 'sans-seirf';
+  font-family: "Roboto", "sans-seirf";
   font-size: 12px;
 }
 
-.rtl .card-wrapper .imgs .button .video {
+.rtl .card-wrapper .card-button .video {
   background-color: #fff !important;
   color: #000 !important;
   border-radius: 20px;
   text-transform: capitalize;
-  font-family: 'Roboto', 'sans-seirf';
+  font-family: "Roboto", "sans-seirf";
   font-size: 12px;
+  box-shadow: 0px 2px 9px #e2e2e2 !important;
+  -moz-box-shadow: 0px 2px 9px #e2e2e2 !important;
+  -o-box-shadow: 0px 2px 9px #e2e2e2 !important;
+  -webkit-box-shadow: 0px 2px 9px #e2e2e2 !important;
+}
+
+.rtl .card-wrapper .rentals-images .img-block .left,
+.rtl .card-wrapper .rentals-images .img-block .right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.rtl .card-wrapper .rentals-images .img-block-3 .left,
+.rtl .card-wrapper .rentals-images .img-block-3 .center,
+.rtl .card-wrapper .rentals-images .img-block-3 .right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.rtl .card-wrapper .rentals-images .img-block-3 .right .counter {
+  width: 100%;
+  height: 141px;
+  background-color: #000;
+}
+
+.rtl .card-wrapper .rentals-images .img-block-3 .right .counter .count {
+  color: #fff;
+  font-size: 20px;
 }
 
 .rtl .card-wrapper .from,
 .rtl .card-wrapper .to {
-  font-family: 'Roboto', 'sans-seirf';
+  font-family: "Roboto", "sans-seirf";
+  font-size: 14px;
+}
+
+.rtl .card-wrapper .from .calendar-date,
+.rtl .card-wrapper .to .calendar-date {
+  font-size: 12px;
+  font-weight: 500;
+  margin-right: 6px;
 }
 
 .rtl .card-wrapper .card-details {
-  background-color: #fafafa !important;
+  background-color: #ffffff !important;
   padding: 10px;
   border-radius: 10px;
   width: 100%;
+  -webkit-box-shadow: 3px 0px 10px #eee;
+          box-shadow: 3px 0px 10px #eee;
 }
 
 .rtl .card-wrapper .card-details .title {
   font-size: 14px;
-  font-family: 'Roboto', 'sans-seirf';
+  font-family: "Roboto", "sans-seirf";
   font-weight: 500;
 }
 
 .rtl .card-wrapper .card-details .title span {
-  font-family: 'Roboto', 'sans-seirf';
+  font-family: "Roboto", "sans-seirf";
 }
 
 .rtl .card-wrapper .card-details .unit-name .location {
   color: #909090;
   font-size: 12px;
-  font-family: 'Roboto', 'sans-seirf';
+  font-family: "Roboto", "sans-seirf";
 }
 
 .rtl .card-wrapper .card-details .unit-descrption p {
@@ -11025,19 +11037,19 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   font-size: 13px;
   color: #999;
   width: 97%;
-  font-family: 'Roboto', 'sans-seirf';
+  font-family: "Roboto", "sans-seirf";
 }
 
 .rtl .card-wrapper .card-details .unit-location p {
   font-size: 13px;
   color: #5058a6;
-  font-family: 'Roboto', 'sans-seirf';
+  font-family: "Roboto", "sans-seirf";
 }
 
 .rtl .card-wrapper .card-details .more .more-rental-details {
   font-size: 13px;
   color: #5058a6;
-  font-family: 'Roboto', 'sans-seirf';
+  font-family: "Roboto", "sans-seirf";
 }
 
 .rtl .card-wrapper .card-details .content span {
@@ -11051,13 +11063,17 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   padding: 0 22px !important;
 }
 
+.rtl .card-wrapper .card-details .content .see-more img {
+  margin-right: 6px;
+}
+
 .rtl .card-wrapper .card-details .next-btn {
   background-color: #5058a6 !important;
   border-radius: 50px;
   padding: 6px 22px !important;
   text-transform: capitalize;
   width: 102px;
-  font-family: 'Roboto', 'sans-seirf';
+  font-family: "Roboto", "sans-seirf";
 }
 
 .rtl .card-wrapper .card-details .chat-btn,
@@ -11065,7 +11081,7 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   color: #000;
   background-color: #fff !important;
   border-radius: 20px;
-  font-family: 'Roboto', 'sans-seirf';
+  font-family: "Roboto", "sans-seirf";
 }
 
 .rtl .card-wrapper .card-details .chat-btn span,
@@ -11079,6 +11095,34 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   border-radius: 0 !important;
 }
 
+.rtl .header-wrapper {
+  background: #fff;
+  padding: 4px;
+  box-shadow: 0px 1px 8px #cccaca;
+  -moz-box-shadow: 0px 1px 8px #cccaca;
+  -o-box-shadow: 0px 1px 8px #cccaca;
+  -webkit-box-shadow: 0px 1px 8px #cccaca;
+  border-radius: 10px;
+}
+
+.rtl .header-wrapper .bell-count {
+  font-size: 6px;
+  border: 0.3px solid #5058a6;
+  padding: 0 4px;
+  border-radius: 50px;
+  top: 5px;
+  right: 17px;
+  background-color: #fff;
+}
+
+.rtl .header-wrapper span {
+  font-family: "Roboto", sans-serif;
+}
+
+.rtl .header-wrapper .notification {
+  top: 0px;
+}
+
 .rtl .bread-span {
   padding-right: 10px;
   padding-left: 10px;
@@ -11090,6 +11134,10 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
     width: 90%;
     margin: auto;
   }
+}
+
+body {
+  background-color: #fcfcfc !important;
 }
 
 .slick-dots li.slick-active button:before,
