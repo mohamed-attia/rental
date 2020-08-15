@@ -1,44 +1,83 @@
-<div class="container-fluid mt-5">
-    <div class="content-background">
-      <div class="row">
-        <div class="col-md-8 mx-auto">
-          <h2 class="mb-4 login-title text-center">{{'Register.title' | translate}}</h2>
-          <div class="phone">
-            <input autocomplete="off" class="form-control" type="text" placeholder="{{'Register.Email-PhoneNumber' | translate}}">
-          </div>
-          <div class="password position-relative mt-3">
-            <input autocomplete="off" class="form-control" type="password" placeholder="{{'Register.New-Password' | translate}}">
-            <a href="#" class="position-absolute visibility-icon"><img width="15px" height="15px" src="assets/icons/visibility.svg" alt=""></a>
-          </div>
-          <div class="password position-relative mt-3">
-              <input autocomplete="off" class="form-control" type="password" placeholder="{{'Register.Confirm-Password' | translate}}">
-              <a href="#" class="position-absolute visibility-icon"><img width="15px" height="15px" src="assets/icons/visibility.svg" alt=""></a>
-            </div>
-          <div class="terms-condition mt-2 text-capitalize mb-2">
-              <input type="checkbox" name="" id="terms">
-              <label class="ml-2 font-14px" for="terms">{{'Register.Creating-account' | translate}}<a class="ml-1" href="#">{{'Register.terms-condition' | translate}}</a></label>
-          </div>
-          <div class="SignIn mb-2">
-            <button type="button" class="btn btn-primary w-100">{{'Register.SignIn' | translate}}</button>
-          </div>
-          <div class="content-border">
-            <div class="register text-center">
-              <span class="line-before"></span>
-              <span class="text-capitalize">{{'login.login-with' | translate}}</span>
-              <span class="line-after"></span>
-            </div>
-            <div class="social-links text-center mt-1">
-              <a href="#"><img width="30px" height="30px" src="assets/icons/facebook.svg" alt="{{'Register.facebook' | translate}}"></a>
-              <a href="#" class="ml-3 mr-3"><img width="30px" height="30px" src="assets/icons/instagram.svg" alt="{{'Register.instagram' | translate}}"></a>
-              <a href="#"><img width="30px" height="30px" src="assets/icons/google-plus.svg" alt="{{'Register.google-plus' | translate}}"></a>
-            </div>
-          </div>
-          <div class="register mt-3 text-center">
-            <span class="text-capitalize" style="color:#000">{{'Register.have-account' | translate}} <a href="#">{{'Register.logIn' | translate}}</a></span>
-          </div>
+<div class="container-fluid mt-3">
+<div class="content-background p-2">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <h2 class="mb-4 text-center login-title">{{'Register.title' | translate}}</h2>
+      <form #form="ngForm" [formGroup]="userRegisterForm" (ngSubmit)="onSubmit(form)">
+
+        <div class="phone mb-1">
+          <input autocomplete="off" formControlName="userName" class="form-control" type="text" placeholder="{{'Register.userName' | translate}}">
+          <ng-container *ngIf="form.submitted && formControls('userName')?.invalid ||
+          (formControls('userName')?.dirty || formControls('userName')?.touched)">
+           <span class="required" *ngIf="formControls('userName')?.errors?.required">{{'Validation.required' | translate}}</span>
+         </ng-container>
         </div>
-      </div>
+
+        <div class="phone mb-1">
+          <input autocomplete="off" formControlName="emailAddress" class="form-control" type="text" placeholder="{{'Register.Email' | translate}}">
+          <ng-container *ngIf="form.submitted && formControls('emailAddress')?.invalid ||
+          (formControls('emailAddress')?.dirty || formControls('emailAddress')?.touched)">
+           <span class="required" *ngIf="formControls('emailAddress')?.errors?.required">{{'Validation.required' | translate}}</span>
+         </ng-container>
+        </div>
+
+        <div class="phone mb-1">
+          <input autocomplete="off" formControlName="phoneNumber" class="form-control" type="text" placeholder="{{'Register.phoneNumber' | translate}}">
+          <ng-container *ngIf="form.submitted && formControls('phoneNumber')?.invalid ||
+          (formControls('phoneNumber')?.dirty || formControls('phoneNumber')?.touched)">
+           <span class="required" *ngIf="formControls('phoneNumber')?.errors?.required">{{'Validation.required' | translate}}</span>
+         </ng-container>
+        </div>
+
+        <div class="password mb-1 position-relative">
+          <input autocomplete="off" formControlName="password" class="form-control" [type]="password ? 'text' : 'password'" placeholder="{{'Register.New-Password' | translate}}">
+          <a href="avascript:void(0)" (click)="password = !password"  class="position-absolute visibility-icon"><img width="15px" height="15px" src="assets/icons/visibility.svg" alt=""></a>
+          <ng-container *ngIf="form.submitted && formControls('password')?.invalid ||
+          (formControls('password').dirty || formControls('password')?.touched)">
+           <span class="required" *ngIf="formControls('password')?.errors?.required">{{'Validation.required' | translate}}</span>
+         </ng-container>
+        </div>
+
+        <div class="password mb-1 position-relative">
+            <input autocomplete="off" formControlName="userConfirmPassword" class="form-control" [type]="confirmpassword ? 'text' : 'password'" placeholder="{{'Register.Confirm-Password' | translate}}">
+            <a href="avascript:void(0)" (click)="confirmpassword = !confirmpassword"  class="position-absolute visibility-icon"><img width="15px" height="15px" src="assets/icons/visibility.svg" alt=""></a>
+            <ng-container *ngIf="(form.submitted && formControls('userConfirmPassword')?.invalid) ||
+            (formControls('userConfirmPassword')?.dirty || formControls('userConfirmPassword')?.touched)">
+              <span class="required" *ngIf="formControls('userConfirmPassword')?.errors?.required">{{'Validation.required' | translate}}</span>
+              <div *ngIf="(formControls('password').value) !== (formControls('userConfirmPassword').value)">Password must match Confirm Password.</div>
+           </ng-container>
+          </div>
+
+        <div class="terms-condition mt-2 text-capitalize mb-2">
+            <input type="checkbox" formControlName="acceptTermsAndConditions"  name="" id="terms" >
+            <label class="ml-2 font-14px" for="terms">{{'Register.Creating-account' | translate}}<a class="ml-1" href="#">{{'Register.terms-condition' | translate}}</a></label>
+            <br/>
+            <ng-container *ngIf="(form.submitted && formControls('acceptTermsAndConditions')?.invalid)">
+              <span class="required" *ngIf="formControls('acceptTermsAndConditions')?.errors?.required">{{'Validation.required' | translate}}</span>
+           </ng-container>
+          </div>
+        <div class="SignIn">
+          <button type="submit" class="btn btn-primary w-100">{{'Register.SignIn' | translate}}</button>
+        </div>
+      </form>
+      <div class="content-border mt-3">
+        <div class="register text-center">
+          <span class="line-before"></span>
+          <span class="text-capitalize">{{'login.login-with' | translate}}</span>
+          <span class="line-after"></span>
+        </div>
+        <div class="social-links text-center mt-1">
+          <a href="#"><img width="30px" height="30px" src="assets/icons/facebook.svg" alt="{{'login.facebook' | translate}}"></a>
+          <a href="#" class="ml-3 mr-3"><img width="30px" height="30px" src="assets/icons/instagram.svg" alt="{{'login.instagram' | translate}}"></a>
+          <a href="#"><img width="30px" height="30px" src="assets/icons/google-plus.svg" alt="{{'login.google-plus' | translate}}"></a>
+        </div>
     </div>
+    
+    <div class="register mt-3">
+      <span class="text-capitalize">{{'Register.have-account' | translate}} <a [routerLink]="['../../user/login']" [queryParams]="{lang: 'en'}">{{'Register.logIn' | translate}}</a></span>
+    </div>
+  </div>
+</div>
   </div>
 
   <div class="background-color"></div>

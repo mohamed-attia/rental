@@ -10847,7 +10847,7 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
 .rtl .container-fluid .content-background {
   background-color: #fff;
   padding: 25px 0;
-  width: 65%;
+  width: 60%;
   margin: auto;
   border-radius: 10px;
 }
@@ -10873,36 +10873,46 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
 .rtl .container-fluid .content-background .row .col-md-7 .content-border .phone .visibility-icon,
 .rtl .container-fluid .content-background .row .col-md-7 .content-border .password .visibility-icon {
   top: 5px;
-  left: 12px;
+  right: 12px;
 }
 
 .rtl .container-fluid .content-background .row .col-md-7 .content-border .SignIn button {
   border-radius: 30px;
 }
 
-.rtl .background-color {
+.rtl .container-fluid .content-background .row .col-md-7 .content-border .SignIn button {
+  border-radius: 30px;
+}
+
+.rtl .container-fluid .background-color {
   position: absolute;
   top: 0;
+  left: 0;
   background-color: #5058a6;
   width: 100%;
   height: 100%;
   z-index: -1;
 }
 
-.rtl .visibility-icon {
-  top: 5px;
-  right: 12px;
+.rtl .container-fluid .required {
+  font-size: 13px;
+  color: red;
 }
 
-.rtl .font-14px {
+.rtl .container-fluid .visibility-icon {
+  top: 5px;
+  left: 12px;
+}
+
+.rtl .container-fluid .font-14px {
   font-size: 14px;
 }
 
-.rtl .register span {
-  color: #aaa;
+.rtl .container-fluid .register span {
+  color: #000;
 }
 
-.rtl .register .line-before {
+.rtl .container-fluid .line-before {
   width: 35px;
   height: 3px;
   border-bottom: 1px solid #aaa;
@@ -10914,7 +10924,7 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   right: -7px;
 }
 
-.rtl .register .line-after {
+.rtl .container-fluid .line-after {
   width: 35px;
   height: 3px;
   border-bottom: 1px solid #aaa;
@@ -10936,13 +10946,20 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   color: red;
 }
 
+.rtl .form-control,
+.rtl .btn-primary {
+  border-radius: 30px;
+  -webkit-box-shadow: unset !important;
+          box-shadow: unset !important;
+}
+
 @media (max-width: 768px) {
   .rtl .content-background {
     width: 98% !important;
     padding: 30px !important;
   }
   .rtl .container-fluid {
-    margin-top: 14px !important;
+    margin-top: 18px !important;
   }
 }
 /*# sourceMappingURL=style.css.map */

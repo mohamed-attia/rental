@@ -14,7 +14,9 @@
   },
   "Register":{
     "title":"Register",
-    "Email-PhoneNumber":"E-mail or phone number",
+    "userName":"user name",
+    "Email":"E-mail",
+    "phoneNumber":"phone number",
     "New-Password":"New password",
     "Confirm-Password":"Confirm password",
     "Creating-account":"By creating an account you agree to our",
@@ -26,6 +28,10 @@
     "facebook":"facebook",
     "instagram":"instagram",
     "google-plus":"google-plus"
+  },
+  "Validation":{
+    "required":"Required",
+    "passwordMatch":"Value not match Password"
   },
   "footer": {
     "copyRights": "© 2019 Ministry of Commerce and Investment"

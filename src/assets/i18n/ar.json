@@ -14,7 +14,9 @@
   },
   "Register":{
     "title":"تسجيل",
-    "Email-PhoneNumber":"البريد الإلكتروني أو رقم الهاتف",
+    "userName":"اسم المستخدم",
+    "Email":"البريد الإلكتروني",
+    "phoneNumber":"رقم الجوال ",
     "New-Password":"كلمة سر جديدة",
     "Confirm-Password":"تأكيد كلمة المرور",
     "Creating-account":"من خلال إنشاء حساب فإنك توافق على",
@@ -26,6 +28,10 @@
     "facebook":"موقع التواصل الاجتماعي الفيسبوك",
     "instagram":"الانستقرام",
     "google-plus":"جوجل بلس"
+  },
+  "Validation":{
+    "required":"حقل مطلوب",
+    "passwordMatch":"لا تطابق كلمة المرور"
   },
   "footer": {
     "copyRights": "جميع الحقوق محفوظة وزارة التجارة والاستثمار © 2019"

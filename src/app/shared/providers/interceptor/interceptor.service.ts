@@ -1,14 +1,15 @@
-import { Injectable } from "@angular/core";
 import {
-  HttpRequest,
-  HttpHandler,
-  HttpEvent,
-  HttpInterceptor,
   HttpErrorResponse,
+  HttpEvent,
+  HttpHandler,
+  HttpInterceptor,
+  HttpRequest,
   HttpResponse
 } from "@angular/common/http";
 import { Observable, throwError } from "rxjs";
-import { map, catchError } from "rxjs/operators";
+import { catchError, map } from "rxjs/operators";
+
+import { Injectable } from "@angular/core";
 import { LanguageUpdateService } from "../language/language.service";
 
 @Injectable({
@@ -34,11 +35,20 @@ export class AppInterceptor implements HttpInterceptor {
       });
     }
 
-    //if (!request.headers.has("Authorization")) {
-    //  request = request.clone({
-    //    headers: request.headers.set("Authorization", token)
-    //  });
-    //}
+    if (!request.headers.has("Authorization")) {
+      if(localStorage.getItem('accessToken'))
+     request = request.clone({
+       headers: request.headers.set("Authorization", localStorage.getItem('accessToken'))
+     });
+    }
+
+    if (!request.headers.has("Abp.TenantId")) {
+      if (localStorage.getItem('tenantId')) {
+        request = request.clone({
+          headers: request.headers.set("Abp.TenantId", localStorage.getItem('tenantId'))
+        });
+       }
+    }
 
     if (!request.headers.has("Accept-language")) {
       request = request.clone({

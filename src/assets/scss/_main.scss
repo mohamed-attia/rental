@@ -22,29 +22,8 @@
 // ### ============================  [ Modules ] =========================== ### //
 // ###  ============  [ Common ]
 @import "./modules/common/breadcrumbs";
+  
+@import "./base/globalStyle";
 
 
-
-// mobile
-@media (max-width: 768px) {
-    .content-background{
-        width: 98% !important;
-        padding: 30px !important;
-    }
-    .container-fluid{
-        margin-top: 14px !important;
-    }
-  }
-  
-  // Ipad
-  @media (min-width: 768px) and (max-width: 1024px) {
-  }
-  
-  // Ipad pro
-  @media (min-width: 1024px) and (max-width: 1366px) {
-  }
-  
-  // web
-  @media (min-width: 1366px) {
-  }
-  
+@import "./base/mediaQuery";
