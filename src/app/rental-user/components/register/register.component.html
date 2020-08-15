@@ -58,8 +58,7 @@
               <span class="required"
                 *ngIf="formControls('userConfirmPassword')?.errors?.required">{{'Validation.required' | translate}}</span>
               <div class="required"
-                *ngIf="(formControls('password').value) !== (formControls('userConfirmPassword').value)">Password
-                must match Confirm Password.</div>
+                *ngIf="(formControls('password').value) !== (formControls('userConfirmPassword').value)">{{'Validation.passwordMatch' | translate}}</div>
             </ng-container>
           </div>
 

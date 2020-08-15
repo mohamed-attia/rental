@@ -11000,7 +11000,7 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 }
 
 .ltr .checkcontainer .checkmark:after {
-  left: 10px;
+  left: 8px;
   top: 6px;
   width: 7px;
   height: 12px;

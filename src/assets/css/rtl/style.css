@@ -11000,7 +11000,7 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
 }
 
 .rtl .checkcontainer .checkmark:after {
-  right: 10px;
+  right: 8px;
   top: 6px;
   width: 7px;
   height: 12px;
