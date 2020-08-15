@@ -58,12 +58,12 @@ export class AppComponent implements OnInit {
 
   changeHtmlAttr(isRtl: boolean): void {
     if (isRtl) {
-      this.titleService.setTitle("عربي");
+      this.titleService.setTitle("Rental");
       this.renderer.addClass(document.querySelector("html"), "rtl");
       this.renderer.removeClass(document.querySelector("html"), "ltr");
       this.renderer.setAttribute(document.querySelector("html"), "lang", "ar");
     } else {
-      this.titleService.setTitle("english title");
+      this.titleService.setTitle("Rental");
       this.renderer.addClass(document.querySelector("html"), "ltr");
       this.renderer.removeClass(document.querySelector("html"), "rtl");
       this.renderer.setAttribute(document.querySelector("html"), "lang", "en");
