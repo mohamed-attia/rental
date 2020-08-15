@@ -76,6 +76,8 @@
       }
     }
     .unit-name {
+      display: flex;
+      justify-content: space-between;
       .location {
         color: #909090;
         font-size: 12px;

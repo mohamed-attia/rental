@@ -1,16 +1,16 @@
 <div class="card-wrapper">
     <div class="card-button mt-3">
-        <button class="btn btn-primary images mr-2">images</button>
-        <button class="btn btn-primary video">video</button>
+        <button class="btn btn-primary  mr-2" [ngClass]="showRentalImages ? 'images' : 'video'" (click)="OnShowRentalImages()">images</button>
+        <button class="btn btn-primary " [ngClass]="showRentalVideos ? 'images' : 'video'" (click)="OnShowRentalVideos()">video</button>
     </div>
-    <!-- <div class="rentals-video mt-3">
+    <div class="rentals-video mt-3" *ngIf="showRentalVideos">
         <video width="100%" controls>
             <source src="https://www.bigbuckbunny.org/" type="video/mp4">
             <source src="https://www.bigbuckbunny.org/" type="video/ogg">
             Your browser does not support HTML video.
         </video>
-    </div> -->
-    <div class="rentals-images mt-4">
+    </div>
+    <div class="rentals-images mt-4" *ngIf="showRentalImages">
         <div class="img-block d-flex">
             <div class="left">
                 <img width="98%" height="170px" src="assets/images/sea.jpeg" alt="">
@@ -35,15 +35,18 @@
     </div>
     <div class="card-details mt-2">
         <div class="unit-name">
-            <span class="title text-capitalize">{{rentalDetails.name}}</span>
-            <span class="location ml-2">{{rentalDetails.location}}</span>
+            <span class="title text-capitalize">{{rentalDetails?.name}}</span>
+            <span class="location ml-2">
+              <img alt="user" height="20px" src="./assets/icons/Home.PNG" width="20px">
+              {{rentalDetails?.location}}
+            </span>
         </div>
         <div class="unit-descrption">
-            <p class="mb-0">{{rentalDetails.description}}/p>
+            <p class="mb-0">{{rentalDetails?.description}}</p>
         </div>
         <div class="unit-location">
-            <p class="mb-0">{{rentalDetails.prices[0].dayPrice}} KD/week Day</p>
-            <p class="mb-0">{{rentalDetails.prices[0].dayPrice}} KD/week Day</p>
+            <p class="mb-0"><img alt="user" height="20px" src="./assets/icons/days.PNG" width="20px">{{rentalDetails?.prices[0]?.dayPrice}} KD/week Day</p>
+            <p class="mb-0"><img alt="user" height="20px" src="./assets/icons/days.PNG" width="20px">{{rentalDetails?.prices[0]?.dayPrice}} KD/week Day</p>
         </div>
         <div class="more d-flex justify-content-end">
             <button class="btn btn-primary text-capitalize more-rental-details p-0">more...</button>
@@ -76,7 +79,7 @@
         </div>
         <div class="content">
             <div class="row">
-                <div class="col-md-3 col-6">
+                <div class="col-md-3 col-6" *ngIf="rentalDetails?.hasLight">
                     <div class="light text-center">
                         <div class="img">
                             <img width="25px" height="22px" src="assets/images/light.PNG" alt="">
@@ -86,7 +89,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
+                <div class="col-md-3 col-6" *ngIf="rentalDetails?.hasWater">
                     <div class="water text-center">
                         <div class="img">
                             <img width="25px" height="22px" src="assets/images/water.PNG" alt="">
@@ -96,7 +99,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
+                <div class="col-md-3 col-6" *ngIf="rentalDetails?.hasParking">
                     <div class="parking text-center">
                         <div class="img">
                             <img width="25px" height="22px" src="assets/images/Parking.PNG" alt="">
@@ -106,7 +109,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
+                <div class="col-md-3 col-6" *ngIf="rentalDetails?.hasInternet">
                     <div class="internet text-center">
                         <div class="img">
                             <img width="25px" height="22px" src="assets/images/internet.PNG" alt="">
