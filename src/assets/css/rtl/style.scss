@@ -10,3 +10,8 @@ $mainSiteLang : ar;
     @import "../../scss/main";
 }
 
+html,
+body,
+.rtl{
+    height: 100%;
+}

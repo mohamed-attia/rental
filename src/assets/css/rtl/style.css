@@ -6,6 +6,13 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+  /* Hide the browser's default checkbox */
+  /* Create a custom checkbox */
+  /* On mouse-over, add a grey background color */
+  /* When the checkbox is checked, add a blue background */
+  /* Create the checkmark/indicator (hidden when not checked) */
+  /* Show the checkmark when checked */
+  /* Style the checkmark/indicator */
 }
 
 .rtl :root {
@@ -10844,25 +10851,25 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   border: 0;
 }
 
+.rtl .container-fluid .login-title {
+  color: #fff;
+}
+
 .rtl .container-fluid .content-background {
   background-color: #fff;
   padding: 25px 0;
-  width: 60%;
-  margin: auto;
+  width: 50%;
+  margin: 0 auto;
   border-radius: 10px;
 }
 
-.rtl .container-fluid .content-background .row .col-md-7 .login-title {
-  color: #5058a6;
-}
-
-.rtl .container-fluid .content-background .row .col-md-7 .content-border .phone,
-.rtl .container-fluid .content-background .row .col-md-7 .content-border .password {
+.rtl .container-fluid .content-background .row .col-md-10 .content-border .phone,
+.rtl .container-fluid .content-background .row .col-md-10 .content-border .password {
   position: relative;
 }
 
-.rtl .container-fluid .content-background .row .col-md-7 .content-border .phone input,
-.rtl .container-fluid .content-background .row .col-md-7 .content-border .password input {
+.rtl .container-fluid .content-background .row .col-md-10 .content-border .phone input,
+.rtl .container-fluid .content-background .row .col-md-10 .content-border .password input {
   border-radius: 30px;
   border: 0;
   background-color: #eee;
@@ -10870,33 +10877,24 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
           box-shadow: unset !important;
 }
 
-.rtl .container-fluid .content-background .row .col-md-7 .content-border .phone .visibility-icon,
-.rtl .container-fluid .content-background .row .col-md-7 .content-border .password .visibility-icon {
+.rtl .container-fluid .content-background .row .col-md-10 .content-border .phone .visibility-icon,
+.rtl .container-fluid .content-background .row .col-md-10 .content-border .password .visibility-icon {
   top: 5px;
   right: 12px;
 }
 
-.rtl .container-fluid .content-background .row .col-md-7 .content-border .SignIn button {
+.rtl .container-fluid .content-background .row .col-md-10 .content-border .SignIn button {
   border-radius: 30px;
 }
 
-.rtl .container-fluid .content-background .row .col-md-7 .content-border .SignIn button {
+.rtl .container-fluid .content-background .row .col-md-10 .content-border .SignIn button {
   border-radius: 30px;
-}
-
-.rtl .container-fluid .background-color {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #5058a6;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
 }
 
 .rtl .container-fluid .required {
   font-size: 13px;
   color: red;
+  margin-right: 20px;
 }
 
 .rtl .container-fluid .visibility-icon {
@@ -10937,13 +10935,79 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
 }
 
 .rtl * {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .rtl .bread-span {
   padding-right: 10px;
   padding-left: 10px;
   color: red;
+}
+
+.rtl .checkcontainer {
+  display: block;
+  position: relative;
+  padding-right: 29px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  cursor: pointer;
+  font-size: 17px;
+  -webkit-user-select: none;
+  /* Chrome, Opera, Safari */
+  -moz-user-select: none;
+  /* Firefox 2+ */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Standard syntax */
+}
+
+.rtl .checkcontainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.rtl .checkmark {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  height: 22px;
+  width: 22px;
+  background-color: #eee;
+  position: absolute;
+  border-radius: 5px;
+}
+
+.rtl .checkcontainer:hover input ~ .checkmark {
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+.rtl .checkcontainer input:checked ~ .checkmark {
+  background-color: #5058a6;
+  border-radius: 5px;
+}
+
+.rtl .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.rtl .checkcontainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.rtl .checkcontainer .checkmark:after {
+  right: 10px;
+  top: 6px;
+  width: 7px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .rtl .form-control,
@@ -10953,13 +11017,35 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
           box-shadow: unset !important;
 }
 
+.rtl .login-register-bg-color {
+  background-color: #5058a6 !important;
+  min-height: 100%;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+}
+
 @media (max-width: 768px) {
   .rtl .content-background {
     width: 98% !important;
     padding: 30px !important;
   }
-  .rtl .container-fluid {
-    margin-top: 18px !important;
+  .rtl input[type="checkbox"] {
+    margin-top: 18px;
   }
+  .rtl .terms-condition .checkcontainer {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .rtl .content-background {
+    width: 50%;
+  }
+}
+
+html,
+body,
+.rtl {
+  height: 100%;
 }
 /*# sourceMappingURL=style.css.map */

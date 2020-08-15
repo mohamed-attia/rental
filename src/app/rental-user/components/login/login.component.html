@@ -1,8 +1,8 @@
-<div class="container-fluid mt-5">
-  <div class="content-background">
+<div class="container-fluid flex-column login-register-bg-color d-flex h-100">
+  <h2 class="mb-4 mt-4 text-center login-title">{{'login.title' | translate}}</h2>
+  <div class="content-background pt-4">
     <div class="row">
-      <div class="col-md-7 mx-auto">
-        <h2 class="mb-4 text-center login-title">{{'login.title' | translate}}</h2>
+      <div class="col-md-10 mx-auto">
         <form #form="ngForm" [formGroup]="userLoginForm" (ngSubmit)="onSubmit(form)" novalidate>
           <div class="phone">
             <input autocomplete="off" formControlName="userNameOrEmailAddressOrPhone" required class="form-control"
@@ -56,4 +56,3 @@
       </div>
     </div>
   </div>
-  <div class="background-color"></div>

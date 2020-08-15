@@ -4,8 +4,11 @@
     width: 98% !important;
     padding: 30px !important;
   }
-  .container-fluid {
-    margin-top: 18px !important;
+  input[type="checkbox"] {
+    margin-top: 18px;
+  }
+  .terms-condition .checkcontainer {
+    font-size: 10px;
   }
 }
 
@@ -15,6 +18,9 @@
 
 // Ipad pro
 @media (min-width: 1024px) and (max-width: 1366px) {
+  .content-background {
+    width: 50%;
+  }
 }
 
 // web

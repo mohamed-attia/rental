@@ -10,3 +10,8 @@ $mainSiteLang : en;
     @import "../../scss/main";
 }
 
+html,
+body,
+.ltr{
+    height: 100%;
+}
