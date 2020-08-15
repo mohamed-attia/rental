@@ -11122,25 +11122,9 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   }
 }
 
-body {
-  overflow: hidden;
-}
-
-.slick-dots li.slick-active button:before,
-.slick-dots li button:before {
-  color: #fff !important;
-}
-
-.slick-dots {
-  margin-bottom: 0 !important;
-  bottom: 0 !important;
-}
-
-.slick-dots li {
-  margin: 0 !important;
-}
-
-.slick-dotted.slick-slider {
-  margin-bottom: 0 !important;
+html,
+body,
+.ltr {
+  height: 100%;
 }
 /*# sourceMappingURL=style.css.map */
