@@ -11,6 +11,8 @@ import { RentalModel } from "../../models/rentals.model";
 export class RentalDetailsComponent implements OnInit {
   public rentalDetails: RentalModel["unit"];
   private id: number;
+  public showRentalVideos:boolean = false;
+  public showRentalImages:boolean = true;
   constructor(
     private getRentalsListService: GetRentalsListService,
     private actRoute: ActivatedRoute
@@ -32,7 +34,17 @@ export class RentalDetailsComponent implements OnInit {
     this.getRentalsListService
       .getRentaDetailsById(this.id)
       .subscribe((rentalDetails) => {
-        this.rentalDetails = rentalDetails["unit"];
+        this.rentalDetails = rentalDetails['body']['result']['unit']
+        console.log(rentalDetails['body']['result']['unit'])
       });
+  }
+  public OnShowRentalImages() {
+    this.showRentalImages = true;
+    this.showRentalVideos = false;
+  }
+
+  public OnShowRentalVideos() {
+    this.showRentalImages = false;
+    this.showRentalVideos = true;
   }
 }

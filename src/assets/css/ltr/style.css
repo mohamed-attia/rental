@@ -10858,7 +10858,7 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 }
 
 .ltr .content-wrapper .card-wrapper {
-  min-height: calc(46.4vh - 70px);
+  min-height: calc(100vh - 316px);
 }
 
 .ltr .content-wrapper .card-wrapper .card-img {
@@ -11024,6 +11024,15 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 
 .ltr .card-wrapper .card-details .title span {
   font-family: "Roboto", "sans-seirf";
+}
+
+.ltr .card-wrapper .card-details .unit-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .ltr .card-wrapper .card-details .unit-name .location {
