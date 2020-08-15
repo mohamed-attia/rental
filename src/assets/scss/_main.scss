@@ -2,8 +2,8 @@
 // $mainSiteLang : ar; // active the next variable if you want arabic direction
 // ### ===================================================================== ### //
 // ### =============================  [ Base ] ============================= ### //
-@import "../scss/base/initial";       // ::=> Set this partail to defined new style
-@import "../scss/base/base";     // ::=> Dont repeat this partail
+@import "../scss/base/initial"; // ::=> Set this partail to defined new style
+@import "../scss/base/base"; // ::=> Dont repeat this partail
 
 // ### ===================================================================== ### //
 // ### ============================  [ Vendors ] =========================== ### //
@@ -16,14 +16,23 @@
 // ### ============================  [ Layouts ] =========================== ### //
 @import "../scss/layouts/rentals";
 @import "../scss/layouts/rental-user-login";
+@import "../scss/layouts/_rental-details.scss";
+@import "../scss/layouts/header";
 
 // ### ===================================================================== ### //
 // ### ============================  [ Modules ] =========================== ### //
 // ###  ============  [ Common ]
 @import "./modules/common/breadcrumbs";
-@import "./layouts/reusedComponent";
 
-@import "./base/globalStyle";
+
+
+// mobile
+@media (max-width: 768px) {
+    .content-wrapper {
+        width: 90%;
+        margin: auto;
+    }
+}
 
 
 @import "./base/mediaQuery";

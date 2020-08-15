@@ -6,13 +6,6 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-  /* Hide the browser's default checkbox */
-  /* Create a custom checkbox */
-  /* On mouse-over, add a grey background color */
-  /* When the checkbox is checked, add a blue background */
-  /* Create the checkmark/indicator (hidden when not checked) */
-  /* Show the checkmark when checked */
-  /* Style the checkmark/indicator */
 }
 
 .ltr :root {
@@ -10852,7 +10845,7 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 }
 
 .ltr .content-wrapper {
-  width: 45%;
+  width: 50%;
   margin: auto;
 }
 
@@ -10865,9 +10858,7 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 }
 
 .ltr .content-wrapper .card-wrapper {
-  height: 479px;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  min-height: calc(100vh - 316px);
 }
 
 .ltr .content-wrapper .card-wrapper .card-img {
@@ -10877,13 +10868,26 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 }
 
 .ltr .content-wrapper .card-wrapper .card-content {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+
+.ltr .content-wrapper .card-wrapper .card-content .unit-name {
+  font-size: 13px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .ltr .content-wrapper .card-wrapper .card {
   border-radius: 10px;
+  width: 100%;
+}
+
+.ltr .content-wrapper .card-wrapper .card:hover {
+  -webkit-box-shadow: 0px 2px 7px #d9d9d9;
+          box-shadow: 0px 2px 7px #d9d9d9;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 .ltr .content-wrapper .card-wrapper .card img {
@@ -10891,9 +10895,16 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   border-bottom-left-radius: 10px;
 }
 
+.ltr .content-wrapper .card-wrapper .card .card-title .content {
+  margin: 0 2px;
+}
+
+.ltr .content-wrapper .card-wrapper .card .card-title .content span {
+  margin-right: 6px;
+}
+
 .ltr .content-wrapper .card-wrapper .card .card-title span:first-child {
   font-weight: bold;
-  font-family: sans-serif;
 }
 
 .ltr .content-wrapper .card-wrapper .card .card-title span,
@@ -10901,33 +10912,38 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 .ltr .content-wrapper .card-wrapper .card .card-cost span,
 .ltr .content-wrapper .card-wrapper .card .card-members span {
   font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.ltr .content-wrapper .card-wrapper .card .card-days,
+.ltr .content-wrapper .card-wrapper .card .card-cost {
+  line-height: 19px;
+}
+
+.ltr .content-wrapper .card-wrapper .card .card-days img,
+.ltr .content-wrapper .card-wrapper .card .card-cost img {
+  margin-right: 2px;
 }
 
 .ltr .content-wrapper .card-wrapper .card .card-days span,
 .ltr .content-wrapper .card-wrapper .card .card-cost span {
   color: #5058a6;
+  font-weight: 500;
+}
+
+.ltr .content-wrapper .card-wrapper .card .card-members .parent {
+  line-height: 19px;
+}
+
+.ltr .content-wrapper .card-wrapper .card .card-members .parent img {
+  margin-right: 2px;
 }
 
 .ltr .content-wrapper .card-wrapper .card .card-members button {
   color: #5058a6;
   font-size: 12px;
   padding: 0 12px;
-}
-
-.ltr ::-webkit-scrollbar {
-  width: 6px;
-}
-
-.ltr ::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-.ltr ::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-.ltr ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  font-family: 'Roboto', sans-serif;
 }
 
 .ltr .container-fluid .login-title {
@@ -11017,90 +11033,203 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   font-family: "Roboto", sans-serif;
 }
 
+.ltr .card-wrapper .card-button .images {
+  background-color: #5058a6 !important;
+  color: #fff !important;
+  border-radius: 20px;
+  text-transform: capitalize;
+  font-family: "Roboto", "sans-seirf";
+  font-size: 12px;
+}
+
+.ltr .card-wrapper .card-button .video {
+  background-color: #fff !important;
+  color: #000 !important;
+  border-radius: 20px;
+  text-transform: capitalize;
+  font-family: "Roboto", "sans-seirf";
+  font-size: 12px;
+  box-shadow: 0px 2px 9px #e2e2e2 !important;
+  -moz-box-shadow: 0px 2px 9px #e2e2e2 !important;
+  -o-box-shadow: 0px 2px 9px #e2e2e2 !important;
+  -webkit-box-shadow: 0px 2px 9px #e2e2e2 !important;
+}
+
+.ltr .card-wrapper .rentals-images .img-block .left,
+.ltr .card-wrapper .rentals-images .img-block .right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.ltr .card-wrapper .rentals-images .img-block-3 .left,
+.ltr .card-wrapper .rentals-images .img-block-3 .center,
+.ltr .card-wrapper .rentals-images .img-block-3 .right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.ltr .card-wrapper .rentals-images .img-block-3 .right .counter {
+  width: 100%;
+  height: 141px;
+  background-color: #000;
+}
+
+.ltr .card-wrapper .rentals-images .img-block-3 .right .counter .count {
+  color: #fff;
+  font-size: 20px;
+}
+
+.ltr .card-wrapper .from,
+.ltr .card-wrapper .to {
+  font-family: "Roboto", "sans-seirf";
+  font-size: 14px;
+}
+
+.ltr .card-wrapper .from .calendar-date,
+.ltr .card-wrapper .to .calendar-date {
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 6px;
+}
+
+.ltr .card-wrapper .card-details {
+  background-color: #ffffff !important;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+  -webkit-box-shadow: 3px 0px 10px #eee;
+          box-shadow: 3px 0px 10px #eee;
+}
+
+.ltr .card-wrapper .card-details .title {
+  font-size: 14px;
+  font-family: "Roboto", "sans-seirf";
+  font-weight: 500;
+}
+
+.ltr .card-wrapper .card-details .title span {
+  font-family: "Roboto", "sans-seirf";
+}
+
+.ltr .card-wrapper .card-details .unit-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.ltr .card-wrapper .card-details .unit-name .location {
+  color: #909090;
+  font-size: 12px;
+  font-family: "Roboto", "sans-seirf";
+}
+
+.ltr .card-wrapper .card-details .unit-descrption p {
+  line-height: 23px;
+  font-size: 13px;
+  color: #999;
+  width: 97%;
+  font-family: "Roboto", "sans-seirf";
+}
+
+.ltr .card-wrapper .card-details .unit-location p {
+  font-size: 13px;
+  color: #5058a6;
+  font-family: "Roboto", "sans-seirf";
+}
+
+.ltr .card-wrapper .card-details .more .more-rental-details {
+  font-size: 13px;
+  color: #5058a6;
+  font-family: "Roboto", "sans-seirf";
+}
+
+.ltr .card-wrapper .card-details .content span {
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.ltr .card-wrapper .card-details .content .see-more button {
+  color: #5058a6 !important;
+  border-radius: 50px;
+  padding: 0 22px !important;
+}
+
+.ltr .card-wrapper .card-details .content .see-more img {
+  margin-left: 6px;
+}
+
+.ltr .card-wrapper .card-details .next-btn {
+  background-color: #5058a6 !important;
+  border-radius: 50px;
+  padding: 6px 22px !important;
+  text-transform: capitalize;
+  width: 102px;
+  font-family: "Roboto", "sans-seirf";
+}
+
+.ltr .card-wrapper .card-details .chat-btn,
+.ltr .card-wrapper .card-details .call-btn {
+  color: #000;
+  background-color: #fff !important;
+  border-radius: 20px;
+  font-family: "Roboto", "sans-seirf";
+}
+
+.ltr .card-wrapper .card-details .chat-btn span,
+.ltr .card-wrapper .card-details .call-btn span {
+  text-transform: capitalize;
+  margin-left: 4px;
+}
+
+.ltr .card-wrapper .card-details-bottom {
+  background: #f2f2f2 !important;
+  border-radius: 0 !important;
+}
+
+.ltr .header-wrapper {
+  background: #fff;
+  padding: 4px;
+  box-shadow: 0px 1px 8px #cccaca;
+  -moz-box-shadow: 0px 1px 8px #cccaca;
+  -o-box-shadow: 0px 1px 8px #cccaca;
+  -webkit-box-shadow: 0px 1px 8px #cccaca;
+  border-radius: 10px;
+}
+
+.ltr .header-wrapper .bell-count {
+  font-size: 6px;
+  border: 0.3px solid #5058a6;
+  padding: 0 4px;
+  border-radius: 50px;
+  top: 5px;
+  left: 17px;
+  background-color: #fff;
+}
+
+.ltr .header-wrapper span {
+  font-family: "Roboto", sans-serif;
+}
+
+.ltr .header-wrapper .notification {
+  top: 0px;
+}
+
 .ltr .bread-span {
   padding-left: 10px;
   padding-right: 10px;
   color: red;
 }
 
-.ltr .checkcontainer {
-  display: block;
-  position: relative;
-  padding-left: 29px;
-  margin-top: 20px;
-  margin-bottom: 0;
-  cursor: pointer;
-  font-size: 17px;
-  -webkit-user-select: none;
-  /* Chrome, Opera, Safari */
-  -moz-user-select: none;
-  /* Firefox 2+ */
-  -ms-user-select: none;
-  /* IE 10+ */
-  user-select: none;
-  /* Standard syntax */
-}
-
-.ltr .checkcontainer input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.ltr .checkmark {
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  height: 22px;
-  width: 22px;
-  background-color: #eee;
-  position: absolute;
-  border-radius: 5px;
-}
-
-.ltr .checkcontainer:hover input ~ .checkmark {
-  background-color: #ccc;
-  border-radius: 5px;
-}
-
-.ltr .checkcontainer input:checked ~ .checkmark {
-  background-color: #5058a6;
-  border-radius: 5px;
-}
-
-.ltr .checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-.ltr .checkcontainer input:checked ~ .checkmark:after {
-  display: block;
-}
-
-.ltr .checkcontainer .checkmark:after {
-  left: 8px;
-  top: 6px;
-  width: 7px;
-  height: 12px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.ltr .form-control,
-.ltr .btn-primary {
-  border-radius: 30px;
-  -webkit-box-shadow: unset !important;
-          box-shadow: unset !important;
-}
-
-.ltr .login-register-bg-color {
-  background-color: #5058a6 !important;
-  min-height: 100%;
-  padding-top: 18px !important;
-  padding-bottom: 18px !important;
+@media (max-width: 768px) {
+  .ltr .content-wrapper {
+    width: 90%;
+    margin: auto;
+  }
 }
 
 @media (max-width: 768px) {
@@ -11122,9 +11251,26 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   }
 }
 
-html,
-body,
-.ltr {
-  height: 100%;
+body {
+  background-color: #fcfcfc !important;
+}
+
+.slick-dots li.slick-active button:before,
+.slick-dots li button:before {
+  color: #fff !important;
+  font-size: 9px;
+}
+
+.slick-dots {
+  margin-bottom: 0 !important;
+  bottom: 0 !important;
+}
+
+.slick-dots li {
+  margin: 0 !important;
+}
+
+.slick-dotted.slick-slider {
+  margin-bottom: 0 !important;
 }
 /*# sourceMappingURL=style.css.map */

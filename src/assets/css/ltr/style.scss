@@ -10,8 +10,25 @@ $mainSiteLang: en;
   @import "../../scss/main";
 }
 
-html,
-body,
-.ltr{
-    height: 100%;
+body{
+  background-color: #fcfcfc !important;
+}
+
+.slick-dots li.slick-active button:before,
+.slick-dots li button:before {
+  color: #fff !important;
+  font-size: 9px;
+}
+
+.slick-dots{
+    margin-bottom: 0 !important;
+    bottom: 0 !important;
+}
+
+.slick-dots li{
+    margin: 0 !important;
+}
+
+.slick-dotted.slick-slider{
+    margin-bottom: 0 !important;
 }

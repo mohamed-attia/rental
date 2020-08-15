@@ -1,20 +1,33 @@
 .menu-wrapper {
-  background-color: #fff;
-  position: absolute;
-  width: 45%;
-  bottom:-7px;
+  background-color: #fff !important;
+  box-shadow: 0px 2px 8px #cccaca;
+  -moz-box-shadow:0px 2px 8px #cccaca;
+  -webkit-box-shadow:0px 2px 8px #cccaca;
+  -o-box-shadow:0px 2px 8px #cccaca;
 }
 button {
   background-color: unset !important;
   border: 0 !important;
   box-shadow: unset !important;
+  font-family: 'Roboto', sans-serif
 }
 .active-title{
     color: #5058a6;
     font-size: 9px;
+    font-family: 'Roboto', sans-serif
 }
 .active-icon{
     background-color: #5058a6;
     border-radius: 20px;
     padding: 2px 8px;
+}
+.active-btn{
+  background-color: white !important;
+  width: 59px;
+  border-radius: 57px !important;
+  padding-top: 8px;
+}
+button{
+  position: relative;
+  top: 4px;
 }
