@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private rentalUserService: RentalUserService
   ) {
+    localStorage.removeItem('accessToken')
     this.createForm();
   }
 
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   createForm() {
     this.userLoginForm = this.fb.group({
-      userNameOrEmailAddress: ["", Validators.required],
+      userNameOrEmailAddressOrPhone: ["", Validators.required],
       password: ["", Validators.required],
     });
   }

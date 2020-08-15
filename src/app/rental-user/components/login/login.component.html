@@ -4,10 +4,10 @@
       <h2 class="mb-4">{{'login.title' | translate}}</h2>
         <form #form="ngForm" [formGroup]="userLoginForm" (ngSubmit)="onSubmit(form)" novalidate>
           <div class="phone">
-            <input autocomplete="off" formControlName="userNameOrEmailAddress" required class="form-control" type="text" placeholder="{{'login.Email-PhoneNumber' | translate}}">
-            <ng-container *ngIf="form.submitted && userLoginForm.controls['userNameOrEmailAddress'].invalid ||
-             (userLoginForm.controls['userNameOrEmailAddress'].dirty || userLoginForm.controls['userNameOrEmailAddress'].touched)">
-              <span *ngIf="userLoginForm.controls['userNameOrEmailAddress']?.errors?.required">{{'Validation.required' | translate}}</span>
+            <input autocomplete="off" formControlName="userNameOrEmailAddressOrPhone" required class="form-control" type="text" placeholder="{{'login.Email-PhoneNumber' | translate}}">
+            <ng-container *ngIf="form.submitted && userLoginForm.controls['userNameOrEmailAddressOrPhone'].invalid ||
+             (userLoginForm.controls['userNameOrEmailAddressOrPhone'].dirty || userLoginForm.controls['userNameOrEmailAddressOrPhone'].touched)">
+              <span *ngIf="userLoginForm.controls['userNameOrEmailAddressOrPhone']?.errors?.required">{{'Validation.required' | translate}}</span>
             </ng-container>
           </div>
           <div class="password mt-3 position-relative">

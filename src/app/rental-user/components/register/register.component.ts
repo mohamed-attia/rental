@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 import { RentalUserService } from "../../services/rental-user.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-register",
@@ -14,6 +15,7 @@ export class RegisterComponent implements OnInit {
   public agree:boolean = false;
 
   constructor(
+    private router:Router,
     private fb: FormBuilder,
     private rentalUserService: RentalUserService
   ) {}
@@ -27,18 +29,17 @@ export class RegisterComponent implements OnInit {
         password: ["", Validators.required],
         userConfirmPassword: ["", Validators.required],
         tenantId:Number(localStorage.getItem('tenantId')),
-        isAgree:["",Validators.required]
+        acceptTermsAndConditions:["",Validators.required]
       }
     );
   }
   public onSubmit(form: FormGroup) {
     if (this.userRegisterForm.valid && (this.userRegisterForm.get('password').value === this.userRegisterForm.get('userConfirmPassword').value)) {
       this.userRegisterForm.removeControl('userConfirmPassword');
-      this.userRegisterForm.removeControl('isAgree');
       this.rentalUserService
         .sendUserREgisterData(this.userRegisterForm.value)
         .subscribe((res) => {
-          console.log(res);
+         this.router.navigate(['./user/login'])
         });
     } else {
       console.log("not ok");

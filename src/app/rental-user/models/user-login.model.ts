@@ -1,4 +1,4 @@
 export interface UserLoginModel {
-  "userNameOrEmailAddress": string,
-  "password": string
+  userNameOrEmailAddressOrPhone: string;
+  password: string;
 }

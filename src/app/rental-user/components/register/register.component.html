@@ -48,11 +48,11 @@
             </div>
 
           <div class="terms-condition mt-2 text-capitalize mb-4">
-              <input type="checkbox" formControlName="isAgree"  name="" id="terms" >
+              <input type="checkbox" formControlName="acceptTermsAndConditions"  name="" id="terms" >
               <label class="ml-2" for="terms">{{'Register.Creating-account' | translate}}<a class="ml-1" href="#">{{'Register.terms-condition' | translate}}</a></label>
               <br/>
-              <ng-container *ngIf="(form.submitted && formControls('isAgree')?.invalid)">
-                <span *ngIf="formControls('isAgree')?.errors?.required">{{'Validation.required' | translate}}</span>
+              <ng-container *ngIf="(form.submitted && formControls('acceptTermsAndConditions')?.invalid)">
+                <span *ngIf="formControls('acceptTermsAndConditions')?.errors?.required">{{'Validation.required' | translate}}</span>
              </ng-container>
             </div>
           <div class="SignIn">
