@@ -5,7 +5,7 @@
     "Password":"Password",
     "forget-Password":"forget password",
     "SignIn":"SignIn",
-    "login-with":"or login with",
+    "login-with":"OR",
     "dont-have-account":"don't have account?",
     "register":"register",
     "facebook":"facebook",
@@ -22,7 +22,7 @@
     "SignIn":"SignIn",
     "have-account":"already have account?",
     "logIn":"logIn",
-    "login-with":"or login with",
+    "login-with":"OR",
     "facebook":"facebook",
     "instagram":"instagram",
     "google-plus":"google-plus"
