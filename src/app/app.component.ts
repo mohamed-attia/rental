@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
     private titleService: Title,
     private rentalUserService:RentalUserService
   ) {
-    this.setDefautLanguage("ar");
+    this.setDefautLanguage("en");
     this.getTanentId();
   }
 
