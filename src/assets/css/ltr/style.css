@@ -11095,6 +11095,11 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   border-radius: 0 !important;
 }
 
+.ltr .calendar-time {
+  width: 37%;
+  margin: auto;
+}
+
 .ltr .header-wrapper {
   background: #fff;
   padding: 4px;
@@ -11132,6 +11137,10 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 @media (max-width: 768px) {
   .ltr .content-wrapper {
     width: 90%;
+    margin: auto;
+  }
+  .ltr .calendar-time {
+    width: 90% !important;
     margin: auto;
   }
 }
