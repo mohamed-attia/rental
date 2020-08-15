@@ -1,5 +1,58 @@
-
-<div class="container mci-ci">
-  <div class="content-wrapper">
-    <h2 class="content__title">{{'crinfo.CrInfoData' | translate}}</h2>
+<div class="container-fluid flex-column login-register-bg-color d-flex h-100">
+  <h2 class="mb-4 mt-4 text-center login-title">{{'login.title' | translate}}</h2>
+  <div class="content-background pt-4">
+    <div class="row">
+      <div class="col-md-10 mx-auto">
+        <form #form="ngForm" [formGroup]="userLoginForm" (ngSubmit)="onSubmit(form)" novalidate>
+          <div class="phone">
+            <input autocomplete="off" formControlName="userNameOrEmailAddressOrPhone" required class="form-control"
+              type="text" placeholder="{{'login.Email-PhoneNumber' | translate}}">
+            <ng-container
+              *ngIf="form.submitted && userLoginForm.controls['userNameOrEmailAddressOrPhone'].invalid ||
+             (userLoginForm.controls['userNameOrEmailAddressOrPhone'].dirty || userLoginForm.controls['userNameOrEmailAddressOrPhone'].touched)">
+              <span class="required"
+                *ngIf="userLoginForm.controls['userNameOrEmailAddressOrPhone']?.errors?.required">{{'Validation.required' | translate}}</span>
+            </ng-container>
+          </div>
+          <div class="password mt-3 position-relative">
+            <input autocomplete="off" formControlName="password" required class="form-control"
+              [type]="fieldTextType ? 'text' : 'password'" placeholder="{{'login.Password' | translate}}">
+            <a href="avascript:void(0)" (click)="fieldTextType = !fieldTextType"
+              class="position-absolute visibility-icon"><img width="15px" height="15px"
+                src="assets/icons/visibility.svg" alt=""></a>
+            <ng-container *ngIf="form.submitted && userLoginForm.controls['password'].invalid ||
+             (userLoginForm.controls['password'].dirty || userLoginForm.controls['password'].touched)">
+              <span class="required"
+                *ngIf="userLoginForm.controls['password']?.errors?.required">{{'Validation.required' | translate}}</span>
+            </ng-container>
+          </div>
+          <div class="forget-password mt-2 text-capitalize mb-4">
+            <a href="#">{{'login.forget-Password' | translate}}</a>
+          </div>
+          <div class="SignIn">
+            <button type="submit" class="btn btn-primary w-100">{{'login.SignIn' | translate}}</button>
+          </div>
+        </form>
+        <div class="content-border mt-3">
+          <div class="register text-center">
+            <span class="line-before"></span>
+            <span class="text-capitalize">{{'login.login-with' | translate}}</span>
+            <span class="line-after"></span>
+          </div>
+          <div class="social-links text-center mt-1">
+            <a href="#"><img width="30px" height="30px" src="assets/icons/facebook.svg"
+                alt="{{'login.facebook' | translate}}"></a>
+            <a href="#" class="ml-3 mr-3"><img width="30px" height="30px" src="assets/icons/instagram.svg"
+                alt="{{'login.instagram' | translate}}"></a>
+            <a href="#"><img width="30px" height="30px" src="assets/icons/google-plus.svg"
+                alt="{{'login.google-plus' | translate}}"></a>
+          </div>
+        </div>
+        <div class="register mt-3">
+          <span class="text-capitalize">{{'login.dont-have-account' | translate}} <a
+              [routerLink]="['../../user/register']"
+              [queryParams]="{lang: 'en'}">{{'login.register' | translate}}</a></span>
+        </div>
+      </div>
+    </div>
   </div>

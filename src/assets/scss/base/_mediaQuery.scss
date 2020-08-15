@@ -1,0 +1,28 @@
+// mobile
+@media (max-width: 768px) {
+  .content-background {
+    width: 98% !important;
+    padding: 30px !important;
+  }
+  input[type="checkbox"] {
+    margin-top: 18px;
+  }
+  .terms-condition .checkcontainer {
+    font-size: 10px;
+  }
+}
+
+// Ipad
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+// Ipad pro
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .content-background {
+    width: 50%;
+  }
+}
+
+// web
+@media (min-width: 1366px) {
+}

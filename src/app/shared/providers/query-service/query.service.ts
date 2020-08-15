@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
-import { environment } from '../../../../environments/environment';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Options } from 'selenium-webdriver/chrome';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +31,7 @@ export class QueryService {
     //     headers.append('Content-Type','application/json');
     //     let options = new RequestOptions({headers:headers});
     // return this.http.post(this.URI, data, Options : { headers: new Headers({ 'Content-Type': 'application/vnd.api+json' })  });
-    return this.http.post(this.URI, data);
+    return this.http.post(this.URI, data,);
   }
 
   public get(): Observable<any> {

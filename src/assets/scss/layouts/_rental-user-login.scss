@@ -1,0 +1,88 @@
+.container-fluid {
+  .login-title {
+    color: #fff;
+  }
+  .content-background {
+    background-color: #fff;
+    padding: 25px 0;
+    width: 50%;
+    margin:0 auto;
+    border-radius: 10px;
+    .row {
+      .col-md-10 {
+        .content-border {
+          .phone,
+          .password {
+            position: relative;
+            input {
+              border-radius: 30px;
+              border: 0;
+              background-color: #eee;
+              box-shadow: unset !important;
+            }
+
+            .visibility-icon {
+              top: 5px;
+              #{$left}: 12px;
+            }
+          }
+          .SignIn {
+            button {
+              border-radius: 30px;
+            }
+          }
+          .SignIn {
+            button {
+              border-radius: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .required {
+    font-size: 13px;
+    color: red;
+    margin-#{$left}: 20px;
+  }
+
+  .visibility-icon {
+    top: 5px;
+    #{$right}: 12px;
+  }
+
+  .font-14px {
+    font-size: 14px;
+  }
+
+  .register {
+    span {
+      color: #000;
+    }
+  }
+  .line-before {
+    width: 35px;
+    height: 3px;
+    border-bottom: 1px solid #aaa;
+    transform: rotate(1deg);
+    display: inline-block;
+    position: relative;
+    top: -5px;
+    #{$left}: -7px;
+  }
+  .line-after {
+    width: 35px;
+    height: 3px;
+    border-bottom: 1px solid #aaa;
+    transform: rotate(0deg);
+    display: inline-block;
+    position: relative;
+    top: -5px;
+    #{$right}: -7px;
+  }
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+}
