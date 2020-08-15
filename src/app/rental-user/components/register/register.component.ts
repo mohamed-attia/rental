@@ -32,6 +32,7 @@ export class RegisterComponent implements OnInit {
     });
   }
   public onSubmit(form: FormGroup) {
+
     if (
       this.userRegisterForm.valid &&
       this.userRegisterForm.get("password").value ===
@@ -41,8 +42,10 @@ export class RegisterComponent implements OnInit {
       this.rentalUserService
         .sendUserREgisterData(this.userRegisterForm.value)
         .subscribe((res) => {
-          console.log("res", res);
+          if(res['success']) {
             this.router.navigate(["./user/login"]);
+            console.log("res", res);
+          }
         });
     } else {
       console.log("not ok");
