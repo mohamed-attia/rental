@@ -1,36 +1,39 @@
-<div class="card-wrapper">
+<div class="card-wrapper rental-details-wrapper">
     <div class="card-button mt-3">
         <button class="btn btn-primary  mr-2" [ngClass]="showRentalImages ? 'images' : 'video'" (click)="OnShowRentalImages()">images</button>
         <button class="btn btn-primary " [ngClass]="showRentalVideos ? 'images' : 'video'" (click)="OnShowRentalVideos()">video</button>
     </div>
     <div class="rentals-video mt-3" *ngIf="showRentalVideos">
-        <video width="100%" controls>
-            <source src="https://www.bigbuckbunny.org/" type="video/mp4">
-            <source src="https://www.bigbuckbunny.org/" type="video/ogg">
-            Your browser does not support HTML video.
-        </video>
+      <div class="row">
+          <div class="col-md-4 col-6 mb-1 p-0" *ngFor="let video of videoList">
+            <ng-container>
+              <video width="98%" height="100%" controls>
+                  <source [src]="video?.path" type="video/mp4">
+                  <source [src]="video?.path" type="video/ogg">
+                  Your browser does not support HTML video.
+              </video>
+            </ng-container>
+          </div>
+      </div>
     </div>
     <div class="rentals-images mt-4" *ngIf="showRentalImages">
-        <div class="img-block d-flex">
-            <div class="left">
-                <img width="98%" height="170px" src="assets/images/sea.jpeg" alt="">
-            </div>
-            <div class="right">
-                <img width="100%" height="170px" src="assets/images/sea.jpeg" alt="">
-            </div>
-        </div>
-        <div class="img-block-3 mt-1 d-flex">
-            <div class="left">
-                <img width="98%" height="141px" src="assets/images/sea.jpeg" alt="">
-            </div>
-            <div class="center">
-                <img width="98%" height="141px" src="assets/images/sea.jpeg" alt="">
-            </div>
-            <div class="right">
-                <div class="counter d-flex justify-content-center align-items-center position-relative">
-                    <span class="count">8+</span>
+        <div class="img-block-3 mt-1">
+          <div class="row">
+              <div class="col-md-3 col-4 mb-1 p-0" *ngFor="let image of imagesList|slice:0:5">
+                <ng-container>
+                  <div class="img">
+                    <img width="98%" height="141px" [src]="image.path" alt="">
                 </div>
-            </div>
+                </ng-container>
+              </div>
+              <div class="col-md-3 col-4 p-0" *ngIf="imagesList.length > 5">
+                <div class="right">
+                    <div class="counter d-flex justify-content-center align-items-center position-relative">
+                        <span class="count">+ {{imagesList.length - 5}}</span>
+                    </div>
+                </div>
+              </div>
+          </div>
         </div>
     </div>
     <div class="card-details mt-2">

@@ -38,7 +38,7 @@ export class RentalsComponent implements OnInit {
   }
 
   public goRetalDetails (id:number) {
-    this.router.navigate(['/rentals', 2]);
+    this.router.navigate(['/rentals', id]);
   }
 
 }
