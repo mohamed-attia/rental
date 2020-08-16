@@ -10864,8 +10864,8 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   border-radius: 10px;
 }
 
-.rtl .content-wrapper .card-wrapper {
-  min-height: calc(100vh - 316px);
+.rtl .content-wrapper .card-wrapper-rentals {
+  min-height: calc(100vh - 315px);
 }
 
 .rtl .content-wrapper .card-wrapper .card-img {
@@ -10985,14 +10985,6 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   right: 12px;
 }
 
-.rtl .container-fluid .content-background .row .col-md-10 .content-border .SignIn button {
-  border-radius: 30px;
-}
-
-.rtl .container-fluid .content-background .row .col-md-10 .content-border .SignIn button {
-  border-radius: 30px;
-}
-
 .rtl .container-fluid .required {
   font-size: 13px;
   color: red;
@@ -11040,6 +11032,12 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   font-family: "Roboto", sans-serif;
 }
 
+.rtl .SignIn button.btn-primary {
+  border-radius: 30px;
+  background-color: #5058a6 !important;
+  border-color: #5058a6 !important;
+}
+
 .rtl .card-wrapper .card-button .images {
   background-color: #5058a6 !important;
   color: #fff !important;
@@ -11062,6 +11060,14 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   -webkit-box-shadow: 0px 2px 9px #e2e2e2 !important;
 }
 
+.rtl .card-wrapper .rentals-video {
+  padding: 0 15px;
+}
+
+.rtl .card-wrapper .rentals-images {
+  padding: 0 15px;
+}
+
 .rtl .card-wrapper .rentals-images .img-block .left,
 .rtl .card-wrapper .rentals-images .img-block .right {
   -webkit-box-flex: 1;
@@ -11081,6 +11087,7 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   width: 100%;
   height: 141px;
   background-color: #000;
+  cursor: pointer;
 }
 
 .rtl .card-wrapper .rentals-images .img-block-3 .right .counter .count {
@@ -11198,9 +11205,17 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   border-radius: 0 !important;
 }
 
+.rtl .rental-details-wrapper {
+  min-height: calc(100vh - 147px);
+}
+
 .rtl .selected-date-range {
   width: 37%;
   margin: auto;
+}
+
+.rtl video {
+  margin-left: 1%;
 }
 
 .rtl .header-wrapper {

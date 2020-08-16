@@ -1,5 +1,4 @@
 .card-wrapper {
-  // box-shadow: -2px 5px 4px #eee;
 
   .card-button {
     // should be active class
@@ -25,7 +24,12 @@
     }
   }
 
+  .rentals-video{
+    padding:0 15px;
+  }
+
   .rentals-images {
+    padding: 0 15px;
     .img-block {
       .left,
       .right {
@@ -43,6 +47,7 @@
           width: 100%;
           height: 141px;
           background-color: #000;
+          cursor: pointer;
           .count {
             color: #fff;
             font-size: 20px;
@@ -149,7 +154,14 @@
   }
 }
 
+.rental-details-wrapper{
+  min-height: calc(100vh - 147px);
+}
+
 .selected-date-range {
   width:37%;
   margin: auto;
+}
+video {
+  margin-#{$right}:1%;
 }
