@@ -11229,6 +11229,8 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
 
 .rtl .header-wrapper .notification {
   top: 0px;
+  border: 0;
+  background: transparent;
 }
 
 .rtl .checkcontainer {
@@ -11346,6 +11348,28 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
 
 body {
   background-color: #fcfcfc !important;
+}
+
+.slick-slide img {
+  height: 270px;
+}
+
+@media all and (max-width: 576px) {
+  .slick-slide img {
+    height: 160px;
+  }
+}
+
+@media all and (min-width: 577px) and (max-width: 767px) {
+  .slick-slide img {
+    height: 1600px;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 992px) {
+  .slick-slide img {
+    height: 160px;
+  }
 }
 
 .slick-dots li.slick-active button:before,
