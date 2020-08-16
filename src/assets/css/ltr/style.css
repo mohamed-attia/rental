@@ -11229,6 +11229,8 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 
 .ltr .header-wrapper .notification {
   top: 0px;
+  border: 0;
+  background: transparent;
 }
 
 .ltr .checkcontainer {
