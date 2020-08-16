@@ -129,7 +129,7 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "namedChunks": false,
-              "baseHref": "/",
+              "baseHref": "https://github.com/mohamed-attia/rental/",
               "outputPath": "dist/preprod/",
               "budgets": [{
                 "type": "initial",
