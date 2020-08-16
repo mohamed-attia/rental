@@ -4,28 +4,29 @@
         <button class="btn btn-primary " [ngClass]="showRentalVideos ? 'images' : 'video'" (click)="OnShowRentalVideos()">video</button>
     </div>
     <div class="rentals-video mt-3" *ngIf="showRentalVideos">
-        <video width="100%" controls>
-            <source src="https://www.bigbuckbunny.org/" type="video/mp4">
-            <source src="https://www.bigbuckbunny.org/" type="video/ogg">
+      <ng-container *ngFor="let video of videoList">
+        <video width="24%" controls >
+            <source [src]="video?.path" type="video/mp4">
+            <source [src]="video?.path" type="video/ogg">
             Your browser does not support HTML video.
         </video>
+      </ng-container>
     </div>
     <div class="rentals-images mt-4" *ngIf="showRentalImages">
-        <div class="img-block d-flex">
+        <!-- <div class="img-block d-flex">
             <div class="left">
                 <img width="98%" height="170px" src="assets/images/sea.jpeg" alt="">
             </div>
             <div class="right">
                 <img width="100%" height="170px" src="assets/images/sea.jpeg" alt="">
             </div>
-        </div>
+        </div> -->
         <div class="img-block-3 mt-1 d-flex">
+          <ng-container *ngFor="let image of imagesList">
             <div class="left">
-                <img width="98%" height="141px" src="assets/images/sea.jpeg" alt="">
-            </div>
-            <div class="center">
-                <img width="98%" height="141px" src="assets/images/sea.jpeg" alt="">
-            </div>
+              <img width="98%" height="141px" [src]="image.path" alt="">
+          </div>
+          </ng-container>
             <div class="right">
                 <div class="counter d-flex justify-content-center align-items-center position-relative">
                     <span class="count">8+</span>

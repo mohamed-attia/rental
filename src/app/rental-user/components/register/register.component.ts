@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 import { RentalUserService } from "../../services/rental-user.service";
 import { Router } from "@angular/router";
+import { UserLoginModel } from './../../models/user-login.model';
 
 @Component({
   selector: "app-register",
@@ -13,6 +14,7 @@ export class RegisterComponent implements OnInit {
   public confirmpassword: boolean = false;
   public userRegisterForm: FormGroup = new FormGroup({});
   public agree: boolean = false;
+  private userLogin:UserLoginModel;
 
   constructor(
     private router: Router,
@@ -32,7 +34,6 @@ export class RegisterComponent implements OnInit {
     });
   }
   public onSubmit(form: FormGroup) {
-
     if (
       this.userRegisterForm.valid &&
       this.userRegisterForm.get("password").value ===
@@ -42,9 +43,11 @@ export class RegisterComponent implements OnInit {
       this.rentalUserService
         .sendUserREgisterData(this.userRegisterForm.value)
         .subscribe((res) => {
-          if(res['success']) {
-            this.router.navigate(["./user/login"]);
-            console.log("res", res);
+          if (res["success"]) {
+            this.userLogin = {userNameOrEmailAddressOrPhone:this.userRegisterForm.get('userName').value,password:this.userRegisterForm.get('password').value}
+            this.rentalUserService.sendUserLoginData(this.userLogin).subscribe(res=>{
+            this.router.navigate(["./rentals"]);
+            });
           }
         });
     } else {

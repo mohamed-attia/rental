@@ -26,16 +26,6 @@
               #{$left}: 12px;
             }
           }
-          .SignIn {
-            button {
-              border-radius: 30px;
-            }
-          }
-          .SignIn {
-            button {
-              border-radius: 30px;
-            }
-          }
         }
       }
     }
@@ -85,4 +75,12 @@
 
 * {
   font-family: "Roboto", sans-serif;
+}
+
+.SignIn {
+  button.btn-primary {
+    border-radius: 30px;
+    background-color: #5058a6 !important;
+    border-color: #5058a6 !important;
+  }
 }

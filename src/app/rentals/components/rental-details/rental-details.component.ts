@@ -13,6 +13,8 @@ export class RentalDetailsComponent implements OnInit {
   private id: number;
   public showRentalVideos:boolean = false;
   public showRentalImages:boolean = true;
+  public imagesList = [];
+  public videoList = [];
   constructor(
     private getRentalsListService: GetRentalsListService,
     private actRoute: ActivatedRoute
@@ -34,8 +36,14 @@ export class RentalDetailsComponent implements OnInit {
     this.getRentalsListService
       .getRentaDetailsById(this.id)
       .subscribe((rentalDetails) => {
-        this.rentalDetails = rentalDetails['body']['result']['unit']
-        console.log(rentalDetails['body']['result']['unit'])
+        this.rentalDetails = rentalDetails['body']['result']['unit'];
+        if(this.rentalDetails['images'].length > 0) {
+         for(let i = 0; i < this.rentalDetails['images'].length ; i++){
+          this.imagesList.push(this.rentalDetails['images'][i]);
+          this.videoList.push(this.rentalDetails['videos'][i]);
+         }
+         console.log(this.imagesList)
+        }
       });
   }
   public OnShowRentalImages() {
