@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-    api: 'https://10.10.63.79:8051/api/',
+    api: 'http://islamattaelkady-001-site5.itempurl.com/api/',
   code:""
 };
 

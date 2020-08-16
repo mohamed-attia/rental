@@ -3,11 +3,11 @@
 // The list of file replacements can be found in `angular.json`..
 
 export const environment = {
-  production: false, 
-  api: 'https://10.10.63.79:8051/api/',
+  production: false,
+  api: 'http://islamattaelkady-001-site5.itempurl.com/api/',
   code: 'GTM-58QF7XJ'
 };
-    
+
 
 /*
  * For easier debugging in development mode, you can import the following file
