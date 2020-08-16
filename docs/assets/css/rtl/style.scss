@@ -12,6 +12,33 @@ $mainSiteLang : ar;
 body{
     background-color: #fcfcfc !important;
 }
+.slick-slide {
+  img {
+    height: 270px;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .slick-slide {
+    img {
+      height: 160px;
+    }
+  }
+}
+@media all and (min-width: 577px) and (max-width:767px) {
+  .slick-slide {
+    img {
+      height: 1600px;
+    }
+  }
+}
+@media all and (min-width: 768px) and (max-width:992px) {
+  .slick-slide {
+    img {
+      height: 160px;
+    }
+  }
+}
 .slick-dots li.slick-active button:before,
 .slick-dots li button:before{
   color: #fff !important;

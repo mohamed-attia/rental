@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1597581678892,
+  "timestamp": 1597583163832,
   "index": "/rental/test/index.html",
   "assetGroups": [
     {
@@ -254,10 +254,10 @@
     "/rental/assets/config.json": "79143217408b2aa747f22da5b8b48ecdf96e3f7a",
     "/rental/assets/css/ltr/style.css": "b97b309d5dea09550474d71841302edf0382a3d6",
     "/rental/assets/css/ltr/style.css.map": "4c864deb4e5319cf9ec9b40ebf517ac5157ec31a",
-    "/rental/assets/css/ltr/style.scss": "79d767ab1ddb9a1b02f67281e1d7e02c43ffd8c5",
+    "/rental/assets/css/ltr/style.scss": "8d56a92874ae435a42f50b936df9ed928564d671",
     "/rental/assets/css/rtl/style.css": "153b00767f8e3be93674f57ac05e4f55e80e959f",
     "/rental/assets/css/rtl/style.css.map": "1f1643a6108efc8ecec9642911f2baf63f347fd6",
-    "/rental/assets/css/rtl/style.scss": "9552b532cc4058ae402bd16e2ec5632d7e175de0",
+    "/rental/assets/css/rtl/style.scss": "0d95e736d305d562c5ac73e4c5d5bf2efd3b978f",
     "/rental/assets/fonts/DroidKufi/DroidKufi-Bold.eot": "6331d05035501ec42f3603888ca7b652a955eae1",
     "/rental/assets/fonts/DroidKufi/DroidKufi-Bold.ttf": "590865add23d8c0b0da1ed52bb453277d824e195",
     "/rental/assets/fonts/DroidKufi/DroidKufi-Bold.woff": "08fc4efcfa4e6e1e8237ca93f39a644024b0e380",
@@ -433,7 +433,7 @@
     "/rental/assets/scss/base/_root.scss": "5501445f38edcc2e63e9238871cb44b789ba3a32",
     "/rental/assets/scss/base/_utilities.scss": "1b459cda84ffdd3962a5aa5f0a7be7ed04e6c9d1",
     "/rental/assets/scss/layouts/.keep": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-    "/rental/assets/scss/layouts/_header.scss": "f493bbf534f39f077eb69e49213ac9eba5cd63a4",
+    "/rental/assets/scss/layouts/_header.scss": "f5adcc74ccf16a86ac5c917289ecb9fb47fc5ce6",
     "/rental/assets/scss/layouts/_rental-details.scss": "ad8a300d71d05f6a739621bc8a4e67c778a0160d",
     "/rental/assets/scss/layouts/_rental-user-login.scss": "cc0f2eeefa2fb756695c45fd6c08227452649459",
     "/rental/assets/scss/layouts/_rentals.scss": "4a51be7558a721a16428fbe597c82324edd50e2f",
