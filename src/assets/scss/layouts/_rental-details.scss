@@ -154,6 +154,10 @@
   }
 }
 
+.rental-details-wrapper{
+  min-height: calc(100vh - 147px);
+}
+
 .selected-date-range {
   width:37%;
   margin: auto;
