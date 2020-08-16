@@ -1,0 +1,103 @@
+// Buttons ------------------------------------------------
+.btn.btn-outline-secondary {
+    border-color: $border;
+  }
+  .btn.btn-primary.dropdown-toggle {
+    background: #fff;
+    border-color: $border;
+    color: $txt3;
+    font-weight: bold;
+    font-size: 12px; 
+  }
+  
+  // Cards --------------------------------------------
+  .card-block {
+    padding: 10px;
+  }
+  .card {
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.04);
+  }
+  .card-link {
+      color:$link-color;
+  }
+  .card-text {
+      color: $txt-black-dark;
+  }
+  .list-group-item {
+      color: $txt-black-light;
+  }
+  // Alert -----------------------------------------------------------
+  .alert {
+    box-shadow: inset 0 -2px 3px 0 rgba(0,0,0,0.1), 0 1px 3px 0 rgba(50,69,66,0.07);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 110px
+  }
+  .alert__success{
+    background-color: #fff;
+  }
+  .alert__fail {
+    background-color: #f8d7da;
+  }
+  .alert__icon {
+    content:" ";
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+  }
+  .alert__icon--success {
+    background-color: $primary;
+  }
+  .alert__icon--fail {
+    background-color: $danger;
+  }
+  .alert__text__title {
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-top: 16px;
+  }
+  .alert__text {
+    margin-#{$left}: 20px;
+  }
+  .alert__icon > img {
+    width:20px
+  }
+  // Modal --------------------------------------
+  .modal-content .modal-header .close {
+    margin: -1rem;
+    outline: 0;
+  }
+  .modal-title {
+        font-size: 16px;	
+        font-weight: bold;
+    }
+    #btn-lang {
+    #{$right}: 10px;
+    background: green;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    outline: 0;
+    position: fixed;
+    bottom: 70px;
+    color:#fff;
+    border: 0;
+    z-index:10;
+    }
+    #scrollTop {
+      background: #8a4726;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      outline: 0;
+      position: fixed;
+      bottom: 15px;
+      #{$right}: 10px;
+      color:#fff;
+      display: none;
+      z-index:1000000;
+      border: 0
+    }

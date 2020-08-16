@@ -1,0 +1,87 @@
+//==  branding from css to root branding
+$branding-path: "../../";
+
+$default-behaviour: true; //  true or false : true is recommended
+$fa: FontAwesome;
+$fa-font-path: $branding-path + "fonts/fontawesome";
+$mdi: "Material Design Icons";
+//== font-families
+//
+// font family
+// Font weight
+// 200: Light
+// 400: Normal(Regular)
+// 600: SemiBold
+// 700: Bold MyriadPro
+$defaultFont: "hinted-RB", sans-serif;
+$defaultFont-2: "hinted-RB";
+$font-family-default: $defaultFont, sans-serif;
+$font-numbers-default: hinted-RB, Arial, sans-serif;
+$fonts-map-default: (
+  // (
+    //     family: '#{$defaultFont}',
+    //     weight: 200,
+    //     weightName:'Light',
+    //     path: '#{$defaultFont}/#{$defaultFont}'
+    // ),
+    // (
+    //     family: '#{$defaultFont}',
+    //     weight: 400,
+    //     weightName: 'Regular',
+    //     path: '#{$defaultFont}/#{$defaultFont}'
+    // ),
+    //  (
+    //     family: '#{$defaultFont}',
+    //     weight: 600,
+    //     weightName: 'SemiBold',
+    //     path: '#{$defaultFont}/#{$defaultFont}'
+    // ),
+    //  (
+    //     family: '#{$defaultFont}',
+    //     weight: 700,
+    //     weightName: 'Bold',
+    //     path: '#{$defaultFont}/#{$defaultFont}'
+    // ),
+    (
+      family: "#{$defaultFont-2}",
+      weight: 600,
+      weightName: "SemiBold",
+      path: "#{$defaultFont-2}/#{$defaultFont-2}"
+    ),
+  (
+    family: "#{$defaultFont-2}",
+    weight: 700,
+    weightName: "Bold",
+    path: "#{$defaultFont-2}/#{$defaultFont-2}"
+  )
+);
+// font family
+$reverseFontName: "hinted-RB";
+$font-family-reverse: "#{$reverseFontName}", sans-serif;
+$font-numbers-reverse: Myriad ar, Arial, sans-serif;
+$fonts-map-reverse: ( 
+    // (
+    //     family: '#{$reverseFontName}',
+    //     weight: 200,
+    //     weightName: 'Light',
+    //     path: '#{$reverseFontName}/#{$reverseFontName}'
+    // ),
+    (
+        family: '#{$reverseFontName}',
+        weight: 400,
+        weightName: 'Regular',
+        path: '#{$reverseFontName}/#{$reverseFontName}'
+    ),
+    //  (
+    //     family: '#{$reverseFontName}',
+    //     weight: 600,
+    //     weightName: 'SemiBold',
+    //     path: '#{$reverseFontName}/#{$reverseFontName}'
+    // ),
+     (
+        family: '#{$reverseFontName}',
+        weight: 700,
+        weightName: 'Bold',
+        path: '#{$reverseFontName}/#{$reverseFontName}'
+    )
+);
