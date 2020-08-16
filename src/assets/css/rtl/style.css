@@ -10864,8 +10864,8 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   border-radius: 10px;
 }
 
-.rtl .content-wrapper .card-wrapper {
-  min-height: calc(100vh - 147px);
+.rtl .content-wrapper .card-wrapper-rentals {
+  min-height: calc(100vh - 315px);
 }
 
 .rtl .content-wrapper .card-wrapper .card-img {
@@ -11203,6 +11203,10 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
 .rtl .card-wrapper .card-details-bottom {
   background: #f2f2f2 !important;
   border-radius: 0 !important;
+}
+
+.rtl .rental-details-wrapper {
+  min-height: calc(100vh - 147px);
 }
 
 .rtl .selected-date-range {

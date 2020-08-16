@@ -9,8 +9,10 @@
       border-radius: 10px;
     }
   }
+  .card-wrapper-rentals{
+    min-height: calc(100vh - 315px);
+  }
   .card-wrapper {
-    min-height: calc(100vh - 147px);
     .card-img{
       flex: 1;
     }
