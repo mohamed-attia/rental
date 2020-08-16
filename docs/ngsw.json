@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1597593924855,
+  "timestamp": 1597594143845,
   "index": "/rental/test/index.html",
   "assetGroups": [
     {
@@ -12,7 +12,7 @@
         "/rental/6.c41066200c634cec277f.js",
         "/rental/favicon.ico",
         "/rental/index.html",
-        "/rental/main.34807da601c21677f0a5.js",
+        "/rental/main.2d8610f9736f6bf0e104.js",
         "/rental/manifest.webmanifest",
         "/rental/polyfills-es5.613d1909ec381c0aefb7.js",
         "/rental/polyfills.d930d539bb8335bd58ab.js",
@@ -446,8 +446,8 @@
     "/rental/assets/shared-style/mainstyle.scss": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
     "/rental/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "/rental/hinted-RB-Regular.1373d26a8b326cbcacb4.woff": "d0508b19c3f5d5bd7f10be5ab3927a032055092b",
-    "/rental/index.html": "88cca60a545c044948652375ad0ccaa94e063c07",
-    "/rental/main.34807da601c21677f0a5.js": "d3ccf1d5d31a602c9c2d1f0f742b88e8e9f8510d",
+    "/rental/index.html": "c515627d9ce237fc3fce54d2897f23aaf242ce44",
+    "/rental/main.2d8610f9736f6bf0e104.js": "73beda860e6137f07921cfc10d0ed119196bf769",
     "/rental/manifest.webmanifest": "a7308345482fa88ca7b9a068c0b83c78a682420f",
     "/rental/polyfills-es5.613d1909ec381c0aefb7.js": "e3aac0d6ebd3f9f1286da2a0bbb8631c4642986c",
     "/rental/polyfills.d930d539bb8335bd58ab.js": "afafd901ad42d2dee3196cdbd744812278777515",
