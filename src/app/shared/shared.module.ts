@@ -3,6 +3,7 @@ import {
   ModuleWithProviders,
   NgModule,
 } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import {
   HTTP_INTERCEPTORS,
   HttpClient,
@@ -21,11 +22,10 @@ import { LanguageSwitcherComponent } from "./components/language-switcher/langua
 import { LanguageUpdateService } from "./providers/language/language.service";
 import { LoaderInterceptor } from "./providers/interceptor/loader-interceptor.service";
 import { LoaderService } from "./components/loader/loader.service";
+import { MenuComponent } from './components/menu/menu.component';
 import { QueryService } from "./providers/query-service/query.service";
-import { ReactiveFormsModule } from "@angular/forms";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { UrlSerializerService } from "./providers/urlSerializer/url-serializer.service";
-import { MenuComponent } from './components/menu/menu.component';
 
 const services = [
   QueryService,
@@ -58,6 +58,7 @@ const sharedMComponents = [
 @NgModule({
   declarations: [sharedMComponents, ConvertGerogianToHijriPipe],
   imports: [
+    FormsModule,
     CommonModule,
     TranslateModule.forRoot({
       loader: {

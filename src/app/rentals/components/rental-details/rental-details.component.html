@@ -19,17 +19,17 @@
     <div class="rentals-images mt-4" *ngIf="showRentalImages">
         <div class="img-block-3 mt-1">
           <div class="row">
-              <div class="col-md-3 col-4 mb-1 p-0" *ngFor="let image of imagesList|slice:0:5">
+              <div class="col-md-3 col-4 mb-1 p-0" *ngFor="let image of imagesList|slice:0:3">
                 <ng-container>
                   <div class="img">
                     <img width="98%" height="141px" [src]="image.path" alt="">
                 </div>
                 </ng-container>
               </div>
-              <div class="col-md-3 col-4 p-0" *ngIf="imagesList.length > 5">
+              <div class="col-md-3 col-4 p-0" *ngIf="imagesList.length > 3" (click)="showRentalDetailsSlider = true">
                 <div class="right">
                     <div class="counter d-flex justify-content-center align-items-center position-relative">
-                        <span class="count">+ {{imagesList.length - 5}}</span>
+                        <span class="count">+ {{imagesList.length - 3}}</span>
                     </div>
                 </div>
               </div>
@@ -60,19 +60,75 @@
             <span class="text-capitalize">choose date</span>
         </div>
         <div class="selected-date-range">
+          <form class="form-inline">
+            <div class="form-group hidden">
+              <div class="input-group">
+                <input name="datepicker"
+                       class="form-control"
+                       ngbDatepicker
+                       #datepicker="ngbDatepicker"
+                       [autoClose]="'outside'"
+                       (dateSelect)="onDateSelection($event)"
+                       [displayMonths]="2"
+                       [dayTemplate]="t"
+                       outsideDays="hidden"
+                       [startDate]="fromDate!">
+                <ng-template #t let-date let-focused="focused">
+                  <span class="custom-day"
+                        [class.focused]="focused"
+                        [class.range]="isRange(date)"
+                        [class.faded]="isHovered(date) || isInside(date)"
+                        (mouseenter)="hoveredDate = date"
+                        (mouseleave)="hoveredDate = null">
+                    {{ date.day }}
+                  </span>
+                </ng-template>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <label>Form:</label>
+                <input #dpFromDate
+                       class="form-control" placeholder="yyyy-mm-dd"
+                       name="dpFromDate"
+                       [value]="formatter.format(fromDate)"
+                       (input)="fromDate = validateInput(fromDate, dpFromDate.value)">
+                <div class="input-group-append">
+                  <!-- <img width="15px" height="15px" (click)="datepicker.toggle()" src="assets/icons/calendar.png" alt="calendar"> -->
+                  <button class="btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button"></button>
+                </div>
+              </div>
+            </div>
+            <div class="form-group ml-2">
+              <div class="input-group">
+                <label>To:</label>
+                <input #dpToDate
+                       class="form-control" placeholder="yyyy-mm-dd"
+                       name="dpToDate"
+                       [value]="formatter.format(toDate)"
+                       (input)="toDate = validateInput(toDate, dpToDate.value)">
+                <div class="input-group-append">
+                  <!-- <img width="15px" height="15px" (click)="datepicker.toggle()" src="assets/icons/calendar.png" alt="calendar"> -->
+                  <button class="btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button"></button>
+                </div>
+              </div>
+            </div>
+          </form>
           <div class="from d-flex justify-content-between">
-            <span class="text-capitalize">from</span>
-            <span>
+            <!-- <span class="text-capitalize">from</span> -->
+            <!-- <ngbd-datepicker-range-popup></ngbd-datepicker-range-popup> -->
+            <!-- <span>
                 <img width="15px" height="15px" src="assets/icons/calendar.png" alt="calendar">
-                <span class="calendar-date">28 Jan- 28 Feb,2020</span>
-            </span>
+               <a href="avascript:void(0)"><span class="calendar-date">28 Jan- 28 Feb,2020</span></a>
+            </span> -->
         </div>
         <div class="to d-flex justify-content-between">
-            <span class="text-capitalize">to</span>
-            <span>
+            <!-- <span class="text-capitalize">to</span> -->
+            <!-- <ngbd-datepicker-range-popup></ngbd-datepicker-range-popup> -->
+            <!-- <span>
                 <img width="15px" height="15px" src="assets/icons/calendar.png" alt="">
                 <span class="calendar-date">28 Jan- 28 Feb,2020</span>
-            </span>
+            </span> -->
         </div>
         </div>
     </div>
@@ -143,4 +199,12 @@
         </button>
     </div>
 
+</div>
+
+<div class="rental-details-slider" *ngIf="showRentalDetailsSlider" >
+  <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let slide of imagesList" class="slide">
+        <img class="w-100" height="160px" [src]="slide.path" alt="">
+    </div>
+  </ngx-slick-carousel>
 </div>
