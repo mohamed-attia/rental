@@ -1,4 +1,4 @@
-import { ActivatedRoute, Params } from "@angular/router";
+import { ActivatedRoute, Params, Router } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
 import {
   NgbCalendar,
@@ -37,7 +37,8 @@ export class RentalDetailsComponent implements OnInit {
     private getRentalsListService: GetRentalsListService,
     private actRoute: ActivatedRoute,
     private calendar: NgbCalendar,
-    public formatter: NgbDateParserFormatter
+    public formatter: NgbDateParserFormatter,
+    private router:Router
   ) {
     this.fromDate = calendar.getToday();
     this.toDate = calendar.getNext(calendar.getToday(), "d", 10);
@@ -125,5 +126,9 @@ export class RentalDetailsComponent implements OnInit {
     return parsed && this.calendar.isValid(NgbDate.from(parsed))
       ? NgbDate.from(parsed)
       : currentValue;
+  }
+
+  public requestRental():void{
+    this.router.navigate([`rentals/${this.id}/request-rental`]);
   }
 }

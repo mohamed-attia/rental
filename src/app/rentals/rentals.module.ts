@@ -7,9 +7,10 @@ import { RentalsLayoutComponent } from "./layout/layout-rentals.component";
 import { RentalsRoutings } from "./rentals-routing";
 import { SharedModule } from "../shared/shared.module";
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { RequestRentalComponent } from './components/request-rental/request-rental.component';
 
 @NgModule({
-  declarations: [RentalsComponent,RentalsLayoutComponent,RentalDetailsComponent],
+  declarations: [RentalsComponent,RentalsLayoutComponent,RentalDetailsComponent,RequestRentalComponent],
   imports: [CommonModule, SharedModule, RentalsRoutings,SlickCarouselModule,FormsModule],
   providers: [],
 })
