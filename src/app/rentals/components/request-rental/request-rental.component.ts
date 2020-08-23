@@ -13,7 +13,7 @@ export class RequestRentalComponent implements OnInit {
   public isUser = false;
   public requestRentalform: FormGroup;
   public singlesValue = false;
-  public familyValue = false
+  public familyValue = false;
   constructor(
     private getRentalsListService: GetRentalsListService,
     private fb: FormBuilder
@@ -40,11 +40,11 @@ export class RequestRentalComponent implements OnInit {
       family: [""],
       singles: [""],
       insurrence: ["", Validators.required],
-      rentamount: ["", Validators.required]
+      rentamount: ["", Validators.required],
     });
   }
 
-  public onSubmit(form:FormGroup) {
+  public onSubmit(form: FormGroup) {
     // if(this.requestRentalform.controls['family'].value) {
     // }
     // if (this.requestRentalform.valid) {
@@ -55,22 +55,13 @@ export class RequestRentalComponent implements OnInit {
   }
 
   public getcheckboxFamilyValue(e) {
-    this.familyValue = e;
-    if(e) {
-      this.singlesValue = true;
-    }else {
-      this.singlesValue = false;
-    }
-    console.log('fam',this.familyValue)
-    console.log('sing',this.singlesValue)
-  }
-  public getcheckboxSinglesValue(e){
-    this.singlesValue = e;
-    if(e) {
-      this.familyValue = true;
-    }else {
-      this.familyValue = false;
-
+    console.log(e);
+    if (e === "family") {
+      this.requestRentalform.controls["family"].setValue(true);
+      this.requestRentalform.controls["singles"].setValue(false);
+    } else {
+      this.requestRentalform.controls["family"].setValue(false);
+      this.requestRentalform.controls["singles"].setValue(true);
     }
   }
 }

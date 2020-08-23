@@ -54,7 +54,7 @@
         </div>
         <div class="request-rental-type d-flex justify-content-around text-capitalize">
             <label class="checkcontainer ml-2 font-14px" for="family">family
-                <input type="checkbox" formControlName="family" (change)="getcheckboxFamilyValue($event.target.checked)"  name="address" id="family">
+                <input type="radio" formControlName="family" (click)="getcheckboxFamilyValue('Female')" value="family" name="family" id="family">
                 <span class="checkmark"></span>
                 <ng-container *ngIf="form.submitted">
                   <p class="required mb-0 validation" *ngIf="familyValue === false"> required</p>
@@ -62,7 +62,7 @@
             </label>
 
             <label class="checkcontainer ml-2 font-14px" for="singles">singles
-                <input type="checkbox"  formControlName="singles" (change)="getcheckboxSinglesValue($event.target.checked)" name="singles" id="singles">
+                <input type="radio"  formControlName="family" (click)="getcheckboxFamilyValue('Female')" value="singles" name="family" id="singles">
                 <span class="checkmark"></span>
                 <ng-container *ngIf="form.submitted">
                   <p class="required mb-0 validation" *ngIf="singlesValue === false"> required</p>
