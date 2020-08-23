@@ -15,33 +15,60 @@
         <div class="full-name mb-1">
             <label class="text-capitalize mb-1" for="fullName">full name</label>
             <input placeholder="Enter full name" formControlName="fullName"  class="form-control" type="text" name=""  >
-            <span class="validation">Please enter your full name</span>
+            <ng-container
+            *ngIf="form.submitted && requestRentalform.controls['fullName'].invalid ||
+           (requestRentalform.controls['fullName'].dirty || requestRentalform.controls['fullName'].touched)">
+            <span class="validation"
+              *ngIf="requestRentalform.controls['fullName']?.errors?.required">Please enter your full name</span>
+          </ng-container>
         </div>
         <div class="telephone-number mb-1">
             <label class="text-capitalize mb-1" for="telephone">telephone number</label>
             <input placeholder="Enter your phone number" formControlName="telephone"  class="form-control" type="text" name="telephone"  >
-            <span class="validation">Please enter your telephone number</span>
+            <ng-container
+            *ngIf="form.submitted && requestRentalform.controls['telephone'].invalid ||
+           (requestRentalform.controls['telephone'].dirty || requestRentalform.controls['telephone'].touched)">
+            <span class="validation"
+              *ngIf="requestRentalform.controls['telephone']?.errors?.required">Please enter your telephone number</span>
+          </ng-container>
         </div>
         <div class="address mb-1">
             <label class="text-capitalize mb-1" for="address">Address</label>
             <input placeholder="Enter your phone number" formControlName="address"  class="form-control" type="text" name="address"  >
-            <span class="validation">Please enter your address</span>
+            <ng-container
+            *ngIf="form.submitted && requestRentalform.controls['address'].invalid ||
+           (requestRentalform.controls['address'].dirty || requestRentalform.controls['address'].touched)">
+            <span class="validation"
+              *ngIf="requestRentalform.controls['telephone']?.errors?.required">Please enter your address</span>
+          </ng-container>
         </div>
         <div class="email mb-1">
             <label class="text-capitalize mb-1" for="">email</label>
             <input placeholder="Enter your phone number" formControlName="email" class="form-control" type="text" name="email"  >
-            <span class="validation">Please enter your email</span>
+            <ng-container
+            *ngIf="form.submitted && requestRentalform.controls['address'].invalid ||
+           (requestRentalform.controls['email'].dirty || requestRentalform.controls['email'].touched)">
+            <span class="validation"
+              *ngIf="requestRentalform.controls['email']?.errors?.required">Please enter your email</span>
+          </ng-container>
         </div>
         <div class="request-rental-type d-flex justify-content-around text-capitalize">
             <label class="checkcontainer ml-2 font-14px" for="family">family
-                <input type="checkbox" checked="checked" formControlName="family"  name="address" id="family">
+                <input type="checkbox" formControlName="family" (change)="getcheckboxFamilyValue($event.target.checked)"  name="address" id="family">
                 <span class="checkmark"></span>
+                <ng-container *ngIf="form.submitted">
+                  <p class="required mb-0 validation" *ngIf="familyValue === false"> required</p>
+                </ng-container>
             </label>
 
             <label class="checkcontainer ml-2 font-14px" for="singles">singles
-                <input type="checkbox" checked="checked" formControlName="singles" name="singles" id="singles">
+                <input type="checkbox"  formControlName="singles" (change)="getcheckboxSinglesValue($event.target.checked)" name="singles" id="singles">
                 <span class="checkmark"></span>
+                <ng-container *ngIf="form.submitted">
+                  <p class="required mb-0 validation" *ngIf="singlesValue === false"> required</p>
+                </ng-container>
             </label>
+
         </div>
     <div class="official-document">
         <div class="official-document-title mb-2 d-flex align-items-center justify-content-between">
