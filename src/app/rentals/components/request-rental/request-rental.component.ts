@@ -31,8 +31,14 @@ export class RequestRentalComponent implements OnInit {
 
   private createForm() {
     this.requestRentalform = this.fb.group({
-      userNameOrEmailAddressOrPhone: ["", Validators.required],
-      password: ["", Validators.required],
+      fullName: ["", Validators.required],
+      telephone: ["", Validators.required],
+      address: ["", Validators.required],
+      email: ["", Validators.required],
+      family: ["", Validators.required],
+      singles: ["", Validators.required],
+      insurrence: ["", Validators.required],
+      rentamount: ["", Validators.required]
     });
   }
 

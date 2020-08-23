@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 
 import { LanguageUpdateService } from "../../providers/language/language.service";
+import {Location} from '@angular/common';
 import { Router } from "@angular/router";
 
 @Component({
@@ -10,6 +11,7 @@ import { Router } from "@angular/router";
 export class RequestRentalHeaderComponent implements OnInit {
   public title: string;
   constructor(
+    private _location: Location,
     private language: LanguageUpdateService,
     private router: Router
   ) {}
@@ -21,6 +23,10 @@ export class RequestRentalHeaderComponent implements OnInit {
         this.title = "QR Code Information";
       }
     });
+  }
+
+  backClicked() {
+    this._location.back();
   }
 
   public logOut() {
