@@ -11086,6 +11086,11 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
           flex: 1;
 }
 
+.rtl .card-wrapper .rentals-images .img-block-3 .right {
+  position: relative;
+  top: -4px;
+}
+
 .rtl .card-wrapper .rentals-images .img-block-3 .right .counter {
   width: 100%;
   height: 141px;
@@ -11203,6 +11208,15 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   margin-left: 4px;
 }
 
+.rtl .card-wrapper .card-details .form-group:first-child {
+  display: none;
+}
+
+.rtl .card-wrapper .card-details .form-group .input-group-append button {
+  position: relative;
+  top: 0;
+}
+
 .rtl .card-wrapper .card-details-bottom {
   background: #f2f2f2 !important;
   border-radius: 0 !important;
@@ -11213,7 +11227,7 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
 }
 
 .rtl .selected-date-range {
-  width: 37%;
+  width: 100%;
   margin: auto;
 }
 
@@ -11249,6 +11263,21 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   top: 0px;
   border: 0;
   background: transparent;
+}
+
+.rtl .request-rental-header {
+  background: #fff;
+  padding: 4px;
+  box-shadow: 0px 1px 8px #cccaca;
+  -moz-box-shadow: 0px 1px 8px #cccaca;
+  -o-box-shadow: 0px 1px 8px #cccaca;
+  -webkit-box-shadow: 0px 1px 8px #cccaca;
+  border-radius: 10px;
+}
+
+.rtl .request-rental-header button {
+  position: relative;
+  top: 0px;
 }
 
 .rtl .checkcontainer {
@@ -11525,6 +11554,10 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   .rtl .selected-date-range {
     width: 90%;
     margin: auto;
+  }
+  .rtl .input-group label {
+    position: relative;
+    top: 6px;
   }
 }
 
