@@ -11317,6 +11317,91 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   transform: rotate(45deg);
 }
 
+.ltr .request-rental-container {
+  min-height: calc(100vh - 115px);
+}
+
+.ltr .request-rental-container label {
+  font-weight: 500;
+  margin: 0;
+  color: #434343;
+}
+
+.ltr .request-rental-container .guest-btn {
+  background-color: #fff !important;
+  border: 1px solid #5058a6 !important;
+  color: #5058a6;
+  border-radius: 25px;
+  width: 85px;
+  padding: 0;
+}
+
+.ltr .request-rental-container .login-register-btn {
+  background-color: #5058a6 !important;
+  padding: 0;
+  width: 134px;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.ltr .request-rental-container .request-rental-unit-info span:first-child {
+  color: #979797;
+}
+
+.ltr .request-rental-container input {
+  border-radius: 25px;
+  background: #fafafa;
+}
+
+.ltr .request-rental-container .validation {
+  font-size: 14px;
+  color: #ff6262;
+}
+
+.ltr .request-rental-container .official-document .official-document-title {
+  font-weight: 500;
+}
+
+.ltr .request-rental-container .official-document .official-document-content .post-pictures {
+  border: 1px dashed #ff6262;
+  padding: 9px 12px;
+}
+
+.ltr .request-rental-container .official-document .official-document-content .post-pictures ul {
+  list-style: decimal;
+}
+
+.ltr .request-rental-container .official-document .official-document-content .post-pictures p:first-child {
+  font-weight: 500;
+  color: #5058a6;
+}
+
+.ltr .request-rental-container .official-document .official-document-content .post-pictures p:last-child {
+  color: #7a7a7a;
+  font-size: 14px;
+}
+
+.ltr .request-rental-container .official-document .official-document-content .post-pictures .pictures-info {
+  font-size: 14px;
+}
+
+.ltr .request-rental-container .submit-btn button {
+  background-color: #5058a6 !important;
+  border-radius: 20px;
+  color: #fff;
+  width: 180px;
+  font-weight: 500;
+  outline: 0;
+  -webkit-box-shadow: unset !important;
+          box-shadow: unset !important;
+}
+
+.ltr .request-rental-container .terms {
+  text-decoration: underline;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
 .ltr .form-control,
 .ltr .btn-primary {
   border-radius: 30px;

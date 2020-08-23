@@ -1,0 +1,77 @@
+.request-rental-container{
+    min-height: calc(100vh - 115px);
+    label{
+        font-weight: 500;
+        margin: 0;
+        color: #434343;
+    }
+    .guest-btn{
+        background-color: #fff !important;
+        border: 1px solid #5058a6 !important;
+        color: #5058a6;
+        border-radius: 25px;
+        width: 85px;
+        padding: 0;
+    }
+    .login-register-btn{
+        background-color: #5058a6 !important;
+        padding: 0;
+        width: 134px;
+        border-radius: 20px;
+        color: #fff;
+    }
+    .request-rental-unit-info{
+        span:first-child{
+            color: #979797;
+        }
+    }
+    input{
+        border-radius: 25px;
+        background: #fafafa;
+    }
+    .validation{
+        font-size: 14px;
+        color: #ff6262;
+    }
+    .official-document{
+        .official-document-title{
+            font-weight: 500;
+        }
+        .official-document-content{
+            .post-pictures{
+                border: 1px dashed #ff6262;
+                padding: 9px 12px;
+                ul{
+                    list-style: decimal;
+                }
+                p:first-child{
+                    font-weight: 500;
+                    color:#5058a6
+                }
+                p:last-child{
+                    color: #7a7a7a;
+                    font-size: 14px;
+                }
+                .pictures-info{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    .submit-btn{
+        button{
+            background-color: #5058a6 !important;
+            border-radius: 20px;
+            color: #fff;
+            width: 180px;
+            font-weight: 500;
+            outline: 0;
+            box-shadow: unset !important;
+        }
+    }
+    .terms{
+        text-decoration: underline;
+        text-transform: capitalize;
+        font-weight: 500;
+    }
+}
