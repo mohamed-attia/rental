@@ -11265,6 +11265,21 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   background: transparent;
 }
 
+.ltr .request-rental-header {
+  background: #fff;
+  padding: 4px;
+  box-shadow: 0px 1px 8px #cccaca;
+  -moz-box-shadow: 0px 1px 8px #cccaca;
+  -o-box-shadow: 0px 1px 8px #cccaca;
+  -webkit-box-shadow: 0px 1px 8px #cccaca;
+  border-radius: 10px;
+}
+
+.ltr .request-rental-header button {
+  position: relative;
+  top: 0px;
+}
+
 .ltr .checkcontainer {
   display: block;
   position: relative;
