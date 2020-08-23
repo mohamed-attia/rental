@@ -147,6 +147,17 @@
         margin-left: 4px;
       }
     }
+    .form-group:first-child{
+      display:none
+    }
+    .form-group{
+      .input-group-append{
+        button{
+          position: relative;
+          top: 0;
+        }
+      }
+    }
   }
   .card-details-bottom {
     background: #f2f2f2 !important;
@@ -159,7 +170,7 @@
 }
 
 .selected-date-range {
-  width:37%;
+  width:100%;
   margin: auto;
 }
 video {

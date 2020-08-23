@@ -60,8 +60,8 @@
             <span class="text-capitalize">choose date</span>
         </div>
         <div class="selected-date-range">
-          <form class="form-inline">
-            <div class="form-group hidden">
+          <form class="form-inline d-flex justify-content-center">
+            <div class="form-group hidden"> 
               <div class="input-group">
                 <input name="datepicker"
                        class="form-control"
@@ -87,9 +87,9 @@
             </div>
             <div class="form-group">
               <div class="input-group">
-                <label>Form:</label>
+                <label class="mr-1 ml-1">From:</label>
                 <input #dpFromDate
-                       class="form-control" placeholder="yyyy-mm-dd"
+                       class="form-control border-0" placeholder="yyyy-mm-dd"
                        name="dpFromDate"
                        [value]="formatter.format(fromDate)"
                        (input)="fromDate = validateInput(fromDate, dpFromDate.value)">
@@ -99,11 +99,11 @@
                 </div>
               </div>
             </div>
-            <div class="form-group ml-2">
+            <div class="form-group">
               <div class="input-group">
-                <label>To:</label>
+                <label class="mr-1 ml-1">To:</label>
                 <input #dpToDate
-                       class="form-control" placeholder="yyyy-mm-dd"
+                       class="form-control border-0" placeholder="yyyy-mm-dd"
                        name="dpToDate"
                        [value]="formatter.format(toDate)"
                        (input)="toDate = validateInput(toDate, dpToDate.value)">

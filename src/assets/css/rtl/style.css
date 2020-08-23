@@ -11203,6 +11203,15 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   margin-left: 4px;
 }
 
+.rtl .card-wrapper .card-details .form-group:first-child {
+  display: none;
+}
+
+.rtl .card-wrapper .card-details .form-group .input-group-append button {
+  position: relative;
+  top: 0;
+}
+
 .rtl .card-wrapper .card-details-bottom {
   background: #f2f2f2 !important;
   border-radius: 0 !important;
@@ -11213,7 +11222,7 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
 }
 
 .rtl .selected-date-range {
-  width: 37%;
+  width: 100%;
   margin: auto;
 }
 
