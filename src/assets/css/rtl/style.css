@@ -11535,6 +11535,10 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
     width: 90%;
     margin: auto;
   }
+  .rtl .input-group label {
+    position: relative;
+    top: 6px;
+  }
 }
 
 @media (min-width: 1024px) and (max-width: 1366px) {
