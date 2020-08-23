@@ -1,20 +1,20 @@
 <div class="request-rental-container">
     <div class="request-rental-identity d-flex justify-content-around mb-3">
         <button class="btn btn-primay pl-0 pr-0 text-capitalize guest-btn">guest</button>
-        <button class="btn btn-primay pl-0 pr-0 text-capitalize login-register-btn">login/register</button>
+        <button class="btn btn-primay pl-0 pr-0 text-capitalize login-register-btn" *ngIf="!isUser" [routerLink]="['../../../user/register']">login/register</button>
     </div>
     <div class="request-rental-unit-info mb-2 d-flex justify-content-between text-capitalize">
         <span>chalet 990</span>
-        <span>alahmudi, khiran</span>
+        <span>{{requestdata.rentalName}}</span>
     </div>
     <div class="request-rental-date mb-3 text-capitalize text-center">
         <img width="20px" src="assets/icons/calendar.png" alt="">
-        <span class="mr-1 ml-1">28 jan - 28 feb,2020</span>
+        <span class="mr-1 ml-1">From {{requestdata?.fromDate?.month}}/{{requestdata?.fromDate?.day}} To: {{requestdata?.toDate?.month}}/{{requestdata?.toDate?.day}},{{requestdata?.toDate?.year}}</span>
     </div>
-    <form action="">
+    <form #form="ngForm" [formGroup]="requestRentalform" (ngSubmit)="onSubmit(form)" novalidate>
         <div class="full-name mb-1">
             <label class="text-capitalize mb-1" for="">full name</label>
-            <input placeholder="Enter full name" class="form-control" type="text" name="" id="">
+            <input placeholder="Enter full name"  class="form-control" type="text" name="" id="">
             <span class="validation">Please enter your full name</span>
         </div>
         <div class="telephone-number mb-1">

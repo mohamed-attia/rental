@@ -19,7 +19,6 @@ currentcomponentName=''
   constructor(private location: Location,private route: Router, private actRoute:ActivatedRoute) {
     route.events.subscribe(val => {
       this.currentcomponentName = actRoute.snapshot.children[0].component['name']
-      console.log(actRoute.snapshot.children[0].component['name'])
     });
   }
 

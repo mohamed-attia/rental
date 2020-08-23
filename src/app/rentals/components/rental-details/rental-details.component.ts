@@ -52,7 +52,6 @@ export class RentalDetailsComponent implements OnInit {
     this.actRoute.params.subscribe((params: Params) => {
       this.id = params["id"];
       this.getRentalDetails();
-      console.log(this.id);
     });
   }
 
@@ -66,7 +65,6 @@ export class RentalDetailsComponent implements OnInit {
             this.imagesList.push(this.rentalDetails["images"][i]);
             this.videoList.push(this.rentalDetails["videos"][i]);
           }
-          console.log(this.imagesList);
         }
       });
   }
@@ -130,5 +128,15 @@ export class RentalDetailsComponent implements OnInit {
 
   public requestRental():void{
     this.router.navigate([`rentals/${this.id}/request-rental`]);
+    this.setRentalDate()
+  }
+
+  setRentalDate() {
+ let obj = {
+      "fromDate":this.fromDate,
+      "toDate":this.toDate,
+      "rentalName":this.rentalDetails.name
+    }
+    this.getRentalsListService.setRentalData(obj);
   }
 }

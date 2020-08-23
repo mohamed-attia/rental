@@ -23,14 +23,14 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
 
-  createForm() {
+  private createForm() {
     this.userLoginForm = this.fb.group({
       userNameOrEmailAddressOrPhone: ["", Validators.required],
       password: ["", Validators.required],
     });
   }
 
-  onSubmit(form:FormGroup) {
+  public onSubmit(form:FormGroup) {
     if (this.userLoginForm.valid) {
       this.rentalUserService
         .sendUserLoginData(this.userLoginForm.value)
