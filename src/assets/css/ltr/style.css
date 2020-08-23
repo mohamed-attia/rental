@@ -11086,6 +11086,11 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
           flex: 1;
 }
 
+.ltr .card-wrapper .rentals-images .img-block-3 .right {
+  position: relative;
+  top: -4px;
+}
+
 .ltr .card-wrapper .rentals-images .img-block-3 .right .counter {
   width: 100%;
   height: 141px;

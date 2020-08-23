@@ -26,16 +26,44 @@
                 </div>
                 </ng-container>
               </div>
-              <div class="col-md-3 col-4 p-0" *ngIf="imagesList.length > 3" (click)="showRentalDetailsSlider = true">
-                <div class="right">
-                    <div class="counter d-flex justify-content-center align-items-center position-relative">
-                        <span class="count">+ {{imagesList.length - 3}}</span>
+              <div class="col-md-3 col-4 p-0" *ngIf="imagesList.length > 3">
+
+                <button type="button" (click)="showRentalDetailsSlider = true" class="btn btn-primary p-0 w-100" data-toggle="modal" data-target="#exampleModal">
+                    <div class="right">
+                        <div class="counter d-flex justify-content-center align-items-center position-relative">
+                            <span class="count">+ {{imagesList.length - 3}}</span>
+                        </div>
                     </div>
-                </div>
+                  </button>
+
               </div>
           </div>
         </div>
     </div>
+    <!-- pop up -->
+      
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="rental-details-slider" *ngIf="showRentalDetailsSlider" >
+                    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                        <div ngxSlickItem *ngFor="let slide of imagesList" class="slide">
+                            <img class="w-100" height="160px" [src]="slide.path" alt="">
+                        </div>
+                    </ngx-slick-carousel>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- pop up -->
     <div class="card-details mt-2">
         <div class="unit-name">
             <span class="title text-capitalize">{{rentalDetails?.name}}</span>
@@ -199,12 +227,4 @@
         </button>
     </div>
 
-</div>
-
-<div class="rental-details-slider" *ngIf="showRentalDetailsSlider" >
-  <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-    <div ngxSlickItem *ngFor="let slide of imagesList" class="slide">
-        <img class="w-100" height="160px" [src]="slide.path" alt="">
-    </div>
-  </ngx-slick-carousel>
 </div>

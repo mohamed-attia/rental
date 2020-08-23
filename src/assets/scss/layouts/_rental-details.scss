@@ -43,6 +43,8 @@
         flex: 1;
       }
       .right {
+        position: relative;
+        top: -4px;
         .counter {
           width: 100%;
           height: 141px;
