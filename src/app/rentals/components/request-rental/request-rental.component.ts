@@ -12,24 +12,54 @@ export class RequestRentalComponent implements OnInit {
   public isGuest = false;
   public isUser = false;
   public requestRentalform: FormGroup;
-  public singlesValue = false;
-  public familyValue = false;
+  public familyOrSinglesValue = false;
   public showmodal = false;
+  public showPayment = false;
+
   constructor(
     private getRentalsListService: GetRentalsListService,
     private fb: FormBuilder
-  ) {}
-
-  ngOnInit() {
+  ) {
     if (localStorage.getItem("accessToken")) {
       this.isUser = true;
     }
+  }
 
+  ngOnInit() {
     this.getRentalsListService.getRentalData().subscribe((res) => {
       this.requestdata = res;
     });
 
     this.createForm();
+  }
+
+  public monthMaping(month){
+    switch(month){
+      case 1:
+        return 'Jan'
+      case 2:
+        return 'Feb'
+      case 3:
+        return 'March'
+      case 4:
+        return 'April'
+      case 5:
+        return 'May'
+      case 6:
+        return 'Jun'
+      case 7:
+        return 'Jul'
+      case 8:
+        return 'Aug'
+      case 9:
+        return 'Sept'
+      case 10:
+        return 'Oct'
+      case 11:
+        return 'Nov'
+      case 12:
+        return 'Dec'
+    }
   }
 
   private createForm() {
@@ -56,7 +86,7 @@ export class RequestRentalComponent implements OnInit {
   }
 
   public getcheckboxFamilyValue(e) {
-    console.log(e);
+    this.familyOrSinglesValue = true;
     if (e === "family") {
       this.requestRentalform.controls["family"].setValue(true);
       this.requestRentalform.controls["singles"].setValue(false);

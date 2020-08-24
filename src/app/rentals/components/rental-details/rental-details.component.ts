@@ -4,6 +4,7 @@ import {
   NgbCalendar,
   NgbDate,
   NgbDateParserFormatter,
+  NgbDateStruct,
 } from "@ng-bootstrap/ng-bootstrap";
 
 import { GetRentalsListService } from "../../service/rental.service";
@@ -21,9 +22,9 @@ export class RentalDetailsComponent implements OnInit {
   public imagesList = [];
   public videoList = [];
   public showRentalDetailsSlider: boolean = false;
-  public hoveredDate: NgbDate | null = null;
-  public fromDate: NgbDate | null;
-  public toDate: NgbDate | null;
+  public hoveredDate: NgbDateStruct | null = null;
+  public fromDate: NgbDateStruct | null;
+  public toDate: NgbDateStruct | null;
   public slideConfig = {
     slidesToShow: 1,
     slidesToScroll: 1,
