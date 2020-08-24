@@ -6,7 +6,6 @@
       color: #fff !important;
       border-radius: 20px;
       text-transform: capitalize;
-      font-family: "Roboto", "sans-seirf";
       font-size: 12px;
     }
     .video {
@@ -14,7 +13,6 @@
       color: #000 !important;
       border-radius: 20px;
       text-transform: capitalize;
-      font-family: "Roboto", "sans-seirf";
       font-size: 12px;
       box-shadow: 0px 2px 9px #e2e2e2 !important;
       -moz-box-shadow: 0px 2px 9px #e2e2e2 !important;
@@ -59,7 +57,6 @@
   }
   .from,
   .to {
-    font-family: "Roboto", "sans-seirf";
     font-size: 14px;
     .calendar-date {
       font-size: 12px;
@@ -75,11 +72,7 @@
     box-shadow: 3px 0px 10px #eee;
     .title {
       font-size: 14px;
-      font-family: "Roboto", "sans-seirf";
       font-weight: 500;
-      span {
-        font-family: "Roboto", "sans-seirf";
-      }
     }
     .unit-name {
       display: flex;
@@ -87,7 +80,6 @@
       .location {
         color: #909090;
         font-size: 12px;
-        font-family: "Roboto", "sans-seirf";
       }
     }
     .unit-descrption {
@@ -96,21 +88,18 @@
         font-size: 13px;
         color: #999;
         width: 97%;
-        font-family: "Roboto", "sans-seirf";
       }
     }
     .unit-location {
       p {
         font-size: 13px;
         color: #5058a6;
-        font-family: "Roboto", "sans-seirf";
       }
     }
     .more {
       .more-rental-details {
         font-size: 13px;
         color: #5058a6;
-        font-family: "Roboto", "sans-seirf";
       }
     }
     .content {
@@ -135,14 +124,12 @@
       padding: 6px 22px !important;
       text-transform: capitalize;
       width: 102px;
-      font-family: "Roboto", "sans-seirf";
     }
     .chat-btn,
     .call-btn {
       color: #000;
       background-color: #fff !important;
       border-radius: 20px;
-      font-family: "Roboto", "sans-seirf";
       span {
         text-transform: capitalize;
         margin-left: 4px;
