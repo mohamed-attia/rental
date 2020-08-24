@@ -11208,8 +11208,8 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   margin-left: 4px;
 }
 
-.rtl .card-wrapper .card-details .form-group:first-child {
-  display: none;
+.rtl .card-wrapper .card-details .form-group:first-child .input-group input {
+  border: 0;
 }
 
 .rtl .card-wrapper .card-details .form-group .input-group-append button {

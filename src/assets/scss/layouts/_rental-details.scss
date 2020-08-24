@@ -1,5 +1,4 @@
 .card-wrapper {
-
   .card-button {
     // should be active class
     .images {
@@ -24,8 +23,8 @@
     }
   }
 
-  .rentals-video{
-    padding:0 15px;
+  .rentals-video {
+    padding: 0 15px;
   }
 
   .rentals-images {
@@ -61,11 +60,11 @@
   .from,
   .to {
     font-family: "Roboto", "sans-seirf";
-    font-size:14px;
-    .calendar-date{
+    font-size: 14px;
+    .calendar-date {
       font-size: 12px;
       font-weight: 500;
-      margin-#{$left}:6px
+      margin-#{$left}: 6px;
     }
   }
   .card-details {
@@ -149,12 +148,16 @@
         margin-left: 4px;
       }
     }
-    .form-group:first-child{
-      display:none
+    .form-group:first-child {
+      .input-group {
+        input {
+          border: 0;
+        }
+      }
     }
-    .form-group{
-      .input-group-append{
-        button{
+    .form-group {
+      .input-group-append {
+        button {
           position: relative;
           top: 0;
         }
@@ -167,14 +170,15 @@
   }
 }
 
-.rental-details-wrapper{
+.rental-details-wrapper {
   min-height: calc(100vh - 147px);
 }
 
 .selected-date-range {
-  width:100%;
+  width: 100%;
   margin: auto;
 }
+
 video {
-  margin-#{$right}:1%;
+  margin-#{$right}: 1%;
 }
