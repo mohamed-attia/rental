@@ -105,7 +105,10 @@
     <p class="mt-3">By submitting this rental request you approve over the renting <a class="terms" href="#">terms and condition</a></p>
     <div class="submit-btn text-center">
         <button type="submit" class="btn btn-primay text-capitalize">submit request</button>
+        <button type="button" class="btn btn-primay text-capitalize" (click)="showmodal = !showmodal">show moadal</button>
     </div>
   </form>
 
 </div>
+
+<app-requestrentalspopup *ngIf="showmodal"></app-requestrentalspopup>

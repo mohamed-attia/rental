@@ -14,6 +14,7 @@ export class RequestRentalComponent implements OnInit {
   public requestRentalform: FormGroup;
   public singlesValue = false;
   public familyValue = false;
+  public showmodal = false;
   constructor(
     private getRentalsListService: GetRentalsListService,
     private fb: FormBuilder

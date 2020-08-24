@@ -5,12 +5,13 @@ import { RentalDetailsComponent } from './components/rental-details/rental-detai
 import {RentalsComponent} from './components/rentals/rentals.component'
 import { RentalsLayoutComponent } from "./layout/layout-rentals.component";
 import { RentalsRoutings } from "./rentals-routing";
+import { ReqRentConfirmPopupComponent } from './components/request-confirmation-popup/request-confirmation-popup';
+import { RequestRentalComponent } from './components/request-rental/request-rental.component';
 import { SharedModule } from "../shared/shared.module";
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { RequestRentalComponent } from './components/request-rental/request-rental.component';
 
 @NgModule({
-  declarations: [RentalsComponent,RentalsLayoutComponent,RentalDetailsComponent,RequestRentalComponent],
+  declarations: [RentalsComponent,RentalsLayoutComponent,RentalDetailsComponent,RequestRentalComponent,ReqRentConfirmPopupComponent],
   imports: [CommonModule, SharedModule, RentalsRoutings,SlickCarouselModule,FormsModule],
   providers: [],
 })
