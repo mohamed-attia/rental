@@ -11253,6 +11253,7 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
 .rtl .request-rental-header button {
   position: relative;
   top: 0px;
+  outline: 0;
 }
 
 .rtl .checkcontainer {

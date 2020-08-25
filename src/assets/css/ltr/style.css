@@ -11253,6 +11253,7 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 .ltr .request-rental-header button {
   position: relative;
   top: 0px;
+  outline: 0;
 }
 
 .ltr .checkcontainer {
