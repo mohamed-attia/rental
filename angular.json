@@ -28,7 +28,6 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/assets/css/rtl/style.css",
               "src/assets/css/ltr/style.css",
               "node_modules/slick-carousel/slick/slick.scss",
