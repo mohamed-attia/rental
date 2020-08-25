@@ -10885,7 +10885,6 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 
 .ltr .content-wrapper .card-wrapper .card-content .unit-name {
   font-size: 13px;
-  font-family: 'Roboto', sans-serif;
 }
 
 .ltr .content-wrapper .card-wrapper .card {
@@ -10922,7 +10921,6 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 .ltr .content-wrapper .card-wrapper .card .card-cost span,
 .ltr .content-wrapper .card-wrapper .card .card-members span {
   font-size: 12px;
-  font-family: 'Roboto', sans-serif;
 }
 
 .ltr .content-wrapper .card-wrapper .card .card-days,
@@ -10953,7 +10951,6 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   color: #5058a6;
   font-size: 12px;
   padding: 0 12px;
-  font-family: 'Roboto', sans-serif;
 }
 
 .ltr .container-fluid .login-title {
@@ -11031,10 +11028,6 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   right: -7px;
 }
 
-.ltr * {
-  font-family: "Roboto", sans-serif;
-}
-
 .ltr .SignIn button.btn-primary {
   border-radius: 30px;
   background-color: #5058a6 !important;
@@ -11046,7 +11039,6 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   color: #fff !important;
   border-radius: 20px;
   text-transform: capitalize;
-  font-family: "Roboto", "sans-seirf";
   font-size: 12px;
 }
 
@@ -11055,7 +11047,6 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   color: #000 !important;
   border-radius: 20px;
   text-transform: capitalize;
-  font-family: "Roboto", "sans-seirf";
   font-size: 12px;
   box-shadow: 0px 2px 9px #e2e2e2 !important;
   -moz-box-shadow: 0px 2px 9px #e2e2e2 !important;
@@ -11105,7 +11096,6 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 
 .ltr .card-wrapper .from,
 .ltr .card-wrapper .to {
-  font-family: "Roboto", "sans-seirf";
   font-size: 14px;
 }
 
@@ -11127,12 +11117,7 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 
 .ltr .card-wrapper .card-details .title {
   font-size: 14px;
-  font-family: "Roboto", "sans-seirf";
   font-weight: 500;
-}
-
-.ltr .card-wrapper .card-details .title span {
-  font-family: "Roboto", "sans-seirf";
 }
 
 .ltr .card-wrapper .card-details .unit-name {
@@ -11147,7 +11132,6 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 .ltr .card-wrapper .card-details .unit-name .location {
   color: #909090;
   font-size: 12px;
-  font-family: "Roboto", "sans-seirf";
 }
 
 .ltr .card-wrapper .card-details .unit-descrption p {
@@ -11155,19 +11139,16 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   font-size: 13px;
   color: #999;
   width: 97%;
-  font-family: "Roboto", "sans-seirf";
 }
 
 .ltr .card-wrapper .card-details .unit-location p {
   font-size: 13px;
   color: #5058a6;
-  font-family: "Roboto", "sans-seirf";
 }
 
 .ltr .card-wrapper .card-details .more .more-rental-details {
   font-size: 13px;
   color: #5058a6;
-  font-family: "Roboto", "sans-seirf";
 }
 
 .ltr .card-wrapper .card-details .content span {
@@ -11191,7 +11172,6 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   padding: 6px 22px !important;
   text-transform: capitalize;
   width: 102px;
-  font-family: "Roboto", "sans-seirf";
 }
 
 .ltr .card-wrapper .card-details .chat-btn,
@@ -11199,7 +11179,6 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   color: #000;
   background-color: #fff !important;
   border-radius: 20px;
-  font-family: "Roboto", "sans-seirf";
 }
 
 .ltr .card-wrapper .card-details .chat-btn span,
@@ -11253,10 +11232,6 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   top: 5px;
   left: 17px;
   background-color: #fff;
-}
-
-.ltr .header-wrapper span {
-  font-family: "Roboto", sans-serif;
 }
 
 .ltr .header-wrapper .notification {
@@ -11431,6 +11406,33 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   font-weight: 500;
 }
 
+.ltr .screeshot .screenshot-btn button {
+  background-color: unset !important;
+  border: unset !important;
+  -webkit-box-shadow: unset !important;
+          box-shadow: unset !important;
+  outline: 0 !important;
+}
+
+.ltr .screeshot .screenshot-btn button span {
+  color: #000;
+}
+
+.ltr .request-msg {
+  text-shadow: 1px 0 10px #aaa;
+}
+
+.ltr .track-request button {
+  background-color: #5058a6 !important;
+  border: 1px solid #5058a6 !important;
+  -webkit-box-shadow: unset !important;
+          box-shadow: unset !important;
+  outline: 0 !important;
+  width: 185px;
+  border-radius: 25px;
+  text-transform: capitalize;
+}
+
 .ltr .form-control,
 .ltr .btn-primary {
   border-radius: 30px;
@@ -11565,6 +11567,17 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   .ltr .content-background {
     width: 50%;
   }
+}
+
+@font-face {
+  .ltr {
+    font-family: roboto;
+    src: url(../../fonts/Roboto/Roboto-Medium.ttf);
+  }
+}
+
+.ltr body * {
+  font-family: roboto !important;
 }
 
 body {

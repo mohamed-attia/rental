@@ -1,8 +1,13 @@
 @font-face {
-  font-family: Roboto-Meduim;
+  font-family: roboto;
   src: url(../../fonts/Roboto/Roboto-Medium.ttf);
 }
 
-body{
-    font-family: Roboto-Meduim !important;
+// .rtl body,
+// .ltr body{
+//   font-family: Roboto-Meduim !important;
+// }
+
+body *{
+  font-family: roboto !important;
 }
