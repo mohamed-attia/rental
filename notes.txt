@@ -1,0 +1,12 @@
+for (var m = moment(this.startDate); m.diff(this.endDate, 'days') <= 0; m.add(1, 'days')) {
+
+                let userShiftDayToAdd = new UserShiftDay();
+                userShiftDayToAdd.userId = user.id;
+                userShiftDayToAdd.shiftIds.push(this.selectedShift.shift.id);
+                userShiftDayToAdd.shiftNames.push(this.selectedShift.shift.nameEn);
+                userShiftDayToAdd.userName = user.name;
+                userShiftDayToAdd.date = m.format('DD/MM/YYYY');
+/////////////////////////////////////////////////////////////////////////////////////
+/api/services/app/UnitRequests/CreateOrEdit
+
+​/api​/Document​/UploadRequestFileToS3
