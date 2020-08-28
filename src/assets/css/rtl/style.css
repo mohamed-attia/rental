@@ -11322,6 +11322,28 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   transform: rotate(45deg);
 }
 
+.rtl .fileUploader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.rtl .fileUploader-images {
+  border: 1px dashed red;
+  margin: 5px;
+}
+
+.rtl .fileUploader-uploadBtn-label {
+  background: #fff;
+  border: 1px dashed red;
+  cursor: pointer;
+  padding: 10px;
+  display: table;
+}
+
 .rtl .request-rental-container {
   min-height: calc(100vh - 115px);
 }

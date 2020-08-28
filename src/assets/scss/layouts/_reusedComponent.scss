@@ -66,3 +66,21 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+.fileUploader{
+  display: flex;
+    align-items: center;
+  &-images{
+    border: 1px dashed red;
+    margin: 5px;
+  }
+  &-uploadBtn{
+    &-label {
+      background:#fff;
+      border:1px dashed red;
+      cursor: pointer;
+      padding:10px;
+      display: table;
+    }
+  }
+
+}

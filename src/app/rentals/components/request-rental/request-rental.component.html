@@ -16,12 +16,12 @@
       <div class="" formGroupName="user">
         <div class="full-name mb-1">
             <label class="text-capitalize mb-1" for="fullName">full name</label>
-            <input placeholder="Enter full name" formControlName="fullName"  class="form-control" type="text" name=""  >
+            <input placeholder="Enter full name" formControlName="fullName"  class="form-control" type="text" name="fullName"  >
             <ng-container
-            *ngIf="form.submitted && requestRentalform.get('user').get('fullName').invalid ||
+            *ngIf="form.submitted && requestRentalform.get('user')?.get('fullName').invalid ||
           (requestRentalform.get('user').get('fullName').dirty|| requestRentalform.get('user').get('fullName').touched)">
             <span class="validation"
-              *ngIf="requestRentalform.get('user').get('fullName')?.errors?.required">Please enter your full name</span>
+              *ngIf="requestRentalform.get('user')?.get('fullName')?.errors?.required">Please enter your full name</span>
           </ng-container>
         </div>
 
@@ -30,7 +30,7 @@
             <input placeholder="Enter your phone number" formControlName="phoneNumber"  class="form-control" type="text" name="phoneNumber"  >
            <ng-container
             *ngIf="form.submitted && requestRentalform.get('user').get('phoneNumber').invalid ||
-          (requestRentalform.get('user').get('phoneNumber').dirty || requestRentalform.get('user').get('phoneNumber').touched)">
+          (requestRentalform.get('user')?.get('phoneNumber')?.dirty || requestRentalform.get('user').get('phoneNumber').touched)">
             <span class="validation"
               *ngIf="requestRentalform.get('user').get('phoneNumber')?.errors?.required">Please enter your telephone number</span>
           </ng-container>
@@ -41,9 +41,9 @@
             <input placeholder="Enter your phone number" formControlName="address"  class="form-control" type="text" name="address"  >
              <ng-container
             *ngIf="form.submitted && requestRentalform.get('user').get('address').invalid ||
-          (requestRentalform.get('user').get('address').dirty || requestRentalform.get('user').get('address').touched)">
+          (requestRentalform.get('user')?.get('address')?.dirty || requestRentalform.get('user')?.get('address').touched)">
             <span class="validation"
-              *ngIf="requestRentalform.get('user').get('address')?.errors?.required">Please enter your address</span>
+              *ngIf="requestRentalform.get('user')?.get('address')?.errors?.required">Please enter your address</span>
           </ng-container>
         </div>
 
@@ -84,9 +84,19 @@
         </div>
         <div class="official-document-content">
             <div class="post-pictures mt-2">
-              <input type="file"
-                     id="file"
-                     (change)="attachFiles($event.target.files)">
+
+              <div class="fileUploader">
+                <div class="fileUploader-images">
+                  <img width="100px" height="100px" src="assets/images/light.PNG" alt="">
+                </div>
+                <div class="fileUploader-uploadBtn">
+                  <input id="fileupload"  type="file" placeholder="file path" hidden (change)="attachFiles($event.target.files)"/>
+                    <label for="fileupload" class="fileUploader-uploadBtn-label">
+                      Select File
+                    </label>
+                </div>
+              </div>
+
                 <p class="mb-0 text-center">Post more pictures</p>
                 <p class="mb-0 text-black-50">Limited at least 4 images. maximum of 20 images and do not exceed over 10 mb</p>
                 <div class="pictures-info">
