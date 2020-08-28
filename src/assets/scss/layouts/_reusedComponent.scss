@@ -72,15 +72,29 @@
   &-images{
     border: 1px dashed red;
     margin: 5px;
+    width: 103px;
+    height: 102px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   &-uploadBtn{
+    margin:5px;
     &-label {
-      background:#fff;
-      border:1px dashed red;
+      background: #fff;
+      border: 1px dashed red;
       cursor: pointer;
-      padding:10px;
-      display: table;
+      padding: 10px;
+      display: grid;
+      width: 100px;
+      height: 100px;
+      align-items: center;
+      text-align: center;
     }
   }
 
+}
+
+.spinner-color {
+  color:#5058a6;
 }

@@ -12,7 +12,7 @@ import { RentalModel } from "../models/rentals.model";
   providedIn: "root",
 })
 export class GetRentalsListService {
-  // public CrInfoData: CrInfoDataInterface = {};
+
   private rentalData: BehaviorSubject<{}> = new BehaviorSubject({});
 
   constructor(private query: QueryService) {}

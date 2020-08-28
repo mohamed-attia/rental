@@ -1,3 +1,5 @@
+import * as moment from 'moment';
+
 import { ActivatedRoute, Params, Router } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
 import {
@@ -25,6 +27,7 @@ export class RentalDetailsComponent implements OnInit {
   public hoveredDate: NgbDateStruct | null = null;
   public fromDate: NgbDateStruct | null;
   public toDate: NgbDateStruct | null;
+  public sortedPricesList = [];
   public slideConfig = {
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -61,14 +64,27 @@ export class RentalDetailsComponent implements OnInit {
       .getRentaDetailsById(this.id)
       .subscribe((rentalDetails) => {
         this.rentalDetails = rentalDetails["body"]["result"]["unit"];
+        this.getSortedPriceList(this.rentalDetails['prices'])
         if (this.rentalDetails["images"].length > 0) {
           for (let i = 0; i < this.rentalDetails["images"].length; i++) {
             this.imagesList.push(this.rentalDetails["images"][i]);
+          }
+          for(let i =0 ; i < this.rentalDetails["videos"].length; i ++){
             this.videoList.push(this.rentalDetails["videos"][i]);
           }
         }
       });
   }
+
+public getSortedPriceList(priceList): void{
+        this.sortedPricesList = priceList;
+        this.sortedPricesList.sort(function(a, b) {
+          return a.priceOrder - b.priceOrder ;
+        });
+        this.checkDateRange();
+        console.log(this.sortedPricesList);
+  }
+
   public OnShowRentalImages() {
     this.showRentalImages = true;
     this.showRentalVideos = false;
@@ -93,8 +109,30 @@ export class RentalDetailsComponent implements OnInit {
       this.toDate = null;
       this.fromDate = date;
     }
+
     console.log('fromDate',this.fromDate)
-    console.log('fromDate',this.toDate)
+    console.log('toDate',this.toDate)
+    this.checkDateRange();
+  }
+
+  public checkDateRange(): void{
+    let fromDateList = [];
+    let ToDateList = [];
+    // {day:9,year:9,month:9}
+    let myMoment: moment.Moment = moment(new Date());
+    console.log('myMoment', myMoment.isBefore(this.fromDate))
+
+    for(let i=0; i<this.sortedPricesList.length; i++){
+      // console.log((this.sortedPricesList[i]['fromDate']).getTime());
+      // console.log(this.fromDate);
+      if(this.fromDate > this.sortedPricesList[i]['fromDate'].split('T')[0]) {
+        console.log('ok')
+      }
+      // fromDateList.push(this.sortedPricesList[i]['fromDate'].split('T')[0]);
+      // ToDateList.push(this.sortedPricesList[i]['toDate'].split('T')[0]);
+    }
+    console.log(fromDateList)
+    console.log(ToDateList)
   }
 
   isHovered(date: NgbDate) {
@@ -138,7 +176,8 @@ export class RentalDetailsComponent implements OnInit {
       "toDate":this.toDate,
       "rentalName":this.rentalDetails.name,
       'unitId':this.rentalDetails.id,
-      'status':this.rentalDetails.status
+      'status':this.rentalDetails.status,
+      'insurance':this.rentalDetails.insurance
     }
     this.getRentalsListService.setRentalData(obj);
   }

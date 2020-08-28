@@ -21,19 +21,19 @@
   <div class="rentals-images mt-4" *ngIf="showRentalImages">
     <div class="img-block-3 mt-1">
       <div class="row">
-        <div class="col-md-3 col-4 mb-1 p-0" *ngFor="let image of imagesList|slice:0:3">
+        <div class="col-md-3 col-4 mb-1 p-0" *ngFor="let image of imagesList|slice:0:5">
           <ng-container>
             <div class="img">
               <img width="98%" height="141px" [src]="image.path" alt="">
             </div>
           </ng-container>
         </div>
-        <div class="col-md-3 col-4 p-0" *ngIf="imagesList.length > 3">
+        <div class="col-md-3 col-4 p-0" *ngIf="imagesList.length > 5">
 
           <button type="button" (click)="showRentalDetailsSlider = true" class="btn btn-primary p-0 w-100">
             <div class="right">
               <div class="counter d-flex justify-content-center align-items-center position-relative">
-                <span class="count">+ {{imagesList.length - 3}}</span>
+                <span class="count">+ {{imagesList.length - 5}}</span>
               </div>
             </div>
           </button>

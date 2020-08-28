@@ -9,6 +9,7 @@ export interface RequestRentalModel {
    unitId  ?: number,
    fromDate  ?: string,
    toDate  ?: string,
+   id  ?: number,
    user  ?: {
     fullName?:string,
      id  ?: number,
@@ -31,5 +32,4 @@ export interface RequestRentalModel {
        id  ?: number
     }
   ],
-   id  ?: number
 }

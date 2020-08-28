@@ -17,10 +17,11 @@ export class RequestRentalComponent implements OnInit {
   public familyOrSinglesValue = false;
   public showmodal = false;
   public showPayment = false;
-  public requestRental:RequestRentalModel = {};
-  private totalNumberOfImages = 0;
-  public fileToUpload: File = null;
+  public requestRental: RequestRentalModel = {};
   public totalsizeOfimages = 10000000;
+  public uploadedFileList = [];
+  public loading = false;
+public imagesData = [];
   constructor(
     private getRentalsListService: GetRentalsListService,
     private fb: FormBuilder,
@@ -36,89 +37,100 @@ export class RequestRentalComponent implements OnInit {
     this.createForm();
   }
 
-  private getRentalData(){
+  private getRentalData() {
     this.getRentalsListService.getRentalData().subscribe((res) => {
       this.requestdata = res;
-      console.log('res', res)
+      console.log("res", res);
     });
   }
 
-  public monthMaping(month){
-    switch(month){
+  public monthMaping(month) {
+    switch (month) {
       case 1:
-        return 'Jan'
+        return "Jan";
       case 2:
-        return 'Feb'
+        return "Feb";
       case 3:
-        return 'March'
+        return "March";
       case 4:
-        return 'April'
+        return "April";
       case 5:
-        return 'May'
+        return "May";
       case 6:
-        return 'Jun'
+        return "Jun";
       case 7:
-        return 'Jul'
+        return "Jul";
       case 8:
-        return 'Aug'
+        return "Aug";
       case 9:
-        return 'Sept'
+        return "Sept";
       case 10:
-        return 'Oct'
+        return "Oct";
       case 11:
-        return 'Nov'
+        return "Nov";
       case 12:
-        return 'Dec'
+        return "Dec";
     }
   }
 
   private createForm() {
     this.requestRentalform = this.fb.group({
-      unitType :[''],
-      amount :"",
-      insurance :'',
-      status :this.requestdata.status,
-      note :'',
-      paymentStatus:"",
-      paymentNote :"",
-      unitId :this.requestdata.unitId,
-      fromDate :`${this.requestdata.fromDate.year}-${this.requestdata.fromDate.month}-${this.requestdata.fromDate.day}`,
-      toDate :`${this.requestdata.toDate.year}-${this.requestdata.toDate.month}-${this.requestdata.toDate.day}`,
-      user:this.fb.group({
-        fullName:["", Validators.required],
-        id :"",
-        userName:"",
-        emailAddress:["", Validators.required],
-        phoneNumber:["", Validators.required],
-        password :"",
-        tenantId: +localStorage.getItem('tenantId'),
-        acceptTermsAndConditions:"",
-        address:["", Validators.required],
-        setRandomPassword:"",
-        shouldChangePasswordOnNextLogin:"",
-        isGuest:""
-      })
+      unitType: [""],
+      amount: "",
+      insurance: this.requestdata.insurance,
+      status: this.requestdata.status,
+      note: "",
+      paymentStatus: "",
+      paymentNote: "",
+      unitId: this.requestdata.unitId,
+      fromDate: `${this.requestdata.fromDate.year}-${this.requestdata.fromDate.month}-${this.requestdata.fromDate.day}`,
+      toDate: `${this.requestdata.toDate.year}-${this.requestdata.toDate.month}-${this.requestdata.toDate.day}`,
+      user: this.fb.group({
+        fullName: ["", Validators.required],
+        id: "",
+        userName: "",
+        emailAddress: ["", Validators.required],
+        phoneNumber: ["", Validators.required],
+        password: "",
+        tenantId: +localStorage.getItem("tenantId"),
+        acceptTermsAndConditions: "",
+        address: ["", Validators.required],
+        setRandomPassword: "",
+        shouldChangePasswordOnNextLogin: "",
+        isGuest: "",
+      }),
     });
   }
 
   public onSubmit(form: FormGroup) {
-    this.requestRentalform.get('user').get('userName').setValue(this.requestRentalform.get('user').get('emailAddress').value)
-    if(this.isUser){
-      this.requestRentalform.get('user').get('id').setValue(Number(localStorage.getItem('userId')));
-      this.requestRentalform.get('user').get('isGuest').setValue(false)
-    }else {
-      this.requestRentalform.get('user').get('id').setValue(0);
-      this.requestRentalform.get('user').get('isGuest').setValue(true)
+    this.requestRentalform
+      .get("user")
+      .get("userName")
+      .setValue(this.requestRentalform.get("user").get("emailAddress").value);
+    if (this.isUser) {
+      this.requestRentalform
+        .get("user")
+        .get("id")
+        .setValue(Number(localStorage.getItem("userId")));
+      this.requestRentalform.get("user").get("isGuest").setValue(false);
+    } else {
+      this.requestRentalform.get("user").get("id").setValue(0);
+      this.requestRentalform.get("user").get("isGuest").setValue(true);
     }
-    console.log('form', this.requestRentalform.value)
+    this.requestRental = Object.assign({},this.requestRentalform.value);
+    this.requestRental.images = [{}];
+
+    console.log("form", this.requestRentalform.value);
+    console.log("this.requestRental", this.requestRental);
     // if(this.requestRentalform.controls['family'].value) {
     // }
-    // if (this.requestRentalform.valid && this.totalNumberOfImages >= 4 && this.totalsizeOfimages <= 10000000) {
+    // if (this.requestRentalform.valid && this.imageuploadValidation() ) {
     //   console.log('data', this.requestRentalform.value)
     // } else {
     //   console.log("not valid");
     // }
   }
+
 
   public getcheckboxFamilyValue(e) {
     this.familyOrSinglesValue = true;
@@ -127,14 +139,53 @@ export class RequestRentalComponent implements OnInit {
     } else {
       this.requestRentalform.controls["unitType"].setValue(1);
     }
-    console.log(this.requestRentalform.controls['unitType'].value);
+    console.log(this.requestRentalform.controls["unitType"].value);
+  }
+  private imageuploadValidation() {
+    if (
+      this.uploadedFileList.length > 4 &&
+      this.uploadedFileList.length < 20 &&
+      this.totalsizeOfimages <= 10000000
+    ) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
-  public attachFiles(files: FileList){
-    this.fileToUpload = files.item(0);
-    console.log(this.fileToUpload)
-    // this.requestRentalService.sendAttachment({}).subscribe(res=>{
-    //   console.log(res)
-    // })
+  private convertFiletypeToLower(fileExtension: string) {
+    return fileExtension.toLocaleLowerCase();
+  }
+
+  public checkFiletype(fileExt: string) {
+    if (fileExt === ".png" || fileExt === ".jpeg" || fileExt === ".jpg" || fileExt === ".jfif") {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  public uploadImages(event: any) {
+    this.loading = true;
+    const formData: FormData = new FormData();
+    for (let index = 0; index < event.target.files.length; index++) {
+      const file = <File>event.target.files[index];
+      this.totalsizeOfimages += file.size
+      formData.append("file_" + index, file, file.name);
+    }
+    if (formData) {
+      this.requestRentalService.postFile(formData).subscribe((res: any) => {
+        let fileObj = {
+          fileName: res["body"]["result"]["filesNames"][0].fileName,
+          fileType: this.convertFiletypeToLower(
+            res["body"]["result"]["filesNames"][0].fileType
+          ),
+        };
+        this.uploadedFileList.push(fileObj);
+        this.loading = false;
+      });
+    }else {
+      this.loading = false;
+    }
   }
 }
