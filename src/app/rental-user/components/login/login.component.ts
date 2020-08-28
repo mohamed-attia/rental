@@ -38,7 +38,8 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('accessToken','Bearer' + ' ' + res.result['accessToken']);
           if(res['success']) {
             this.router.navigate(["./rentals"]);
-            console.log("res", res);
+            localStorage.setItem('userId',res['result']['userId'])
+            console.log("res", res['result']['userId']);
           }
         });
     } else {

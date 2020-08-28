@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 import { GetRentalsListService } from "../../service/rental.service";
+import { RequestRentalModel } from '../../models/request-rental.model';
+import { RequestRentalService } from 'src/app/rental-user/services/request-rental-service';
 
 @Component({
   selector: "app-root",
@@ -15,10 +17,14 @@ export class RequestRentalComponent implements OnInit {
   public familyOrSinglesValue = false;
   public showmodal = false;
   public showPayment = false;
-
+  public requestRental:RequestRentalModel = {};
+  private totalNumberOfImages = 0;
+  public fileToUpload: File = null;
+  public totalsizeOfimages = 10000000;
   constructor(
     private getRentalsListService: GetRentalsListService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private requestRentalService: RequestRentalService
   ) {
     if (localStorage.getItem("accessToken")) {
       this.isUser = true;
@@ -26,11 +32,15 @@ export class RequestRentalComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getRentalData();
+    this.createForm();
+  }
+
+  private getRentalData(){
     this.getRentalsListService.getRentalData().subscribe((res) => {
       this.requestdata = res;
+      console.log('res', res)
     });
-
-    this.createForm();
   }
 
   public monthMaping(month){
@@ -64,21 +74,46 @@ export class RequestRentalComponent implements OnInit {
 
   private createForm() {
     this.requestRentalform = this.fb.group({
-      fullName: ["", Validators.required],
-      telephone: ["", Validators.required],
-      address: ["", Validators.required],
-      email: ["", Validators.required],
-      family: [""],
-      singles: [""],
-      insurrence: ["", Validators.required],
-      rentamount: ["", Validators.required],
+      unitType :[''],
+      amount :"",
+      insurance :'',
+      status :this.requestdata.status,
+      note :'',
+      paymentStatus:"",
+      paymentNote :"",
+      unitId :this.requestdata.unitId,
+      fromDate :`${this.requestdata.fromDate.year}-${this.requestdata.fromDate.month}-${this.requestdata.fromDate.day}`,
+      toDate :`${this.requestdata.toDate.year}-${this.requestdata.toDate.month}-${this.requestdata.toDate.day}`,
+      user:this.fb.group({
+        fullName:["", Validators.required],
+        id :"",
+        userName:"",
+        emailAddress:["", Validators.required],
+        phoneNumber:["", Validators.required],
+        password :"",
+        tenantId: +localStorage.getItem('tenantId'),
+        acceptTermsAndConditions:"",
+        address:["", Validators.required],
+        setRandomPassword:"",
+        shouldChangePasswordOnNextLogin:"",
+        isGuest:""
+      })
     });
   }
 
   public onSubmit(form: FormGroup) {
+    this.requestRentalform.get('user').get('userName').setValue(this.requestRentalform.get('user').get('emailAddress').value)
+    if(this.isUser){
+      this.requestRentalform.get('user').get('id').setValue(Number(localStorage.getItem('userId')));
+      this.requestRentalform.get('user').get('isGuest').setValue(false)
+    }else {
+      this.requestRentalform.get('user').get('id').setValue(0);
+      this.requestRentalform.get('user').get('isGuest').setValue(true)
+    }
+    console.log('form', this.requestRentalform.value)
     // if(this.requestRentalform.controls['family'].value) {
     // }
-    // if (this.requestRentalform.valid) {
+    // if (this.requestRentalform.valid && this.totalNumberOfImages >= 4 && this.totalsizeOfimages <= 10000000) {
     //   console.log('data', this.requestRentalform.value)
     // } else {
     //   console.log("not valid");
@@ -88,11 +123,18 @@ export class RequestRentalComponent implements OnInit {
   public getcheckboxFamilyValue(e) {
     this.familyOrSinglesValue = true;
     if (e === "family") {
-      this.requestRentalform.controls["family"].setValue(true);
-      this.requestRentalform.controls["singles"].setValue(false);
+      this.requestRentalform.controls["unitType"].setValue(2);
     } else {
-      this.requestRentalform.controls["family"].setValue(false);
-      this.requestRentalform.controls["singles"].setValue(true);
+      this.requestRentalform.controls["unitType"].setValue(1);
     }
+    console.log(this.requestRentalform.controls['unitType'].value);
+  }
+
+  public attachFiles(files: FileList){
+    this.fileToUpload = files.item(0);
+    console.log(this.fileToUpload)
+    // this.requestRentalService.sendAttachment({}).subscribe(res=>{
+    //   console.log(res)
+    // })
   }
 }

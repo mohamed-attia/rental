@@ -136,7 +136,9 @@ export class RentalDetailsComponent implements OnInit {
  let obj = {
       "fromDate":this.fromDate,
       "toDate":this.toDate,
-      "rentalName":this.rentalDetails.name
+      "rentalName":this.rentalDetails.name,
+      'unitId':this.rentalDetails.id,
+      'status':this.rentalDetails.status
     }
     this.getRentalsListService.setRentalData(obj);
   }

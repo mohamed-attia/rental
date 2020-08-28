@@ -46,6 +46,7 @@ export class RegisterComponent implements OnInit {
           if (res["success"]) {
             this.userLogin = {userNameOrEmailAddressOrPhone:this.userRegisterForm.get('userName').value,password:this.userRegisterForm.get('password').value}
             this.rentalUserService.sendUserLoginData(this.userLogin).subscribe(res=>{
+            localStorage.setItem('userId',res['result']['userId'])
             this.router.navigate(["./rentals"]);
             });
           }

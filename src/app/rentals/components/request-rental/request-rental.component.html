@@ -12,62 +12,69 @@
         <span class="mr-1 ml-1">From: {{requestdata?.fromDate?.day}} {{monthMaping(requestdata?.fromDate?.month)}} To: {{requestdata?.toDate?.day}} {{monthMaping(requestdata?.toDate?.month)}},{{requestdata?.toDate?.year}}</span>
     </div>
     <form #form="ngForm" [formGroup]="requestRentalform" (ngSubmit)="onSubmit(form)" novalidate>
+
+      <div class="" formGroupName="user">
         <div class="full-name mb-1">
             <label class="text-capitalize mb-1" for="fullName">full name</label>
             <input placeholder="Enter full name" formControlName="fullName"  class="form-control" type="text" name=""  >
             <ng-container
-            *ngIf="form.submitted && requestRentalform.controls['fullName'].invalid ||
-           (requestRentalform.controls['fullName'].dirty || requestRentalform.controls['fullName'].touched)">
+            *ngIf="form.submitted && requestRentalform.get('user').get('fullName').invalid ||
+          (requestRentalform.get('user').get('fullName').dirty|| requestRentalform.get('user').get('fullName').touched)">
             <span class="validation"
-              *ngIf="requestRentalform.controls['fullName']?.errors?.required">Please enter your full name</span>
+              *ngIf="requestRentalform.get('user').get('fullName')?.errors?.required">Please enter your full name</span>
           </ng-container>
         </div>
+
         <div class="telephone-number mb-1">
-            <label class="text-capitalize mb-1" for="telephone">telephone number</label>
-            <input placeholder="Enter your phone number" formControlName="telephone"  class="form-control" type="text" name="telephone"  >
-            <ng-container
-            *ngIf="form.submitted && requestRentalform.controls['telephone'].invalid ||
-           (requestRentalform.controls['telephone'].dirty || requestRentalform.controls['telephone'].touched)">
+            <label class="text-capitalize mb-1" for="phoneNumber">telephone number</label>
+            <input placeholder="Enter your phone number" formControlName="phoneNumber"  class="form-control" type="text" name="phoneNumber"  >
+           <ng-container
+            *ngIf="form.submitted && requestRentalform.get('user').get('phoneNumber').invalid ||
+          (requestRentalform.get('user').get('phoneNumber').dirty || requestRentalform.get('user').get('phoneNumber').touched)">
             <span class="validation"
-              *ngIf="requestRentalform.controls['telephone']?.errors?.required">Please enter your telephone number</span>
+              *ngIf="requestRentalform.get('user').get('phoneNumber')?.errors?.required">Please enter your telephone number</span>
           </ng-container>
         </div>
+
         <div class="address mb-1">
             <label class="text-capitalize mb-1" for="address">Address</label>
             <input placeholder="Enter your phone number" formControlName="address"  class="form-control" type="text" name="address"  >
-            <ng-container
-            *ngIf="form.submitted && requestRentalform.controls['address'].invalid ||
-           (requestRentalform.controls['address'].dirty || requestRentalform.controls['address'].touched)">
+             <ng-container
+            *ngIf="form.submitted && requestRentalform.get('user').get('address').invalid ||
+          (requestRentalform.get('user').get('address').dirty || requestRentalform.get('user').get('address').touched)">
             <span class="validation"
-              *ngIf="requestRentalform.controls['telephone']?.errors?.required">Please enter your address</span>
+              *ngIf="requestRentalform.get('user').get('address')?.errors?.required">Please enter your address</span>
           </ng-container>
         </div>
+
         <div class="email mb-1">
             <label class="text-capitalize mb-1" for="">email</label>
-            <input placeholder="Enter your phone number" formControlName="email" class="form-control" type="text" name="email"  >
-            <ng-container
-            *ngIf="form.submitted && requestRentalform.controls['address'].invalid ||
-           (requestRentalform.controls['email'].dirty || requestRentalform.controls['email'].touched)">
+            <input placeholder="Enter your phone number" formControlName="emailAddress" class="form-control" type="text" name="email"  >
+             <ng-container
+            *ngIf="form.submitted && requestRentalform.get('user').get('emailAddress').invalid ||
+          (requestRentalform.get('user').get('address').dirty || requestRentalform.get('user').get('emailAddress').touched)">
             <span class="validation"
-              *ngIf="requestRentalform.controls['email']?.errors?.required">Please enter your email</span>
+              *ngIf="requestRentalform.get('user').get('emailAddress')?.errors?.required">Please enter your email</span>
           </ng-container>
         </div>
-        <div class="request-rental-type d-flex justify-content-around text-capitalize">
-          <label class=" ml-2 font-14px" for="family">family
-            <input type="radio" (click)="getcheckboxFamilyValue('family')" value="family" name="family" id="family">
-            <ng-container *ngIf="form.submitted">
-              <p class="required mb-0 validation" *ngIf="!familyOrSinglesValue"> required</p>
-            </ng-container>
-          </label>
+      </div>
 
-          <label class=" ml-2 font-14px" for="singles">singles
-            <input type="radio" id="singles" (click)="getcheckboxFamilyValue('singles')" value="singles" name="family" id="singles">
-            <ng-container *ngIf="form.submitted">
-              <p class="required mb-0 validation" *ngIf="!familyOrSinglesValue"> required</p>
-            </ng-container>
-          </label>
+      <div class="request-rental-type d-flex justify-content-around text-capitalize">
+        <label class=" ml-2 font-14px" for="family">family
+          <input type="radio" (click)="getcheckboxFamilyValue('family')" value="family" name="family" id="family">
+          <ng-container *ngIf="form.submitted">
+            <p class="required mb-0 validation" *ngIf="!familyOrSinglesValue"> required</p>
+          </ng-container>
+        </label>
 
-        </div>
+        <label class=" ml-2 font-14px" for="singles">singles
+          <input type="radio" id="singles" (click)="getcheckboxFamilyValue('singles')" value="singles" name="family" id="singles">
+          <ng-container *ngIf="form.submitted">
+            <p class="required mb-0 validation" *ngIf="!familyOrSinglesValue"> required</p>
+          </ng-container>
+        </label>
+      </div>
+
     <div class="official-document">
         <div class="official-document-title mb-2 d-flex align-items-center justify-content-between">
             <span class="text-capitalize">official document</span>
@@ -77,6 +84,9 @@
         </div>
         <div class="official-document-content">
             <div class="post-pictures mt-2">
+              <input type="file"
+                     id="file"
+                     (change)="attachFiles($event.target.files)">
                 <p class="mb-0 text-center">Post more pictures</p>
                 <p class="mb-0 text-black-50">Limited at least 4 images. maximum of 20 images and do not exceed over 10 mb</p>
                 <div class="pictures-info">
@@ -93,11 +103,11 @@
     </div>
         <div class="insurrence mb-1">
             <label class="text-capitalize mb-1" for="">insurrence</label>
-            <input placeholder="1.000" class="form-control" formControlName="insurrence" type="text" name="insurrence"  >
+            <input placeholder="1.000" class="form-control" formControlName="insurance" type="text" name="insurance"  >
         </div>
         <div class="rent-amount mb-1">
             <label class="text-capitalize mb-1" for="">rent amount</label>
-            <input placeholder="850.000" class="form-control" formControlName="rentamount" type="text" name="rent amount"  >
+            <input placeholder="850.000" class="form-control" formControlName="amount" type="text" name="amount"  >
         </div>
 
     <p class="mt-3">By submitting this rental request you approve over the renting <a class="terms" href="#">terms and condition</a></p>
