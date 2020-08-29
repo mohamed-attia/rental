@@ -25,7 +25,7 @@ export class RequestRentalComponent implements OnInit {
   public imagesData = [];
   public showRequestRentalconfirmation = false;
   public showPaymentModal= false;
-  public showNoticePayment = false;
+  // public showNoticePayment = false;
   constructor(
     private getRentalsListService: GetRentalsListService,
     private fb: FormBuilder,
