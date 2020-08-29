@@ -1,4 +1,57 @@
-<div *ngIf="showPaymentModal">
-  <h1>payment</h1>
+<div class="confirm-booking" *ngIf="showPaymentModal">
+  <div class="confirm-title text-center">
+    <span class="text-capitalize">{{'payment.bookingConfirm' | translate}}</span>
+  </div>
+  <div class="input mb-1">
+    <div class="input-title">
+      <span class="text-capitalize">{{'payment.unitName' | translate}}</span>
+    </div>
+    <div class="input-type">
+      <input type="text" class="form-control">
+    </div>
+    <div class="validation-msg">
+      <span class="text-capitalize">required</span>
+    </div>
+  </div>
+  <div class="input mb-1">
+    <div class="input-title">
+      <span class="text-capitalize">{{'payment.bookingDate' | translate}}</span>
+    </div>
+    <div class="input-type">
+      <input type="date" class="form-control">
+    </div>
+    <div class="validation-msg">
+      <span class="text-capitalize">required</span>
+    </div>
+  </div>
+  <div class="input mb-1">
+    <div class="input-title">
+      <span class="text-capitalize">{{'payment.insurance' | translate}}</span>
+    </div>
+    <div class="input-type">
+      <input type="text" class="form-control">
+    </div>
+    <div class="validation-msg">
+      <span class="text-capitalize">required</span>
+    </div>
+  </div>
+  <div class="input mb-1">
+    <div class="input-title">
+      <span class="text-capitalize">{{'payment.rentAmount' | translate}}</span>
+    </div>
+    <div class="input-type">
+      <input type="number" class="form-control">
+    </div>
+    <div class="validation-msg">
+      <span class="text-capitalize">required</span>
+    </div>
+  </div>
+  <p>{{'payment.proceed' | translate}} <a class="text-capitalize" href="#">{{'payment.contract' | translate}}</a></p>
+  <div class="pay-now text-center mb-1">
+    <button class="btn btn-primay text-capitalize" type="submit">{{'payment.payNow' | translate}}</button>
+  </div>
+  <div class="cancel text-center">
+    <button class="btn btn-primay text-capitalize" type="submit">{{'payment.cancel' | translate}}</button>
+  </div>
   <button (click)="emitClosePaymentModal()"></button>
 </div>

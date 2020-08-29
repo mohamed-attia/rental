@@ -42,5 +42,16 @@
   },
   "lang_switcher": {
     "currentLang": "En"
+  },
+  "payment":{
+    "bookingConfirm":"تأكيد الحجز",
+    "unitName":"إسم الوحدة",
+    "bookingDate":"تاريخ الحجز",
+    "insurance":"تأمين",
+    "rentAmount":"مقدار الايجار",
+    "proceed":"من خلال الشروع في الدفع فإنك توافق على الإيجار",
+    "contract":"العقد واللوائح",
+    "payNow":"ادفع الآن",
+    "cancel":"إلغاء"
   }
 }
