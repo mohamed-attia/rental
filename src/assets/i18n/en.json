@@ -42,5 +42,16 @@
   },
   "lang_switcher": {
     "currentLang": "ع"
+  },
+  "payment":{
+    "bookingConfirm":"booking confirmation",
+    "unitName":"unit name",
+    "bookingDate":"booking date",
+    "insurance":"insurance",
+    "rentAmount":"rent amount",
+    "proceed":"by proceeding to payment you approve over the renting",
+    "contract":"contract and regulations",
+    "payNow":"pay now",
+    "cancel":"cancel"
   }
 }

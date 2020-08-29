@@ -11482,6 +11482,45 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   text-transform: capitalize;
 }
 
+.rtl .confirm-booking .input .input-type .form-control {
+  background-color: #f2f2f2;
+}
+
+.rtl .confirm-booking .validation-msg span {
+  color: #ff6262;
+  font-size: 14px;
+}
+
+.rtl .confirm-booking p a {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.rtl .confirm-booking .pay-now button {
+  background-color: #5058a6 !important;
+  border-radius: 20px;
+  color: #fff;
+  width: 190px;
+  margin: auto;
+  font-weight: 500;
+  outline: 0;
+  -webkit-box-shadow: unset !important;
+          box-shadow: unset !important;
+}
+
+.rtl .confirm-booking .cancel button {
+  background-color: #fff !important;
+  border: 0;
+  border-radius: 20px;
+  color: #5058a6 !important;
+  width: 190px;
+  margin: auto;
+  font-weight: 500;
+  outline: 0;
+  -webkit-box-shadow: unset !important;
+          box-shadow: unset !important;
+}
+
 .rtl .form-control,
 .rtl .btn-primary {
   border-radius: 30px;

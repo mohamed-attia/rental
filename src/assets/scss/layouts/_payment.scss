@@ -1,0 +1,51 @@
+.confirm-booking{
+    .input{
+        // .input-title{
+        //     span{
+        //         color:#aaa
+        //     }
+        // }
+        .input-type{
+            .form-control{
+                background-color: #f2f2f2;
+            }
+        }
+    }
+    .validation-msg{
+        span{
+            color:#ff6262;
+            font-size: 14px;
+        }
+    }
+    p{
+        a{
+            text-decoration: underline;
+            font-weight: 600;
+        }
+    }
+    .pay-now {
+        button{
+            background-color: #5058a6 !important;
+            border-radius: 20px;
+            color: #fff;
+            width: 190px;
+            margin: auto;
+            font-weight: 500;
+            outline: 0;
+            box-shadow: unset !important;
+        }
+    }
+    .cancel{
+        button{
+            background-color: #fff !important;
+            border:0;
+            border-radius: 20px;
+            color: #5058a6 !important;
+            width: 190px;
+            margin: auto;
+            font-weight: 500;
+            outline: 0;
+            box-shadow: unset !important;
+        }
+    }
+}
