@@ -136,7 +136,5 @@
   </form>
 
 </div>
-<!-- [showModal]="showRequestRentalconfirmation" -->
-{{showRequestRentalconfirmation}}
 <app-requestrentalspopup (closeModal)="closeRequestModal($event)" [showModal]="showRequestRentalconfirmation" ></app-requestrentalspopup>
-<app-payment *ngIf="showPayment"></app-payment>
+<app-payment-modal (closePaymentModal)="closePaymentModal($event)" [showPaymentModal]="showPaymentModal"></app-payment-modal>

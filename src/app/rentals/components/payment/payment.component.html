@@ -1,1 +1,4 @@
-<h1>payment</h1>
+<div *ngIf="showPaymentModal">
+  <h1>payment</h1>
+  <button (click)="emitClosePaymentModal()"></button>
+</div>

@@ -8,6 +8,7 @@ export class ReqRentConfirmPopupComponent implements OnInit {
   @Input() showModal;
   @Output() closeModal = new EventEmitter<boolean>();
 
+  showPaymentModal = false;
   constructor() {}
 
   ngOnInit() {}

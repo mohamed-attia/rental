@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { QueryService } from "../../shared/providers/query-service/query.service";
-import { environment } from "./../../../environments/environment";
+import { environment } from "../../../environments/environment";
 
 @Injectable({
   providedIn: "root",
@@ -25,6 +25,12 @@ export class RequestRentalService {
   }
 
   public postRequestRental(body): Observable<any> {
+    this.query.setURI(`services/app/UnitRequests/CreateOrEdit`);
+    // this.query.setHeaders();
+    return this.query.post(body);
+  }
+
+  public sendPaymentData(body): Observable<any> {
     this.query.setURI(`services/app/UnitRequests/CreateOrEdit`);
     // this.query.setHeaders();
     return this.query.post(body);

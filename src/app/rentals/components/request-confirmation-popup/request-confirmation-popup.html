@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="track-request pt-2 pb-2">
-                        <button class="btn btn-primary">track your request</button>
+                        <button class="btn btn-primary" (click)="emitCloseModal();showPaymentModal = true">track your request</button>
                     </div>
                 </div>
             </div>
@@ -50,3 +50,5 @@
     </div>
 </div>
 <div class="modal-backdrop fade show" *ngIf="showModal"></div>
+
+

@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 import { GetRentalsListService } from "../../service/rental.service";
 import { RequestRentalModel } from '../../models/request-rental.model';
-import { RequestRentalService } from 'src/app/rental-user/services/request-rental-service';
+import { RequestRentalService } from 'src/app/rentals/service/request-rental-service';
 import { Key } from 'protractor';
 
 @Component({
@@ -24,6 +24,7 @@ export class RequestRentalComponent implements OnInit {
   public loading = false;
   public imagesData = [];
   public showRequestRentalconfirmation = false;
+  public showPaymentModal= false;
   constructor(
     private getRentalsListService: GetRentalsListService,
     private fb: FormBuilder,
@@ -212,5 +213,10 @@ export class RequestRentalComponent implements OnInit {
 
    closeRequestModal(e){
     this.showRequestRentalconfirmation = e;
+    this.showPaymentModal = true;
+  }
+
+  closePaymentModal(e) {
+    this.showPaymentModal = false;
   }
 }
