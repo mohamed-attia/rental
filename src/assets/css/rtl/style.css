@@ -11370,6 +11370,15 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   color: #5058a6;
 }
 
+.rtl .swal2-styled.swal2-cancel {
+  background-color: #aaa !important;
+  margin: 5px;
+}
+
+.rtl .swal2-styled.swal2-confirm {
+  background-color: #3085d6 !important;
+}
+
 .rtl .request-rental-container {
   min-height: calc(100vh - 115px);
 }
