@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 import { RequestRentalService } from "../../service/request-rental-service";
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: "app-payment-modal",
@@ -35,7 +36,9 @@ export class PaymentComponent implements OnInit {
   }
 
   public onSubmit(form: FormGroup) {
+    this.emitClosePaymentModal();
     if (this.paymentForm.valid) {
+    Swal.fire('Thank you...', 'You submitted succesfully!', 'success');
     }
   }
 

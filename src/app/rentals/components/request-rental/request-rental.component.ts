@@ -218,7 +218,7 @@ export class RequestRentalComponent implements OnInit {
   }
 
  public closePaymentModal(e) {
-    this.showPaymentModal = false;
+    this.showPaymentModal = e;
   }
 
   // simpleAlert(){

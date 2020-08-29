@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade show" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" [style.display]="showPaymentModal ? 'block' : 'none'">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -11,7 +11,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <div class="confirm-booking" *ngIf="showPaymentModal">
+        <div class="confirm-booking" >
           <form #form="ngForm" [formGroup]="paymentForm" (ngSubmit)="onSubmit(form)" novalidate>
             <div class="input mb-1">
               <div class="input-title">
@@ -22,7 +22,7 @@
               </div>
               <div class="validation-msg">
                 <ng-container
-                *ngIf="form.submitted && paymentForm.controls['userNameOrEmailAddressOrPhone'].invalid ||
+                *ngIf="form.submitted && paymentForm.controls['name'].invalid ||
                (paymentForm.controls['name'].dirty || paymentForm.controls['name'].touched)">
                 <span class="required text-capitalize"
                   *ngIf="paymentForm.controls['name']?.errors?.required">{{'Validation.required' | translate}}</span>
@@ -77,18 +77,20 @@
               </ng-container>
               </div>
             </div>
+            <p>{{'payment.proceed' | translate}} <a class="text-capitalize" href="#">{{'payment.contract' | translate}}</a></p>
+            <div class="pay-now text-center mb-1">
+              <button class="btn btn-primay text-capitalize" type="submit">{{'payment.payNow' | translate}}</button>
+            </div>
           </form>
-          <p>{{'payment.proceed' | translate}} <a class="text-capitalize" href="#">{{'payment.contract' | translate}}</a></p>
-          <div class="pay-now text-center mb-1">
-            <button class="btn btn-primay text-capitalize" type="submit">{{'payment.payNow' | translate}}</button>
+          <div class="cancel text-center">
+            <button class="btn btn-primay text-capitalize" type="button" (click)="emitClosePaymentModal()">{{'payment.cancel' | translate}}</button>
           </div>
-          <!-- <div class="cancel text-center">
-            <button class="btn btn-primay text-capitalize" type="button">{{'payment.cancel' | translate}}</button>
-          </div> -->
           <!-- <button (click)="emitClosePaymentModal()"></button> -->
         </div>
-        
+
       </div>
     </div>
   </div>
 </div>
+
+<div class="modal-backdrop fade show" *ngIf="showPaymentModal"></div>
