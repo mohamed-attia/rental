@@ -131,14 +131,12 @@
     <p class="mt-3">By submitting this rental request you approve over the renting <a class="terms" href="#">terms and condition</a></p>
     <div class="submit-btn text-center">
         <button type="submit" class="btn btn-primay text-capitalize">submit request</button>
-        <button type="button" class="btn btn-primay text-capitalize" data-toggle="modal" data-target="#requesConfirmation">
-            show modal
-        </button>
 
     </div>
   </form>
 
 </div>
-
-<app-requestrentalspopup></app-requestrentalspopup>
+<!-- [showModal]="showRequestRentalconfirmation" -->
+{{showRequestRentalconfirmation}}
+<app-requestrentalspopup (closeModal)="closeRequestModal($event)" [showModal]="showRequestRentalconfirmation" ></app-requestrentalspopup>
 <app-payment *ngIf="showPayment"></app-payment>

@@ -28,6 +28,7 @@ export class RentalDetailsComponent implements OnInit {
   public fromDate: NgbDateStruct | null;
   public toDate: NgbDateStruct | null;
   public sortedPricesList = [];
+  public totalAmount = 0;
   public slideConfig = {
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -82,7 +83,6 @@ public getSortedPriceList(priceList): void{
           return a.priceOrder - b.priceOrder ;
         });
         this.checkDateRange();
-        console.log(this.sortedPricesList);
   }
 
   public OnShowRentalImages() {
@@ -116,23 +116,29 @@ public getSortedPriceList(priceList): void{
   }
 
   public checkDateRange(): void{
-    let fromDateList = [];
-    let ToDateList = [];
-    // {day:9,year:9,month:9}
-    let myMoment: moment.Moment = moment(new Date());
-    console.log('myMoment', myMoment.isBefore(this.fromDate))
-
-    for(let i=0; i<this.sortedPricesList.length; i++){
-      // console.log((this.sortedPricesList[i]['fromDate']).getTime());
-      // console.log(this.fromDate);
-      if(this.fromDate > this.sortedPricesList[i]['fromDate'].split('T')[0]) {
-        console.log('ok')
+    if(this.fromDate !== null && this.toDate !== null){
+      debugger
+      let momenttest = moment(this.sortedPricesList[0].fromDate)
+      let startDate = moment(new Date(`${this.fromDate.year}-${this.fromDate.month}-${this.fromDate.day}`).toISOString());
+      let endDate = moment(new Date(`${this.toDate.year}-${this.toDate.month}-${this.toDate.day}`).toISOString());
+      console.log(startDate)
+      console.log(endDate)
+      console.log(momenttest)
+      for (var m = startDate; m.diff(endDate, 'days') <= 0; m.add(1, 'days')) {
+        for (let index = 0; index < this.sortedPricesList.length; index++) {
+            const price = this.sortedPricesList[index];
+            if(m.isBetween(moment(price.fromDate) , moment(price.toDate),'day')){
+                let day = m.isoWeekday();
+                if(day === 6 || day ===7 )
+                  this.totalAmount += price.weekEndPrice;
+                else
+                  this.totalAmount += price.dayPrice;
+                  break;
+            }
+        }
       }
-      // fromDateList.push(this.sortedPricesList[i]['fromDate'].split('T')[0]);
-      // ToDateList.push(this.sortedPricesList[i]['toDate'].split('T')[0]);
     }
-    console.log(fromDateList)
-    console.log(ToDateList)
+      console.log(this.totalAmount)
   }
 
   isHovered(date: NgbDate) {
@@ -177,7 +183,8 @@ public getSortedPriceList(priceList): void{
       "rentalName":this.rentalDetails.name,
       'unitId':this.rentalDetails.id,
       'status':this.rentalDetails.status,
-      'insurance':this.rentalDetails.insurance
+      'insurance':this.rentalDetails.insurance,
+      "amount":this.totalAmount + this.rentalDetails.insurance
     }
     this.getRentalsListService.setRentalData(obj);
   }

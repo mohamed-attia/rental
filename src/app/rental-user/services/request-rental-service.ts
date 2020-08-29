@@ -11,7 +11,7 @@ import { environment } from "./../../../environments/environment";
 export class RequestRentalService {
   constructor(private query: QueryService, private http: HttpClient) {}
 
-  postFile(formData: FormData): Observable<any> {
+  public postFile(formData: FormData): Observable<any> {
     let url_ = `${environment.api}Document/UploadRequestFileToS3`;
     url_ = url_.replace(/[?&]$/, "");
     let options_: any = {
@@ -22,5 +22,11 @@ export class RequestRentalService {
       headers: new HttpHeaders({}),
     };
     return this.http.request("post", url_, options_);
+  }
+
+  public postRequestRental(body): Observable<any> {
+    this.query.setURI(`services/app/UnitRequests/CreateOrEdit`);
+    // this.query.setHeaders();
+    return this.query.post(body);
   }
 }

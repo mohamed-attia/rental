@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { GetRentalsListService } from "../../service/rental.service";
 import { RequestRentalModel } from '../../models/request-rental.model';
 import { RequestRentalService } from 'src/app/rental-user/services/request-rental-service';
+import { Key } from 'protractor';
 
 @Component({
   selector: "app-root",
@@ -17,11 +18,12 @@ export class RequestRentalComponent implements OnInit {
   public familyOrSinglesValue = false;
   public showmodal = false;
   public showPayment = false;
-  public requestRental: RequestRentalModel = {};
+  public requestRental: RequestRentalModel = {images:[{}]};
   public totalsizeOfimages = 10000000;
   public uploadedFileList = [];
   public loading = false;
-public imagesData = [];
+  public imagesData = [];
+  public showRequestRentalconfirmation = false;
   constructor(
     private getRentalsListService: GetRentalsListService,
     private fb: FormBuilder,
@@ -76,15 +78,15 @@ public imagesData = [];
   private createForm() {
     this.requestRentalform = this.fb.group({
       unitType: [""],
-      amount: "",
+      amount: this.requestdata.amount,
       insurance: this.requestdata.insurance,
       status: this.requestdata.status,
       note: "",
       paymentStatus: "",
       paymentNote: "",
       unitId: this.requestdata.unitId,
-      fromDate: `${this.requestdata.fromDate.year}-${this.requestdata.fromDate.month}-${this.requestdata.fromDate.day}`,
-      toDate: `${this.requestdata.toDate.year}-${this.requestdata.toDate.month}-${this.requestdata.toDate.day}`,
+      fromDate: new Date(`${this.requestdata.fromDate.year}-${this.requestdata.fromDate.month}-${this.requestdata.fromDate.day}`).toISOString(),
+      toDate: new Date(`${this.requestdata.toDate.year}-${this.requestdata.toDate.month}-${this.requestdata.toDate.day}`).toISOString(),
       user: this.fb.group({
         fullName: ["", Validators.required],
         id: "",
@@ -117,11 +119,18 @@ public imagesData = [];
       this.requestRentalform.get("user").get("id").setValue(0);
       this.requestRentalform.get("user").get("isGuest").setValue(true);
     }
-    this.requestRental = Object.assign({},this.requestRentalform.value);
-    this.requestRental.images = [{}];
-
-    console.log("form", this.requestRentalform.value);
+    this.requestRental = Object.assign({},this.requestRentalform.value,{images:this.requestRental.images});
     console.log("this.requestRental", this.requestRental);
+
+    this.showRequestRentalconfirmation = true;
+    this.requestRentalService.postRequestRental(this.requestRental).subscribe(res=>{
+      debugger
+      console.log(res);
+      console.log(res['result'].success);
+      console.log('send data')
+      if(res['result'].success){
+      }
+    })
     // if(this.requestRentalform.controls['family'].value) {
     // }
     // if (this.requestRentalform.valid && this.imageuploadValidation() ) {
@@ -166,6 +175,11 @@ public imagesData = [];
   }
 
   public uploadImages(event: any) {
+    for(let i=0;i<this.requestRental.images.length;i++){
+      if(!this.requestRental.images[i].hasOwnProperty('path')){
+        this.requestRental['images'].splice(i,1)
+      }
+    }
     this.loading = true;
     const formData: FormData = new FormData();
     for (let index = 0; index < event.target.files.length; index++) {
@@ -175,6 +189,12 @@ public imagesData = [];
     }
     if (formData) {
       this.requestRentalService.postFile(formData).subscribe((res: any) => {
+        this.requestRental['images'].push({
+          "path":res["body"]["result"]["filesNames"][0].fileName,
+          "type":res["body"]["result"]["filesNames"][0].fileType,
+          "id":null,
+          "unitRequestId":null,
+        })
         let fileObj = {
           fileName: res["body"]["result"]["filesNames"][0].fileName,
           fileType: this.convertFiletypeToLower(
@@ -183,9 +203,14 @@ public imagesData = [];
         };
         this.uploadedFileList.push(fileObj);
         this.loading = false;
+        console.log('images',this.requestRental.images)
       });
     }else {
       this.loading = false;
     }
+  }
+
+   closeRequestModal(e){
+    this.showRequestRentalconfirmation = e;
   }
 }

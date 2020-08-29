@@ -10,7 +10,7 @@ export interface RequestRentalModel {
    fromDate  ?: string,
    toDate  ?: string,
    id  ?: number,
-   user  ?: {
+   user?: {
     fullName?:string,
      id  ?: number,
      userName  ?: string,
@@ -24,7 +24,7 @@ export interface RequestRentalModel {
      shouldChangePasswordOnNextLogin  ?: boolean,
      isGuest  ?: boolean
   },
-   images  ?: [
+   images?: [
     {
        path  ?:  string ,
        unitRequestId  ?: number,

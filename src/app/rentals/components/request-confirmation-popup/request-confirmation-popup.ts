@@ -1,14 +1,18 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
 @Component({
   selector: "app-requestrentalspopup",
-  templateUrl:'./request-confirmation-popup.html'
+  templateUrl: "./request-confirmation-popup.html",
 })
 export class ReqRentConfirmPopupComponent implements OnInit {
+  @Input() showModal;
+  @Output() closeModal = new EventEmitter<boolean>();
 
   constructor() {}
 
-    ngOnInit() {
-    }
-
+  ngOnInit() {}
+  public emitCloseModal() {
+    this.showModal = false;
+    this.closeModal.emit(false);
+  }
 }
