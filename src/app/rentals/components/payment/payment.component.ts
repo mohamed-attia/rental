@@ -27,10 +27,10 @@ export class PaymentComponent implements OnInit {
 
   private createPaymentForm() {
     this.paymentForm = this.fb.group({
-      1: ["", Validators.required],
-      2: ["", Validators.required],
-      3: ["", Validators.required],
-      4: ["", Validators.required],
+      name: ["", Validators.required],
+      date: ["", Validators.required],
+      insurance: ["", Validators.required],
+      rentAmount: ["", Validators.required],
     });
   }
 
