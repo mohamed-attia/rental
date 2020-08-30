@@ -27,7 +27,8 @@
     "login-with":"OR",
     "facebook":"facebook",
     "instagram":"instagram",
-    "google-plus":"google-plus"
+    "google-plus":"google-plus",
+    "address":"address"
   },
   "Validation":{
     "required":"Required",

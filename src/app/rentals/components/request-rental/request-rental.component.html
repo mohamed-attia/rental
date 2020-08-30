@@ -16,7 +16,7 @@
       <div class="" formGroupName="user">
         <div class="full-name mb-1">
             <label class="text-capitalize mb-1" for="fullName">full name</label>
-            <input placeholder="Enter full name" formControlName="fullName"  class="form-control" type="text" name="fullName"  >
+            <input placeholder="Enter full name" formControlName="fullName"  [attr.disabled]="isUser? true : null" class="form-control" type="text" name="fullName"  >
             <ng-container
             *ngIf="form.submitted && requestRentalform.get('user')?.get('fullName').invalid ||
           (requestRentalform.get('user')?.get('fullName')?.dirty|| requestRentalform.get('user')?.get('fullName')?.touched)">
@@ -27,7 +27,7 @@
 
         <div class="telephone-number mb-1">
             <label class="text-capitalize mb-1" for="phoneNumber">telephone number</label>
-            <input placeholder="Enter your phone number" formControlName="phoneNumber"  class="form-control" type="text" name="phoneNumber"  >
+            <input placeholder="Enter your phone number"  [attr.disabled]="isUser? true : null" formControlName="phoneNumber"  class="form-control" type="text" name="phoneNumber"  >
            <ng-container
             *ngIf="form.submitted && requestRentalform.get('user')?.get('phoneNumber')?.invalid ||
           (requestRentalform.get('user')?.get('phoneNumber')?.dirty || requestRentalform.get('user')?.get('phoneNumber')?.touched)">
@@ -38,7 +38,7 @@
 
         <div class="address mb-1">
             <label class="text-capitalize mb-1" for="address">Address</label>
-            <input placeholder="Enter your phone number" formControlName="address"  class="form-control" type="text" name="address"  >
+            <input placeholder="Enter your phone number"  [attr.disabled]="isUser? true : null" formControlName="address"  class="form-control" type="text" name="address"  >
              <ng-container
             *ngIf="form.submitted && requestRentalform.get('user')?.get('address')?.invalid ||
           (requestRentalform.get('user')?.get('address')?.dirty || requestRentalform.get('user')?.get('address')?.touched)">
@@ -49,7 +49,7 @@
 
         <div class="email mb-1">
             <label class="text-capitalize mb-1" for="">email</label>
-            <input placeholder="Enter your phone number" formControlName="emailAddress" class="form-control" type="text" name="email"  >
+            <input placeholder="Enter your phone number"  [attr.disabled]="isUser? true : null" formControlName="emailAddress" class="form-control" type="text" name="email"  >
              <ng-container
             *ngIf="form.submitted && requestRentalform.get('user').get('emailAddress').invalid ||
           (requestRentalform.get('user')?.get('address')?.dirty || requestRentalform.get('user')?.get('emailAddress')?.touched)">
@@ -77,7 +77,7 @@
 
     <div class="official-document">
         <div class="official-document-title mb-2 d-flex align-items-center justify-content-between">
-            <span class="text-capitalize">official document</span>
+            <span class="text-capitalize">official document <span class="text-danger" *ngIf="!validaImages">Required</span></span>
             <button class="btn btn-primary delete-btn p-0">
                 <img width="15px" src="assets/icons/delete.svg" alt="">
             </button>
@@ -121,11 +121,11 @@
     </div>
         <div class="insurrence mb-1">
             <label class="text-capitalize mb-1" for="">insurrence</label>
-            <input placeholder="1.000" class="form-control"  formControlName="insurance" type="text" name="insurance"  >
+            <input placeholder="1.000" class="form-control" disabled formControlName="insurance" type="text" name="insurance"  >
         </div>
         <div class="rent-amount mb-1">
             <label class="text-capitalize mb-1" for="">rent amount</label>
-            <input placeholder="850.000" class="form-control"  formControlName="amount" type="text" name="amount"  >
+            <input placeholder="850.000" class="form-control" disabled formControlName="TotalAmount" type="text" name="TotalAmount"  >
         </div>
 
     <p class="mt-3">By submitting this rental request you approve over the renting <a class="terms" href="#">terms and condition</a></p>
@@ -140,6 +140,6 @@
   </form>
 
 </div>
-<app-requestrentalspopup (closeModal)="closeRequestModal($event)" [showModal]="showRequestRentalconfirmation" ></app-requestrentalspopup>
+<app-requestrentalspopup (closeModal)="closeRequestModal($event)" [showModal]="showRequestRentalconfirmation" [requestData]="responseRequestData" ></app-requestrentalspopup>
 <app-payment-modal (closePaymentModal)="closePaymentModal($event)" [showPaymentModal]="showPaymentModal"></app-payment-modal>
 <!-- <app-noticePaymentPopup *ngIf="showNoticePayment"></app-noticePaymentPopup> -->

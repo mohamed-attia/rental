@@ -27,7 +27,8 @@
     "login-with":"أو تسجيل الدخول باستخدام",
     "facebook":"موقع التواصل الاجتماعي الفيسبوك",
     "instagram":"الانستقرام",
-    "google-plus":"جوجل بلس"
+    "google-plus":"جوجل بلس",
+    "address":"العنوان"
   },
   "Validation":{
     "required":"حقل مطلوب",

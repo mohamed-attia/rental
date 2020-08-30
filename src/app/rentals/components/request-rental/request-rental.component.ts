@@ -25,6 +25,8 @@ export class RequestRentalComponent implements OnInit {
   public imagesData = [];
   public showRequestRentalconfirmation = false;
   public showPaymentModal= false;
+  public responseRequestData = {};
+  validaImages: boolean = true;
   constructor(
     private getRentalsListService: GetRentalsListService,
     private fb: FormBuilder,
@@ -41,14 +43,10 @@ export class RequestRentalComponent implements OnInit {
   }
 
   private getUSerInfo(){
-    this.requestRentalform.get('user').get('fullName').setValue('attia');
-    this.requestRentalform.get('user').get('fullName').disable()
-    this.requestRentalform.get('user').get('emailAddress').setValue('attia');
-    this.requestRentalform.get('user').get('emailAddress').disable();
-    this.requestRentalform.get('user').get('phoneNumber').setValue('attia');
-    this.requestRentalform.get('user').get('phoneNumber').disable();
-    this.requestRentalform.get('user').get('address').setValue('attia');
-    this.requestRentalform.get('user').get('address').disable()
+    this.requestRentalform.get('user').get('fullName').setValue(localStorage.getItem('name'));
+    this.requestRentalform.get('user').get('emailAddress').setValue(localStorage.getItem('emailAddress'));
+    this.requestRentalform.get('user').get('phoneNumber').setValue(localStorage.getItem('phoneNumber'));
+    this.requestRentalform.get('user').get('address').setValue(localStorage.getItem('address'));
   }
 
   private getRentalData() {
@@ -91,11 +89,11 @@ export class RequestRentalComponent implements OnInit {
 
     this.requestRentalform = this.fb.group({
       unitType: [""],
-      amount: [{value:this.requestdata.amount,disabled: true}],
-      insurance: [{value:this.requestdata.insurance, disabled: true} ],
+      TotalAmount: [this.requestdata.amount],
+      insurance: [this.requestdata.insurance],
       status: this.requestdata.status,
       note: "",
-      paymentStatus: "",
+      paymentStatus: 1,
       paymentNote: "",
       unitId: this.requestdata.unitId,
       fromDate: new Date(`${this.requestdata.fromDate.year}-${this.requestdata.fromDate.month}-${this.requestdata.fromDate.day}`).toISOString(),
@@ -108,10 +106,10 @@ export class RequestRentalComponent implements OnInit {
         phoneNumber: ["", Validators.required],
         password: "",
         tenantId: +localStorage.getItem("tenantId"),
-        acceptTermsAndConditions: "",
+        acceptTermsAndConditions: true,
         address: ["", Validators.required],
         setRandomPassword: "",
-        shouldChangePasswordOnNextLogin: "",
+        shouldChangePasswordOnNextLogin: true,
         isGuest: "",
       }),
     });
@@ -122,39 +120,29 @@ export class RequestRentalComponent implements OnInit {
   }
 
   public onSubmit(form: FormGroup) {
-    this.requestRentalform
-      .get("user")
-      .get("userName")
-      .setValue(this.requestRentalform.get("user").get("emailAddress").value);
+    this.requestRentalform.get("user").get("userName").setValue(this.requestRentalform.get("user").get("emailAddress").value);
     if (this.isUser) {
-      this.requestRentalform
-        .get("user")
-        .get("id")
-        .setValue(Number(localStorage.getItem("userId")));
+      this.requestRentalform.get("user").get("id").setValue(Number(localStorage.getItem("userId")));
       this.requestRentalform.get("user").get("isGuest").setValue(false);
+      this.requestRentalform.get('user').get('setRandomPassword').setValue(false)
     } else {
       this.requestRentalform.get("user").get("id").setValue(0);
       this.requestRentalform.get("user").get("isGuest").setValue(true);
+      this.requestRentalform.get('user').get('setRandomPassword').setValue(true)
     }
     this.requestRental = Object.assign({},this.requestRentalform.value,{images:this.requestRental.images});
-    console.log("this.requestRental", this.requestRental);
-
-    this.showRequestRentalconfirmation = true;
-    this.requestRentalService.postRequestRental(this.requestRental).subscribe(res=>{
-      // debugger
-      // console.log(res);
-      // console.log(res['result'].success);
-      // console.log('send data')
-      if(res['result'].success){
-      }
-    })
     // if(this.requestRentalform.controls['family'].value) {
     // }
-    // if (this.requestRentalform.valid && this.imageuploadValidation() ) {
-    //   console.log('data', this.requestRentalform.value)
-    // } else {
-    //   console.log("not valid");
-    // }
+    if (this.requestRentalform.valid && this.imageuploadValidation()) {
+      this.requestRentalService.postRequestRental(this.requestRental).subscribe(res=>{
+        if(res.success){
+          this.responseRequestData = res['result'];
+          this.showRequestRentalconfirmation = true;
+        }
+      })
+    } else {
+      console.log("not valid");
+    }
   }
 
   public getcheckboxFamilyValue(e) {
@@ -167,14 +155,18 @@ export class RequestRentalComponent implements OnInit {
     console.log(this.requestRentalform.controls["unitType"].value);
   }
 
-  private imageuploadValidation() {
+  public imageuploadValidation() {
     if (
-      this.uploadedFileList.length > 4 &&
-      this.uploadedFileList.length < 20 &&
-      this.totalsizeOfimages <= 10000000
-    ) {
+      this.uploadedFileList.length >= 4 &&
+      this.uploadedFileList.length <= 20 &&
+      this.totalsizeOfimages <= 100000000
+      ) {
+        this.validaImages = true
       return true;
     } else {
+      Swal.fire('Images Required...', 'Check images validation', 'error');
+
+      this.validaImages = false
       return false;
     }
   }
@@ -209,7 +201,7 @@ export class RequestRentalComponent implements OnInit {
         this.requestRental['images'].push({
           "path":res["body"]["result"]["filesNames"][0].fileName,
           "type":res["body"]["result"]["filesNames"][0].fileType,
-          "id":null,
+          "id":0,
           "unitRequestId":null,
         })
         let fileObj = {

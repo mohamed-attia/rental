@@ -1,6 +1,6 @@
 export interface RequestRentalModel {
    unitType  ?: number,
-   amount  ?: number,
+   TotalAmount  ?: number,
    insurance  ?: number,
    status  ?: number,
    note  ?: string,

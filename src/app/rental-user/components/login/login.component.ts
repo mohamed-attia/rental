@@ -36,9 +36,13 @@ export class LoginComponent implements OnInit {
         .sendUserLoginData(this.userLoginForm.value)
         .subscribe((res) => {
           localStorage.setItem('accessToken','Bearer' + ' ' + res.result['accessToken']);
+          localStorage.setItem('address', res['result'].address);
+          localStorage.setItem('emailAddress', res['result'].emailAddress);
+          localStorage.setItem('name', res['result'].name);
+          localStorage.setItem('phoneNumber', res['result'].phoneNumber);
           if(res['success']) {
             this.router.navigate(["./rentals"]);
-            localStorage.setItem('userId',res['result']['userId'])
+            localStorage.setItem('userId',res['result']['userId']);
             console.log("res", res['result']['userId']);
           }
         });
