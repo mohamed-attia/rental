@@ -35,4 +35,10 @@ export class RequestRentalService {
     // this.query.setHeaders();
     return this.query.post(body);
   }
+
+  public getUSerInfo(userId): Observable<any>{
+    this.query.setHeaders();
+    this.query.setURI(`services/app/User/GetUserForView?id=${userId}`);
+    return this.query.get();
+  }
 }

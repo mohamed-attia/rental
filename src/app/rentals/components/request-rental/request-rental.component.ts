@@ -36,10 +36,15 @@ export class RequestRentalComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getUSerInfo();
     this.getRentalData();
     this.createForm();
   }
-
+  private getUSerInfo(){
+    this.requestRentalService.getUSerInfo(localStorage.getItem('userId')).subscribe(res=>{
+      console.log('user Info', res)
+    })
+  }
   private getRentalData() {
     this.getRentalsListService.getRentalData().subscribe((res) => {
       this.requestdata = res;
