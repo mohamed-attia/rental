@@ -110,20 +110,19 @@ public getSortedPriceList(priceList): void{
       this.fromDate = date;
     }
 
-    console.log('fromDate',this.fromDate)
-    console.log('toDate',this.toDate)
+    // console.log('fromDate',this.fromDate)
+    // console.log('toDate',this.toDate)
     this.checkDateRange();
   }
 
   public checkDateRange(): void{
     if(this.fromDate !== null && this.toDate !== null){
-      debugger
       let momenttest = moment(this.sortedPricesList[0].fromDate)
       let startDate = moment(new Date(`${this.fromDate.year}-${this.fromDate.month}-${this.fromDate.day}`).toISOString());
       let endDate = moment(new Date(`${this.toDate.year}-${this.toDate.month}-${this.toDate.day}`).toISOString());
-      console.log(startDate)
-      console.log(endDate)
-      console.log(momenttest)
+      // console.log(startDate)
+      // console.log(endDate)
+      // console.log(momenttest)
       for (var m = startDate; m.diff(endDate, 'days') <= 0; m.add(1, 'days')) {
         for (let index = 0; index < this.sortedPricesList.length; index++) {
             const price = this.sortedPricesList[index];

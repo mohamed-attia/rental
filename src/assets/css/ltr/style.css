@@ -11394,7 +11394,7 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(242, 242, 242, 0.9);
+  background-color: #f2f2f2;
   z-index: 99999;
 }
 
