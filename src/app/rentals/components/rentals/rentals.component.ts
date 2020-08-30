@@ -25,7 +25,8 @@ export class RentalsComponent implements OnInit {
     "nextArrow": "",
     "prevArrow": "",
     "dots": true,
-    "infinite": true
+    "infinite": true,
+    "autoplay":true,
   };
 
   private getRentals() {

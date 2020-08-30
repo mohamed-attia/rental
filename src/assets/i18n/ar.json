@@ -53,5 +53,18 @@
     "contract":"العقد واللوائح",
     "payNow":"ادفع الآن",
     "cancel":"إلغاء"
+  },
+  "request-rental":{
+    "guest":"زائر",
+    "login-register":"دخول/تسجيل",
+    "chalet-name":"شاليه 990",
+    "from":"من عند:",
+    "to":"إلى:",
+    "full-name":"الاسم الكامل",
+    "enter-full-name":"أدخل الاسم الكامل",
+    "please-enter-full-name":"من فضلك ادخل اسمك الكامل",
+    "telephone-number":"رقم هاتف",
+    "enter-telephone-number":"أدخل رقم هاتفك",
+    "please-enter-telephone-number":"يرجى إدخال رقم الهاتف الخاص بك"
   }
 }

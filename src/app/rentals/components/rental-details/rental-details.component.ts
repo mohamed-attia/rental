@@ -32,6 +32,7 @@ export class RentalDetailsComponent implements OnInit {
   public slideConfig = {
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay:true,
     nextArrow: "",
     prevArrow: "",
     dots: true,

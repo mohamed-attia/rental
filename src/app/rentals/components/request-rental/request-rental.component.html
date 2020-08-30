@@ -1,38 +1,38 @@
 <div class="request-rental-container mt-3">
     <div class="request-rental-identity d-flex justify-content-around mb-3">
-        <button class="btn btn-primay pl-0 pr-0 text-capitalize guest-btn" *ngIf="!isUser" >guest</button>
-        <button class="btn btn-primay pl-0 pr-0 text-capitalize login-register-btn" *ngIf="!isUser" [routerLink]="['../../../user/register']">login/register</button>
+        <button class="btn btn-primay pl-0 pr-0 text-capitalize guest-btn" *ngIf="!isUser" >{{'request-rental.guest' | translate}}</button>
+        <button class="btn btn-primay pl-0 pr-0 text-capitalize login-register-btn" *ngIf="!isUser" [routerLink]="['../../../user/register']"> {{'request-rental.login-register' | translate}}</button>
     </div>
     <div class="request-rental-unit-info mb-2 d-flex justify-content-between text-capitalize">
-        <span>chalet 990</span>
+        <span>{{'request-rental.chalet-name' | translate}}</span>
         <span>{{requestdata.rentalName}}</span>
     </div>
     <div class="request-rental-date mb-3 text-capitalize text-center">
         <img width="20px" src="assets/icons/calendar.png" alt="">
-        <span class="mr-1 ml-1">From: {{requestdata?.fromDate?.day}} {{monthMaping(requestdata?.fromDate?.month)}} To: {{requestdata?.toDate?.day}} {{monthMaping(requestdata?.toDate?.month)}},{{requestdata?.toDate?.year}}</span>
+        <span class="mr-1 ml-1">{{'request-rental.from' | translate}} {{requestdata?.fromDate?.day}} {{monthMaping(requestdata?.fromDate?.month)}} {{'request-rental.to' | translate}} {{requestdata?.toDate?.day}} {{monthMaping(requestdata?.toDate?.month)}},{{requestdata?.toDate?.year}}</span>
     </div>
     <form #form="ngForm" [formGroup]="requestRentalform" (ngSubmit)="onSubmit(form)" novalidate>
 
       <div class="" formGroupName="user">
         <div class="full-name mb-1">
-            <label class="text-capitalize mb-1" for="fullName">full name</label>
-            <input placeholder="Enter full name" formControlName="fullName"  class="form-control" type="text" name="fullName"  >
+            <label class="text-capitalize mb-1" for="fullName">{{'request-rental.full-name' | translate}}</label>
+            <input placeholder="{{'request-rental.enter-full-name' | translate}}" formControlName="fullName"  class="form-control" type="text" name="fullName"  >
             <ng-container
             *ngIf="form.submitted && requestRentalform.get('user')?.get('fullName').invalid ||
           (requestRentalform.get('user')?.get('fullName')?.dirty|| requestRentalform.get('user')?.get('fullName')?.touched)">
             <span class="validation"
-              *ngIf="requestRentalform.get('user')?.get('fullName')?.errors?.required">Please enter your full name</span>
+              *ngIf="requestRentalform.get('user')?.get('fullName')?.errors?.required">{{'request-rental.please-enter-full-name' | translate}}</span>
           </ng-container>
         </div>
 
         <div class="telephone-number mb-1">
-            <label class="text-capitalize mb-1" for="phoneNumber">telephone number</label>
-            <input placeholder="Enter your phone number" formControlName="phoneNumber"  class="form-control" type="text" name="phoneNumber"  >
+            <label class="text-capitalize mb-1" for="phoneNumber">{{'request-rental.telephone-number' | translate}}</label>
+            <input placeholder="{{'request-rental.enter-telephone-number' | translate}}" formControlName="phoneNumber"  class="form-control" type="text" name="phoneNumber"  >
            <ng-container
             *ngIf="form.submitted && requestRentalform.get('user')?.get('phoneNumber')?.invalid ||
           (requestRentalform.get('user')?.get('phoneNumber')?.dirty || requestRentalform.get('user')?.get('phoneNumber')?.touched)">
             <span class="validation"
-              *ngIf="requestRentalform.get('user')?.get('phoneNumber')?.errors?.required">Please enter your telephone number</span>
+              *ngIf="requestRentalform.get('user')?.get('phoneNumber')?.errors?.required">{{'request-rental.please-enter-telephone-number' | translate}}</span>
           </ng-container>
         </div>
 
@@ -60,6 +60,7 @@
       </div>
 
       <div class="request-rental-type d-flex justify-content-around text-capitalize">
+        
         <label class=" ml-2 font-14px" for="family">family
           <input type="radio" (click)="getcheckboxFamilyValue('family')" value="family" name="family" id="family">
           <ng-container *ngIf="form.submitted">
