@@ -36,15 +36,21 @@ export class RequestRentalComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getUSerInfo();
     this.getRentalData();
     this.createForm();
   }
+
   private getUSerInfo(){
-    this.requestRentalService.getUSerInfo(localStorage.getItem('userId')).subscribe(res=>{
-      console.log('user Info', res)
-    })
+    this.requestRentalform.get('user').get('fullName').setValue('attia');
+    this.requestRentalform.get('user').get('fullName').disable()
+    this.requestRentalform.get('user').get('emailAddress').setValue('attia');
+    this.requestRentalform.get('user').get('emailAddress').disable();
+    this.requestRentalform.get('user').get('phoneNumber').setValue('attia');
+    this.requestRentalform.get('user').get('phoneNumber').disable();
+    this.requestRentalform.get('user').get('address').setValue('attia');
+    this.requestRentalform.get('user').get('address').disable()
   }
+
   private getRentalData() {
     this.getRentalsListService.getRentalData().subscribe((res) => {
       this.requestdata = res;
@@ -82,10 +88,11 @@ export class RequestRentalComponent implements OnInit {
   }
 
   private createForm() {
+
     this.requestRentalform = this.fb.group({
       unitType: [""],
-      amount: this.requestdata.amount,
-      insurance: this.requestdata.insurance,
+      amount: [{value:this.requestdata.amount,disabled: true}],
+      insurance: [{value:this.requestdata.insurance, disabled: true} ],
       status: this.requestdata.status,
       note: "",
       paymentStatus: "",
@@ -108,6 +115,10 @@ export class RequestRentalComponent implements OnInit {
         isGuest: "",
       }),
     });
+
+    if(this.isUser){
+      this.getUSerInfo();
+      }
   }
 
   public onSubmit(form: FormGroup) {
@@ -146,7 +157,6 @@ export class RequestRentalComponent implements OnInit {
     // }
   }
 
-
   public getcheckboxFamilyValue(e) {
     this.familyOrSinglesValue = true;
     if (e === "family") {
@@ -156,6 +166,7 @@ export class RequestRentalComponent implements OnInit {
     }
     console.log(this.requestRentalform.controls["unitType"].value);
   }
+
   private imageuploadValidation() {
     if (
       this.uploadedFileList.length > 4 &&
