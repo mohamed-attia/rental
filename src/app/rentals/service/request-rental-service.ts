@@ -1,7 +1,7 @@
+import { BehaviorSubject, Observable } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
 import { QueryService } from "../../shared/providers/query-service/query.service";
 import { environment } from "../../../environments/environment";
 
@@ -9,6 +9,9 @@ import { environment } from "../../../environments/environment";
   providedIn: "root",
 })
 export class RequestRentalService {
+
+  private RequestResponseData: BehaviorSubject<{}> = new BehaviorSubject({});
+
   constructor(private query: QueryService, private http: HttpClient) {}
 
   public postFile(formData: FormData): Observable<any> {
@@ -40,5 +43,12 @@ export class RequestRentalService {
     this.query.setHeaders();
     this.query.setURI(`services/app/User/GetUserForView?id=${userId}`);
     return this.query.get();
+  }
+
+  public getRequestResponseRentalData(): Observable<{}> {
+    return this.RequestResponseData.asObservable();
+  }
+  public setRequestResponseRentalData(rentalData){
+    this.RequestResponseData.next(rentalData);
   }
 }

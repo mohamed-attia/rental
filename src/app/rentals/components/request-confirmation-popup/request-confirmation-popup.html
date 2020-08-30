@@ -16,16 +16,16 @@
                     </div>
                     <div class="success-msg">
                         <div class="request-id">
-                            <span class="text-capitalize">request id:</span>
+                            <span class="text-capitalize">request id:{{requestResponseData['id']}}</span>
                             <span></span>
                         </div>
                         <div class="date-time d-flex justify-content-around">
                             <div class="date">
-                                <span class="text-capitalize">date:</span>
+                                <span class="text-capitalize">date: {{date}}</span>
                                 <span></span>
                             </div>
                             <div class="time">
-                                <span class="text-capitalize">time:</span>
+                                <span class="text-capitalize">time: {{time}}</span>
                                 <span></span>
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                     <div class="screeshot">
                         <div class="screenshot-btn">
                             <button class="btn btn-primary">
-                                <img width="50px" src="assets/icons/screenshot.png" alt="">
+                                <img [src]="'data:image/jpg;base64,'+requestResponseData['qrCode']"/>
                                 <span class="d-block text-capitalize">take a screenshot</span>
                             </button>
                         </div>

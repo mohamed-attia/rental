@@ -131,12 +131,18 @@ export class RequestRentalComponent implements OnInit {
       this.requestRentalform.get('user').get('setRandomPassword').setValue(true)
     }
     this.requestRental = Object.assign({},this.requestRentalform.value,{images:this.requestRental.images});
-    // if(this.requestRentalform.controls['family'].value) {
-    // }
+
     if (this.requestRentalform.valid && this.imageuploadValidation()) {
       this.requestRentalService.postRequestRental(this.requestRental).subscribe(res=>{
         if(res.success){
-          this.responseRequestData = res['result'];
+          debugger
+          this.responseRequestData = {
+            fromDate:res['result'].fromDate,
+            qrCode:res['result'].qrCode,
+            requestId:res['result'].id,
+          };
+          this.requestRentalService.setRequestResponseRentalData(this.responseRequestData);
+
           this.showRequestRentalconfirmation = true;
         }
       })

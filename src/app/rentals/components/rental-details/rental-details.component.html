@@ -30,7 +30,7 @@
         </div>
         <div class="col-md-3 col-4 p-0" *ngIf="imagesList.length > 5">
 
-          <button type="button" (click)="showRentalDetailsSlider = true" class="btn btn-primary p-0 w-100">
+          <button type="button" (click)="showRentalDetailsSlider = !showRentalDetailsSlider" class="btn btn-primary p-0 w-100">
             <div class="right">
               <div class="counter d-flex justify-content-center align-items-center position-relative">
                 <span class="count">+ {{imagesList.length - 5}}</span>
@@ -44,10 +44,10 @@
   </div>
   <!-- pop up -->
 
-    <div class="rental-details-slider">
+    <div class="rental-details-slider" *ngIf="showRentalDetailsSlider">
       <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
         <div ngxSlickItem *ngFor="let slide of imagesList" class="slide">
-          <img width="800px" height="160px" [src]="slide.path" alt="">
+          <img width="800px" height="300px" [src]="slide.path" alt="">
         </div>
       </ngx-slick-carousel>
     </div>
