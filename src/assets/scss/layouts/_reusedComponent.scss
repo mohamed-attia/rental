@@ -68,15 +68,11 @@
 }
 .fileUploader{
   display: flex;
-    align-items: center;
+  align-items: center;
+  flex-wrap: wrap;
   &-images{
     border: 1px dashed red;
     margin: 5px;
-    width: 103px;
-    height: 102px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   &-uploadBtn{
     margin:5px;

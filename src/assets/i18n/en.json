@@ -54,5 +54,18 @@
     "contract":"contract and regulations",
     "payNow":"pay now",
     "cancel":"cancel"
+  },
+  "request-rental":{
+    "guest":"guest",
+    "login-register":"login/register",
+    "chalet-name":"chalet 990",
+    "from":"From:",
+    "to":"To:",
+    "full-name":"full name",
+    "enter-full-name":"Enter full name",
+    "please-enter-full-name":"Please enter your full name",
+    "telephone-number":"telephone number",
+    "enter-telephone-number":"Enter your phone number",
+    "please-enter-telephone-number":"Please enter your telephone number"
   }
 }

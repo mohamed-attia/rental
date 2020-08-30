@@ -27,7 +27,7 @@
 
   .rentals-images {
     padding: 0 15px;
-    .img-block {
+    .img-block { 
       .left,
       .right {
         flex: 1;
@@ -168,4 +168,19 @@
 
 video {
   margin-#{$right}: 1%;
+}
+
+.rental-details-slider{
+  padding: 6px;
+  box-shadow: 0 0 10px #eee;
+  background-color: #fff;
+  border: 0.5px solid #ddd;
+  position: absolute;
+  top: 55px;
+  width: 50%;
+  z-index: unset;
+}
+
+button.calendar{
+  background-image: url(../../../assets/icons/calendar.png) !important;
 }
