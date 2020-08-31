@@ -11728,6 +11728,13 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   background-image: url(../../../assets/icons/calendar.png) !important;
 }
 
+.rtl .input-group-append {
+  position: absolute;
+  right: 0;
+  top: -32px;
+  height: 100px;
+}
+
 .rtl .bread-span {
   padding-right: 10px;
   padding-left: 10px;

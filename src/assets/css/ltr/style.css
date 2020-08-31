@@ -11728,6 +11728,13 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   background-image: url(../../../assets/icons/calendar.png) !important;
 }
 
+.ltr .input-group-append {
+  position: absolute;
+  right: 0;
+  top: -32px;
+  height: 100px;
+}
+
 .ltr .bread-span {
   padding-left: 10px;
   padding-right: 10px;
