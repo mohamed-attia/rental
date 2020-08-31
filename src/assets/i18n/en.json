@@ -66,6 +66,25 @@
     "please-enter-full-name":"Please enter your full name",
     "telephone-number":"telephone number",
     "enter-telephone-number":"Enter your phone number",
-    "please-enter-telephone-number":"Please enter your telephone number"
+    "please-enter-telephone-number":"Please enter your telephone number",
+    "Address":"Address",
+    "enter-Address":"Enter your address",
+    "enter-your-Address":"Please enter your address",
+    "email":"email",
+    "enter-email":"Enter your email",
+    "enter-your-email":"Please enter your email",
+    "family":"family",
+    "singles":"singles",
+    "select":"Select File",
+    "post":"Post more pictures",
+    "post-desc":"Limited at least 4 images. maximum of 20 images and do not exceed over 10 mb",
+    "civil-id":"civil id (front and back)",
+    "marriage":"marriage certificate",
+    "add":"Please add at least 2 copies of the requested documents",
+    "insurrence":"insurrence",
+    "rent-amount":"rent amount",
+    "submit-rent":"By submitting this rental request you approve over the renting",
+    "terms":"terms and condition",
+    "submit":"submit request"
   }
 }
