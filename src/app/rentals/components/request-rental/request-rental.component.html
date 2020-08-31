@@ -90,7 +90,7 @@
                 <ng-container *ngFor="let image of uploadedFileList; let i = index">
                   <div class="fileUploader-images">
                     <img width="100px" height="100px" [src]="image.fileName" alt="" *ngIf="checkFiletype(image.fileType)">
-                    <img width="80px" height="80px" src="assets/images/attachment.png" alt="" *ngIf="!checkFiletype(image.fileType)">
+                    <img width="100px" height="100px" src="assets/images/attachment.png" alt="" *ngIf="!checkFiletype(image.fileType)">
                   </div>
                 </ng-container>
                 <div class="fileUploader-images" *ngIf="loading">

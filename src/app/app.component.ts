@@ -45,6 +45,7 @@ export class AppComponent implements OnInit {
 
   getTanentId(){
   this.rentalUserService.getTanentId().subscribe(res=>{
+    debugger
     localStorage.setItem('tenantId',res.result['tenantId'])
   });
 }

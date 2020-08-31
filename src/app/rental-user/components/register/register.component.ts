@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
       phoneNumber: ["", Validators.required],
       password: ["", Validators.required],
       userConfirmPassword: ["", Validators.required],
-      tenantId: Number(localStorage.getItem("tenantId")),
+      tenantId: localStorage.getItem("tenantId"),
       acceptTermsAndConditions: ["", Validators.required],
     });
   }
@@ -47,7 +47,7 @@ export class RegisterComponent implements OnInit {
           if (res["success"]) {
             this.userLogin = {userNameOrEmailAddressOrPhone:this.userRegisterForm.get('userName').value,password:this.userRegisterForm.get('password').value}
             this.rentalUserService.sendUserLoginData(this.userLogin).subscribe(res=>{
-            localStorage.setItem('userId',res['result']['userId']);
+           localStorage.setItem('userId',res['result']['userId']);
            localStorage.setItem('accessToken','Bearer' + ' ' + res.result['accessToken']);
 
            localStorage.setItem('address', res['result'].address);
