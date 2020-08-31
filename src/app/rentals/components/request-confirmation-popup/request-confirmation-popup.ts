@@ -22,6 +22,7 @@ export class ReqRentConfirmPopupComponent implements OnInit {
     this.requestRentalService
       .getRequestResponseRentalData()
       .subscribe((res) => {
+        debugger
         console.log("requestData", res);
         this.requestResponseData = res;
         this.qrImage = `data:image/png' + ';base64,' + ${this.requestResponseData["qrCode"]}`;

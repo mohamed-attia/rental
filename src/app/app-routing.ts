@@ -4,7 +4,7 @@ import { NgModule } from "@angular/core";
 import { NotFoundComponent } from "./shared/components/not-found/not-found.component";
 
 export const routes: Routes = [
-  { path: "", redirectTo: "user/login", pathMatch: "full" },
+  { path: "", redirectTo: "rentals", pathMatch: "full" },
   {
     path: "user",
     loadChildren: () =>

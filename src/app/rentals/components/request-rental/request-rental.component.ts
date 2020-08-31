@@ -126,7 +126,7 @@ export class RequestRentalComponent implements OnInit {
       this.requestRentalform.get("user").get("isGuest").setValue(false);
       this.requestRentalform.get('user').get('setRandomPassword').setValue(false)
     } else {
-      this.requestRentalform.get("user").get("id").setValue(0);
+      this.requestRentalform.get("user").get("id").setValue(null);
       this.requestRentalform.get("user").get("isGuest").setValue(true);
       this.requestRentalform.get('user').get('setRandomPassword').setValue(true)
     }
