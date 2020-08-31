@@ -11747,6 +11747,12 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   color: #000 !important;
 }
 
+.rtl .custom-day.range,
+.rtl .custom-day:hover {
+  background-color: #5058a6;
+  outline: 0;
+}
+
 .rtl .bread-span {
   padding-right: 10px;
   padding-left: 10px;

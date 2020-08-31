@@ -11747,6 +11747,12 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   color: #000 !important;
 }
 
+.ltr .custom-day.range,
+.ltr .custom-day:hover {
+  background-color: #5058a6;
+  outline: 0;
+}
+
 .ltr .bread-span {
   padding-left: 10px;
   padding-right: 10px;

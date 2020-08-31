@@ -201,3 +201,9 @@ button.calendar {
     color:#000 !important
   }
 }
+
+.custom-day.range,
+.custom-day:hover{
+  background-color: #5058a6;
+  outline: 0;
+}
