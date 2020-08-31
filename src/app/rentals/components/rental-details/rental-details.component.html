@@ -44,10 +44,10 @@
   </div>
   <!-- pop up -->
 
-    <div class="rental-details-slider" *ngIf="showRentalDetailsSlider">
+    <div class="rental-details-slider" (click)="showRentalDetailsSlider = false" *ngIf="showRentalDetailsSlider">
       <div class="slider-content">
         <div class="close-btn mb-2 d-flex justify-content-end">
-          <button type="button" class="btn btn-primary">
+          <button type="button" class="btn btn-primary" (click)="showRentalDetailsSlider = false">
             <span aria-hidden="true">&times;</span>
         </button>
         </div>
