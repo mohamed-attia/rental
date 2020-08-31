@@ -11713,15 +11713,13 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
 }
 
 .rtl .rental-details-slider {
-  padding: 6px;
-  -webkit-box-shadow: 0 0 10px #eee;
-          box-shadow: 0 0 10px #eee;
-  background-color: #fff;
-  border: 0.5px solid #ddd;
   position: absolute;
-  top: 55px;
-  width: 50%;
-  z-index: unset;
+  top: -8px;
+  width: 100%;
+  left: 0;
+  height: 101%;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .rtl button.calendar, .rtl button.calendar:active {
@@ -11751,6 +11749,13 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
 .rtl .custom-day:hover {
   background-color: #5058a6;
   outline: 0;
+}
+
+.rtl .slider-content {
+  width: 50%;
+  margin: 26px auto;
+  background-color: #fff;
+  padding: 0 20px 20px;
 }
 
 .rtl .bread-span {

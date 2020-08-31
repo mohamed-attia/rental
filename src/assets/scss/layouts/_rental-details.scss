@@ -171,14 +171,13 @@ video {
 }
 
 .rental-details-slider {
-  padding: 6px;
-  box-shadow: 0 0 10px #eee;
-  background-color: #fff;
-  border: 0.5px solid #ddd;
   position: absolute;
-  top: 55px;
-  width: 50%;
-  z-index: unset;
+  top: -8px;
+  width: 100%;
+  left: 0;
+  height: 101%;
+  z-index: 3;
+  background-color: rgba(0,0,0,0.5);
 }
 
 button.calendar,
@@ -207,4 +206,11 @@ button.calendar:active {
 .custom-day:hover{
   background-color: #5058a6;
   outline: 0;
+}
+
+.slider-content{
+  width: 50%;
+  margin: 26px auto;
+  background-color: #fff;
+  padding: 0 20px 20px;
 }
