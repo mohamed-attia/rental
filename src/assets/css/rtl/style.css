@@ -11689,6 +11689,10 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   border: 0;
 }
 
+.rtl .card-wrapper .card-details .form-group input {
+  border: 0.5px solid #aaa;
+}
+
 .rtl .card-wrapper .card-details .form-group .input-group-append button {
   position: relative;
   top: 0;
@@ -11786,6 +11790,9 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   .rtl .input-group label {
     position: relative;
     top: 6px;
+  }
+  .rtl .slider-content {
+    width: 93%;
   }
 }
 

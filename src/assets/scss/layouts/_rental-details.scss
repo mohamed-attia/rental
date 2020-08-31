@@ -143,6 +143,9 @@
       }
     }
     .form-group {
+      input{
+        border: 0.5px solid #aaa;
+      }
       .input-group-append {
         button {
           position: relative;
