@@ -45,6 +45,11 @@
   <!-- pop up -->
 
     <div class="rental-details-slider" *ngIf="showRentalDetailsSlider">
+      <div class="close-btn mb-2 d-flex justify-content-end">
+        <button type="button" class="btn btn-primary">
+          <span aria-hidden="true">&times;</span>
+      </button>
+      </div>
       <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
         <div ngxSlickItem *ngFor="let slide of imagesList" class="slide">
           <img width="800px" height="300px" [src]="slide.path" alt="">

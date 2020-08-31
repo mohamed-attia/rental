@@ -11735,6 +11735,18 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   height: 100px;
 }
 
+.rtl .close-btn {
+  background-color: unset;
+  border: unset;
+  outline: 0;
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+}
+
+.rtl .close-btn button {
+  color: #000 !important;
+}
+
 .rtl .bread-span {
   padding-right: 10px;
   padding-left: 10px;

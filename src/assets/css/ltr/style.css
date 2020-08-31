@@ -11735,6 +11735,18 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   height: 100px;
 }
 
+.ltr .close-btn {
+  background-color: unset;
+  border: unset;
+  outline: 0;
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+}
+
+.ltr .close-btn button {
+  color: #000 !important;
+}
+
 .ltr .bread-span {
   padding-left: 10px;
   padding-right: 10px;

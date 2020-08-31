@@ -191,3 +191,13 @@ button.calendar {
   top: -32px;
   height: 100px;
 }
+
+.close-btn{
+  background-color: unset;
+  border:unset;
+  outline: 0;
+  box-shadow: unset;
+  button{
+    color:#000 !important
+  }
+}
