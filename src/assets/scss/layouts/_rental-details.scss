@@ -181,7 +181,8 @@ video {
   z-index: unset;
 }
 
-button.calendar {
+button.calendar,
+button.calendar:active {
   background-image: url(../../../assets/icons/calendar.png) !important;
 }
 

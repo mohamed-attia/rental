@@ -11724,7 +11724,7 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   z-index: unset;
 }
 
-.rtl button.calendar {
+.rtl button.calendar, .rtl button.calendar:active {
   background-image: url(../../../assets/icons/calendar.png) !important;
 }
 

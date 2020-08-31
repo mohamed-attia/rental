@@ -11724,7 +11724,7 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   z-index: unset;
 }
 
-.ltr button.calendar {
+.ltr button.calendar, .ltr button.calendar:active {
   background-image: url(../../../assets/icons/calendar.png) !important;
 }
 
