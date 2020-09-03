@@ -71,10 +71,11 @@
             margin-#{$right}:2px;
           }
         }
-        button {
+        span {
           color: #5058a6;
           font-size: 12px;
           padding: 0 12px;
+          cursor: pointer;
         }
       }
     }

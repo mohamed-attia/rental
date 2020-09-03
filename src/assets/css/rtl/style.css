@@ -10947,10 +10947,11 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   margin-left: 2px;
 }
 
-.rtl .content-wrapper .card-wrapper .card .card-members button {
+.rtl .content-wrapper .card-wrapper .card .card-members span {
   color: #5058a6;
   font-size: 12px;
   padding: 0 12px;
+  cursor: pointer;
 }
 
 .rtl .container-fluid .login-title {
@@ -11647,6 +11648,7 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
 .rtl .card-wrapper .card-details .more .more-rental-details {
   font-size: 13px;
   color: #5058a6;
+  cursor: pointer;
 }
 
 .rtl .card-wrapper .card-details .content span {
@@ -11654,10 +11656,10 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   text-transform: capitalize;
 }
 
-.rtl .card-wrapper .card-details .content .see-more button {
+.rtl .card-wrapper .card-details .content .see-more .see-more-expanded {
   color: #5058a6 !important;
   border-radius: 50px;
-  padding: 0 22px !important;
+  cursor: pointer;
 }
 
 .rtl .card-wrapper .card-details .content .see-more img {
@@ -11745,8 +11747,9 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
           box-shadow: unset;
 }
 
-.rtl .close-btn button {
+.rtl .close-btn span {
   color: #000 !important;
+  cursor: pointer;
 }
 
 .rtl .custom-day.range,

@@ -79,11 +79,13 @@ export class RentalDetailsComponent implements OnInit {
   }
 
 public getSortedPriceList(priceList): void{
-        this.sortedPricesList = priceList;
-        this.sortedPricesList.sort(function(a, b) {
-          return a.priceOrder - b.priceOrder ;
-        });
-        this.checkDateRange();
+    if(priceList.length> 0) {
+      this.sortedPricesList = priceList;
+      this.sortedPricesList.sort(function(a, b) {
+        return a.priceOrder - b.priceOrder ;
+      });
+      this.checkDateRange();
+    }
   }
 
   public OnShowRentalImages() {
