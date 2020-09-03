@@ -100,6 +100,7 @@
       .more-rental-details {
         font-size: 13px;
         color: #5058a6;
+        cursor: pointer;
       }
     }
     .content {
@@ -108,10 +109,11 @@
         text-transform: capitalize;
       }
       .see-more {
-        button {
+        .see-more-expanded {
           color: #5058a6 !important;
           border-radius: 50px;
-          padding: 0 22px !important;
+          cursor: pointer;
+          // padding: 0 22px !important;
         }
         img {
           margin-#{$left}: 6px;
@@ -200,8 +202,9 @@ button.calendar:active {
   border:unset;
   outline: 0;
   box-shadow: unset;
-  button{
-    color:#000 !important
+  span{
+    color:#000 !important;
+    cursor: pointer;
   }
 }
 

@@ -47,9 +47,9 @@
     <div class="rental-details-slider" (click)="showRentalDetailsSlider = false" *ngIf="showRentalDetailsSlider">
       <div class="slider-content">
         <div class="close-btn mb-2 d-flex justify-content-end">
-          <button type="button" class="btn btn-primary" (click)="showRentalDetailsSlider = false">
+          <span (click)="showRentalDetailsSlider = false">
             <span aria-hidden="true">&times;</span>
-        </button>
+        </span>
         </div>
         <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
           <div ngxSlickItem *ngFor="let slide of imagesList" class="slide">
@@ -78,7 +78,7 @@
           width="20px">{{rentalDetails?.prices[0]?.weekEndPrice}} KD/week end</p>
     </div>
     <div class="more d-flex justify-content-end">
-      <button class="btn btn-primary text-capitalize more-rental-details p-0">more...</button>
+      <span class="text-capitalize more-rental-details">more...</span>
     </div>
   </div>
   <div class="card-details calendar mt-2">
@@ -108,7 +108,7 @@
               [value]="formatter.format(fromDate)" (input)="fromDate">
             <div class="input-group-append">
               <!-- <img width="15px" height="15px" (click)="datepicker.toggle()" src="assets/icons/calendar.png" alt="calendar"> -->
-              <button class="btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button"></button>
+              <button class="btn btn-outline-secondary calendar border-0" (click)="datepicker.toggle()" type="button"></button>
             </div>
           </div>
         </div>
@@ -119,7 +119,7 @@
               [value]="formatter.format(toDate)" (input)="toDate">
             <div class="input-group-append">
               <!-- <img width="15px" height="15px" (click)="datepicker.toggle()" src="assets/icons/calendar.png" alt="calendar"> -->
-              <button class="btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button"></button>
+              <button class="btn btn-outline-secondary calendar border-0" (click)="datepicker.toggle()" type="button"></button>
             </div>
           </div>
         </div>
@@ -190,19 +190,19 @@
         </div>
       </div>
       <div class="see-more text-center mt-2">
-        <button class="btn btn-primary text-capitalize">
-          <span class="">see more</span>
+        <span class="text-capitalize">
+          <span class="see-more-expanded">see more</span>
           <img width="12px" height="12px" src="assets/icons/down-arrow.svg" alt="">
-        </button>
+        </span>
       </div>
     </div>
   </div>
   <div class="card-details card-details-bottom next mt-2 d-flex justify-content-around">
-    <button class="btn chat-btn btn-primary">
+    <button class="btn chat-btn btn-primary border-0">
       <img width="22px" height="20px" src="assets/images/chat.PNG" alt="">
       <span>chat</span>
     </button>
-    <button class="btn btn-primary next-btn" (click)="requestRental()">next</button>
+    <button class="btn btn-primary next-btn border-0" (click)="requestRental()">next</button>
     <button class="btn call-btn btn-primary">
       <img width="22px" height="20px" src="assets/images/call.PNG" alt="">
       <span>call</span>
