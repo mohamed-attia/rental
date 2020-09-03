@@ -135,7 +135,7 @@ export class RequestRentalComponent implements OnInit {
     if (this.requestRentalform.valid && this.imageuploadValidation()) {
       this.requestRentalService.postRequestRental(this.requestRental).subscribe(res=>{
         if(res.success){
-          debugger
+          // debugger
           this.responseRequestData = {
             fromDate:res['result'].fromDate,
             qrCode:res['result'].qrCode,

@@ -105,7 +105,7 @@
           <div class="input-group">
             <label class="mr-1 ml-1">From:</label>
             <input #dpFromDate placeholder="yyyy-mm-dd" name="dpFromDate"
-              [value]="formatter.format(fromDate)" (input)="fromDate = validateInput(fromDate, dpFromDate.value)">
+              [value]="formatter.format(fromDate)" (input)="fromDate">
             <div class="input-group-append">
               <!-- <img width="15px" height="15px" (click)="datepicker.toggle()" src="assets/icons/calendar.png" alt="calendar"> -->
               <button class="btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button"></button>
@@ -116,7 +116,7 @@
           <div class="input-group">
             <label class="mr-1 ml-1">To:</label>
             <input #dpToDate placeholder="yyyy-mm-dd" name="dpToDate"
-              [value]="formatter.format(toDate)" (input)="toDate = validateInput(toDate, dpToDate.value)">
+              [value]="formatter.format(toDate)" (input)="toDate">
             <div class="input-group-append">
               <!-- <img width="15px" height="15px" (click)="datepicker.toggle()" src="assets/icons/calendar.png" alt="calendar"> -->
               <button class="btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button"></button>

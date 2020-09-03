@@ -29,6 +29,7 @@ export class LoaderInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
+
     this.requests.push(req);
     this.loaderService.isLoading.next(true);
     return Observable.create(observer => {
@@ -57,3 +58,13 @@ export class LoaderInterceptor implements HttpInterceptor {
     });
   }
 }
+
+
+// intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+//   // put this before your current code
+//   if (req.url.indexOf('/* the api path you want to exclude*/') === -1) {
+//     return next.handle(req);
+//   }
+//   // do your stuff here.
+//   return next.handle(req);
+// }
