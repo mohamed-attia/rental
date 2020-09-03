@@ -35,6 +35,16 @@
             </ng-container>
           </div>
 
+          <div class="phone mb-2">
+            <input autocomplete="off" formControlName="address" class="form-control" type="text"
+              placeholder="{{'Register.address' | translate}}">
+            <ng-container *ngIf="form.submitted && formControls('address')?.invalid ||
+          (formControls('address')?.dirty || formControls('address')?.touched)">
+              <span class="required"
+                *ngIf="formControls('address')?.errors?.required">{{'Validation.required' | translate}}</span>
+            </ng-container>
+          </div>
+
           <div class="password mb-2 position-relative">
             <input autocomplete="off" formControlName="password" class="form-control"
               [type]="password ? 'text' : 'password'" placeholder="{{'Register.New-Password' | translate}}">
@@ -63,7 +73,6 @@
           </div>
 
           <div class="terms-condition mt-2 text-capitalize mb-2">
-
 
             <label class="checkcontainer ml-2 font-14px" for="terms">{{'Register.Creating-account' | translate}}<a
                 class="ml-1" href="#">{{'Register.terms-condition' | translate}}</a>

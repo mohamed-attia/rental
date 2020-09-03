@@ -1,0 +1,140 @@
+<div class="request-rental-container mt-3">
+    <div class="request-rental-identity d-flex justify-content-around mb-3">
+        <button class="btn btn-primay pl-0 pr-0 text-capitalize guest-btn" *ngIf="!isUser" >{{'request-rental.guest' | translate}}</button>
+        <button class="btn btn-primay pl-0 pr-0 text-capitalize login-register-btn" *ngIf="!isUser" [routerLink]="['../../../user/register']"> {{'request-rental.login-register' | translate}}</button>
+    </div>
+    <div class="request-rental-unit-info mb-2 d-flex justify-content-between text-capitalize">
+        <span>{{'request-rental.chalet-name' | translate}}</span>
+        <span>{{requestdata.rentalName}}</span>
+    </div>
+    <div class="request-rental-date mb-3 text-capitalize text-center">
+        <img width="20px" src="assets/icons/calendar.png" alt="">
+        <span class="mr-1 ml-1">{{'request-rental.from' | translate}} {{requestdata?.fromDate?.day}} {{monthMaping(requestdata?.fromDate?.month)}} {{'request-rental.to' | translate}} {{requestdata?.toDate?.day}} {{monthMaping(requestdata?.toDate?.month)}},{{requestdata?.toDate?.year}}</span>
+    </div>
+    <form #form="ngForm" [formGroup]="requestRentalform" (ngSubmit)="onSubmit(form)" novalidate>
+
+      <div class="" formGroupName="user">
+        <div class="full-name mb-1">
+            <label class="text-capitalize mb-1" for="fullName">{{'request-rental.full-name' | translate}}</label>
+            <input placeholder="Enter full name" formControlName="fullName"  [attr.disabled]="isUser? true : null" class="form-control" type="text" name="fullName"  >
+            <ng-container
+            *ngIf="form.submitted && requestRentalform.get('user')?.get('fullName').invalid ||
+          (requestRentalform.get('user')?.get('fullName')?.dirty|| requestRentalform.get('user')?.get('fullName')?.touched)">
+            <span class="validation"
+              *ngIf="requestRentalform.get('user')?.get('fullName')?.errors?.required">{{'request-rental.please-enter-full-name' | translate}}</span>
+          </ng-container>
+        </div>
+
+        <div class="telephone-number mb-1">
+            <label class="text-capitalize mb-1" for="phoneNumber">{{'request-rental.telephone-number' | translate}}</label>
+            <input placeholder="Enter your phone number"  [attr.disabled]="isUser? true : null" formControlName="phoneNumber"  class="form-control" type="text" name="phoneNumber"  >
+           <ng-container
+            *ngIf="form.submitted && requestRentalform.get('user')?.get('phoneNumber')?.invalid ||
+          (requestRentalform.get('user')?.get('phoneNumber')?.dirty || requestRentalform.get('user')?.get('phoneNumber')?.touched)">
+            <span class="validation"
+              *ngIf="requestRentalform.get('user')?.get('phoneNumber')?.errors?.required">{{'request-rental.please-enter-telephone-number' | translate}}</span>
+          </ng-container>
+        </div>
+
+        <div class="address mb-1">
+            <label class="text-capitalize mb-1" for="address">{{'request-rental.Address' | translate}}</label>
+            <input placeholder="{{'request-rental.enter-Address' | translate}}"  [attr.disabled]="isUser? true : null" formControlName="address"  class="form-control" type="text" name="address"  >
+             <ng-container
+            *ngIf="form.submitted && requestRentalform.get('user')?.get('address')?.invalid ||
+          (requestRentalform.get('user')?.get('address')?.dirty || requestRentalform.get('user')?.get('address')?.touched)">
+            <span class="validation"
+              *ngIf="requestRentalform.get('user')?.get('address')?.errors?.required">{{'request-rental.enter-your-Address' | translate}}</span>
+          </ng-container>
+        </div>
+
+        <div class="email mb-1">
+            <label class="text-capitalize mb-1" for="">{{'request-rental.email' | translate}}</label>
+            <input placeholder="{{'request-rental.enter-email' | translate}}"  [attr.disabled]="isUser? true : null" formControlName="emailAddress" class="form-control" type="text" name="email"  >
+             <ng-container
+            *ngIf="form.submitted && requestRentalform.get('user').get('emailAddress').invalid ||
+          (requestRentalform.get('user')?.get('address')?.dirty || requestRentalform.get('user')?.get('emailAddress')?.touched)">
+            <span class="validation"
+              *ngIf="requestRentalform.get('user')?.get('emailAddress')?.errors?.required">{{'request-rental.enter-your-email' | translate}}</span>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="request-rental-type d-flex justify-content-around text-capitalize">
+
+        <label class=" ml-2 font-14px" for="family">{{'request-rental.family' | translate}}
+          <input type="radio" (click)="getcheckboxFamilyValue('family')" value="family" name="family" id="family">
+          <ng-container *ngIf="form.submitted">
+            <p class="required mb-0 validation" *ngIf="!familyOrSinglesValue"> required</p>
+          </ng-container>
+        </label>
+
+        <label class=" ml-2 font-14px" for="singles">{{'request-rental.singles' | translate}}
+          <input type="radio" id="singles" (click)="getcheckboxFamilyValue('singles')" value="singles" name="family" id="singles">
+          <ng-container *ngIf="form.submitted">
+            <p class="required mb-0 validation" *ngIf="!familyOrSinglesValue"> required</p>
+          </ng-container>
+        </label>
+      </div>
+
+    <div class="official-document">
+        <div class="official-document-title mb-2 d-flex align-items-center justify-content-between">
+            <span class="text-capitalize">official document <span class="text-danger" *ngIf="!validaImages">Required</span></span>
+            <button class="btn btn-primary delete-btn p-0">
+                <img width="15px" src="assets/icons/delete.svg" alt="">
+            </button>
+        </div>
+        <div class="official-document-content">
+            <div class="post-pictures mt-2">
+
+              <div class="fileUploader">
+                <ng-container *ngFor="let image of uploadedFileList; let i = index">
+                  <div class="fileUploader-images">
+                    <img width="100px" height="100px" [src]="image.fileName" alt="" *ngIf="checkFiletype(image.fileType)">
+                    <img width="100px" height="100px" src="assets/images/attachment.png" alt="" *ngIf="!checkFiletype(image.fileType)">
+                  </div>
+                </ng-container>
+                <div class="fileUploader-images" *ngIf="loading">
+                  <div class=" spinner-border spinner-color mr-2 ml-2" role="status" >
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                </div>
+                <div class="fileUploader-uploadBtn" *ngIf="this.uploadedFileList.length < 20">
+                  <input id="fileupload" #FileInput  type="file" placeholder="file path" hidden (change)="uploadImages($event)"/>
+                    <label for="fileupload" class="fileUploader-uploadBtn-label">
+                      {{'request-rental.select' | translate}}
+                    </label>
+                </div>
+              </div>
+
+                <p class="mb-0 text-center">{{'request-rental.post' | translate}}</p>
+                <p class="mb-0 text-black-50">{{'request-rental.post-desc' | translate}}</p>
+                <div class="pictures-info">
+                    <ul class="mb-0">
+                        <li class="text-capitalize text-black-50">{{'request-rental.civil-id' | translate}}</li>
+                        <li class="text-capitalize text-black-50">{{'request-rental.marriage' | translate}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="validate mt-1 mb-1">
+                <span class="validation">{{'request-rental.add' | translate}}</span>
+            </div>
+        </div>
+    </div>
+        <div class="insurrence mb-1">
+            <label class="text-capitalize mb-1" for="">{{'request-rental.insurrence' | translate}}</label>
+            <input placeholder="1.000" class="form-control" disabled formControlName="insurance" type="text" name="insurance"  >
+        </div>
+        <div class="rent-amount mb-1">
+            <label class="text-capitalize mb-1" for="">{{'request-rental.rent-amount' | translate}}</label>
+            <input placeholder="850.000" class="form-control" disabled formControlName="TotalAmount" type="text" name="TotalAmount"  >
+        </div>
+
+    <p class="mt-3"> {{'request-rental.submit-rent' | translate}}<a class="terms" href="#">{{'request-rental.terms' | translate}}</a></p>
+    <div class="submit-btn text-center">
+        <button type="submit" class="btn btn-primay text-capitalize">{{'request-rental.submit' | translate}}</button>
+    </div>
+  </form>
+
+</div>
+<app-requestrentalspopup (closeModal)="closeRequestModal($event)" [showModal]="showRequestRentalconfirmation" ></app-requestrentalspopup>
+<app-payment-modal (closePaymentModal)="closePaymentModal($event)" [showPaymentModal]="showPaymentModal"></app-payment-modal>

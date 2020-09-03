@@ -29,11 +29,11 @@ export class AppInterceptor implements HttpInterceptor {
     //const token: string =
     //  localStorage.getItem("token") || "Basic VGVzdDp0ZXN0MTIz";
 
-    if (!request.headers.has("Content-type")) {
-      request = request.clone({
-        headers: request.headers.set("Content-type", "Application/json")
-      });
-    }
+    // if (!request.headers.has("Content-type")) {
+    //   request = request.clone({
+    //     headers: request.headers.set("Content-type", "application/json; charset=utf-8")
+    //   });
+    // }
 
     if (!request.headers.has("Authorization")) {
       if(localStorage.getItem('accessToken'))

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'http://islamattaelkady-001-site5.itempurl.com/api/',
+  api: 'https://api.directrental.co/api/',
   code: 'GTM-58QF7XJ'
 };
 

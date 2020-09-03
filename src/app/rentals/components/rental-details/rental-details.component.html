@@ -1,146 +1,212 @@
 <div class="card-wrapper rental-details-wrapper">
-    <div class="card-button mt-3">
-        <button class="btn btn-primary  mr-2" [ngClass]="showRentalImages ? 'images' : 'video'" (click)="OnShowRentalImages()">images</button>
-        <button class="btn btn-primary " [ngClass]="showRentalVideos ? 'images' : 'video'" (click)="OnShowRentalVideos()">video</button>
-    </div>
-    <div class="rentals-video mt-3" *ngIf="showRentalVideos">
-      <div class="row">
-          <div class="col-md-4 col-6 mb-1 p-0" *ngFor="let video of videoList">
-            <ng-container>
-              <video width="98%" height="100%" controls>
-                  <source [src]="video?.path" type="video/mp4">
-                  <source [src]="video?.path" type="video/ogg">
-                  Your browser does not support HTML video.
-              </video>
-            </ng-container>
-          </div>
+  <div class="card-button mt-3">
+    <button class="btn btn-primary  mr-2" [ngClass]="showRentalImages ? 'images' : 'video'"
+      (click)="OnShowRentalImages()">images</button>
+    <button class="btn btn-primary " [ngClass]="showRentalVideos ? 'images' : 'video'"
+      (click)="OnShowRentalVideos()">video</button>
+  </div>
+  <div class="rentals-video mt-3" *ngIf="showRentalVideos">
+    <div class="row">
+      <div class="col-md-4 col-6 mb-1 p-0" *ngFor="let video of videoList">
+        <ng-container>
+          <video width="98%" height="100%" controls>
+            <source [src]="video?.path" type="video/mp4">
+            <source [src]="video?.path" type="video/ogg">
+            Your browser does not support HTML video.
+          </video>
+        </ng-container>
       </div>
     </div>
-    <div class="rentals-images mt-4" *ngIf="showRentalImages">
-        <div class="img-block-3 mt-1">
-          <div class="row">
-              <div class="col-md-3 col-4 mb-1 p-0" *ngFor="let image of imagesList|slice:0:5">
-                <ng-container>
-                  <div class="img">
-                    <img width="98%" height="141px" [src]="image.path" alt="">
-                </div>
-                </ng-container>
+  </div>
+  <div class="rentals-images mt-4" *ngIf="showRentalImages">
+    <div class="img-block-3 mt-1">
+      <div class="row">
+        <div class="col-md-3 col-4 mb-1 p-0" *ngFor="let image of imagesList|slice:0:5">
+          <ng-container>
+            <div class="img">
+              <img width="98%" height="141px" [src]="image.path" alt="">
+            </div>
+          </ng-container>
+        </div>
+        <div class="col-md-3 col-4 p-0" *ngIf="imagesList.length > 5">
+
+          <button type="button" (click)="showRentalDetailsSlider = !showRentalDetailsSlider" class="btn btn-primary p-0 w-100">
+            <div class="right">
+              <div class="counter d-flex justify-content-center align-items-center position-relative">
+                <span class="count">+ {{imagesList.length - 5}}</span>
               </div>
-              <div class="col-md-3 col-4 p-0" *ngIf="imagesList.length > 5">
-                <div class="right">
-                    <div class="counter d-flex justify-content-center align-items-center position-relative">
-                        <span class="count">+ {{imagesList.length - 5}}</span>
-                    </div>
-                </div>
-              </div>
+            </div>
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- pop up -->
+
+    <div class="rental-details-slider" (click)="showRentalDetailsSlider = false" *ngIf="showRentalDetailsSlider">
+      <div class="slider-content">
+        <div class="close-btn mb-2 d-flex justify-content-end">
+          <button type="button" class="btn btn-primary" (click)="showRentalDetailsSlider = false">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+          <div ngxSlickItem *ngFor="let slide of imagesList" class="slide">
+            <img width="100%" height="280px" [src]="slide.path" alt="">
+          </div>
+        </ngx-slick-carousel>
+      </div>
+    </div>
+
+  <!-- pop up -->
+  <div class="card-details mt-2">
+    <div class="unit-name">
+      <span class="title text-capitalize">{{rentalDetails?.name}}</span>
+      <span class="location ml-2">
+        <img alt="user" height="20px" src="./assets/icons/Home.PNG" width="20px">
+        {{rentalDetails?.location}}
+      </span>
+    </div>
+    <div class="unit-descrption">
+      <p class="mb-0">{{rentalDetails?.description}}</p>
+    </div>
+    <div class="unit-location">
+      <p class="mb-0"><img alt="user" height="20px" src="./assets/icons/days.PNG"
+          width="20px">{{rentalDetails?.prices[0]?.dayPrice}} KD/week Day</p>
+      <p class="mb-0"><img alt="user" height="20px" src="./assets/icons/days.PNG"
+          width="20px">{{rentalDetails?.prices[0]?.weekEndPrice}} KD/week end</p>
+    </div>
+    <div class="more d-flex justify-content-end">
+      <button class="btn btn-primary text-capitalize more-rental-details p-0">more...</button>
+    </div>
+  </div>
+  <div class="card-details calendar mt-2">
+    <div class="calendar-title">
+      <span class="text-capitalize">choose date</span>
+    </div>
+    <div class="selected-date-range">
+      <form class="form-inline d-flex justify-content-center">
+        <div class="form-group hidden">
+          <div class="input-group">
+            <input name="datepicker" class="form-control" ngbDatepicker #datepicker="ngbDatepicker"
+              [autoClose]="'outside'" (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t"
+              outsideDays="hidden" [startDate]="fromDate!">
+            <ng-template #t let-date let-focused="focused">
+              <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
+                [class.faded]="isHovered(date) || isInside(date)" (mouseenter)="hoveredDate = date"
+                (mouseleave)="hoveredDate = null">
+                {{ date.day }}
+              </span>
+            </ng-template>
           </div>
         </div>
-    </div>
-    <div class="card-details mt-2">
-        <div class="unit-name">
-            <span class="title text-capitalize">{{rentalDetails?.name}}</span>
-            <span class="location ml-2">
-              <img alt="user" height="20px" src="./assets/icons/Home.PNG" width="20px">
-              {{rentalDetails?.location}}
-            </span>
+        <div class="form-group">
+          <div class="input-group">
+            <label class="mr-1 ml-1">From:</label>
+            <input #dpFromDate placeholder="yyyy-mm-dd" name="dpFromDate"
+              [value]="formatter.format(fromDate)" (input)="fromDate">
+            <div class="input-group-append">
+              <!-- <img width="15px" height="15px" (click)="datepicker.toggle()" src="assets/icons/calendar.png" alt="calendar"> -->
+              <button class="btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button"></button>
+            </div>
+          </div>
         </div>
-        <div class="unit-descrption">
-            <p class="mb-0">{{rentalDetails?.description}}</p>
+        <div class="form-group">
+          <div class="input-group">
+            <label class="mr-1 ml-1">To:</label>
+            <input #dpToDate placeholder="yyyy-mm-dd" name="dpToDate"
+              [value]="formatter.format(toDate)" (input)="toDate">
+            <div class="input-group-append">
+              <!-- <img width="15px" height="15px" (click)="datepicker.toggle()" src="assets/icons/calendar.png" alt="calendar"> -->
+              <button class="btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button"></button>
+            </div>
+          </div>
         </div>
-        <div class="unit-location">
-            <p class="mb-0"><img alt="user" height="20px" src="./assets/icons/days.PNG" width="20px">{{rentalDetails?.prices[0]?.dayPrice}} KD/week Day</p>
-            <p class="mb-0"><img alt="user" height="20px" src="./assets/icons/days.PNG" width="20px">{{rentalDetails?.prices[0]?.dayPrice}} KD/week Day</p>
-        </div>
-        <div class="more d-flex justify-content-end">
-            <button class="btn btn-primary text-capitalize more-rental-details p-0">more...</button>
-        </div>
-    </div>
-    <div class="card-details calendar mt-2">
-        <div class="calendar-title">
-            <span class="text-capitalize">choose date</span>
-        </div>
-        <div class="selected-date-range">
-          <div class="from d-flex justify-content-between">
-            <span class="text-capitalize">from</span>
-            <span>
+      </form>
+      <div class="from d-flex justify-content-between">
+        <!-- <span class="text-capitalize">from</span> -->
+        <!-- <ngbd-datepicker-range-popup></ngbd-datepicker-range-popup> -->
+        <!-- <span>
                 <img width="15px" height="15px" src="assets/icons/calendar.png" alt="calendar">
-                <span class="calendar-date">28 Jan- 28 Feb,2020</span>
-            </span>
-        </div>
-        <div class="to d-flex justify-content-between">
-            <span class="text-capitalize">to</span>
-            <span>
+               <a href="avascript:void(0)"><span class="calendar-date">28 Jan- 28 Feb,2020</span></a>
+            </span> -->
+      </div>
+      <div class="to d-flex justify-content-between">
+        <!-- <span class="text-capitalize">to</span> -->
+        <!-- <ngbd-datepicker-range-popup></ngbd-datepicker-range-popup> -->
+        <!-- <span>
                 <img width="15px" height="15px" src="assets/icons/calendar.png" alt="">
                 <span class="calendar-date">28 Jan- 28 Feb,2020</span>
-            </span>
-        </div>
-        </div>
+            </span> -->
+      </div>
     </div>
-    <div class="card-details utilies mt-2">
-        <div class="title">
-            <span class="text-capitalize">utilies</span>
-        </div>
-        <div class="content">
-            <div class="row">
-                <div class="col-md-3 col-3" *ngIf="rentalDetails?.hasLight">
-                    <div class="light text-center">
-                        <div class="img">
-                            <img width="25px" height="22px" src="assets/images/light.PNG" alt="">
-                        </div>
-                        <div class="title">
-                            <span>light</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-3" *ngIf="rentalDetails?.hasWater">
-                    <div class="water text-center">
-                        <div class="img">
-                            <img width="25px" height="22px" src="assets/images/water.PNG" alt="">
-                        </div>
-                        <div class="title">
-                            <span>water</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-3" *ngIf="rentalDetails?.hasParking">
-                    <div class="parking text-center">
-                        <div class="img">
-                            <img width="25px" height="22px" src="assets/images/Parking.PNG" alt="">
-                        </div>
-                        <div class="title">
-                            <span>parking</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-3" *ngIf="rentalDetails?.hasInternet">
-                    <div class="internet text-center">
-                        <div class="img">
-                            <img width="25px" height="22px" src="assets/images/internet.PNG" alt="">
-                        </div>
-                        <div class="title">
-                            <span>internet</span>
-                        </div>
-                    </div>
-                </div>
+  </div>
+  <div class="card-details utilies mt-2">
+    <div class="title">
+      <span class="text-capitalize">utilies</span>
+    </div>
+    <div class="content">
+      <div class="row">
+        <div class="col-md-3 col-3" *ngIf="rentalDetails?.hasLight">
+          <div class="light text-center">
+            <div class="img">
+              <img width="25px" height="22px" src="assets/images/light.PNG" alt="">
             </div>
-            <div class="see-more text-center mt-2">
-                <button class="btn btn-primary text-capitalize">
-                    <span class="">see more</span>
-                    <img width="12px" height="12px" src="assets/icons/down-arrow.svg" alt="">
-                </button>
+            <div class="title">
+              <span>light</span>
             </div>
+          </div>
         </div>
-    </div>
-    <div class="card-details card-details-bottom next mt-2 d-flex justify-content-around">
-        <button class="btn chat-btn btn-primary">
-            <img width="22px" height="20px" src="assets/images/chat.PNG" alt="">
-            <span>chat</span>
+        <div class="col-md-3 col-3" *ngIf="rentalDetails?.hasWater">
+          <div class="water text-center">
+            <div class="img">
+              <img width="25px" height="22px" src="assets/images/water.PNG" alt="">
+            </div>
+            <div class="title">
+              <span>water</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-3" *ngIf="rentalDetails?.hasParking">
+          <div class="parking text-center">
+            <div class="img">
+              <img width="25px" height="22px" src="assets/images/Parking.PNG" alt="">
+            </div>
+            <div class="title">
+              <span>parking</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-3" *ngIf="rentalDetails?.hasInternet">
+          <div class="internet text-center">
+            <div class="img">
+              <img width="25px" height="22px" src="assets/images/internet.PNG" alt="">
+            </div>
+            <div class="title">
+              <span>internet</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="see-more text-center mt-2">
+        <button class="btn btn-primary text-capitalize">
+          <span class="">see more</span>
+          <img width="12px" height="12px" src="assets/icons/down-arrow.svg" alt="">
         </button>
-        <button class="btn btn-primary next-btn">next</button>
-        <button class="btn call-btn btn-primary">
-            <img width="22px" height="20px" src="assets/images/call.PNG" alt="">
-            <span>call</span>
-        </button>
+      </div>
     </div>
+  </div>
+  <div class="card-details card-details-bottom next mt-2 d-flex justify-content-around">
+    <button class="btn chat-btn btn-primary">
+      <img width="22px" height="20px" src="assets/images/chat.PNG" alt="">
+      <span>chat</span>
+    </button>
+    <button class="btn btn-primary next-btn" (click)="requestRental()">next</button>
+    <button class="btn call-btn btn-primary">
+      <img width="22px" height="20px" src="assets/images/call.PNG" alt="">
+      <span>call</span>
+    </button>
+  </div>
 
 </div>

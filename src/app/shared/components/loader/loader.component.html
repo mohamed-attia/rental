@@ -1,3 +1,5 @@
-  <main [hidden]="!loading">
-      <th-spinner s-img="./app/mci/assets/images/qr-public/icon--colored.svg"></th-spinner>
-  </main>
+<!-- *ngIf="isLoading | async" -->
+
+<div *ngIf="isLoading | async"  class="loader-overlay">
+<div class="loader">Loading...</div>
+</div>

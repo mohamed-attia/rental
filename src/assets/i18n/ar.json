@@ -27,7 +27,8 @@
     "login-with":"أو تسجيل الدخول باستخدام",
     "facebook":"موقع التواصل الاجتماعي الفيسبوك",
     "instagram":"الانستقرام",
-    "google-plus":"جوجل بلس"
+    "google-plus":"جوجل بلس",
+    "address":"العنوان"
   },
   "Validation":{
     "required":"حقل مطلوب",
@@ -42,5 +43,48 @@
   },
   "lang_switcher": {
     "currentLang": "En"
+  },
+  "payment":{
+    "bookingConfirm":"تأكيد الحجز",
+    "unitName":"إسم الوحدة",
+    "bookingDate":"تاريخ الحجز",
+    "insurance":"تأمين",
+    "rentAmount":"مقدار الايجار",
+    "proceed":"من خلال الشروع في الدفع فإنك توافق على الإيجار",
+    "contract":"العقد واللوائح",
+    "payNow":"ادفع الآن",
+    "cancel":"إلغاء"
+  },
+  "request-rental":{
+    "guest":"زائر",
+    "login-register":"دخول/تسجيل",
+    "chalet-name":"شاليه 990",
+    "from":"من عند:",
+    "to":"إلى:",
+    "full-name":"الاسم الكامل",
+    "enter-full-name":"أدخل الاسم الكامل",
+    "please-enter-full-name":"من فضلك ادخل اسمك الكامل",
+    "telephone-number":"رقم هاتف",
+    "enter-telephone-number":"أدخل رقم هاتفك",
+    "please-enter-telephone-number":"يرجى إدخال رقم الهاتف الخاص بك",
+    "Address":"عنوان",
+    "enter-Address":"أدخل عنوانك",
+    "enter-your-Address":"الرجاء إدخال عنوانك",
+    "email":"البريد الإلكتروني",
+    "enter-email":"أدخل بريدك الإلكتروني",
+    "enter-your-email":"رجاءا أدخل بريدك الإلكتروني",
+    "family":"أسرة",
+    "singles":"الفردي",
+    "select":"حدد ملف",
+    "post":"انشر المزيد من الصور",
+    "post-desc":"4 صور محدودة على الأقل. 20 صورة كحد أقصى ولا تزيد عن 10 ميغا بايت",
+    "civil-id":"الهوية المدنية (الأمامي والخلفي)",
+    "marriage":"وثيقة زواج",
+    "add":"الرجاء إضافة نسختين على الأقل من المستندات المطلوبة",
+    "insurrence":"تامين",
+    "rent-amount":"مقدار الايجار",
+    "submit-rent":"بتقديم طلب الإيجار هذا ، فإنك توافق على الإيجار",
+    "terms":"أحكام وشروط",
+    "submit":"تقديم الطلب"
   }
 }

@@ -1,0 +1,13 @@
+@font-face {
+  font-family: roboto;
+  src: url(../../fonts/Roboto/Roboto-Medium.ttf);
+}
+
+// .rtl body,
+// .ltr body{
+//   font-family: Roboto-Meduim !important;
+// }
+
+body *{
+  font-family: roboto !important;
+}

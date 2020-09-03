@@ -1,0 +1,54 @@
+<!-- Modal -->
+<div class="modal fade show" [style.display]="showModal ? 'block' : 'none'" id="requesConfirmation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-capitalize" id="exampleModalLabel">request submitted</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="emitCloseModal()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-success text-center">
+                    <div class="img">
+                        <img width="90px" src="assets/icons/success.png" alt="">
+                    </div>
+                    <div class="success-msg">
+                        <div class="request-id">
+                            <span class="text-capitalize">request id:{{requestResponseData['requestId']}}</span>
+                            <span></span>
+                        </div>
+                        <div class="date-time d-flex justify-content-around">
+                            <div class="date">
+                                <span class="text-capitalize">date: {{date}}</span>
+                                <span></span>
+                            </div>
+                            <div class="time">
+                                <span class="text-capitalize">time: {{time}}</span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="request-msg w-75 mx-auto">
+                            <span>Your request under host reviewing, you can track your request from the requests page</span>
+                        </div>
+                    </div>
+                    <div class="screeshot">
+                        <div class="screenshot-btn">
+                            <button class="btn btn-primary">
+                                <img [src]="'data:image/jpg;base64,'+requestResponseData['qrCode']"/>
+                                <span class="d-block text-capitalize">take a screenshot</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="track-request pt-2 pb-2">
+                        <button class="btn btn-primary" (click)="emitCloseModal()" >track your request</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop fade show" *ngIf="showModal"></div>
+
+

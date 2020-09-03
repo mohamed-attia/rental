@@ -23,22 +23,27 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
 
-  createForm() {
+  private createForm() {
     this.userLoginForm = this.fb.group({
       userNameOrEmailAddressOrPhone: ["", Validators.required],
       password: ["", Validators.required],
     });
   }
 
-  onSubmit(form:FormGroup) {
+  public onSubmit(form:FormGroup) {
     if (this.userLoginForm.valid) {
       this.rentalUserService
         .sendUserLoginData(this.userLoginForm.value)
         .subscribe((res) => {
           localStorage.setItem('accessToken','Bearer' + ' ' + res.result['accessToken']);
+          localStorage.setItem('address', res['result'].address);
+          localStorage.setItem('emailAddress', res['result'].emailAddress);
+          localStorage.setItem('name', res['result'].name);
+          localStorage.setItem('phoneNumber', res['result'].phoneNumber);
           if(res['success']) {
             this.router.navigate(["./rentals"]);
-            console.log("res", res);
+            localStorage.setItem('userId',res['result']['userId']);
+            console.log("res", res['result']['userId']);
           }
         });
     } else {

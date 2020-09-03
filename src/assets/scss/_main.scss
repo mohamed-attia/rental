@@ -16,10 +16,16 @@
 // ### ============================  [ Layouts ] =========================== ### //
 @import "../scss/layouts/rentals";
 @import "../scss/layouts/rental-user-login";
-@import "../scss/layouts/_rental-details.scss";
 @import "../scss/layouts/header";
+@import "../scss/layouts/request-rental-header";
 @import "./layouts/reusedComponent";
+@import "./layouts/requestRental";
+@import "./layouts/request-confirmation-popup";
+@import "./layouts/payment";
 @import "./base/globalStyle";
+@import "./base/radioButtons";
+@import "./layouts/datepicker";
+@import "../scss/layouts/_rental-details.scss";
 
 
 // ### ===================================================================== ### //
@@ -27,3 +33,7 @@
 // ###  ============  [ Common ]
 @import "./modules/common/breadcrumbs";
 @import "./base/mediaQuery";
+
+
+// ## ========================= [ fonts ] =============== ## //
+@import "./base/fonts";

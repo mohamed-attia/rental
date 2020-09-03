@@ -10,7 +10,7 @@ interface RetnalDataModel {
   longitude: string;
   latitude: string;
   status: number;
-
+  insurance:number;
   hasLight: boolean;
   hasWater: boolean;
   hasInternet: boolean;

@@ -1,0 +1,29 @@
+.screeshot {
+  .screenshot-btn {
+    button {
+      background-color: unset !important;
+      border: unset !important;
+      box-shadow: unset !important;
+      outline: 0 !important;
+      span {
+        color: #000;
+      }
+    }
+  }
+}
+
+.request-msg{
+  text-shadow: 1px 0 10px #aaa;
+}
+
+.track-request{
+    button{
+        background-color: #5058a6 !important;
+        border: 1px solid #5058a6 !important;
+        box-shadow: unset !important;
+        outline: 0 !important;
+        width: 185px;
+        border-radius: 25px;
+        text-transform:capitalize
+    }
+}

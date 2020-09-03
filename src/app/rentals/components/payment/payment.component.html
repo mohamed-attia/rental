@@ -1,0 +1,96 @@
+<!-- Modal -->
+<div class="modal fade show" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" [style.display]="showPaymentModal ? 'block' : 'none'">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="confirm-title text-center">
+          <span class="text-capitalize">{{'payment.bookingConfirm' | translate}}</span>
+        </div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="confirm-booking" >
+          <form #form="ngForm" [formGroup]="paymentForm" (ngSubmit)="onSubmit(form)" novalidate>
+            <div class="input mb-1">
+              <div class="input-title">
+                <span class="text-capitalize">{{'payment.unitName' | translate}}</span>
+              </div>
+              <div class="input-type">
+                <input type="text" autocomplete="off" formControlName="name" required  class="form-control" >
+              </div>
+              <div class="validation-msg">
+                <ng-container
+                *ngIf="form.submitted && paymentForm.controls['name'].invalid ||
+               (paymentForm.controls['name'].dirty || paymentForm.controls['name'].touched)">
+                <span class="required text-capitalize"
+                  *ngIf="paymentForm.controls['name']?.errors?.required">{{'Validation.required' | translate}}</span>
+              </ng-container>
+              </div>
+            </div>
+            <div class="input mb-1">
+              <div class="input-title">
+                <span class="text-capitalize">{{'payment.bookingDate' | translate}}</span>
+              </div>
+              <div class="input-type">
+                <input type="text" autocomplete="off" formControlName="date" required  class="form-control">
+              </div>
+              <div class="validation-msg">
+                <ng-container
+                *ngIf="form.submitted && paymentForm.controls['date'].invalid ||
+               (paymentForm.controls['date'].dirty || paymentForm.controls['date'].touched)">
+                <span class="required text-capitalize"
+                  *ngIf="paymentForm.controls['date']?.errors?.required">{{'Validation.required' | translate}}</span>
+              </ng-container>
+              </div>
+            </div>
+            <div class="input mb-1">
+              <div class="input-title">
+                <span class="text-capitalize">{{'payment.insurance' | translate}}</span>
+              </div>
+              <div class="input-type">
+                <input type="text" autocomplete="off" formControlName="insurance" required  class="form-control">
+              </div>
+              <div class="validation-msg">
+                <ng-container
+                *ngIf="form.submitted && paymentForm.controls['rentAmount'].invalid ||
+               (paymentForm.controls['rentAmount'].dirty || paymentForm.controls['rentAmount'].touched)">
+                <span class="required text-capitalize"
+                  *ngIf="paymentForm.controls['rentAmount']?.errors?.required">{{'Validation.required' | translate}}</span>
+              </ng-container>
+              </div>
+            </div>
+            <div class="input mb-1">
+              <div class="input-title">
+                <span class="text-capitalize">{{'payment.rentAmount' | translate}}</span>
+              </div>
+              <div class="input-type">
+                <input type="text" autocomplete="off" formControlName="rentAmount" required  class="form-control">
+              </div>
+              <div class="validation-msg">
+                <ng-container
+                *ngIf="form.submitted && paymentForm.controls['insurance'].invalid ||
+               (paymentForm.controls['insurance'].dirty || paymentForm.controls['insurance'].touched)">
+                <span class="required text-capitalize"
+                  *ngIf="paymentForm.controls['insurance']?.errors?.required">{{'Validation.required' | translate}}</span>
+              </ng-container>
+              </div>
+            </div>
+            <p>{{'payment.proceed' | translate}} <a class="text-capitalize" href="#">{{'payment.contract' | translate}}</a></p>
+            <div class="pay-now text-center mb-1">
+              <button class="btn btn-primay text-capitalize" type="submit">{{'payment.payNow' | translate}}</button>
+            </div>
+          </form>
+          <div class="cancel text-center">
+            <button class="btn btn-primay text-capitalize" type="button" (click)="emitClosePaymentModal()">{{'payment.cancel' | translate}}</button>
+          </div>
+          <!-- <button (click)="emitClosePaymentModal()"></button> -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop fade show" *ngIf="showPaymentModal"></div>
