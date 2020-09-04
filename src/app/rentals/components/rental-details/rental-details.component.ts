@@ -198,6 +198,14 @@ public getSortedPriceList(priceList): void{
       'insurance':this.rentalDetails.insurance,
       "amount":this.totalAmount + this.rentalDetails.insurance
     }
-    this.getRentalsListService.setRentalData(obj);
+    this.getRentalsListService.setRentalData({
+      "fromDate":this.fromDate,
+      "toDate":this.toDate,
+      "rentalName":this.rentalDetails.name,
+      'unitId':this.rentalDetails.id,
+      'status':this.rentalDetails.status,
+      'insurance':this.rentalDetails.insurance,
+      "amount":this.totalAmount + this.rentalDetails.insurance
+    });
   }
 }

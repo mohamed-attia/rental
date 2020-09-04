@@ -27,6 +27,8 @@ export class RequestRentalComponent implements OnInit {
   public showPaymentModal= false;
   public responseRequestData = {};
   validaImages: boolean = true;
+  public fromDate:any;
+  public toDate:any;
   constructor(
     private getRentalsListService: GetRentalsListService,
     private fb: FormBuilder,
@@ -39,7 +41,6 @@ export class RequestRentalComponent implements OnInit {
 
   ngOnInit() {
     this.getRentalData();
-    this.createForm();
   }
 
   private getUSerInfo(){
@@ -50,9 +51,13 @@ export class RequestRentalComponent implements OnInit {
   }
 
   private getRentalData() {
-    this.getRentalsListService.getRentalData().subscribe((res) => {
+    this.getRentalsListService.getRentalData().subscribe(res => {
+      debugger
       this.requestdata = res;
-      console.log("res", res);
+      debugger
+      if(this.requestdata !== null && this.requestdata !== undefined && Object.keys(this.requestdata).length !== 0){
+        this.createForm();
+      }
     });
   }
 
@@ -88,38 +93,66 @@ export class RequestRentalComponent implements OnInit {
   private createForm() {
 
     this.requestRentalform = this.fb.group({
-      unitType: [""],
-      TotalAmount: [this.requestdata.amount],
-      insurance: [this.requestdata.insurance],
-      status: this.requestdata.status,
-      note: "",
-      paymentStatus: 1,
-      paymentNote: "",
-      unitId: this.requestdata.unitId,
-      fromDate: new Date(`${this.requestdata.fromDate.year}-${this.requestdata.fromDate.month}-${this.requestdata.fromDate.day}`).toISOString(),
-      toDate: new Date(`${this.requestdata.toDate.year}-${this.requestdata.toDate.month}-${this.requestdata.toDate.day}`).toISOString(),
+    unitType: [""],
+    TotalAmount: [this.requestdata.amount],
+    insurance: [this.requestdata.insurance],
+    status: this.requestdata.status,
+    note: "",
+    paymentStatus: 1,
+    paymentNote: "",
+    unitId: this.requestdata.unitId,
       user: this.fb.group({
-        fullName: ["", Validators.required],
-        id: "",
-        userName: "",
-        emailAddress: ["", Validators.required],
-        phoneNumber: ["", Validators.required],
-        password: "",
-        tenantId: +localStorage.getItem("tenantId"),
-        acceptTermsAndConditions: true,
-        address: ["", Validators.required],
-        setRandomPassword: "",
-        shouldChangePasswordOnNextLogin: true,
-        isGuest: "",
+      fullName: ["", Validators.required],
+      id: "",
+      userName: "",
+      emailAddress: ["", Validators.required],
+      phoneNumber: ["", Validators.required],
+      password: "",
+      tenantId: +localStorage.getItem("tenantId"),
+      acceptTermsAndConditions: true,
+      address: ["", Validators.required],
+      setRandomPassword: "",
+      shouldChangePasswordOnNextLogin: true,
+      isGuest: "",
       }),
     });
 
-    if(this.isUser){
-      this.getUSerInfo();
-      }
+  // this.requestRentalform = this.fb.group({
+  //   unitType: [""],
+  //   TotalAmount: [this.requestdata.amount],
+  //   insurance: [this.requestdata.insurance],
+  //   status: this.requestdata.status,
+  //   note: "",
+  //   paymentStatus: 1,
+  //   paymentNote: "",
+  //   unitId: this.requestdata.unitId,
+  //   fromDate: new Date(`${this.requestdata.fromDate.year}-${this.requestdata.fromDate.month}-${this.requestdata.fromDate.day}`).toISOString(),
+  //   toDate: new Date(`${this.requestdata.toDate.year}-${this.requestdata.toDate.month}-${this.requestdata.toDate.day}`).toISOString(),
+  //   user: this.fb.group({
+  //     fullName: ["", Validators.required],
+  //     id: "",
+  //     userName: "",
+  //     emailAddress: ["", Validators.required],
+  //     phoneNumber: ["", Validators.required],
+  //     password: "",
+  //     tenantId: +localStorage.getItem("tenantId"),
+  //     acceptTermsAndConditions: true,
+  //     address: ["", Validators.required],
+  //     setRandomPassword: "",
+  //     shouldChangePasswordOnNextLogin: true,
+  //     isGuest: "",
+  //   }),
+  // });
+
+  if(this.isUser){
+    this.getUSerInfo();
+    }
+
   }
 
   public onSubmit(form: FormGroup) {
+      this.fromDate = new Date(Number(this.requestdata.fromDate.year),Number(this.requestdata.fromDate.month),Number(this.requestdata.fromDate.day));
+      this.toDate = new Date(Number(this.requestdata.toDate.year),Number(this.requestdata.toDate.month),Number(this.requestdata.toDate.day));
     this.requestRentalform.get("user").get("userName").setValue(this.requestRentalform.get("user").get("emailAddress").value);
     if (this.isUser) {
       this.requestRentalform.get("user").get("id").setValue(Number(localStorage.getItem("userId")));
@@ -130,10 +163,11 @@ export class RequestRentalComponent implements OnInit {
       this.requestRentalform.get("user").get("isGuest").setValue(true);
       this.requestRentalform.get('user').get('setRandomPassword').setValue(true)
     }
-    this.requestRental = Object.assign({},this.requestRentalform.value,{images:this.requestRental.images});
+    this.requestRental = Object.assign({},this.requestRentalform.value,{images:this.requestRental.images},{fromDate:this.fromDate},{toDate:this.toDate});
 
     if (this.requestRentalform.valid && this.imageuploadValidation()) {
       this.requestRentalService.postRequestRental(this.requestRental).subscribe(res=>{
+        let result = res.error;
         if(res.success){
           // debugger
           this.responseRequestData = {
