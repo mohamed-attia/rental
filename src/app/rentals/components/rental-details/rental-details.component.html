@@ -5,7 +5,7 @@
     <button class="btn btn-primary " [ngClass]="showRentalVideos ? 'images' : 'video'"
       (click)="OnShowRentalVideos()">video</button>
   </div>
-  <div class="rentals-video mt-3" *ngIf="showRentalVideos">
+  <!-- <div class="rentals-video mt-3" *ngIf="showRentalVideos">
     <div class="row">
       <div class="col-md-4 col-6 mb-1 p-0" *ngFor="let video of videoList">
         <ng-container>
@@ -17,8 +17,10 @@
         </ng-container>
       </div>
     </div>
-  </div>
-  <div class="rentals-images mt-4" *ngIf="showRentalImages">
+  </div> -->
+  <img width="98%" height="141px" [src]="imagesList[0]?.path" alt="">
+
+  <!-- <div class="rentals-images mt-4" *ngIf="showRentalImages">
     <div class="img-block-3 mt-1">
       <div class="row">
         <div class="col-md-3 col-4 mb-1 p-0" *ngFor="let image of imagesList|slice:0:5">
@@ -41,7 +43,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- pop up -->
 
     <div class="rental-details-slider" (click)="showRentalDetailsSlider = false" *ngIf="showRentalDetailsSlider">
