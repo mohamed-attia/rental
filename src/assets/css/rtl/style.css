@@ -11797,6 +11797,12 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   .rtl .slider-content {
     width: 93%;
   }
+  .rtl .ngb-dp-months {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
 }
 
 @media (min-width: 1024px) and (max-width: 1366px) {
