@@ -5,9 +5,9 @@
     <button class="btn btn-primary " [ngClass]="showRentalVideos ? 'images' : 'video'"
       (click)="OnShowRentalVideos()">video</button>
   </div>
-  <!-- <div class="rentals-video mt-3" *ngIf="showRentalVideos">
+  <div class="rentals-video mt-3" *ngIf="showRentalVideos">
     <div class="row">
-      <div class="col-md-4 col-6 mb-1 p-0" *ngFor="let video of videoList">
+      <div class="col-md-4 col-6 mb-1 p-0" *ngFor="let video of videos">
         <ng-container>
           <video width="98%" height="100%" controls>
             <source [src]="video?.path" type="video/mp4">
@@ -17,25 +17,23 @@
         </ng-container>
       </div>
     </div>
-  </div> -->
-  <img width="98%" height="141px" [src]="imagesList[0]?.path" alt="">
-
-  <!-- <div class="rentals-images mt-4" *ngIf="showRentalImages">
+  </div>
+  <div class="rentals-images mt-4" *ngIf="showRentalImages">
     <div class="img-block-3 mt-1">
-      <div class="row">
-        <div class="col-md-3 col-4 mb-1 p-0" *ngFor="let image of imagesList|slice:0:5">
+      <div class="row" *ngIf="images.length>0">
+        <div class="col-md-3 col-4 mb-1 p-0" *ngFor="let image of images|slice:0:5">
           <ng-container>
             <div class="img">
               <img width="98%" height="141px" [src]="image.path" alt="">
             </div>
           </ng-container>
         </div>
-        <div class="col-md-3 col-4 p-0" *ngIf="imagesList.length > 5">
+        <div class="col-md-3 col-4 p-0" *ngIf="images.length > 5">
 
           <button type="button" (click)="showRentalDetailsSlider = !showRentalDetailsSlider" class="btn btn-primary p-0 w-100">
             <div class="right">
               <div class="counter d-flex justify-content-center align-items-center position-relative">
-                <span class="count">+ {{imagesList.length - 5}}</span>
+                <span class="count">+ {{images.length - 5}}</span>
               </div>
             </div>
           </button>
@@ -43,7 +41,7 @@
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
   <!-- pop up -->
 
     <div class="rental-details-slider" (click)="showRentalDetailsSlider = false" *ngIf="showRentalDetailsSlider">
@@ -54,7 +52,7 @@
         </span>
         </div>
         <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-          <div ngxSlickItem *ngFor="let slide of imagesList" class="slide">
+          <div ngxSlickItem *ngFor="let slide of images" class="slide">
             <img width="100%" height="280px" [src]="slide.path" alt="">
           </div>
         </ngx-slick-carousel>

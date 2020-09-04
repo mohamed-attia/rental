@@ -11,6 +11,7 @@ import { environment } from "../../../environments/environment";
 export class RequestRentalService {
 
   private RequestResponseData: BehaviorSubject<{}> = new BehaviorSubject({});
+  private Rentalimages: BehaviorSubject<{images:[],videos:[]}> = new BehaviorSubject({images:[],videos:[]});
 
   constructor(private query: QueryService, private http: HttpClient) {}
 
@@ -50,5 +51,12 @@ export class RequestRentalService {
   }
   public setRequestResponseRentalData(rentalData){
     this.RequestResponseData.next(rentalData);
+  }
+
+  public getRentalImages(): Observable<{images:[],videos:[]}> {
+    return this.Rentalimages.asObservable();
+  }
+  public setrentalImages(rentalData){
+    this.Rentalimages.next(rentalData);
   }
 }

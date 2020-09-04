@@ -11,6 +11,7 @@ import {
 
 import { GetRentalsListService } from "../../service/rental.service";
 import { RentalModel } from "../../models/rentals.model";
+import { RequestRentalService } from '../../service/request-rental-service';
 
 @Component({
   selector: "app-rental-details",
@@ -38,20 +39,28 @@ export class RentalDetailsComponent implements OnInit {
     dots: true,
     infinite: true,
   };
-
+  images: [] = [];
+  videos: [] = [];
   constructor(
     private getRentalsListService: GetRentalsListService,
     private actRoute: ActivatedRoute,
     private calendar: NgbCalendar,
     public formatter: NgbDateParserFormatter,
-    private router:Router
+    private router:Router,
+    private requestRentalService: RequestRentalService
   ) {
     this.fromDate = calendar.getToday();
     this.toDate = calendar.getNext(calendar.getToday(), "d", 10);
+    this.getRentalId();
+
   }
 
   ngOnInit() {
-    this.getRentalId();
+    this.requestRentalService.getRentalImages().subscribe(res=>{
+      console.log('res', res)
+      this.images = res['images'];
+      this.videos = res['videos'];
+    })
   }
 
   public getRentalId() {

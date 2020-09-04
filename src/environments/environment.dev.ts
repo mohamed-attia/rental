@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'https://api.directrental.co/api/',
+  api: 'https://api.directrental.app/api/',
   code: 'GTM-58QF7XJ'
 };
 
