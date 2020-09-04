@@ -11803,6 +11803,9 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
   }
+  .ltr video {
+    border: 1px solid #dedede;
+  }
 }
 
 @media (min-width: 1024px) and (max-width: 1366px) {
