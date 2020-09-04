@@ -11,12 +11,12 @@
         <img width="20px" src="assets/icons/calendar.png" alt="">
         <span class="mr-1 ml-1">{{'request-rental.from' | translate}} {{requestdata?.fromDate?.day}} {{monthMaping(requestdata?.fromDate?.month)}} {{'request-rental.to' | translate}} {{requestdata?.toDate?.day}} {{monthMaping(requestdata?.toDate?.month)}},{{requestdata?.toDate?.year}}</span>
     </div>
-    <form #form="ngForm" [formGroup]="requestRentalform" (ngSubmit)="onSubmit(form)" novalidate>
+    <!-- <form #form="ngForm" [formGroup]="requestRentalform" (ngSubmit)="onSubmit(form)" novalidate>
 
       <div class="" formGroupName="user">
         <div class="full-name mb-1">
             <label class="text-capitalize mb-1" for="fullName">{{'request-rental.full-name' | translate}}</label>
-            <input placeholder="Enter full name" formControlName="fullName"  [attr.disabled]="isUser? true : null" class="form-control" type="text" name="fullName"  >
+            <input placeholder="Enter full name" formControlName="fullName"  class="form-control" type="text" name="fullName"  >
             <ng-container
             *ngIf="form.submitted && requestRentalform.get('user')?.get('fullName').invalid ||
           (requestRentalform.get('user')?.get('fullName')?.dirty|| requestRentalform.get('user')?.get('fullName')?.touched)">
@@ -27,7 +27,7 @@
 
         <div class="telephone-number mb-1">
             <label class="text-capitalize mb-1" for="phoneNumber">{{'request-rental.telephone-number' | translate}}</label>
-            <input placeholder="Enter your phone number"  [attr.disabled]="isUser? true : null" formControlName="phoneNumber"  class="form-control" type="text" name="phoneNumber"  >
+            <input placeholder="Enter your phone number"   formControlName="phoneNumber"  class="form-control" type="text" name="phoneNumber"  >
            <ng-container
             *ngIf="form.submitted && requestRentalform.get('user')?.get('phoneNumber')?.invalid ||
           (requestRentalform.get('user')?.get('phoneNumber')?.dirty || requestRentalform.get('user')?.get('phoneNumber')?.touched)">
@@ -38,7 +38,7 @@
 
         <div class="address mb-1">
             <label class="text-capitalize mb-1" for="address">{{'request-rental.Address' | translate}}</label>
-            <input placeholder="{{'request-rental.enter-Address' | translate}}"  [attr.disabled]="isUser? true : null" formControlName="address"  class="form-control" type="text" name="address"  >
+            <input placeholder="{{'request-rental.enter-Address' | translate}}"   formControlName="address"  class="form-control" type="text" name="address"  >
              <ng-container
             *ngIf="form.submitted && requestRentalform.get('user')?.get('address')?.invalid ||
           (requestRentalform.get('user')?.get('address')?.dirty || requestRentalform.get('user')?.get('address')?.touched)">
@@ -49,7 +49,7 @@
 
         <div class="email mb-1">
             <label class="text-capitalize mb-1" for="">{{'request-rental.email' | translate}}</label>
-            <input placeholder="{{'request-rental.enter-email' | translate}}"  [attr.disabled]="isUser? true : null" formControlName="emailAddress" class="form-control" type="text" name="email"  >
+            <input placeholder="{{'request-rental.enter-email' | translate}}"   formControlName="emailAddress" class="form-control" type="text" name="email"  >
              <ng-container
             *ngIf="form.submitted && requestRentalform.get('user').get('emailAddress').invalid ||
           (requestRentalform.get('user')?.get('address')?.dirty || requestRentalform.get('user')?.get('emailAddress')?.touched)">
@@ -59,7 +59,7 @@
         </div>
       </div>
 
-      <div class="request-rental-type d-flex justify-content-around text-capitalize">
+       <div class="request-rental-type d-flex justify-content-around text-capitalize">
 
         <label class=" ml-2 font-14px" for="family">{{'request-rental.family' | translate}}
           <input type="radio" (click)="getcheckboxFamilyValue('family')" value="family" name="family" id="family">
@@ -122,19 +122,19 @@
     </div>
         <div class="insurrence mb-1">
             <label class="text-capitalize mb-1" for="">{{'request-rental.insurrence' | translate}}</label>
-            <input placeholder="1.000" class="form-control" disabled formControlName="insurance" type="text" name="insurance"  >
+            <input placeholder="1.000" class="form-control"  formControlName="insurance" type="text" name="insurance"  >
         </div>
         <div class="rent-amount mb-1">
             <label class="text-capitalize mb-1" for="">{{'request-rental.rent-amount' | translate}}</label>
-            <input placeholder="850.000" class="form-control" disabled formControlName="TotalAmount" type="text" name="TotalAmount"  >
+            <input placeholder="850.000" class="form-control"  formControlName="TotalAmount" type="text" name="TotalAmount"  >
         </div>
 
     <p class="mt-3"> {{'request-rental.submit-rent' | translate}}<a class="terms" href="#">{{'request-rental.terms' | translate}}</a></p>
     <div class="submit-btn text-center">
         <button type="submit" class="btn btn-primay text-capitalize">{{'request-rental.submit' | translate}}</button>
     </div>
-  </form>
+  </form> -->
 
 </div>
-<app-requestrentalspopup (closeModal)="closeRequestModal($event)" [showModal]="showRequestRentalconfirmation" ></app-requestrentalspopup>
-<app-payment-modal (closePaymentModal)="closePaymentModal($event)" [showPaymentModal]="showPaymentModal"></app-payment-modal>
+<!-- <app-requestrentalspopup (closeModal)="closeRequestModal($event)" [showModal]="showRequestRentalconfirmation" ></app-requestrentalspopup>
+<app-payment-modal (closePaymentModal)="closePaymentModal($event)" [showPaymentModal]="showPaymentModal"></app-payment-modal> -->
