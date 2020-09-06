@@ -23,17 +23,19 @@ export class RegisterComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+
     this.userRegisterForm = this.fb.group({
       userName: ["", Validators.required],
-      emailAddress: ["", Validators.required],
+      emailAddress: [null, Validators.compose([Validators.required, Validators.pattern(/^(\d{10}|\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3}))$/)])],
       address: ["", Validators.required],
-      phoneNumber: ["", Validators.required],
+      phoneNumber: [null, Validators.compose([Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)])],
       password: ["", Validators.required],
       userConfirmPassword: ["", Validators.required],
       tenantId: localStorage.getItem("tenantId"),
       acceptTermsAndConditions: ["", Validators.required],
     });
   }
+
   public onSubmit(form: FormGroup) {
     if (
       this.userRegisterForm.valid &&

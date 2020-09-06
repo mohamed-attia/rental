@@ -11,17 +11,22 @@
             <ng-container *ngIf="form.submitted && formControls('userName')?.invalid ||
           (formControls('userName')?.dirty || formControls('userName')?.touched)">
               <span class="required"
-                *ngIf="formControls('userName')?.errors?.required">{{'Validation.required' | translate}}</span>
+                *ngIf="formControls('userName')?.errors?.required">{{'Validation.required' | translate}}
+              </span>
+
             </ng-container>
           </div>
 
           <div class="phone mb-2">
-            <input autocomplete="off" formControlName="emailAddress" class="form-control" type="text"
+            <input autocomplete="off" formControlName="emailAddress" class="form-control" type="email"
               placeholder="{{'Register.Email' | translate}}">
             <ng-container *ngIf="form.submitted && formControls('emailAddress')?.invalid ||
           (formControls('emailAddress')?.dirty || formControls('emailAddress')?.touched)">
               <span class="required"
                 *ngIf="formControls('emailAddress')?.errors?.required">{{'Validation.required' | translate}}</span>
+                <span class="required"
+                *ngIf="formControls('emailAddress')?.errors?.pattern">Please enter valid email
+              </span>
             </ng-container>
           </div>
 
@@ -32,6 +37,9 @@
           (formControls('phoneNumber')?.dirty || formControls('phoneNumber')?.touched)">
               <span class="required"
                 *ngIf="formControls('phoneNumber')?.errors?.required">{{'Validation.required' | translate}}</span>
+                <span class="required"
+                *ngIf="formControls('phoneNumber')?.errors?.pattern">Please enter numbers only
+              </span>
             </ng-container>
           </div>
 
@@ -86,7 +94,7 @@
             </ng-container>
           </div>
           <div class="SignIn">
-            <button type="submit" class="btn btn-primary w-100">{{'Register.SignIn' | translate}}</button>
+            <button type="submit" class="btn btn-primary w-100">{{'Register.title' | translate}}</button>
           </div>
         </form>
         <div class="content-border mt-3">

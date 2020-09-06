@@ -132,9 +132,6 @@ public getSortedPriceList(priceList): void{
       let momenttest = moment(this.sortedPricesList[0].fromDate)
       let startDate = moment(new Date(`${this.fromDate.year}-${this.fromDate.month}-${this.fromDate.day}`).toISOString());
       let endDate = moment(new Date(`${this.toDate.year}-${this.toDate.month}-${this.toDate.day}`).toISOString());
-      // console.log(startDate)
-      // console.log(endDate)
-      // console.log(momenttest)
       for (var m = startDate; m.diff(endDate, 'days') <= 0; m.add(1, 'days')) {
         for (let index = 0; index < this.sortedPricesList.length; index++) {
             const price = this.sortedPricesList[index];
@@ -189,15 +186,6 @@ public getSortedPriceList(priceList): void{
   }
 
   setRentalDate() {
- let obj = {
-      "fromDate":this.fromDate,
-      "toDate":this.toDate,
-      "rentalName":this.rentalDetails.name,
-      'unitId':this.rentalDetails.id,
-      'status':this.rentalDetails.status,
-      'insurance':this.rentalDetails.insurance,
-      "amount":this.totalAmount + this.rentalDetails.insurance
-    }
     this.getRentalsListService.setRentalData({
       "fromDate":this.fromDate,
       "toDate":this.toDate,
@@ -205,7 +193,9 @@ public getSortedPriceList(priceList): void{
       'unitId':this.rentalDetails.id,
       'status':this.rentalDetails.status,
       'insurance':this.rentalDetails.insurance,
-      "amount":this.totalAmount + this.rentalDetails.insurance
+      "amount":this.totalAmount + this.rentalDetails.insurance,
+      "single":this.rentalDetails.isSingle,
+      "family":this.rentalDetails.isFamily
     });
   }
 }

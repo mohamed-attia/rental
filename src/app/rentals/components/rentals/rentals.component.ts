@@ -40,7 +40,7 @@ export class RentalsComponent implements OnInit {
   }
 
   public goRetalDetails (i,id:number) {
-    debugger
+    // debugger
     console.log(this.rentalsList[i]['unit']['images'])
     this.requestRentalService.setrentalImages({images:this.rentalsList[i]['unit']['images'],videos:this.rentalsList[i]['unit']['videos']})
     this.router.navigate(['/rentals', id]);

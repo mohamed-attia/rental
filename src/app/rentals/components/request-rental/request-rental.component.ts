@@ -52,9 +52,7 @@ export class RequestRentalComponent implements OnInit {
 
   private getRentalData() {
     this.getRentalsListService.getRentalData().subscribe(res => {
-      debugger
       this.requestdata = res;
-      debugger
       if(this.requestdata !== null && this.requestdata !== undefined && Object.keys(this.requestdata).length !== 0){
         this.createForm();
       }
@@ -91,11 +89,10 @@ export class RequestRentalComponent implements OnInit {
   }
 
   private createForm() {
-
     this.requestRentalform = this.fb.group({
     unitType: [""],
-    TotalAmount: [this.requestdata.amount],
-    insurance: [this.requestdata.insurance],
+    TotalAmount: [{value: this.requestdata.amount, disabled: true}],
+    insurance: [{value: this.requestdata.insurance , disabled: true}],
     status: this.requestdata.status,
     note: "",
     paymentStatus: 1,

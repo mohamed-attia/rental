@@ -62,14 +62,14 @@
 
        <div class="request-rental-type d-flex justify-content-around text-capitalize">
 
-        <label class=" ml-2 font-14px" for="family">{{'request-rental.family' | translate}}
+        <label class=" ml-2 font-14px" for="family" *ngIf="requestdata.family">{{'request-rental.family' | translate}}
           <input type="radio" (click)="getcheckboxFamilyValue('family')" value="family" name="family" id="family">
           <ng-container *ngIf="form.submitted">
             <p class="required mb-0 validation" *ngIf="!familyOrSinglesValue"> required</p>
           </ng-container>
         </label>
 
-        <label class=" ml-2 font-14px" for="singles">{{'request-rental.singles' | translate}}
+        <label class=" ml-2 font-14px" for="singles" *ngIf="requestdata.single">{{'request-rental.singles' | translate}}
           <input type="radio" id="singles" (click)="getcheckboxFamilyValue('singles')" value="singles" name="family" id="singles">
           <ng-container *ngIf="form.submitted">
             <p class="required mb-0 validation" *ngIf="!familyOrSinglesValue"> required</p>
