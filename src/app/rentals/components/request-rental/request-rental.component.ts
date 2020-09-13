@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 import { GetRentalsListService } from "../../service/rental.service";
@@ -9,6 +9,7 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
 @Component({
   selector: "app-root",
   templateUrl: "./request-rental.component.html",
+  encapsulation: ViewEncapsulation.None
 })
 export class RequestRentalComponent implements OnInit {
   public requestdata: any = {};
@@ -221,6 +222,7 @@ export class RequestRentalComponent implements OnInit {
   }
 
   public uploadImages(event: any) {
+    debugger
     for(let i=0;i<this.requestRental.images.length;i++){
       if(!this.requestRental.images[i].hasOwnProperty('path')){
         this.requestRental['images'].splice(i,1)
@@ -232,28 +234,25 @@ export class RequestRentalComponent implements OnInit {
       const file = <File>event.target.files[index];
       this.totalsizeOfimages += file.size
       formData.append("file_" + index, file, file.name);
+        this.requestRentalService.postFile(formData).subscribe((res: any) => {
+          this.requestRental['images'].push({
+            "path":res["body"]["result"]["filesNames"][index].fileName,
+            "type":res["body"]["result"]["filesNames"][index].fileType,
+            "id":0,
+            "unitRequestId":null,
+          })
+          let fileObj = {
+            fileName: res["body"]["result"]["filesNames"][index].fileName,
+            fileType: this.convertFiletypeToLower(
+              res["body"]["result"]["filesNames"][index].fileType
+            ),
+          };
+          this.uploadedFileList.push(fileObj);
+          this.loading = false;
+          console.log('images',this.requestRental.images)
+        });
     }
-    if (formData) {
-      this.requestRentalService.postFile(formData).subscribe((res: any) => {
-        this.requestRental['images'].push({
-          "path":res["body"]["result"]["filesNames"][0].fileName,
-          "type":res["body"]["result"]["filesNames"][0].fileType,
-          "id":0,
-          "unitRequestId":null,
-        })
-        let fileObj = {
-          fileName: res["body"]["result"]["filesNames"][0].fileName,
-          fileType: this.convertFiletypeToLower(
-            res["body"]["result"]["filesNames"][0].fileType
-          ),
-        };
-        this.uploadedFileList.push(fileObj);
-        this.loading = false;
-        console.log('images',this.requestRental.images)
-      });
-    }else {
-      this.loading = false;
-    }
+
   }
 
    public closeRequestModal(e){

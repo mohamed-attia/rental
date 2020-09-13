@@ -60,6 +60,7 @@
     "jquery-slim": "^3.0.0",
     "moment": "^2.27.0",
     "moment-hijri": "^2.1.2",
+    "ngx-dropzone": "^2.2.2",
     "ngx-slick-carousel": "^0.5.1",
     "popper.js": "^1.16.1",
     "rxjs": "^6.5.1",

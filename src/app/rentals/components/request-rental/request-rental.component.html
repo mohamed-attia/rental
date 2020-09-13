@@ -80,7 +80,7 @@
     <div class="official-document">
         <div class="official-document-title mb-2 d-flex align-items-center justify-content-between">
             <span class="text-capitalize">official document <span class="text-danger" *ngIf="!validaImages">Required</span></span>
-            <button class="btn btn-primary delete-btn p-0">
+            <button class="btn delete-btn p-0">
                 <img width="15px" src="assets/icons/delete.svg" alt="">
             </button>
         </div>
@@ -100,12 +100,21 @@
                   </div>
                 </div>
                 <div class="fileUploader-uploadBtn" *ngIf="this.uploadedFileList.length < 20">
-                  <input id="fileupload" #FileInput  type="file" placeholder="file path" hidden (change)="uploadImages($event)"/>
+                  <input id="fileupload" #FileInput multiple="" type="file" placeholder="file path" hidden (change)="uploadImages($event)"/>
                     <label for="fileupload" class="fileUploader-uploadBtn-label">
                       {{'request-rental.select' | translate}}
                     </label>
                 </div>
               </div>
+
+              <!-- <div class="ngz-fileUploader">
+                <div class="ngz-fileUploader-uploader" ngx-dropzone (change)="onSelect($event)">
+                  <div class="ngz-fileUploader-upload">Drop it</div>
+                  <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                      <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                  </ngx-dropzone-preview>
+                </div>
+              </div> -->
 
                 <p class="mb-0 text-center">{{'request-rental.post' | translate}}</p>
                 <p class="mb-0 text-black-50">{{'request-rental.post-desc' | translate}}</p>

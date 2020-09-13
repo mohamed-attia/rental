@@ -11,10 +11,11 @@ import { ReqRentConfirmPopupComponent } from './components/request-confirmation-
 import { RequestRentalComponent } from './components/request-rental/request-rental.component';
 import { SharedModule } from "../shared/shared.module";
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 @NgModule({
   declarations: [PaymentNoticePopupComponent,PaymentComponent,RentalsComponent,RentalsLayoutComponent,RentalDetailsComponent,RequestRentalComponent,ReqRentConfirmPopupComponent],
-  imports: [CommonModule, SharedModule, RentalsRoutings,SlickCarouselModule,FormsModule],
+  imports: [NgxDropzoneModule, CommonModule, SharedModule, RentalsRoutings,SlickCarouselModule,FormsModule],
   providers: [],
 })
 export class RentalsModule {}

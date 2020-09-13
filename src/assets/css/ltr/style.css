@@ -11364,6 +11364,18 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   font-weight: 500;
 }
 
+.ltr .ngz-fileUploader-upload {
+  border: 1px dashed red;
+  width: 100px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .ltr .screeshot .screenshot-btn button {
   background-color: unset !important;
   border: unset !important;
@@ -11583,7 +11595,7 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 
 .ltr .card-wrapper .rentals-images .img-block-3 .right .counter {
   width: 100%;
-  height: 141px;
+  height: 144px;
   background-color: #000;
   cursor: pointer;
 }
@@ -11698,6 +11710,13 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 .ltr .card-wrapper .card-details .form-group .input-group-append button {
   position: relative;
   top: 0;
+}
+
+.ltr .card-wrapper .card-details .form-group .input-group-append button:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 black;
+          box-shadow: 0 0 black;
+  border: 0;
 }
 
 .ltr .card-wrapper .card-details-bottom {
