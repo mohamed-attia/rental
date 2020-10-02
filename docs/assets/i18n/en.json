@@ -1,7 +1,7 @@
 {
   "login": {
     "title": "LogIn",
-    "Email-PhoneNumber":"E-mail or phone number",
+    "Email-PhoneNumber":"Email Or Phone Number Or User Name",
     "Password":"Password",
     "forget-Password":"forget password",
     "SignIn":"SignIn",

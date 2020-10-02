@@ -18,6 +18,8 @@ import { RequestRentalService } from '../../service/request-rental-service';
   templateUrl: "./rental-details.component.html",
 })
 export class RentalDetailsComponent implements OnInit {
+  public showMoreUtilities = false;
+  public allDescription = false;
   public rentalDetails: RentalModel["unit"];
   private id: number;
   public showRentalVideos: boolean = false;
@@ -39,7 +41,7 @@ export class RentalDetailsComponent implements OnInit {
     dots: true,
     infinite: true,
   };
-  images: [] = [];
+  // images: [] = [];
   videos: [] = [];
   constructor(
     private getRentalsListService: GetRentalsListService,
@@ -57,8 +59,7 @@ export class RentalDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.requestRentalService.getRentalImages().subscribe(res=>{
-      console.log('res', res)
-      this.images = res['images'];
+      // this.images = res['images'];
       this.videos = res['videos'];
     })
   }
@@ -75,15 +76,15 @@ export class RentalDetailsComponent implements OnInit {
       .getRentaDetailsById(this.id)
       .subscribe((rentalDetails) => {
         this.rentalDetails = rentalDetails["body"]["result"]["unit"];
-        this.getSortedPriceList(this.rentalDetails['prices'])
-        if (this.rentalDetails["images"].length > 0) {
-          for (let i = 0; i < this.rentalDetails["images"].length; i++) {
-            this.imagesList.push(this.rentalDetails["images"][i]);
-          }
-          for(let i =0 ; i < this.rentalDetails["videos"].length; i ++){
-            this.videoList.push(this.rentalDetails["videos"][i]);
-          }
+        this.imagesList = rentalDetails["body"]["result"]["unit"]["images"];
+        for(let i =0 ; i < this.rentalDetails["videos"].length; i ++){
+          this.videoList.push(this.rentalDetails["videos"][i]);
         }
+        this.getSortedPriceList(this.rentalDetails['prices'])
+        // if (rentalDetails["body"]["result"]["unit"]["images"].length > 0) {
+          // for (let i = 0; i < this.rentalDetails["images"].length; i++) {
+          // }
+        // }
       });
   }
 
@@ -192,10 +193,15 @@ public getSortedPriceList(priceList): void{
       "rentalName":this.rentalDetails.name,
       'unitId':this.rentalDetails.id,
       'status':this.rentalDetails.status,
-      'insurance':this.rentalDetails.insurance,
-      "amount":this.totalAmount + this.rentalDetails.insurance,
+      'totalInsurance':this.rentalDetails.totalInsurance,
+      "amount":this.totalAmount + this.rentalDetails.totalInsurance,
       "single":this.rentalDetails.isSingle,
-      "family":this.rentalDetails.isFamily
+      "family":this.rentalDetails.isFamily,
+      "insurances":this.rentalDetails.insurances
     });
+  }
+
+  public seeMoreUtilities(){
+    alert()
   }
 }

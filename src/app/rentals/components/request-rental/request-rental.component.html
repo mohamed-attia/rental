@@ -132,7 +132,12 @@
     </div>
         <div class="insurrence mb-1">
             <label class="text-capitalize mb-1" for="">{{'request-rental.insurrence' | translate}}</label>
-            <input placeholder="1.000" class="form-control"  formControlName="insurance" type="text" name="insurance"  >
+            <span> [</span>
+            <ng-container *ngFor="let insurance of requestdata.insurances; let last = last">
+              <span class="text-capitalize mb-1">  {{insurance.nameEn}}:{{insurance.price}} <span *ngIf="!last">+</span> </span>
+            </ng-container>
+            <span>] </span>
+            <input placeholder="1.000" class="form-control"  formControlName="totalInsurance" type="text" name="totalInsurance"  >
         </div>
         <div class="rent-amount mb-1">
             <label class="text-capitalize mb-1" for="">{{'request-rental.rent-amount' | translate}}</label>

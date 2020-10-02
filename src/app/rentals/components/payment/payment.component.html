@@ -50,7 +50,7 @@
                 <span class="text-capitalize">{{'payment.insurance' | translate}}</span>
               </div>
               <div class="input-type">
-                <input type="text" autocomplete="off" formControlName="insurance" required  class="form-control">
+                <input type="text" autocomplete="off" formControlName="totalInsurance" required  class="form-control">
               </div>
               <div class="validation-msg">
                 <ng-container
@@ -70,10 +70,10 @@
               </div>
               <div class="validation-msg">
                 <ng-container
-                *ngIf="form.submitted && paymentForm.controls['insurance'].invalid ||
-               (paymentForm.controls['insurance'].dirty || paymentForm.controls['insurance'].touched)">
+                *ngIf="form.submitted && paymentForm.controls['totalInsurance'].invalid ||
+               (paymentForm.controls['totalInsurance'].dirty || paymentForm.controls['totalInsurance'].touched)">
                 <span class="required text-capitalize"
-                  *ngIf="paymentForm.controls['insurance']?.errors?.required">{{'Validation.required' | translate}}</span>
+                  *ngIf="paymentForm.controls['totalInsurance']?.errors?.required">{{'Validation.required' | translate}}</span>
               </ng-container>
               </div>
             </div>

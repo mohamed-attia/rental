@@ -11364,18 +11364,6 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   font-weight: 500;
 }
 
-.rtl .ngz-fileUploader-upload {
-  border: 1px dashed red;
-  width: 100px;
-  height: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .rtl .screeshot .screenshot-btn button {
   background-color: unset !important;
   border: unset !important;
@@ -11650,6 +11638,11 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   font-size: 13px;
   color: #999;
   width: 97%;
+}
+
+.rtl .card-wrapper .card-details .unit-descrption p span {
+  color: #5058a6;
+  cursor: pointer;
 }
 
 .rtl .card-wrapper .card-details .unit-location p {

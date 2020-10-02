@@ -45,7 +45,8 @@ export class AppComponent implements OnInit {
 
   getTanentId(){
   this.rentalUserService.getTanentId().subscribe(res=>{
-    localStorage.setItem('tenantId',res.result['tenantId'])
+    localStorage.setItem('tenantId',res.result['tenantId']);
+    this.rentalUserService.setTenantImages(res.result['images'])
   });
 }
 

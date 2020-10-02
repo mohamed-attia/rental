@@ -20,20 +20,20 @@
   </div>
   <div class="rentals-images mt-4" *ngIf="showRentalImages">
     <div class="img-block-3 mt-1">
-      <div class="row" *ngIf="images.length>0">
-        <div class="col-md-3 col-4 mb-1 p-0" *ngFor="let image of images|slice:0:5">
+      <div class="row" *ngIf="imagesList.length>0">
+        <div class="col-md-3 col-4 mb-1 p-0" *ngFor="let image of imagesList|slice:0:5; let i = index">
           <ng-container>
             <div class="img">
               <img width="98%" height="141px" [src]="image.path" alt="">
             </div>
           </ng-container>
         </div>
-        <div class="col-md-3 col-4 p-0" *ngIf="images.length > 5">
+        <div class="col-md-3 col-4 p-0" *ngIf="imagesList.length > 5">
 
           <button type="button" (click)="showRentalDetailsSlider = !showRentalDetailsSlider" class="btn p-0 w-100">
             <div class="right">
               <div class="counter d-flex justify-content-center align-items-center position-relative">
-                <span class="count">+ {{images.length - 5}}</span>
+                <span class="count">+ {{imagesList.length - 5}}</span>
               </div>
             </div>
           </button>
@@ -52,8 +52,8 @@
         </span>
         </div>
         <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-          <div ngxSlickItem *ngFor="let slide of images" class="slide">
-            <img width="100%" height="280px" [src]="slide.path" alt="">
+          <div ngxSlickItem *ngFor="let slide of imagesList; let i = index" class="slide">
+            <img width="100%" height="280px" [src]="imagesList[i].path" alt="">
           </div>
         </ngx-slick-carousel>
       </div>
@@ -69,7 +69,8 @@
       </span>
     </div>
     <div class="unit-descrption">
-      <p class="mb-0">{{rentalDetails?.description}}</p>
+      <p class="mb-0" *ngIf="!allDescription">{{rentalDetails?.description |slice:0:200}} <span class="more text-capitalize more-rental-details" (click)="allDescription = !allDescription">more...</span></p>
+      <p class="mb-0" *ngIf="allDescription">{{rentalDetails?.description}}</p>
     </div>
     <div class="unit-location">
       <p class="mb-0"><img alt="user" height="20px" src="./assets/icons/days.PNG"
@@ -77,9 +78,7 @@
       <p class="mb-0"><img alt="user" height="20px" src="./assets/icons/days.PNG"
           width="20px">{{rentalDetails?.prices[0]?.weekEndPrice}} KD/week end</p>
     </div>
-    <div class="more d-flex justify-content-end">
-      <span class="text-capitalize more-rental-details">more...</span>
-    </div>
+
   </div>
   <div class="card-details calendar mt-2">
     <div class="calendar-title">
@@ -189,9 +188,52 @@
           </div>
         </div>
       </div>
+
+      <div class="row" *ngIf="showMoreUtilities">
+        <div class="col-md-3 col-3" *ngIf="rentalDetails?.hasLight">
+          <div class="light text-center">
+            <div class="img">
+              <img width="25px" height="22px" src="assets/images/light.PNG" alt="">
+            </div>
+            <div class="title">
+              <span>light</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-3" *ngIf="rentalDetails?.hasWater">
+          <div class="water text-center">
+            <div class="img">
+              <img width="25px" height="22px" src="assets/images/water.PNG" alt="">
+            </div>
+            <div class="title">
+              <span>water</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-3" *ngIf="rentalDetails?.hasParking">
+          <div class="parking text-center">
+            <div class="img">
+              <img width="25px" height="22px" src="assets/images/Parking.PNG" alt="">
+            </div>
+            <div class="title">
+              <span>parking</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-3" *ngIf="rentalDetails?.hasInternet">
+          <div class="internet text-center">
+            <div class="img">
+              <img width="25px" height="22px" src="assets/images/internet.PNG" alt="">
+            </div>
+            <div class="title">
+              <span>internet</span>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="see-more text-center mt-2">
-        <span class="text-capitalize">
-          <span class="see-more-expanded">see more</span>
+        <span class="text-capitalize" (click)="showMoreUtilities = !showMoreUtilities">
+          <span class="see-more-expanded"> {{showMoreUtilities == true ? 'less' : showMoreUtilities == false ? 'more' : ''}}</span>
           <img width="12px" height="12px" src="assets/icons/down-arrow.svg" alt="">
         </span>
       </div>

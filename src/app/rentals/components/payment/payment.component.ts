@@ -40,7 +40,7 @@ export class PaymentComponent implements OnInit {
     this.paymentForm = this.fb.group({
       name: ["", Validators.required],
       date: ["", Validators.required],
-      insurance: ["", Validators.required],
+      totalInsurance: ["", Validators.required],
       rentAmount: ["", Validators.required],
     });
       this.patchPymentForm();
@@ -50,7 +50,7 @@ export class PaymentComponent implements OnInit {
     this.paymentForm.patchValue({
       name: this.requestdata.rentalName,
       date: `${this.requestdata.fromDate.year} - ${this.requestdata.fromDate.month} - ${this.requestdata.fromDate.day}` ,
-      insurance: this.requestdata.insurance,
+      totalInsurance: this.requestdata.totalInsurance,
       rentAmount: this.requestdata.amount,
     })
   }

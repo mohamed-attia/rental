@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 import { GetRentalsListService } from '../../service/rental.service';
 import { RentalModel } from '../../models/rentals.model';
+import { RentalUserService } from 'src/app/rental-user/services/rental-user.service';
 import { RequestRentalService } from '../../service/request-rental-service';
 import { Router } from '@angular/router';
 
@@ -11,14 +12,18 @@ import { Router } from '@angular/router';
 })
 export class RentalsComponent implements OnInit {
   public rentalsList:Array<RentalModel> = [];
+  public rentalIMages: [] = [];
 
-  constructor(private getRentalsListService:GetRentalsListService, private router:Router, private requestRentalService:RequestRentalService) {}
+  constructor(private getRentalsListService:GetRentalsListService,
+     private router:Router,
+     private requestRentalService:RequestRentalService,
+     private rentalUserService: RentalUserService) {}
 
     ngOnInit() {
       this.getRentals();
+      this.getRentalImages();
     }
 
-  slides = [342, 453, 846];
 
   slideConfig = {
     "slidesToShow": 1,
@@ -33,15 +38,16 @@ export class RentalsComponent implements OnInit {
   private getRentals() {
     this.getRentalsListService.getRentasList().subscribe(rentals=>{
         this.rentalsList = rentals['body']['result']['items']
-        console.log(rentals['body']['result']['items'][0])
-        console.log(typeof this.rentalsList)
-        console.log(typeof rentals['body']['result']['items'][0])
+    })
+  }
+
+  private getRentalImages(){
+    this.rentalUserService.getTenantImages().subscribe(images=>{
+      this.rentalIMages = images;
     })
   }
 
   public goRetalDetails (i,id:number) {
-    // debugger
-    console.log(this.rentalsList[i]['unit']['images'])
     this.requestRentalService.setrentalImages({images:this.rentalsList[i]['unit']['images'],videos:this.rentalsList[i]['unit']['videos']})
     this.router.navigate(['/rentals', id]);
   }
