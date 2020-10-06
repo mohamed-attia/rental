@@ -163,7 +163,7 @@
         </ng-container>
       </div>
 
-      <div class="see-more text-center mt-2">
+      <div class="see-more text-center mt-2" *ngIf="rentalDetails?.utilityIcons.length > 4">
         <span class="text-capitalize" (click)="setMaxValue()">
           <span class="see-more-expanded"> {{showMoreUtilities == true ? 'less' : showMoreUtilities == false ? 'more' : ''}}</span>
           <img width="12px" height="12px" src="assets/icons/down-arrow.svg" alt="">

@@ -24,7 +24,6 @@
               "src/favicon.ico",
               "src/robots.txt",
               "src/assets",
-              "src/app/mci/assets/",
               "src/manifest.webmanifest"
             ],
             "styles": [
@@ -90,7 +89,9 @@
               "ngswConfigPath": "ngsw-config.json",
               "styles": [
                 "src/app/mci/assets/css/rtl/style.css",
-                "src/app/mci/assets/css/ltr/style.css"
+                "src/app/mci/assets/css/ltr/style.css",
+              "node_modules/font-awesome/css/font-awesome.css"
+
               ],
               "fileReplacements": [{
                 "replace": "src/environments/environment.ts",

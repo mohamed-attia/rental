@@ -16,11 +16,7 @@ button {
     font-size: 9px;
     font-family: 'Roboto', sans-serif
 }
-.active-icon{
-    background-color: #5058a6;
-    border-radius: 20px;
-    padding: 2px 8px;
-}
+
 .active-btn{
   background-color: white !important;
   width: 59px;

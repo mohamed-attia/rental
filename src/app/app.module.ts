@@ -30,9 +30,11 @@ import { map, catchError } from 'rxjs/operators';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { RentalRequestsModule } from './rental-requests/rental-requests.module';
 
 @NgModule({
   imports: [
+    RentalRequestsModule,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,

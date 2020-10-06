@@ -1,19 +1,37 @@
-<div class="menu-wrapper d-flex justify-content-around mt-4 p-1">
-    <button class="btn btn-primary p-0">
-        <div class="active-icon">
-            <img width="20px" height="20px" src="assets/icons/home.svg" alt="user">
-        </div>
-        <div class="active-title">
-            <span class="text-capitalize">explore</span>
-        </div>
-    </button>
-    <button class="btn btn-primary p-0">
-        <img width="20px" height="20px" src="assets/icons/request.PNG" alt="user">
-    </button>
-    <button class="btn btn-primary p-0">
-        <img width="20px" height="20px" src="assets/icons/conversation.svg" alt="user">
-    </button>
-    <button class="btn btn-primary p-0">
-        <img width="20px" height="20px" src="assets/icons/user.svg" alt="user">
-    </button>
+<div class="menu-wrapper d-flex justify-content-around mt-4">
+  <div class="menu-item" [ngClass]="{'active':currentComponent == 'explore'}">
+    <div class="active-icon">
+      <i class="fas fa-home"></i>
+    </div>
+    <div class="active-title">
+      <span class="text-capitalize">Explore</span>
+    </div>
+  </div>
+
+  <div class="menu-item" [ngClass]="{'active':currentComponent == 'request'}">
+    <div class="active-icon">
+      <i class="fas fa-clock"></i>
+    </div>
+    <div class="active-title">
+      <span class="text-capitalize">Requests</span>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <div class="active-icon">
+      <i class="fas fa-comment-dots"></i>
+    </div>
+    <div class="active-title">
+      <span class="text-capitalize">Chat</span>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <div class="active-icon">
+      <i class="fas fa-user"></i>
+    </div>
+    <div class="active-title">
+      <span class="text-capitalize">User</span>
+    </div>
+  </div>
 </div>

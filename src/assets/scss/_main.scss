@@ -15,6 +15,7 @@
 // ### ===================================================================== ### //
 // ### ============================  [ Layouts ] =========================== ### //
 @import "../scss/layouts/rentals";
+@import "./modules/common/menu";
 @import "../scss/layouts/rental-user-login";
 @import "../scss/layouts/header";
 @import "../scss/layouts/request-rental-header";
@@ -22,6 +23,7 @@
 @import "./layouts/requestRental";
 @import "./layouts/request-confirmation-popup";
 @import "./layouts/payment";
+@import "./layouts/rental-requests";
 @import "./base/globalStyle";
 @import "./base/radioButtons";
 @import "./layouts/datepicker";

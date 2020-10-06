@@ -10854,6 +10854,20 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   border: 0;
 }
 
+.rtl .btn-primary {
+  color: #5058a6 !important;
+  background: #fff !important;
+  border: 1px solid #5058a6 !important;
+}
+
+.rtl .btn-secondary {
+  color: #444 !important;
+  background: #e2e1e1 !important;
+  border-radius: 30px !important;
+  -webkit-box-shadow: unset !important;
+          box-shadow: unset !important;
+}
+
 .rtl .content-wrapper {
   width: 50%;
   margin: auto;
@@ -10952,6 +10966,57 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   font-size: 12px;
   padding: 0 12px;
   cursor: pointer;
+}
+
+.rtl .menu-wrapper .menu-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.rtl .menu-wrapper .menu-item .active-icon {
+  height: 40px;
+  border-radius: 50%;
+  width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.rtl .menu-wrapper .menu-item .active-icon .fas {
+  color: #444;
+  font-size: 22px;
+}
+
+.rtl .menu-wrapper .menu-item .active-title {
+  color: #838383;
+}
+
+.rtl .menu-wrapper .menu-item.active .fas {
+  color: #fff !important;
+}
+
+.rtl .menu-wrapper .menu-item.active .active-icon {
+  background-color: #5058a6;
+}
+
+.rtl .menu-wrapper .menu-item.active .active-title {
+  color: #5058a6;
 }
 
 .rtl .container-fluid .login-title {
@@ -11430,6 +11495,20 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
           box-shadow: unset !important;
 }
 
+.rtl .rental-requests {
+  min-height: calc(100vh - 151px);
+}
+
+.rtl .rental-requests-filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 20px;
+}
+
 .rtl .form-control,
 .rtl .btn-primary {
   border-radius: 30px;
@@ -11833,7 +11912,7 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   }
 }
 
-.rtl body * {
+.rtl body {
   font-family: roboto !important;
 }
 

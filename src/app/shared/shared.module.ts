@@ -42,7 +42,7 @@ const sharedModules = [
   ReactiveFormsModule,
   NgbPaginationModule,
   NgbModule,
-  TranslateModule,
+  TranslateModule
 ];
 
 export function createTranslateLoader(http: HttpClient) {

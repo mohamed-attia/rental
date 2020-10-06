@@ -8,9 +8,9 @@ import { Location } from "@angular/common";
   template:`
   <div class="content-wrapper">
     <app-header *ngIf="currentcomponentName === 'RentalDetailsComponent' || currentcomponentName === 'RentalsComponent'"></app-header>
-    <app-request-rental-header *ngIf="currentcomponentName === 'RequestRentalComponent' "></app-request-rental-header>
+    <app-request-rental-header [title]="'Information'" *ngIf="currentcomponentName === 'RequestRentalComponent' "></app-request-rental-header>
     <router-outlet></router-outlet>
-    <app-menu>menu</app-menu>
+    <app-menu [currentComponent]="'explore'">menu</app-menu>
   </div>
   `
 })

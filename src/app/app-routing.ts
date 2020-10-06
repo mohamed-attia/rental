@@ -17,6 +17,13 @@ export const routes: Routes = [
     loadChildren: () =>
       import("./rentals/rentals.module").then((mod) => mod.RentalsModule),
   },
+  {
+    path: "rental-requests",
+    loadChildren: () =>
+      import("./rental-requests/rental-requests.module").then(
+        (mod) => mod.RentalRequestsModule
+      ),
+  },
   { path: "**", component: NotFoundComponent },
 ];
 
