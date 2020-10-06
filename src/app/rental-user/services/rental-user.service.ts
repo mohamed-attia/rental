@@ -19,8 +19,8 @@ export class RentalUserService {
     return this.query.post(body);
   }
 
-  public sendUserREgisterData(body:UserRegisterModel): Observable<any> {
-    this.query.setURI(`services/app/User/RegisterUser`);
+  public sendUserRegisterData(body:UserRegisterModel): Observable<any> {
+    this.query.setURI(`TokenAuth/RegisterUser`);
     // this.query.setHeaders();
     return this.query.post(body);
   }

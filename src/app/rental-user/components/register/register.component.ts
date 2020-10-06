@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 import { RentalUserService } from "../../services/rental-user.service";
 import { Router } from "@angular/router";
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 import { UserLoginModel } from './../../models/user-login.model';
 
 @Component({
@@ -28,7 +29,7 @@ export class RegisterComponent implements OnInit {
       userName: ["", Validators.required],
       emailAddress: [null, Validators.compose([Validators.required, Validators.pattern(/^(\d{10}|\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3}))$/)])],
       address: ["", Validators.required],
-      phoneNumber: [null, Validators.compose([Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)])],
+      phoneNumber: [null, Validators.compose([Validators.required, Validators.pattern(/^-?([0-9]\d*)?$/)])],
       password: ["", Validators.required],
       userConfirmPassword: ["", Validators.required],
       tenantId: localStorage.getItem("tenantId"),
@@ -44,7 +45,7 @@ export class RegisterComponent implements OnInit {
     ) {
       this.userRegisterForm.removeControl("userConfirmPassword");
       this.rentalUserService
-        .sendUserREgisterData(this.userRegisterForm.value)
+        .sendUserRegisterData(this.userRegisterForm.value)
         .subscribe((res) => {
           if (res["success"]) {
             this.userLogin = {userNameOrEmailAddressOrPhone:this.userRegisterForm.get('userName').value,password:this.userRegisterForm.get('password').value}
@@ -63,6 +64,7 @@ export class RegisterComponent implements OnInit {
         });
     } else {
       console.log("not ok");
+      // Swal.fire('Rquired', 'Check images validation', 'error');
     }
   }
 

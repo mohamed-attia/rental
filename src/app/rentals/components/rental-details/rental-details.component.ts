@@ -32,6 +32,7 @@ export class RentalDetailsComponent implements OnInit {
   public toDate: NgbDateStruct | null;
   public sortedPricesList = [];
   public totalAmount = 0;
+  public max=4;
   public slideConfig = {
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -88,7 +89,7 @@ export class RentalDetailsComponent implements OnInit {
       });
   }
 
-public getSortedPriceList(priceList): void{
+  public getSortedPriceList(priceList): void{
     if(priceList.length> 0) {
       this.sortedPricesList = priceList;
       this.sortedPricesList.sort(function(a, b) {
@@ -147,7 +148,7 @@ public getSortedPriceList(priceList): void{
         }
       }
     }
-      console.log(this.totalAmount)
+      // console.log(this.totalAmount)
   }
 
   isHovered(date: NgbDate) {
@@ -201,7 +202,12 @@ public getSortedPriceList(priceList): void{
     });
   }
 
-  public seeMoreUtilities(){
-    alert()
+  public setMaxValue(){
+    this.showMoreUtilities = !this.showMoreUtilities;
+    if(this.showMoreUtilities) {
+      this.max=this.rentalDetails.utilityIcons.length;
+    }else {
+      this.max=4;
+    }
   }
 }

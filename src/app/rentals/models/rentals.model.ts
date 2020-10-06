@@ -10,6 +10,7 @@ interface RetnalDataModel {
   longitude: string;
   latitude: string;
   status: number;
+  utilityIcons:[],
   totalInsurance:number;
   hasLight: boolean;
   hasWater: boolean;
@@ -18,6 +19,7 @@ interface RetnalDataModel {
   insurances:[];
   isFamily: boolean;
   isSingle: boolean;
+  utilities:[]
   unitGroupId: number;
   id: number;
   images: Array<RentalImageModel>;

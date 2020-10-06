@@ -147,92 +147,24 @@
     </div>
     <div class="content">
       <div class="row">
-        <div class="col-md-3 col-3" *ngIf="rentalDetails?.hasLight">
-          <div class="light text-center">
-            <div class="img">
-              <img width="25px" height="22px" src="assets/images/light.PNG" alt="">
+        <ng-container *ngIf="rentalDetails?.utilityIcons.length > 0">
+          <ng-container *ngFor="let utility of rentalDetails?.utilityIcons| slice:0:[max]">
+            <div class="col-md-3 col-3">
+              <div class="light text-center">
+                <div class="img">
+                  <img width="25px" height="22px" [src]="utility.url" alt="">
+                </div>
+                <div class="title">
+                  <span>{{utility.name}}</span>
+                </div>
+              </div>
             </div>
-            <div class="title">
-              <span>light</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-3" *ngIf="rentalDetails?.hasWater">
-          <div class="water text-center">
-            <div class="img">
-              <img width="25px" height="22px" src="assets/images/water.PNG" alt="">
-            </div>
-            <div class="title">
-              <span>water</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-3" *ngIf="rentalDetails?.hasParking">
-          <div class="parking text-center">
-            <div class="img">
-              <img width="25px" height="22px" src="assets/images/Parking.PNG" alt="">
-            </div>
-            <div class="title">
-              <span>parking</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-3" *ngIf="rentalDetails?.hasInternet">
-          <div class="internet text-center">
-            <div class="img">
-              <img width="25px" height="22px" src="assets/images/internet.PNG" alt="">
-            </div>
-            <div class="title">
-              <span>internet</span>
-            </div>
-          </div>
-        </div>
+          </ng-container>
+        </ng-container>
       </div>
 
-      <div class="row" *ngIf="showMoreUtilities">
-        <div class="col-md-3 col-3" *ngIf="rentalDetails?.hasLight">
-          <div class="light text-center">
-            <div class="img">
-              <img width="25px" height="22px" src="assets/images/light.PNG" alt="">
-            </div>
-            <div class="title">
-              <span>light</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-3" *ngIf="rentalDetails?.hasWater">
-          <div class="water text-center">
-            <div class="img">
-              <img width="25px" height="22px" src="assets/images/water.PNG" alt="">
-            </div>
-            <div class="title">
-              <span>water</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-3" *ngIf="rentalDetails?.hasParking">
-          <div class="parking text-center">
-            <div class="img">
-              <img width="25px" height="22px" src="assets/images/Parking.PNG" alt="">
-            </div>
-            <div class="title">
-              <span>parking</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-3" *ngIf="rentalDetails?.hasInternet">
-          <div class="internet text-center">
-            <div class="img">
-              <img width="25px" height="22px" src="assets/images/internet.PNG" alt="">
-            </div>
-            <div class="title">
-              <span>internet</span>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="see-more text-center mt-2">
-        <span class="text-capitalize" (click)="showMoreUtilities = !showMoreUtilities">
+        <span class="text-capitalize" (click)="setMaxValue()">
           <span class="see-more-expanded"> {{showMoreUtilities == true ? 'less' : showMoreUtilities == false ? 'more' : ''}}</span>
           <img width="12px" height="12px" src="assets/icons/down-arrow.svg" alt="">
         </span>
