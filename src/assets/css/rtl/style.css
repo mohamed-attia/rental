@@ -11560,6 +11560,127 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   margin-top: 20px;
 }
 
+.rtl .rental-requests-requests {
+  padding: 12px;
+  margin-bottom: 5px;
+}
+
+.rtl .rental-requests-requests .rental-requests-data {
+  float: right;
+  margin-left: 40px;
+}
+
+.rtl .rental-requests-requests .rental-requests-data_header {
+  color: gray;
+  margin-bottom: 5px;
+  margin-right: 40px;
+  display: block;
+}
+
+.rtl .rental-requests-requests .rental-requests-data_picture, .rtl .rental-requests-requests .rental-requests-data_picture > * {
+  border-radius: 50%;
+}
+
+.rtl .rental-requests-requests .rental-requests-details {
+  float: right;
+  margin-top: 10px;
+}
+
+.rtl .rental-requests-requests .rental-requests-details--1 {
+  font-size: 1.3rem;
+}
+
+.rtl .rental-requests-requests .rental-requests_status--approved {
+  color: #3bb345;
+  margin-right: 35px;
+  margin-top: 15px;
+  font-weight: 500;
+  display: block;
+  font-size: 1.2rem;
+}
+
+.rtl .rental-requests-requests .rental-requests_bar--approved {
+  background-color: #3bb345;
+  width: 145px;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.rtl .mr-10px {
+  margin-left: 10px;
+}
+
+.rtl .color-blue {
+  color: #317ec7;
+}
+
+.rtl .color-gray {
+  color: #888888;
+}
+
+.rtl .rental-requests-subdetails {
+  color: #888888;
+  clear: both;
+  padding: 5px;
+}
+
+.rtl .rental-time-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.rtl .rental-time-container_details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 30%;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 424px) {
+  .rtl .rental-requests-requests {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    justify-items: center;
+  }
+  .rtl .rental-requests-requests .rental-requests-data {
+    margin: 0;
+  }
+  .rtl .rental-requests-requests .rental-requests-data_header {
+    margin-right: 0;
+  }
+  .rtl .rental-requests-requests .rental-requests_status--approved {
+    margin-right: 0;
+  }
+  .rtl .rental-requests-requests .rental-requests_bar--approved {
+    display: inline-block;
+  }
+}
+
 .rtl .form-control,
 .rtl .btn-primary {
   border-radius: 30px;

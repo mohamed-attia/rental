@@ -3,4 +3,126 @@
   &-filters {
     margin-top: 20px;
   }
+ 
 }
+
+.rental-requests-requests {
+  padding: 12px;
+  margin-bottom: 5px;
+
+  .rental-requests-data {
+  
+    float: #{$left};
+    margin-#{$right}: 40px;
+  
+    &_header {
+      color: gray;
+      margin-bottom: 5px;
+      margin-#{$left}: 40px;
+      display: block;
+    }
+  
+    &_picture {      
+      &, & > *{
+        border-radius: 50%;
+      }
+    }
+  }
+  
+  .rental-requests-details {
+    float: #{$left};
+    margin-top: 10px;
+    &--1 {
+      font-size: 1.3rem;
+    }
+  
+  }
+
+  .rental-requests_status {
+    &--approved {
+      color: #3bb345;
+      margin-#{$left}: 35px;
+      margin-top: 15px;
+      font-weight: 500;
+      display: block;
+      font-size: 1.2rem;
+    }
+  }
+
+  .rental-requests_bar {
+    &--approved {
+      background-color: #3bb345;
+      width: 145px;
+      height: 8px;
+      border-radius: 4px;
+    }
+  }
+}
+
+.mr-10px {
+  margin-#{$right}: 10px;
+}
+
+.color-blue {
+  color: #317ec7; 
+}
+
+.color-gray {
+  color: #888888;
+}
+
+.rental-requests-subdetails {
+  color: #888888;
+  clear: both;
+  padding: 5px;
+}
+
+.rental-time-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &_details {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 30%;
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 424px) {
+  .rental-requests-requests  {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+
+    .rental-requests-data {
+      margin: 0;
+
+      &_header {
+        margin-#{$left}: 0;
+      }
+    }
+
+    .rental-requests_status {
+      &--approved {
+        margin-#{$left}: 0;
+      }
+    }
+  
+    .rental-requests_bar {
+      &--approved {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+
+
+

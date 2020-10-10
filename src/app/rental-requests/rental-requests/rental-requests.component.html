@@ -2,24 +2,81 @@
   <div class="rental-requests-filters">
     <div class="row">
       <div class="col-4 mt-2 col-sm-3 col-md-2">
-        <button class="btn btn-outline btn-secondary" (click)="selectedRequestType('pending')">{{'RentalRequests.Pending' | translate}}</button>
+        <button class="btn btn-outline btn-secondary"
+          (click)="selectedRequestType('pending')">{{'RentalRequests.Pending' | translate}}</button>
       </div>
       <div class="col-4 mt-2 col-sm-3 col-md-2">
-        <button class="btn btn-outline btn-primary-outline" (click)="selectedRequestType('approved')">{{'RentalRequests.Approved' | translate}}</button>
+        <button class="btn btn-outline btn-primary-outline"
+          (click)="selectedRequestType('approved')">{{'RentalRequests.Approved' | translate}}</button>
       </div>
       <div class="col-4 mt-2 col-sm-3 col-md-2">
-        <button class="btn btn-outline btn-secondary" (click)="selectedRequestType('ongoing')">{{'RentalRequests.OnGoing' | translate}}</button>
+        <button class="btn btn-outline btn-secondary"
+          (click)="selectedRequestType('ongoing')">{{'RentalRequests.OnGoing' | translate}}</button>
       </div>
       <div class="col-4 mt-2 col-sm-3 col-md-2">
-        <button class="btn btn-outline btn-secondary" (click)="selectedRequestType('issues')">{{'RentalRequests.Issues' | translate}}</button>
+        <button class="btn btn-outline btn-secondary"
+          (click)="selectedRequestType('issues')">{{'RentalRequests.Issues' | translate}}</button>
       </div>
       <div class="col-4 mt-2 col-sm-3 col-md-2">
-        <button class="btn btn-outline btn-secondary" (click)="selectedRequestType('expired')">{{'RentalRequests.Expired' | translate}}</button>
+        <button class="btn btn-outline btn-secondary"
+          (click)="selectedRequestType('expired')">{{'RentalRequests.Expired' | translate}}</button>
       </div>
       <div class="col-4 mt-2 col-sm-3 col-md-2">
-        <button class="btn btn-outline btn-secondary" (click)="selectedRequestType('canceled')">{{'RentalRequests.Canceled' | translate}}</button>
+        <button class="btn btn-outline btn-secondary"
+          (click)="selectedRequestType('canceled')">{{'RentalRequests.Canceled' | translate}}</button>
       </div>
     </div>
   </div>
-  <div class="rental-requests-request"></div>
-</div>
+
+
+  <div class="rental-requests-requests">
+    <div class="rental-requests-data">
+      <span class="rental-requests-data_header">Request ID:</span>
+      <div class="rental-requests-data_picture">
+        <img src="../../../assets/images/sea.jpeg" alt="img" width="150" height="150">
+      </div>
+      <span class="rental-requests_status--approved">Approved</span>
+      <div class="rental-requests_bar--approved"></div>
+    </div>
+    <div class="rental-requests-details">
+      <div class=rental-requests-details--1>
+        <span>UNIT NAME</span>
+      </div>
+      <div class=rental-requests-details--2>
+        <!-- <img class="mr-10px" src="../../../assets/images/sea.jpeg" alt="img" width="20" height="20"> -->
+        <i class="fas fa-tags mr-10px color-gray"></i>
+        <span class="color-blue">KD 580.000</span>
+      </div>
+      <div class=rental-requests-details--2>
+        <!-- <img class="mr-10px" src="../../../assets/images/sea.jpeg" alt="img" width="20" height="20"> -->
+        <i class="fas fa-user-edit mr-10px color-gray"></i>
+        <span>Family</span>
+      </div>
+      <div class=rental-requests-details--2>
+        <!-- <img class="mr-10px" src="../../../assets/images/sea.jpeg" alt="img" width="20" height="20"> -->
+        <i class="fas fa-home mr-10px color-gray"></i>
+        <span>Alahmadi Khairan</span>
+      </div>
+      <div class=rental-requests-details--2>
+        <!-- <img class="mr-10px" src="../../../assets/images/sea.jpeg" alt="img" width="20" height="20"> -->
+        <i class="far fa-calendar-alt mr-10px color-gray"></i>
+        <span>28 Jan - 28 Feb, 2020</span>
+      </div>
+    </div>
+    <div class="rental-requests-subdetails">
+      tesymxj kdke lasdlj dldlld euejfd ejdjj jejejej jejejej xcnnc mdcjd s, lasdlj dldlld euejfd ejdjj jejejej jejejej xcnnc mdcjd s, djjfc ebbcn djjde djdjdjj
+    </div>
+    <hr>
+    <div class="rental-time-container">
+      <div class="rental-time-container_details">
+        <div>05h</div>
+        <div>30m</div>
+        <div>30s</div>
+      </div>
+    </div>
+    <hr>
+    <div>
+      <span class="mr-10px">Payment Link:</span><a href="#">this is the link</a>
+    </div>
+  </div>
+  </div>
