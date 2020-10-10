@@ -1,10 +1,25 @@
 <div class="rental-requests">
   <div class="rental-requests-filters">
-    <button class="btn btn-outline btn-secondary" (click)="selectedRequestType('pending')">Pending</button>
-    <button class="btn btn-outline btn-primary" (click)="selectedRequestType('approved')">Approved</button>
-    <button class="btn btn-outline btn-secondary" (click)="selectedRequestType('ongoing')">On Going</button>
-    <button class="btn btn-outline btn-secondary" (click)="selectedRequestType('issues')">Issues</button>
-    <button class="btn btn-outline btn-secondary" (click)="selectedRequestType('expired')">Expired</button>
-    <button class="btn btn-outline btn-secondary" (click)="selectedRequestType('canceled')">Canceled</button>
+    <div class="row">
+      <div class="col-4 mt-2 col-sm-3 col-md-2">
+        <button class="btn btn-outline btn-secondary" (click)="selectedRequestType('pending')">{{'RentalRequests.Pending' | translate}}</button>
+      </div>
+      <div class="col-4 mt-2 col-sm-3 col-md-2">
+        <button class="btn btn-outline btn-primary-outline" (click)="selectedRequestType('approved')">{{'RentalRequests.Approved' | translate}}</button>
+      </div>
+      <div class="col-4 mt-2 col-sm-3 col-md-2">
+        <button class="btn btn-outline btn-secondary" (click)="selectedRequestType('ongoing')">{{'RentalRequests.OnGoing' | translate}}</button>
+      </div>
+      <div class="col-4 mt-2 col-sm-3 col-md-2">
+        <button class="btn btn-outline btn-secondary" (click)="selectedRequestType('issues')">{{'RentalRequests.Issues' | translate}}</button>
+      </div>
+      <div class="col-4 mt-2 col-sm-3 col-md-2">
+        <button class="btn btn-outline btn-secondary" (click)="selectedRequestType('expired')">{{'RentalRequests.Expired' | translate}}</button>
+      </div>
+      <div class="col-4 mt-2 col-sm-3 col-md-2">
+        <button class="btn btn-outline btn-secondary" (click)="selectedRequestType('canceled')">{{'RentalRequests.Canceled' | translate}}</button>
+      </div>
+    </div>
   </div>
+  <div class="rental-requests-request"></div>
 </div>

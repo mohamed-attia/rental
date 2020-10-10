@@ -1,8 +1,6 @@
 .rental-requests {
   min-height: calc(100vh - 151px);
   &-filters {
-    display: flex;
-    justify-content: space-between;
     margin-top: 20px;
   }
 }

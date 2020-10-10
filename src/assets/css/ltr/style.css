@@ -10854,10 +10854,11 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   border: 0;
 }
 
-.ltr .btn-primary {
+.ltr .btn-primary-outline {
   color: #5058a6 !important;
   background: #fff !important;
   border: 1px solid #5058a6 !important;
+  border-radius: 30px !important;
 }
 
 .ltr .btn-secondary {
@@ -11098,6 +11099,62 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   border-radius: 30px;
   background-color: #5058a6 !important;
   border-color: #5058a6 !important;
+}
+
+.ltr .user-profile {
+  min-height: calc(100vh - 201px);
+}
+
+.ltr .user-profile .user-image {
+  position: relative;
+  width: 150px;
+  margin: 50px auto;
+  margin-top: 49px;
+}
+
+.ltr .user-profile .user-image img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+
+.ltr .user-profile .user-image-upload {
+  top: 65px;
+  background: #5058a6;
+  height: 35px;
+  width: 35px;
+  right: 20px;
+  border: 1px solid #fefefe;
+  position: absolute;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 35px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.ltr .user-profile .user-data {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.ltr .user-profile .user-data-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #f8f3f3;
+  color: #6b6969;
+}
+
+@media (max-width: 576px) {
+  .ltr .user-profile .user-data {
+    width: 100%;
+  }
 }
 
 .ltr .header-wrapper {
@@ -11500,12 +11557,6 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
 }
 
 .ltr .rental-requests-filters {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   margin-top: 20px;
 }
 

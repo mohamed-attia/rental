@@ -1,90 +1,114 @@
 {
   "login": {
     "title": "LogIn",
-    "Email-PhoneNumber":"E-mail or phone number",
-    "Password":"Password",
-    "forget-Password":"forget password",
-    "SignIn":"SignIn",
-    "login-with":"OR",
-    "dont-have-account":"don't have account?",
-    "register":"register",
-    "facebook":"facebook",
-    "instagram":"instagram",
-    "google-plus":"google-plus"
+    "Email-PhoneNumber": "E-mail or phone number",
+    "Password": "Password",
+    "forget-Password": "forget password",
+    "SignIn": "SignIn",
+    "login-with": "OR",
+    "dont-have-account": "don't have account?",
+    "register": "register",
+    "facebook": "facebook",
+    "instagram": "instagram",
+    "google-plus": "google-plus"
   },
-  "Register":{
-    "title":"Register",
-    "userName":"user name",
-    "Email":"E-mail",
-    "phoneNumber":"phone number",
-    "New-Password":"New password",
-    "Confirm-Password":"Confirm password",
-    "Creating-account":"By creating an account you agree to our",
-    "terms-condition":"Terms and Condition",
-    "SignIn":"SignIn",
-    "have-account":"already have account?",
-    "logIn":"logIn",
-    "login-with":"OR",
-    "facebook":"facebook",
-    "instagram":"instagram",
-    "google-plus":"google-plus",
-    "address":"address"
+  "Register": {
+    "title": "Register",
+    "userName": "user name",
+    "Email": "E-mail",
+    "phoneNumber": "phone number",
+    "New-Password": "New password",
+    "Confirm-Password": "Confirm password",
+    "Creating-account": "By creating an account you agree to our",
+    "terms-condition": "Terms and Condition",
+    "SignIn": "SignIn",
+    "have-account": "already have account?",
+    "logIn": "logIn",
+    "login-with": "OR",
+    "facebook": "facebook",
+    "instagram": "instagram",
+    "google-plus": "google-plus",
+    "address": "address"
   },
-  "Validation":{
-    "required":"Required",
-    "passwordMatch":"confirmPassword not match Password"
+  "Validation": {
+    "required": "Required",
+    "passwordMatch": "confirmPassword not match Password"
   },
   "footer": {
     "copyRights": "© 2019 Ministry of Commerce and Investment"
   },
-  "rentals":{
+  "rentals": {
     "family": "Family",
     "single": "Single "
   },
   "lang_switcher": {
-    "currentLang": "ع"
+    "currentLang": "اللغة العربية"
   },
-  "payment":{
-    "bookingConfirm":"booking confirmation",
-    "unitName":"unit name",
-    "bookingDate":"booking date",
-    "insurance":"insurance",
-    "rentAmount":"rent amount",
-    "proceed":"By proceeding to payment you approve over the renting",
-    "contract":"contract and regulations",
-    "payNow":"pay now",
-    "cancel":"cancel"
+  "payment": {
+    "bookingConfirm": "booking confirmation",
+    "unitName": "unit name",
+    "bookingDate": "booking date",
+    "insurance": "insurance",
+    "rentAmount": "rent amount",
+    "proceed": "By proceeding to payment you approve over the renting",
+    "contract": "contract and regulations",
+    "payNow": "pay now",
+    "cancel": "cancel"
   },
-  "request-rental":{
-    "guest":"guest",
-    "login-register":"login/register",
-    "chalet-name":"chalet 990",
-    "from":"From:",
-    "to":"To:",
-    "full-name":"full name",
-    "enter-full-name":"Enter full name",
-    "please-enter-full-name":"Please enter your full name",
-    "telephone-number":"telephone number",
-    "enter-telephone-number":"Enter your phone number",
-    "please-enter-telephone-number":"Please enter your telephone number",
-    "Address":"Address",
-    "enter-Address":"Enter your address",
-    "enter-your-Address":"Please enter your address",
-    "email":"email",
-    "enter-email":"Enter your email",
-    "enter-your-email":"Please enter your email",
-    "family":"family",
-    "singles":"singles",
-    "select":"Select File",
-    "post":"Post more pictures",
-    "post-desc":"Limited at least 4 images. maximum of 20 images and do not exceed over 10 mb",
-    "civil-id":"civil id (front and back)",
-    "marriage":"marriage certificate",
-    "add":"Please add at least 2 copies of the requested documents",
-    "insurrence":"insurrence",
-    "rent-amount":"rent amount",
-    "submit-rent":"By submitting this rental request you approve over the renting",
-    "terms":"terms and condition",
-    "submit":"submit request"
+  "request-rental": {
+    "guest": "guest",
+    "login-register": "login/register",
+    "chalet-name": "chalet 990",
+    "from": "From:",
+    "to": "To:",
+    "full-name": "full name",
+    "enter-full-name": "Enter full name",
+    "please-enter-full-name": "Please enter your full name",
+    "telephone-number": "telephone number",
+    "enter-telephone-number": "Enter your phone number",
+    "please-enter-telephone-number": "Please enter your telephone number",
+    "Address": "Address",
+    "enter-Address": "Enter your address",
+    "enter-your-Address": "Please enter your address",
+    "email": "email",
+    "enter-email": "Enter your email",
+    "enter-your-email": "Please enter your email",
+    "family": "family",
+    "singles": "singles",
+    "select": "Select File",
+    "post": "Post more pictures",
+    "post-desc": "Limited at least 4 images. maximum of 20 images and do not exceed over 10 mb",
+    "civil-id": "civil id (front and back)",
+    "marriage": "marriage certificate",
+    "add": "Please add at least 2 copies of the requested documents",
+    "insurrence": "insurrence",
+    "rent-amount": "rent amount",
+    "submit-rent": "By submitting this rental request you approve over the renting",
+    "terms": "terms and condition",
+    "submit": "submit request"
+  },
+  "RentalRequests": {
+    "Pending": "Pending",
+    "Canceled": "Canceled",
+    "OnGoing": "OnGoing",
+    "Issues": "Issues",
+    "Expired": "Expired",
+    "Approved": "Approved",
+    "Reuests": "Reuests"
+  },
+  "UserProfile": {
+    "Email": "Email Address",
+    "MobileNo": "Mobile No",
+    "PersonalInfo": "Personal Info",
+    "Language": "Language"
+  },
+  "Menu": {
+    "Explore": "Explore",
+    "Request": "Request",
+    "PersonalInfo": "Personal Info",
+    "Chat": "Chat"
+  },
+  "Header": {
+    "Cancel": "Cancel"
   }
 }

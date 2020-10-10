@@ -1,0 +1,24 @@
+<div class="user-profile">
+  <div class="user-image">
+  <img  src="assets/icons/facebook.svg"/>
+  <span class="user-image-upload"><i class="fas fa-user-edit"></i></span>
+  </div>
+  <div class="user-data">
+    <div class="user-data-row">
+      <div class="user-data-row-icon"><i class="fas fa-user"></i> {{'UserProfile.Email' | translate}}</div>
+      <div class="user-data-row-data">{{email}}</div>
+    </div>
+    <div class="user-data-row">
+      <div class="user-data-row-icon"><i class="fas fa-mobile-alt"></i> {{'UserProfile.MobileNo' | translate}}</div>
+      <div class="user-data-row-data">{{phone}}</div>
+    </div>
+    <div class="user-data-row">
+      <div class="user-data-row-icon"><i class="fas fa-map-marker-alt"></i> {{'UserProfile.PersonalInfo' | translate}}</div>
+      <div class="user-data-row-data">Edit</div>
+    </div>
+    <div class="user-data-row">
+      <div class="user-data-row-icon"><i class="fas fa-globe"></i> {{'UserProfile.Language' | translate}}</div>
+      <div class="user-data-row-data"><app-language-switcher></app-language-switcher></div>
+    </div>
+  </div>
+</div>

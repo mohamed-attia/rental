@@ -1,19 +1,19 @@
 <div class="menu-wrapper d-flex justify-content-around mt-4">
-  <div class="menu-item" [ngClass]="{'active':currentComponent == 'explore'}">
+  <div class="menu-item" (click)="navigateToHome()" [ngClass]="{'active':currentComponent == 'explore'}">
     <div class="active-icon">
       <i class="fas fa-home"></i>
     </div>
     <div class="active-title">
-      <span class="text-capitalize">Explore</span>
+      <span class="text-capitalize">{{ 'Menu.Explore' | translate}}</span>
     </div>
   </div>
 
-  <div class="menu-item" [ngClass]="{'active':currentComponent == 'request'}">
+  <div class="menu-item" (click)="navigateRequests()" [ngClass]="{'active':currentComponent == 'request'}">
     <div class="active-icon">
       <i class="fas fa-clock"></i>
     </div>
     <div class="active-title">
-      <span class="text-capitalize">Requests</span>
+      <span class="text-capitalize">{{ 'Menu.Request' | translate}}</span>
     </div>
   </div>
 
@@ -22,16 +22,16 @@
       <i class="fas fa-comment-dots"></i>
     </div>
     <div class="active-title">
-      <span class="text-capitalize">Chat</span>
+      <span class="text-capitalize">{{ 'Menu.Chat' | translate}}</span>
     </div>
   </div>
 
-  <div class="menu-item">
+  <div class="menu-item" (click)="navigateToUser()" [ngClass]="{'active':currentComponent == 'user-profile'}">
     <div class="active-icon">
       <i class="fas fa-user"></i>
     </div>
     <div class="active-title">
-      <span class="text-capitalize">User</span>
+      <span class="text-capitalize">{{ 'Menu.PersonalInfo' | translate}}</span>
     </div>
   </div>
 </div>

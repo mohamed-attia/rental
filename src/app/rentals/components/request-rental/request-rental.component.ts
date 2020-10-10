@@ -54,6 +54,7 @@ export class RequestRentalComponent implements OnInit {
   private getRentalData() {
     this.getRentalsListService.getRentalData().subscribe(res => {
       this.requestdata = res;
+      debugger
       if(this.requestdata !== null && this.requestdata !== undefined && Object.keys(this.requestdata).length !== 0){
         this.createForm();
       }

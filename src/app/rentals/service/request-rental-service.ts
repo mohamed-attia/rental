@@ -16,7 +16,8 @@ export class RequestRentalService {
   constructor(private query: QueryService, private http: HttpClient) {}
 
   public postFile(formData: FormData): Observable<any> {
-    let url_ = `${environment.api}Document/UploadRequestFileToS3`;
+    let tenantId = localStorage.getItem('tenantId')
+    let url_ = `${environment.api}Document/UploadRequestFileToS3?tenantId=${tenantId}`;
     url_ = url_.replace(/[?&]$/, "");
     let options_: any = {
       body: formData,

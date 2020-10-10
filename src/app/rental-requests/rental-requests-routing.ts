@@ -2,14 +2,17 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { NgModule } from "@angular/core";
 import { RentalRequestsComponent } from "./rental-requests/rental-requests.component";
-import { RequestRentalComponent } from "./../rentals/components/request-rental/request-rental.component";
 import { RequestsLayoutComponent } from "./requests-layout/requests-layout.component";
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
   {
     path: "rental-requests",
     component: RequestsLayoutComponent,
-    children: [{ path: "", component: RentalRequestsComponent }],
+    children: [
+      { path: "", component: RentalRequestsComponent },
+      {path:"user-profile",component:UserProfileComponent}
+    ],
   },
 ];
 

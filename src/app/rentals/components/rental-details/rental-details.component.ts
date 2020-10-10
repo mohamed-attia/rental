@@ -140,7 +140,7 @@ export class RentalDetailsComponent implements OnInit {
             if(m.isBetween(moment(price.fromDate) , moment(price.toDate),'day')){
                 let day = m.isoWeekday();
                 if(day === 6 || day ===7 )
-                  this.totalAmount += price.weekEndPrice;
+                  this.totalAmount += price.weekendPrice;
                 else
                   this.totalAmount += price.dayPrice;
                   break;
@@ -148,7 +148,7 @@ export class RentalDetailsComponent implements OnInit {
         }
       }
     }
-      // console.log(this.totalAmount)
+      console.log(this.totalAmount);
   }
 
   isHovered(date: NgbDate) {

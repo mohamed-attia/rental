@@ -1,21 +1,13 @@
 .app-switcher a {
     display: inline-block;
-    width: 25px;
-    height: 25px;
     background: #fff;
     line-height: 22px;
-    border-radius: 50%;
-    color: #0d8a86 !important;
     cursor: pointer;
-    transition: all  0.2s ease-in-out;
     text-align: center;
     margin: 0 10px
 }
 
-.app-switcher a:hover {
-    background: #065b58;
-    color: #fff !important;
-}
+
 
 .ltr .app-switcher a {
     line-height: 18px;

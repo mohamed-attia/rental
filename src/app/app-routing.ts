@@ -24,6 +24,7 @@ export const routes: Routes = [
         (mod) => mod.RentalRequestsModule
       ),
   },
+  {path:"user-profile",component:NotFoundComponent},
   { path: "**", component: NotFoundComponent },
 ];
 

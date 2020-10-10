@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
+
+import { LanguageUpdateService } from '../../providers/language/language.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +10,24 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
  @Input()currentComponent:string;
-  constructor() { }
+  constructor(private router: Router, private languageUpdateService:LanguageUpdateService) {
+    this.languageUpdateService.getMenuItem().subscribe(res=>{
+      this.currentComponent =res
+    })
+  }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  public navigateToUser(){
+    this.router.navigate(['rental-requests/user-profile'])
+  }
+
+  public navigateRequests(){
+    this.router.navigate(['rental-requests']);
+  }
+
+  public navigateToHome(){
+    this.router.navigate(['rentals'])
   }
 
 }

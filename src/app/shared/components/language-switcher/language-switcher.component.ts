@@ -1,9 +1,11 @@
-import { LanguageUpdateService } from "./../../providers/language/language.service";
 import { Component, OnInit, Renderer2, ViewEncapsulation } from "@angular/core";
-import { Location } from "@angular/common";
-import { TranslateService } from "@ngx-translate/core";
+
 import { ActivatedRoute } from "@angular/router";
+import { LanguageUpdateService } from "./../../providers/language/language.service";
+import { Location } from "@angular/common";
 import { Title } from '@angular/platform-browser';
+import { TranslateService } from "@ngx-translate/core";
+
 @Component({
   selector: "app-language-switcher",
   templateUrl: "./language-switcher.component.html",
@@ -58,6 +60,6 @@ export class LanguageSwitcherComponent implements OnInit {
     this.translate.setDefaultLang(lang);
     this.translate.use(lang);
     this.language.setLang(lang);
-    this.location.go(`${location.pathname}?lang=${lang}&q=${this.q}`);
+    this.location.go(`${location.pathname}?lang=${lang}`);
   }
 }
