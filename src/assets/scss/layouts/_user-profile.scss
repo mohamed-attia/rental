@@ -35,6 +35,11 @@
       padding: 10px;
       border-bottom: 1px solid #f8f3f3;
       color: #6b6969;
+      .edit {
+        cursor: pointer;
+        color:#5058a6;
+        text-decoration: underline;
+      }
     }
   }
 }

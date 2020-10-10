@@ -1,4 +1,5 @@
 import { CommonModule } from "@angular/common";
+import { FormsModule } from '@angular/forms';
 import { NgModule } from "@angular/core";
 import { RentalRequestsComponent } from "./rental-requests/rental-requests.component";
 import { RentalRequestsRoutingModule } from "./rental-requests-routing";
@@ -10,6 +11,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 @NgModule({
   declarations: [RequestsLayoutComponent, RentalRequestsComponent,UserProfileComponent],
   imports: [
+    FormsModule,
     SharedModule,
     RouterModule,
     CommonModule,

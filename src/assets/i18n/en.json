@@ -100,7 +100,11 @@
     "Email": "Email Address",
     "MobileNo": "Mobile No",
     "PersonalInfo": "Personal Info",
-    "Language": "Language"
+    "Language": "Language",
+    "Save":"Save",
+    "Cancel":"Cancel",
+    "Edit":"Edit",
+    "ProfileEdit":"Profile Edit"
   },
   "Menu": {
     "Explore": "Explore",

@@ -12,9 +12,9 @@
       <div class="user-data-row-icon"><i class="fas fa-mobile-alt"></i> {{'UserProfile.MobileNo' | translate}}</div>
       <div class="user-data-row-data">{{phone}}</div>
     </div>
-    <div class="user-data-row">
+    <div class="user-data-row" (click)="open(content)">
       <div class="user-data-row-icon"><i class="fas fa-map-marker-alt"></i> {{'UserProfile.PersonalInfo' | translate}}</div>
-      <div class="user-data-row-data">Edit</div>
+      <div class="user-data-row-data edit">{{'UserProfile.Edit'| translate}}</div>
     </div>
     <div class="user-data-row">
       <div class="user-data-row-icon"><i class="fas fa-globe"></i> {{'UserProfile.Language' | translate}}</div>
@@ -22,3 +22,40 @@
     </div>
   </div>
 </div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form #form="ngForm" [formGroup]="userUpdateForm" (ngSubmit)="onSubmit(form)">
+      <div class="form-group">
+        <label for="userName">user Name </label>
+        <input type="email" class="form-control"  formControlName="userName"  id="username"/>
+      </div>
+      <div class="form-group">
+        <label for="userName">user Email</label>
+        <input type="email" class="form-control"  formControlName="userEmail"  id="userEmail"/>
+      </div>
+      <div class="form-group">
+        <label for="userName">user Phone </label>
+        <input type="email" class="form-control"  formControlName="userPhone"  id="userPhone"/>
+      </div>
+      <div class="form-group">
+        <label for="userName">user Address</label>
+        <input type="email" class="form-control"  formControlName="userAddress"  id="userAddress"/>
+      </div>
+  </form>
+  </div>
+  <div class="modal-footer">
+    <!-- <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button> -->
+    <button type="button" class="btn btn-cancel-outline" >{{'UserProfile.Cancel'| translate}}</button>
+    <button type="submit" (click)="onSubmit(userUpdateForm)" class="btn btn-primary-outline">{{'UserProfile.Save'| translate}}</button>
+
+  </div>
+</ng-template>
+
+

@@ -230,11 +230,12 @@ export class RequestRentalComponent implements OnInit {
       }
     }
     this.loading = true;
-    const formData: FormData = new FormData();
     for (let index = 0; index < event.target.files.length; index++) {
+      const formData: FormData = new FormData();
       const file = <File>event.target.files[index];
       this.totalsizeOfimages += file.size
       formData.append("file_" + index, file, file.name);
+      formData.append("tenantId" , localStorage.getItem('tenantId'));
         this.requestRentalService.postFile(formData).subscribe((res: any) => {
           this.requestRental['images'].push({
             "path":res["body"]["result"]["filesNames"][index].fileName,

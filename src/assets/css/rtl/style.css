@@ -11151,6 +11151,12 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
   color: #6b6969;
 }
 
+.rtl .user-profile .user-data-row .edit {
+  cursor: pointer;
+  color: #5058a6;
+  text-decoration: underline;
+}
+
 @media (max-width: 576px) {
   .rtl .user-profile .user-data {
     width: 100%;

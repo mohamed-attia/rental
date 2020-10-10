@@ -11151,6 +11151,12 @@ a.ltr .badge-dark:focus, a.ltr .badge-dark.focus {
   color: #6b6969;
 }
 
+.ltr .user-profile .user-data-row .edit {
+  cursor: pointer;
+  color: #5058a6;
+  text-decoration: underline;
+}
+
 @media (max-width: 576px) {
   .ltr .user-profile .user-data {
     width: 100%;
