@@ -44,7 +44,7 @@ export class UserProfileComponent implements OnInit {
     debugger
     if (this.userUpdateForm.valid) {
       console.log(this.userUpdateForm.value);
-      this.showmodal = false;
+      this.modalService.dismissAll('save click')
     }else{
       console.log("not valid");
     }
@@ -71,6 +71,11 @@ export class UserProfileComponent implements OnInit {
     } else {
       return `with: ${reason}`;
     }
+  }
+
+  cancel(){
+    this.userUpdateForm.reset();
+    this.modalService.dismissAll('save click')
   }
 
 }

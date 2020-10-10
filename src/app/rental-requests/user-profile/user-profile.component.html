@@ -52,7 +52,7 @@
   </div>
   <div class="modal-footer">
     <!-- <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button> -->
-    <button type="button" class="btn btn-cancel-outline" >{{'UserProfile.Cancel'| translate}}</button>
+    <button type="button" class="btn btn-cancel-outline" (click)="cancel()">{{'UserProfile.Cancel'| translate}}</button>
     <button type="submit" (click)="onSubmit(userUpdateForm)" class="btn btn-primary-outline">{{'UserProfile.Save'| translate}}</button>
 
   </div>
