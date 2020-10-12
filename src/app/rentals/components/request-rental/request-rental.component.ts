@@ -5,6 +5,7 @@ import { GetRentalsListService } from "../../service/rental.service";
 import { RequestRentalModel } from '../../models/request-rental.model';
 import { RequestRentalService } from 'src/app/rentals/service/request-rental-service';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+import { Subject, zip as observableZip } from 'rxjs';
 
 @Component({
   selector: "app-root",
@@ -30,6 +31,7 @@ export class RequestRentalComponent implements OnInit {
   validaImages: boolean = true;
   public fromDate:any;
   public toDate:any;
+  myFiles = [];
   constructor(
     private getRentalsListService: GetRentalsListService,
     private fb: FormBuilder,
@@ -150,8 +152,8 @@ export class RequestRentalComponent implements OnInit {
   }
 
   public onSubmit(form: FormGroup) {
-      this.fromDate = new Date(Number(this.requestdata.fromDate.year),Number(this.requestdata.fromDate.month),Number(this.requestdata.fromDate.day));
-      this.toDate = new Date(Number(this.requestdata.toDate.year),Number(this.requestdata.toDate.month),Number(this.requestdata.toDate.day));
+    this.fromDate = new Date(Number(this.requestdata.fromDate.year),Number(this.requestdata.fromDate.month),Number(this.requestdata.fromDate.day));
+    this.toDate = new Date(Number(this.requestdata.toDate.year),Number(this.requestdata.toDate.month),Number(this.requestdata.toDate.day));
     this.requestRentalform.get("user").get("userName").setValue(this.requestRentalform.get("user").get("emailAddress").value);
     if (this.isUser) {
       this.requestRentalform.get("user").get("id").setValue(Number(localStorage.getItem("userId")));
@@ -223,37 +225,48 @@ export class RequestRentalComponent implements OnInit {
   }
 
   public uploadImages(event: any) {
-    debugger
     for(let i=0;i<this.requestRental.images.length;i++){
       if(!this.requestRental.images[i].hasOwnProperty('path')){
         this.requestRental['images'].splice(i,1)
       }
     }
     this.loading = true;
-    for (let index = 0; index < event.target.files.length; index++) {
+    for (var i = 0; i < event.target.files.length; i++) {
+      this.myFiles.push(event.target.files[i]);
+  }
+  console.log(this.myFiles);
+  let serviceArray = []
+    for (let index = 0; index < this.myFiles.length; index++) {
       const formData: FormData = new FormData();
       const file = <File>event.target.files[index];
       this.totalsizeOfimages += file.size
       formData.append("file_" + index, file, file.name);
       formData.append("tenantId" , localStorage.getItem('tenantId'));
-        this.requestRentalService.postFile(formData).subscribe((res: any) => {
-          this.requestRental['images'].push({
-            "path":res["body"]["result"]["filesNames"][index].fileName,
-            "type":res["body"]["result"]["filesNames"][index].fileType,
-            "id":0,
-            "unitRequestId":null,
-          })
-          let fileObj = {
-            fileName: res["body"]["result"]["filesNames"][index].fileName,
-            fileType: this.convertFiletypeToLower(
-              res["body"]["result"]["filesNames"][index].fileType
-            ),
-          };
-          this.uploadedFileList.push(fileObj);
-          this.loading = false;
-          console.log('images',this.requestRental.images)
-        });
+      serviceArray.push(this.requestRentalService.postFile(formData));
+
     }
+
+    observableZip(...serviceArray).subscribe(res=>{
+      this.loading = false;
+      if(res.length>0){
+        for(let i = 0; i<res.length;i++){
+          // console.log(res[i]['body']['result']["filesNames"][0]['fileName']);
+          let fileObj  = {}
+              fileObj = {
+            fileName: res[i]["body"]["result"]["filesNames"][0].fileName,
+            fileType: this.convertFiletypeToLower(res[i]["body"]["result"]["filesNames"][0].fileType)
+          };
+          this.requestRental['images'].push({
+          "path":res[i]["body"]["result"]["filesNames"][0].fileName,
+          "type":res[i]["body"]["result"]["filesNames"][0].fileType,
+          "id":0,
+          "unitRequestId":null,
+          });
+          this.uploadedFileList.push(fileObj);
+          // console.log(this.uploadedFileList)
+        }
+      }
+    });
 
   }
 

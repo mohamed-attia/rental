@@ -44,6 +44,9 @@ export class UserProfileComponent implements OnInit {
     debugger
     if (this.userUpdateForm.valid) {
       console.log(this.userUpdateForm.value);
+      this.rentalRequestsUserService.sendUserProfileDate(this.userUpdateForm.value).subscribe(res=>{
+        console.log('done')
+      })
       this.modalService.dismissAll('save click')
     }else{
       console.log("not valid");

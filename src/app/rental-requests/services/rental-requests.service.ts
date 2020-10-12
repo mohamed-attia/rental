@@ -18,6 +18,12 @@ export class RentalRequestsUserService {
     return this.query.get();
   }
 
+  public sendUserProfileDate(userData): Observable<any> {
+    this.query.setURI(`services/app/UnitRequests/GetRequestsByUserId`);
+    // this.query.setHeaders();
+    return this.query.post(userData);
+  }
+
   setHeaderTitle(title: string): void {
     this.currentHreaderTitle.next(title);
   }
