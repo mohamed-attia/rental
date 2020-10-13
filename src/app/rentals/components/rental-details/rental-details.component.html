@@ -69,7 +69,7 @@
       </span>
     </div>
     <div class="unit-descrption">
-      <p class="mb-0" *ngIf="!allDescription">{{rentalDetails?.description |slice:0:200}} <span class="more text-capitalize more-rental-details" (click)="allDescription = !allDescription">more...</span></p>
+      <p class="mb-0" *ngIf="!allDescription">{{rentalDetails?.description |slice:0:200}} <span class="more text-capitalize more-rental-details" (click)="allDescription = !allDescription">{{'RentalDetails.More' | translate}}</span></p>
       <p class="mb-0" *ngIf="allDescription">{{rentalDetails?.description}}</p>
     </div>
     <div class="unit-location">
@@ -82,7 +82,7 @@
   </div>
   <div class="card-details calendar mt-2">
     <div class="calendar-title">
-      <span class="text-capitalize">choose date</span>
+      <span class="text-capitalize">{{'RentalDetails.ChooseDate' | translate}}</span>
     </div>
     <div class="selected-date-range">
       <form class="form-inline d-flex justify-content-center">
@@ -102,7 +102,7 @@
         </div>
         <div class="form-group">
           <div class="input-group">
-            <label class="mr-1 ml-1">From:</label>
+            <label class="mr-1 ml-1">{{'RentalDetails.From:' | translate}}</label>
             <input #dpFromDate placeholder="yyyy-mm-dd" name="dpFromDate"
               [value]="formatter.format(fromDate)" (input)="fromDate">
             <div class="input-group-append">
@@ -113,7 +113,7 @@
         </div>
         <div class="form-group">
           <div class="input-group">
-            <label class="mr-1 ml-1">To:</label>
+            <label class="mr-1 ml-1">{{'RentalDetails.To:' | translate}}</label>
             <input #dpToDate placeholder="yyyy-mm-dd" name="dpToDate"
               [value]="formatter.format(toDate)" (input)="toDate">
             <div class="input-group-append">
@@ -143,7 +143,7 @@
   </div>
   <div class="card-details utilies mt-2">
     <div class="title">
-      <span class="text-capitalize">utilies</span>
+      <span class="text-capitalize">{{'RentalDetails.Utilities' | translate}}</span>
     </div>
     <div class="content">
       <div class="row">
@@ -174,12 +174,12 @@
   <div class="card-details card-details-bottom next mt-2 d-flex justify-content-around">
     <button class="btn chat-btn  border-0">
       <img width="22px" height="20px" src="assets/images/chat.PNG" alt="">
-      <span>chat</span>
+      <span>{{'RentalDetails.Chat' | translate}}</span>
     </button>
-    <button class="btn btn-primary next-btn border-0" (click)="requestRental()">next</button>
+    <button class="btn btn-primary next-btn border-0" (click)="requestRental()">{{'RentalDetails.Next' | translate}}</button>
     <button class="btn call-btn ">
       <img width="22px" height="20px" src="assets/images/call.PNG" alt="">
-      <span>call</span>
+      <span>{{'RentalDetails.Call' | translate}}</span>
     </button>
   </div>
 

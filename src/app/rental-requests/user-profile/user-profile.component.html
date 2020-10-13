@@ -30,32 +30,56 @@
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
+  <form #form="ngForm" [formGroup]="userUpdateForm" (ngSubmit)="onSubmit(form)" novalidate>
   <div class="modal-body">
-    <form #form="ngForm" [formGroup]="userUpdateForm" (ngSubmit)="onSubmit(form)">
-      <div class="form-group">
-        <label for="userName">user Name </label>
-        <input type="email" class="form-control"  formControlName="userName"  id="username"/>
-      </div>
-      <div class="form-group">
-        <label for="userName">user Email</label>
-        <input type="email" class="form-control"  formControlName="userEmail"  id="userEmail"/>
-      </div>
-      <div class="form-group">
-        <label for="userName">user Phone </label>
-        <input type="email" class="form-control"  formControlName="userPhone"  id="userPhone"/>
-      </div>
-      <div class="form-group">
-        <label for="userName">user Address</label>
-        <input type="email" class="form-control"  formControlName="userAddress"  id="userAddress"/>
-      </div>
-  </form>
+    <div class="form-group">
+      <label for="userName">Name </label>
+      <input type="email" class="form-control" required formControlName="surname"  id="username"/>
+      <ng-container
+      *ngIf="form.submitted && userUpdateForm.controls['surname'].invalid ||
+     (userUpdateForm.controls['surname'].dirty || userUpdateForm.controls['surname'].touched)">
+      <span class="required"
+        *ngIf="userUpdateForm.controls['surname']?.errors?.required">{{'Validation.required' | translate}}</span>
+    </ng-container>
+    </div>
+    <div class="form-group">
+      <label for="userName">EmailAddress</label>
+      <input type="email" class="form-control" required formControlName="emailAddress"  id="emailAddress"/>
+      <ng-container
+      *ngIf="form.submitted && userUpdateForm.controls['emailAddress'].invalid ||
+     (userUpdateForm.controls['emailAddress'].dirty || userUpdateForm.controls['emailAddress'].touched)">
+      <span class="required"
+        *ngIf="userUpdateForm.controls['emailAddress']?.errors?.required">{{'Validation.required' | translate}}</span>
+    </ng-container>
+    </div>
+    <div class="form-group">
+      <label for="userName">Phone Number </label>
+      <input type="email" class="form-control" required formControlName="phoneNumber"  id="phoneNumber"/>
+      <ng-container
+      *ngIf="form.submitted && userUpdateForm.controls['phoneNumber'].invalid ||
+     (userUpdateForm.controls['phoneNumber'].dirty || userUpdateForm.controls['phoneNumber'].touched)">
+      <span class="required"
+        *ngIf="userUpdateForm.controls['phoneNumber']?.errors?.required">{{'Validation.required' | translate}}</span>
+    </ng-container>
+    </div>
+    <div class="form-group">
+      <label for="userName">Password</label>
+      <input type="email" class="form-control" required formControlName="password"  id="password"/>
+      <ng-container
+      *ngIf="form.submitted && userUpdateForm.controls['password'].invalid ||
+     (userUpdateForm.controls['password'].dirty || userUpdateForm.controls['password'].touched)">
+      <span class="required"
+        *ngIf="userUpdateForm.controls['password']?.errors?.required">{{'Validation.required' | translate}}</span>
+    </ng-container>
+    </div>
+
   </div>
   <div class="modal-footer">
     <!-- <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button> -->
     <button type="button" class="btn btn-cancel-outline" (click)="cancel()">{{'UserProfile.Cancel'| translate}}</button>
     <button type="submit" (click)="onSubmit(userUpdateForm)" class="btn btn-primary-outline">{{'UserProfile.Save'| translate}}</button>
-
   </div>
+</form>
 </ng-template>
 
 

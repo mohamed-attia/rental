@@ -104,7 +104,10 @@
     "Save":"حفظ",
     "Cancel":"إلغاء",
     "Edit":"تعديل",
-    "ProfileEdit":"بيانات المستخدم"
+    "ProfileEdit":"بيانات المستخدم",
+    "Name":"الاسم",
+    "PhoneNumber":"الجوال",
+    "Password":"كلمة المرور"
   },
   "Menu": {
     "Explore": "الرئيسية",
@@ -114,5 +117,18 @@
   },
   "Header": {
     "Cancel": "عودة"
+  },
+  "Rentals":{
+    "Details":"التفاصيل"
+  },
+  "RentalDetails":{
+    "ChooseDate":"اختر التاريخ",
+    "From:":"من:",
+    "To:":"الي:",
+    "Utilities":"الخدمات",
+    "Chat":"محادثة",
+    "Call":"اتصال",
+    "Next":"التالي",
+    "More":"المزيد"
   }
 }

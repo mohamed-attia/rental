@@ -10869,6 +10869,10 @@ a.rtl .badge-dark:focus, a.rtl .badge-dark.focus {
           box-shadow: unset !important;
 }
 
+.rtl .required {
+  color: red;
+}
+
 .rtl .content-wrapper {
   width: 50%;
   margin: auto;

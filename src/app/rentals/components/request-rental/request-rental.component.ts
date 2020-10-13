@@ -56,7 +56,7 @@ export class RequestRentalComponent implements OnInit {
   private getRentalData() {
     this.getRentalsListService.getRentalData().subscribe(res => {
       this.requestdata = res;
-      debugger
+      // debugger
       if(this.requestdata !== null && this.requestdata !== undefined && Object.keys(this.requestdata).length !== 0){
         this.createForm();
       }
@@ -234,7 +234,7 @@ export class RequestRentalComponent implements OnInit {
     for (var i = 0; i < event.target.files.length; i++) {
       this.myFiles.push(event.target.files[i]);
   }
-  console.log(this.myFiles);
+  // console.log(this.myFiles);
   let serviceArray = []
     for (let index = 0; index < this.myFiles.length; index++) {
       const formData: FormData = new FormData();
@@ -243,7 +243,6 @@ export class RequestRentalComponent implements OnInit {
       formData.append("file_" + index, file, file.name);
       formData.append("tenantId" , localStorage.getItem('tenantId'));
       serviceArray.push(this.requestRentalService.postFile(formData));
-
     }
 
     observableZip(...serviceArray).subscribe(res=>{
@@ -267,7 +266,7 @@ export class RequestRentalComponent implements OnInit {
         }
       }
     });
-
+      this.myFiles = []
   }
 
    public closeRequestModal(e){

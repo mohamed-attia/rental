@@ -104,7 +104,10 @@
     "Save":"Save",
     "Cancel":"Cancel",
     "Edit":"Edit",
-    "ProfileEdit":"Profile Edit"
+    "ProfileEdit":"Profile Edit",
+    "Name":"Name",
+    "PhoneNumber":"Phone Number",
+    "Password":"Password"
   },
   "Menu": {
     "Explore": "Explore",
@@ -114,5 +117,18 @@
   },
   "Header": {
     "Cancel": "Cancel"
+  },
+  "Rentals":{
+    "Details":"Details"
+  },
+  "RentalDetails":{
+    "ChooseDate":"Choose Date",
+    "From:":"From:",
+    "To:":"To:",
+    "Utilities":"Utilities",
+    "Chat":"Chat",
+    "Call":"Call",
+    "Next":"Next",
+    "More":"More"
   }
 }

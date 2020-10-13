@@ -32,27 +32,30 @@ export class UserProfileComponent implements OnInit {
 
   private createForm() {
     this.userUpdateForm = this.fb.group({
-      userName: ["", Validators.required],
-      userEmail: ["", Validators.required],
-      userPhone: ["", Validators.required],
-      userAddress: ["", Validators.required],
+        surname: ["", Validators.required],
+        password: ["", Validators.required],
+        emailAddress: ["", Validators.required],
+        phoneNumber: ["", Validators.required],
+        id:[Number(localStorage.getItem('userId'))]
     });
   }
 
-
   public onSubmit(form:FormGroup) {
-    debugger
     if (this.userUpdateForm.valid) {
-      console.log(this.userUpdateForm.value);
-      this.rentalRequestsUserService.sendUserProfileDate(this.userUpdateForm.value).subscribe(res=>{
-        console.log('done')
+      let userData = Object.assign({Name : this.userUpdateForm.get('surname').value},{UserName : this.userUpdateForm.get('surname').value},this.userUpdateForm.value)
+      this.rentalRequestsUserService.sendUserProfileDate({user:userData}).subscribe(res=>{
+        console.log('done');
+        if(res['success']){
+          this.modalService.dismissAll('save click');
+          this.userUpdateForm.reset();
+        }
       })
-      this.modalService.dismissAll('save click')
     }else{
       console.log("not valid");
     }
 
   }
+
   getUserData() {
     this.email = localStorage.getItem('emailAddress');
     this.phone = localStorage.getItem("phoneNumber");
