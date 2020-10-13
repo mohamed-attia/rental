@@ -1,41 +1,55 @@
 .rental-requests {
   min-height: calc(100vh - 151px);
   &-filters {
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 22px;
+    margin-#{$left}: 30px;
+    @media(max-width:567px){
+    margin-#{$left}: 0;
+    }
   }
- 
+  .ongoingActions,.PendingActions,.rejectedActions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
-
 .rental-requests-requests {
   padding: 12px;
   margin-bottom: 5px;
-
+  margin-top: 10px;
+  box-shadow: 0px 1px 8px #cccaca;
+  -moz-box-shadow: 0px 1px 8px #cccaca;
+  -o-box-shadow: 0px 1px 8px #cccaca;
+  -webkit-box-shadow: 0px 1px 8px #cccaca;
   .rental-requests-data {
-  
     float: #{$left};
     margin-#{$right}: 40px;
-  
     &_header {
       color: gray;
       margin-bottom: 5px;
       margin-#{$left}: 40px;
       display: block;
     }
-  
-    &_picture {      
-      &, & > *{
+
+    &_picture {
+      &,
+      & > * {
         border-radius: 50%;
       }
     }
   }
-  
+
   .rental-requests-details {
     float: #{$left};
     margin-top: 10px;
+    @media (max-width:567px){
+      text-align: #{$left};
+      margin: 0 auto;
+    }
     &--1 {
       font-size: 1.3rem;
     }
-  
   }
 
   .rental-requests_status {
@@ -47,11 +61,29 @@
       display: block;
       font-size: 1.2rem;
     }
+    &--pending{
+      color:rgb(80, 11, 11)
+    }
+    &--reject{
+      color:rgb(214, 17, 17)
+    }
   }
 
   .rental-requests_bar {
     &--approved {
       background-color: #3bb345;
+      width: 145px;
+      height: 8px;
+      border-radius: 4px;
+    }
+    &--pending {
+      background-color:rgb(80, 11, 11);
+      width: 145px;
+      height: 8px;
+      border-radius: 4px;
+    }
+    &--reject {
+      background-color:rgb(214, 17, 17);
       width: 145px;
       height: 8px;
       border-radius: 4px;
@@ -64,7 +96,7 @@
 }
 
 .color-blue {
-  color: #317ec7; 
+  color: #317ec7;
 }
 
 .color-gray {
@@ -94,7 +126,7 @@
 }
 
 @media (max-width: 424px) {
-  .rental-requests-requests  {
+  .rental-requests-requests {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -114,7 +146,7 @@
         margin-#{$left}: 0;
       }
     }
-  
+
     .rental-requests_bar {
       &--approved {
         display: inline-block;
@@ -122,7 +154,3 @@
     }
   }
 }
-
-
-
-

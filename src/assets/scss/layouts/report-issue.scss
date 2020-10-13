@@ -1,0 +1,28 @@
+.report-issue {
+  min-height: calc(100vh - 150px);
+  .official-document {
+    .official-document-title {
+      font-weight: 500;
+    }
+    .official-document-content {
+      .post-pictures {
+        border: 1px dashed #ff6262;
+        padding: 9px 12px;
+        ul {
+          list-style: decimal;
+        }
+        p:first-child {
+          font-weight: 500;
+          color: #5058a6;
+        }
+        p:last-child {
+          color: #7a7a7a;
+          font-size: 14px;
+        }
+        .pictures-info {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

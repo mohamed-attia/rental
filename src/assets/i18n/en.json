@@ -85,7 +85,9 @@
     "rent-amount": "rent amount",
     "submit-rent": "By submitting this rental request you approve over the renting",
     "terms": "terms and condition",
-    "submit": "submit request"
+    "submit": "submit request",
+    "Required":"Required",
+    "OfficialDocs":"Official Documents"
   },
   "RentalRequests": {
     "Pending": "Pending",
@@ -94,7 +96,10 @@
     "Issues": "Issues",
     "Expired": "Expired",
     "Approved": "Approved",
-    "Reuests": "Reuests"
+    "Reuests": "Reuests",
+    "History": "History",
+    "Reject": "Reject",
+    "RequestId": "Request Id"
   },
   "UserProfile": {
     "Email": "Email Address",
@@ -130,5 +135,11 @@
     "Call":"Call",
     "Next":"Next",
     "More":"More"
+  },
+  "ReportIssue":{
+    "ReportIssue":"Report Issue",
+    "Images":"Images",
+    "Required":"Required",
+    "IssueDecription":"Issue Decription"
   }
 }

@@ -85,7 +85,9 @@
     "rent-amount": "مقدار الايجار",
     "submit-rent": "بتقديم طلب الإيجار هذا ، فإنك توافق على الإيجار",
     "terms": "أحكام وشروط",
-    "submit": "تقديم الطلب"
+    "submit": "تقديم الطلب",
+    "Required":"Required",
+    "OfficialDocs":"Official Documents"
   },
   "RentalRequests": {
     "Pending": "معلق",
@@ -94,7 +96,10 @@
     "Issues": "مشاكل",
     "Expired": "منتهي",
     "Approved": "موافق",
-    "Reuests": "الطلبات"
+    "Reuests": "الطلبات",
+    "History": "السابقة",
+    "Reject": "ملغي",
+    "RequestId": "رقم الطلب"
   },
   "UserProfile": {
     "Email": "البريد الإلكتروني",
@@ -130,5 +135,11 @@
     "Call":"اتصال",
     "Next":"التالي",
     "More":"المزيد"
+  },
+  "ReportIssue":{
+    "ReportIssue":"أرسال مشكله",
+    "Images":"الصور",
+    "Required":"مطلوب",
+    "IssueDecription":"وصف المشكلة"
   }
 }

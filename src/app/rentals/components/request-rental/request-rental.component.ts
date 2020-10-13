@@ -95,8 +95,8 @@ export class RequestRentalComponent implements OnInit {
   private createForm() {
     this.requestRentalform = this.fb.group({
     unitType: [""],
-    TotalAmount: [{value: this.requestdata.amount, disabled: true}],
-    totalInsurance: [{value: this.requestdata.totalInsurance , disabled: true}],
+    TotalAmount: this.requestdata.amount,
+    totalInsurance: this.requestdata.totalInsurance,
     status: this.requestdata.status,
     note: "",
     paymentStatus: 1,

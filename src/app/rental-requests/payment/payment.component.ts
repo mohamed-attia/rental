@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
-import { GetRentalsListService } from '../../service/rental.service';
-import { RequestRentalService } from "../../service/request-rental-service";
+import { GetRentalsListService } from 'src/app/rentals/service/rental.service';
+import { RequestRentalService } from './../../rentals/service/request-rental-service';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
@@ -11,6 +11,7 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
 })
 export class PaymentComponent implements OnInit {
   @Input() showPaymentModal;
+  @Input() paymentData;
   @Output() closePaymentModal = new EventEmitter<boolean>();
   public paymentForm: FormGroup;
   public requestdata:any;
@@ -48,10 +49,10 @@ export class PaymentComponent implements OnInit {
 
   private patchPymentForm(){
     this.paymentForm.patchValue({
-      name: this.requestdata.rentalName,
-      date: `${this.requestdata.fromDate.year} - ${this.requestdata.fromDate.month} - ${this.requestdata.fromDate.day}` ,
-      totalInsurance: this.requestdata.totalInsurance,
-      rentAmount: this.requestdata.amount,
+      name: this.paymentData.unit.name,
+      date: new Date(this.paymentData.fromDate) ,
+      totalInsurance: this.paymentData.unit.insurances,
+      rentAmount: this.paymentData.unit.totalAmount,
     })
   }
 

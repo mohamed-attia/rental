@@ -18,8 +18,20 @@ export class RentalRequestsUserService {
     return this.query.get();
   }
 
+  public cancelRequest(cancelObject:any): Observable<any> {
+    this.query.setURI(`services/app/UnitRequests/UpdateRequestStatus`);
+    // this.query.setHeaders();
+    return this.query.post(cancelObject);
+  }
+
+  public reportIssue(reportIssue:any): Observable<any> {
+    this.query.setURI(`services/app/UnitRequestIssues/CreateOrEdit`);
+    // this.query.setHeaders();
+    return this.query.post(reportIssue);
+  }
+
   public sendUserProfileDate(userData): Observable<any> {
-    this.query.setURI(`/services/app/User/CreateOrUpdateUser`);
+    this.query.setURI(`services/app/User/CreateOrUpdateUser`);
     // this.query.setHeaders();
     return this.query.post(userData);
   }

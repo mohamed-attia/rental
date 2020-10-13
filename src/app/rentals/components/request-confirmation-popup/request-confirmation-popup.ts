@@ -3,6 +3,7 @@ import * as moment from "moment";
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
 import { RequestRentalService } from "../../service/request-rental-service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-requestrentalspopup",
@@ -16,7 +17,7 @@ export class ReqRentConfirmPopupComponent implements OnInit {
   time: any;
   qrImage: any;
   date: any;
-  constructor(private requestRentalService: RequestRentalService) {}
+  constructor(private requestRentalService: RequestRentalService, private router:Router) {}
 
   ngOnInit() {
     this.requestRentalService
@@ -32,6 +33,7 @@ export class ReqRentConfirmPopupComponent implements OnInit {
   public emitCloseModal() {
     this.showModal = false;
     this.closeModal.emit(false);
+    this.router.navigate(["./rental-requests"]);
   }
   getDateTime(date) {
     date = new Date("2013-08-03T02:00:00Z");

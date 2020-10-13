@@ -1,0 +1,50 @@
+<div class="report-issue">
+  <form #form="ngForm" [formGroup]="reportIssueForm" (ngSubmit)="onSubmit(form)" novalidate>
+    <div class="official-document mt-3">
+      <div class="official-document-title mb-2 d-flex align-items-center justify-content-between">
+        <span class="text-capitalize">{{'ReportIssue.Images'| translate}}<span class="text-danger"
+            *ngIf="!validaImages">{{'ReportIssue.Required'| translate}}</span></span>
+        <button class="btn delete-btn p-0">
+          <img width="15px" src="assets/icons/delete.svg" alt="">
+        </button>
+      </div>
+      <div class="official-document-content">
+        <div class="post-pictures mt-2">
+
+          <div class="fileUploader">
+            <ng-container *ngFor="let image of uploadedFileList; let i = index">
+              <div class="fileUploader-images">
+                <img width="100px" height="100px" [src]="image.fileName" alt="" *ngIf="checkFiletype(image.fileType)">
+                <img width="100px" height="100px" src="assets/images/attachment.png" alt=""
+                  *ngIf="!checkFiletype(image.fileType)">
+              </div>
+            </ng-container>
+            <div class="fileUploader-images" *ngIf="loading">
+              <div class=" spinner-border spinner-color mr-2 ml-2" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+            <div class="fileUploader-uploadBtn" *ngIf="this.uploadedFileList.length < 20">
+              <input id="fileupload" #FileInput multiple="" type="file" placeholder="file path" hidden
+                (change)="uploadImages($event)" />
+              <label for="fileupload" class="fileUploader-uploadBtn-label">
+                {{'request-rental.select' | translate}}
+              </label>
+            </div>
+          </div>
+          <p class="mb-0 text-black-50">{{'request-rental.post-desc' | translate}}</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="Issue-description mt-3">
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">{{'ReportIssue.IssueDecription' | translate}}</label>
+        <textarea class="form-control" formControlName="description" required id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Send Report</button>
+    </form>
+
+</div>

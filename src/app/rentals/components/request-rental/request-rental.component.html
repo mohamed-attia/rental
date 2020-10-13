@@ -74,7 +74,7 @@
         <label class=" ml-2 font-14px" for="family" *ngIf="requestdata.family">{{'request-rental.family' | translate}}
           <input type="radio" (click)="getcheckboxFamilyValue('family')" value="family" name="family" id="family">
           <ng-container *ngIf="form.submitted">
-            <p class="required mb-0 validation" *ngIf="!familyOrSinglesValue"> required</p>
+            <p class="required mb-0 validation" *ngIf="!familyOrSinglesValue"> {{'request-rental.Required' | translate}}</p>
           </ng-container>
         </label>
 
@@ -82,15 +82,15 @@
           <input type="radio" id="singles" (click)="getcheckboxFamilyValue('singles')" value="singles" name="family"
             id="singles">
           <ng-container *ngIf="form.submitted">
-            <p class="required mb-0 validation" *ngIf="!familyOrSinglesValue"> required</p>
+            <p class="required mb-0 validation" *ngIf="!familyOrSinglesValue"> {{'request-rental.Required' | translate}}</p>
           </ng-container>
         </label>
       </div>
 
       <div class="official-document">
         <div class="official-document-title mb-2 d-flex align-items-center justify-content-between">
-          <span class="text-capitalize">official document <span class="text-danger"
-              *ngIf="!validaImages">Required</span></span>
+          <span class="text-capitalize">{{'request-rental.OfficialDocs' | translate}} <span class="text-danger"
+              *ngIf="!validaImages">{{'request-rental.Required' | translate}}</span></span>
           <button class="btn delete-btn p-0">
             <img width="15px" src="assets/icons/delete.svg" alt="">
           </button>
@@ -161,5 +161,5 @@
 </div>
 <app-requestrentalspopup (closeModal)="closeRequestModal($event)" [showModal]="showRequestRentalconfirmation">
 </app-requestrentalspopup>
-<app-payment-modal (closePaymentModal)="closePaymentModal($event)" [showPaymentModal]="showPaymentModal">
-</app-payment-modal>
+<!-- <app-payment-modal (closePaymentModal)="closePaymentModal($event)" [showPaymentModal]="showPaymentModal">
+</app-payment-modal> -->
