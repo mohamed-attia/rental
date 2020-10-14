@@ -19,7 +19,7 @@
       </div>
       <div class="col-4 mt-2 col-sm-3 col-md-2">
         <button class="btn btn-outline" [ngClass]="{'btn-primary-outline':RequestType === 'reject','btn-secondary':RequestType != 'reject'}"
-          (click)="selectedRequestType('reject')">{{'RentalRequests.Expired' | translate}}</button>
+          (click)="selectedRequestType('reject')">{{'RentalRequests.Reject' | translate}}</button>
       </div>
       <div class="col-4 mt-2 col-sm-3 col-md-2">
         <button class="btn btn-outline" [ngClass]="{'btn-primary-outline':RequestType === 'canceled','btn-secondary':RequestType != 'canceled'}"
@@ -27,7 +27,7 @@
       </div>
       <div class="col-4 mt-2 col-sm-3 col-md-2">
         <button class="btn btn-outline" [ngClass]="{'btn-primary-outline':RequestType === 'expire','btn-secondary':RequestType != 'expire'}"
-          (click)="selectedRequestType('expire')">{{'RentalRequests.Reject' | translate}}</button>
+          (click)="selectedRequestType('expired')">{{'RentalRequests.Expired' | translate}}</button>
       </div>
     </div>
   </div>

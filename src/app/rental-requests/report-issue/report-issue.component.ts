@@ -1,12 +1,12 @@
-import { ActivatedRoute } from '@angular/router';
-import { Swal } from 'sweetalert2/dist/sweetalert2.js';
+import { ActivatedRoute, Router } from '@angular/router';
+import Swal  from 'sweetalert2/dist/sweetalert2.js';
 import { Component, OnInit } from "@angular/core";
 
 import { LanguageUpdateService } from "src/app/shared/providers/language/language.service";
 import { RentalRequestsUserService } from "../services/rental-requests.service";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { RequestRentalService } from "src/app/rentals/service/request-rental-service";
-import { Subject, zip as observableZip } from "rxjs";
+import { zip as observableZip } from "rxjs";
 
 @Component({
   selector: "app-request-issue",
@@ -27,7 +27,8 @@ export class ReportIssueComponent implements OnInit {
     private languageUpdateService: LanguageUpdateService,
     private requestRentalService: RequestRentalService,
     private fb: FormBuilder,
-    private activatedRoute:ActivatedRoute
+    private activatedRoute:ActivatedRoute,
+    private router:Router
   ) {
     this.rentalRequestsUserService.setHeaderTitle("ReportIssue.ReportIssue");
     this.languageUpdateService.setMenuItem("request-issue");
@@ -36,7 +37,7 @@ export class ReportIssueComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe(params => {
       this.unetrequestid = params['unetrequestid'];
-      console.log(this.unetrequestid);
+      // console.log(this.unetrequestid);
     });
     this.createForm()
   }
@@ -44,13 +45,10 @@ export class ReportIssueComponent implements OnInit {
   onSubmit(form: FormGroup) {
     if(this.reportIssueForm.valid){
       let issueObject = Object.assign({},{images:this.requestRental.images},this.reportIssueForm.value);
-      console.log(issueObject)
+      // console.log(issueObject)
       this.rentalRequestsUserService.reportIssue(issueObject).subscribe(res=>{
-        Swal.fire(
-          "Thank you...",
-          `Issue Sent will contact you soon`,
-          "success"
-        );
+        Swal.fire('Thank you...', 'You submitted succesfully!', 'success');
+          this.router.navigate(["./rental-requests"]);
       })
     }
 
