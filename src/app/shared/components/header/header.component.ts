@@ -11,7 +11,12 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
     public title: string;
-    constructor(private language: LanguageUpdateService, private router:Router ) { }
+  isUser = false;
+    constructor(private language: LanguageUpdateService, private router:Router ) {
+      if (localStorage.getItem("accessToken")) {
+        this.isUser = true;
+      }
+     }
     ngOnInit() {
         this.language.getCurrentLang().subscribe(lang => {
 
@@ -26,7 +31,9 @@ export class HeaderComponent implements OnInit {
 
 
     public logOut(){
+      let tenantId = localStorage.getItem('tenantId');
       localStorage.clear();
+      localStorage.setItem('tenantId',tenantId)
       this.router.navigate(["./user/login"]);
     }
 }

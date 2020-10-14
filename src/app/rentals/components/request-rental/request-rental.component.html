@@ -1,9 +1,9 @@
 <div class="request-rental-container mt-3">
   <div class="request-rental-identity d-flex justify-content-around mb-3">
-    <button class="btn btn-primay pl-0 pr-0 text-capitalize guest-btn"
+    <!-- <button class="btn btn-primay pl-0 pr-0 text-capitalize guest-btn"
       *ngIf="!isUser">{{'request-rental.guest' | translate}}</button>
     <button class="btn btn-primay pl-0 pr-0 text-capitalize login-register-btn" *ngIf="!isUser"
-      [routerLink]="['../../../user/register']"> {{'request-rental.login-register' | translate}}</button>
+      [routerLink]="['../../../user/register']"> {{'request-rental.login-register' | translate}}</button> -->
   </div>
   <div class="request-rental-unit-info mb-2 d-flex justify-content-between text-capitalize">
     <span>{{'request-rental.chalet-name' | translate}}</span>
@@ -62,10 +62,22 @@
             class="form-control" type="text" name="email">
           <ng-container
             *ngIf="form.submitted && requestRentalform.get('user').get('emailAddress').invalid ||
-          (requestRentalform.get('user')?.get('address')?.dirty || requestRentalform.get('user')?.get('emailAddress')?.touched)">
+          (requestRentalform.get('user')?.get('emailAddress')?.dirty || requestRentalform.get('user')?.get('emailAddress')?.touched)">
             <span class="validation"
               *ngIf="requestRentalform.get('user')?.get('emailAddress')?.errors?.required">{{'request-rental.enter-your-email' | translate}}</span>
           </ng-container>
+
+          <div class="email mb-1" *ngIf="!isUser">
+            <label class="text-capitalize mb-1" for="">Password</label>
+            <input placeholder="enter password" formControlName="password"
+              class="form-control" type="text" name="password">
+            <ng-container
+              *ngIf="form.submitted && requestRentalform.get('user').get('password').invalid ||
+            (requestRentalform.get('user')?.get('password')?.dirty || requestRentalform.get('user')?.get('password')?.touched)">
+              <span class="validation"
+                *ngIf="requestRentalform.get('user')?.get('password')?.errors?.required">{{'request-rental.enter-your-email' | translate}}</span>
+            </ng-container>
+          </div>
         </div>
       </div>
 
@@ -142,12 +154,13 @@
           </span>
         </ng-container>
         <span>] </span>
-        <input placeholder="1.000" class="form-control" formControlName="totalInsurance" type="text"
+        <!-- [attr.disabled]="disabled ? '' : null" -->
+        <input placeholder="1.000" [attr.disabled]="true"class="form-control" formControlName="totalInsurance" type="text"
           name="totalInsurance">
       </div>
       <div class="rent-amount mb-1">
         <label class="text-capitalize mb-1" for="">{{'request-rental.rent-amount' | translate}}</label>
-        <input placeholder="850.000" class="form-control" formControlName="TotalAmount" type="text" name="TotalAmount">
+        <input placeholder="850.000" [attr.disabled]="true"  class="form-control" formControlName="TotalAmount" type="text" name="TotalAmount">
       </div>
 
       <p class="mt-3"> {{'request-rental.submit-rent' | translate}}<a class="terms"

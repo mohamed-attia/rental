@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Subscription, timer } from 'rxjs';
 
 import { LanguageUpdateService } from "src/app/shared/providers/language/language.service";
 import { RentalRequestsUserService } from "../services/rental-requests.service";
@@ -22,7 +23,9 @@ export class RentalRequestsComponent implements OnInit {
   showPaymentModal = false;
   paymentData = {};
   time: string;
-
+  countDown:Subscription;
+  counter = 1800;
+  tick = 1000;
   constructor(
     private rentalRequestsUserService: RentalRequestsUserService,
     private languageUpdateService: LanguageUpdateService
@@ -32,6 +35,8 @@ export class RentalRequestsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.countDown = timer(0, this.tick)
+    .subscribe(() => --this.counter)
     this.getRentalRequests();
   }
 
@@ -151,6 +156,10 @@ export class RentalRequestsComponent implements OnInit {
         `Payment done`,
         "success"
       );
+    }
+
+    ngOnDestroy(){
+      this.countDown=null;
     }
 
 }

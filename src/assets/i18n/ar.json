@@ -98,8 +98,16 @@
     "Approved": "موافق",
     "Reuests": "الطلبات",
     "History": "السابقة",
-    "Reject": "ملغي",
-    "RequestId": "رقم الطلب"
+    "Reject": "مرفوض",
+    "RequestId": "رقم الطلب",
+    "KD":"دينار كويتي",
+    "Family":"عائلي",
+    "Single":"فردي",
+    "Cancel":"إلغاء",
+    "PayNow":"الدفع الان",
+    "PaymentLink":"رابط الدفع",
+    "GetDirection":"الاتجاهات",
+    "ReportIssue":"ارسال مشكلة"
   },
   "UserProfile": {
     "Email": "البريد الإلكتروني",
@@ -140,6 +148,7 @@
     "ReportIssue":"أرسال مشكله",
     "Images":"الصور",
     "Required":"مطلوب",
-    "IssueDecription":"وصف المشكلة"
+    "IssueDecription":"وصف المشكلة",
+    "SendReport":"أرسال التقرير"
   }
 }

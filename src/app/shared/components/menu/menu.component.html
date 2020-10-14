@@ -8,7 +8,7 @@
     </div>
   </div>
 
-  <div class="menu-item" (click)="navigateRequests()" [ngClass]="{'active':currentComponent == 'request'}">
+  <div class="menu-item" *ngIf="isUser" (click)="navigateRequests()" [ngClass]="{'active':currentComponent == 'request'}">
     <div class="active-icon">
       <i class="fas fa-clock"></i>
     </div>
@@ -26,7 +26,7 @@
     </div>
   </div>
 
-  <div class="menu-item" (click)="navigateToUser()" [ngClass]="{'active':currentComponent == 'user-profile'}">
+  <div class="menu-item" *ngIf="isUser" (click)="navigateToUser()" [ngClass]="{'active':currentComponent == 'user-profile'}">
     <div class="active-icon">
       <i class="fas fa-user"></i>
     </div>

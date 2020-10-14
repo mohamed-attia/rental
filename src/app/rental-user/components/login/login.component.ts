@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 import { RentalUserService } from "../../services/rental-user.service";
 import { Router } from '@angular/router';
+import Swal  from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: "app-login",
@@ -45,6 +46,12 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('userId',res['result']['userId']);
             console.log("res", res['result']['userId']);
           }
+        },(error) => {
+          Swal.fire(
+            "Error",
+            `${error["error"]["error"]["message"]}`,
+            "Error"
+          );
         });
     } else {
       console.log("not valid");

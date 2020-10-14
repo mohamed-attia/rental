@@ -67,13 +67,13 @@
         <div class=rental-requests-details--2>
           <!-- <img class="mr-10px" src="../../../assets/images/sea.jpeg" alt="img" width="20" height="20"> -->
           <i class="fas fa-tags mr-10px color-gray"></i>
-          <span class="color-blue">KD {{request.totalAmount}}</span>
+          <span class="color-blue">{{'RentalRequests.KD' | translate}} {{request.totalAmount}}</span>
         </div>
         <div class=rental-requests-details--2>
           <!-- <img class="mr-10px" src="../../../assets/images/sea.jpeg" alt="img" width="20" height="20"> -->
           <i class="fas fa-user-edit mr-10px color-gray"></i>
-          <span *ngIf="request.unitType === 1">single</span>
-          <span *ngIf="request.unitType === 2">family</span>
+          <span *ngIf="request.unitType === 1">{{'RentalRequests.Single' | translate}}</span>
+          <span *ngIf="request.unitType === 2">{{'RentalRequests.Family' | translate}}</span>
         </div>
         <div class=rental-requests-details--2>
           <!-- <img class="mr-10px" src="../../../assets/images/sea.jpeg" alt="img" width="20" height="20"> -->
@@ -93,8 +93,10 @@
       <div class="approvedActions" *ngIf="RequestType === 'approved'">
         <div class="rental-time-container">
           <div class="rental-time-container_details">
-           <span hidden>{{setTimeOut(request.unit.paymentLinkExpiresAfter)}}</span>
-           <span >{{time}}</span>
+            {{request.unit.paymentLinkExpiresAfter | CounterPipe}}
+
+           <!-- <span hidden>{{setTimeOut(request.unit.paymentLinkExpiresAfter)}}</span>
+           <span >{{time}}</span> -->
             <!-- <div>05h</div>
             <div>30m</div>
             <div>30s</div> -->
@@ -102,19 +104,19 @@
         </div>
         <hr>
         <div>
-          <span class="mr-10px">Payment Link:</span><button (click)="sendPaymentData(request)">Pay Now</button>
+          <span class="mr-10px">{{'RentalRequests.PaymentLink' | translate}}:</span><button (click)="sendPaymentData(request)">{{'RentalRequests.PayNow' | translate}}</button>
         </div>
       </div>
       <div class="ongoingActions" *ngIf="RequestType === 'ongoing'">
-        <button class="btn btn-primary" (click)="openDirection(request.unit.latitude, request.unit.longitude)">Get Direction</button>
-        <a [routerLink]="['../rental-requests/report-issue']" [queryParams]="{ unetrequestid: request.requestNumber}" >Report Issue</a>
-        <button (click)="cancelRequest(i,request.requestNumber)">Cancel</button>
+        <button class="btn btn-primary" (click)="openDirection(request.unit.latitude, request.unit.longitude)">{{'RentalRequests.GetDirection' | translate}}</button>
+        <a [routerLink]="['../rental-requests/report-issue']" [queryParams]="{ unetrequestid: request.requestNumber}" >{{'RentalRequests.ReportIssue' | translate}}</a>
+        <button (click)="cancelRequest(i,request.requestNumber)">{{'RentalRequests.Cancel' | translate}}</button>
       </div>
       <div class="rejectedActions" *ngIf="RequestType === 'reject'" >
-        <button (click)="cancelRequest(i,request.requestNumber)">Cancel</button>
+        <button (click)="cancelRequest(i,request.requestNumber)">{{'RentalRequests.Cancel' | translate}}</button>
       </div>
       <div class="PendingActions" *ngIf="RequestType === 'pending'"  >
-        <button (click)="cancelRequest(i,request.requestNumber)">Cancel</button>
+        <button (click)="cancelRequest(i,request.requestNumber)">{{'RentalRequests.Cancel' | translate}}</button>
       </div>
     </div>
   </ng-container>

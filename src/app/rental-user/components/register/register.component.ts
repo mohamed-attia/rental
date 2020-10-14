@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 import { RentalUserService } from "../../services/rental-user.service";
 import { Router } from "@angular/router";
-import Swal from 'sweetalert2/dist/sweetalert2.js';
+import Swal  from 'sweetalert2/dist/sweetalert2.js';
 import { UserLoginModel } from './../../models/user-login.model';
 
 @Component({
@@ -57,29 +57,17 @@ export class RegisterComponent implements OnInit {
            localStorage.setItem('phoneNumber', res['result'].phoneNumber);
           this.router.navigate(["./rentals"]);
           }
+        },(error) => {
+          Swal.fire(
+            "Error",
+            `${error["error"]["error"]["message"]}`,
+            "Error"
+          );
         });
     } else {
-      console.log("not ok");
+      // console.log("not ok");
     }
   }
-
-  // private ConfirmedValidator(controlName: string, matchingControlName: string) {
-  //   return (formGroup: FormGroup) => {
-  //     const control = formGroup.controls[controlName];
-  //     const matchingControl = formGroup.controls[matchingControlName];
-  //     if (
-  //       matchingControl.errors &&
-  //       !matchingControl.errors.confirmedValidator
-  //     ) {
-  //       return;
-  //     }
-  //     if (control.value !== matchingControl.value) {
-  //       matchingControl.setErrors({ confirmedValidator: true });
-  //     } else {
-  //       matchingControl.setErrors(null);
-  //     }
-  //   };
-  // }
   public formControls(controls) {
     return this.userRegisterForm.controls[controls];
   }

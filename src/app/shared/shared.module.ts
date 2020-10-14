@@ -27,6 +27,7 @@ import { QueryService } from "./providers/query-service/query.service";
 import { RequestRentalHeaderComponent } from './components/request-rental-header/request-rental-header.component';
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { UrlSerializerService } from "./providers/urlSerializer/url-serializer.service";
+import { CounterPipe } from './pipes/counterdown';
 
 const services = [
   QueryService,
@@ -58,7 +59,7 @@ const sharedMComponents = [
 ];
 
 @NgModule({
-  declarations: [sharedMComponents, ConvertGerogianToHijriPipe],
+  declarations: [sharedMComponents, ConvertGerogianToHijriPipe,CounterPipe],
   imports: [
     FormsModule,
     CommonModule,
@@ -70,7 +71,7 @@ const sharedMComponents = [
       },
     }),
   ],
-  exports: [...sharedModules, sharedMComponents, ConvertGerogianToHijriPipe],
+  exports: [...sharedModules, sharedMComponents, ConvertGerogianToHijriPipe, CounterPipe],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SharedModule {

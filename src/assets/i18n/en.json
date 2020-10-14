@@ -99,7 +99,15 @@
     "Reuests": "Reuests",
     "History": "History",
     "Reject": "Reject",
-    "RequestId": "Request Id"
+    "RequestId": "Request Id",
+    "KD":"KD",
+    "Family":"Family",
+    "Single":"Single",
+    "Cancel":"Cancel",
+    "PayNow":"Pay Now",
+    "PaymentLink":"Payment Link",
+    "GetDirection":"Get Direction",
+    "ReportIssue":"Report Issue"
   },
   "UserProfile": {
     "Email": "Email Address",
@@ -140,6 +148,7 @@
     "ReportIssue":"Report Issue",
     "Images":"Images",
     "Required":"Required",
-    "IssueDecription":"Issue Decription"
+    "IssueDecription":"Issue Decription",
+    "SendReport":"Send Report"
   }
 }

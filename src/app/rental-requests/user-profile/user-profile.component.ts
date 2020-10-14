@@ -34,10 +34,10 @@ export class UserProfileComponent implements OnInit {
 
   private createForm() {
     this.userUpdateForm = this.fb.group({
-      surname: ["", Validators.required],
+      surname: localStorage.getItem('name'),
       password: ["", Validators.required],
-      emailAddress: ["", Validators.required],
-      phoneNumber: ["", Validators.required],
+      emailAddress: localStorage.getItem('emailAddress'),
+      phoneNumber: localStorage.getItem('phoneNumber'),
       id: [Number(localStorage.getItem("userId"))],
     });
   }
@@ -60,6 +60,11 @@ export class UserProfileComponent implements OnInit {
               localStorage.setItem("phoneNumber", this.userUpdateForm.get('phoneNumber').value);
               this.modalService.dismissAll("save click");
               this.getUserData();
+              Swal.fire(
+                "Success",
+                `Data Updated `,
+                "success"
+              );
               this.userUpdateForm.reset();
             } else {
               return;

@@ -55,10 +55,16 @@ export class RequestRentalComponent implements OnInit {
 
   private getRentalData() {
     this.getRentalsListService.getRentalData().subscribe(res => {
-      this.requestdata = res;
-      // debugger
-      if(this.requestdata !== null && this.requestdata !== undefined && Object.keys(this.requestdata).length !== 0){
+      debugger
+      if(res !== null && res !== undefined && Object.keys(res).length !== 0){
+        this.requestdata = res;
+        localStorage.setItem('requestdata', JSON.stringify(this.requestdata));
         this.createForm();
+      }else {
+        let requestdata = localStorage.getItem('requestdata');
+        this.requestdata = JSON.parse(requestdata);
+        this.createForm();
+        console.log('requestdata: ', JSON.parse(this.requestdata));
       }
     });
   }
@@ -108,7 +114,7 @@ export class RequestRentalComponent implements OnInit {
       userName: "",
       emailAddress: ["", Validators.required],
       phoneNumber: ["", Validators.required],
-      password: "",
+      password: [""],
       tenantId: +localStorage.getItem("tenantId"),
       acceptTermsAndConditions: true,
       address: ["", Validators.required],
@@ -117,33 +123,6 @@ export class RequestRentalComponent implements OnInit {
       isGuest: "",
       }),
     });
-
-  // this.requestRentalform = this.fb.group({
-  //   unitType: [""],
-  //   TotalAmount: [this.requestdata.amount],
-  //   insurance: [this.requestdata.insurance],
-  //   status: this.requestdata.status,
-  //   note: "",
-  //   paymentStatus: 1,
-  //   paymentNote: "",
-  //   unitId: this.requestdata.unitId,
-  //   fromDate: new Date(`${this.requestdata.fromDate.year}-${this.requestdata.fromDate.month}-${this.requestdata.fromDate.day}`).toISOString(),
-  //   toDate: new Date(`${this.requestdata.toDate.year}-${this.requestdata.toDate.month}-${this.requestdata.toDate.day}`).toISOString(),
-  //   user: this.fb.group({
-  //     fullName: ["", Validators.required],
-  //     id: "",
-  //     userName: "",
-  //     emailAddress: ["", Validators.required],
-  //     phoneNumber: ["", Validators.required],
-  //     password: "",
-  //     tenantId: +localStorage.getItem("tenantId"),
-  //     acceptTermsAndConditions: true,
-  //     address: ["", Validators.required],
-  //     setRandomPassword: "",
-  //     shouldChangePasswordOnNextLogin: true,
-  //     isGuest: "",
-  //   }),
-  // });
 
   if(this.isUser){
     this.getUSerInfo();
@@ -170,7 +149,7 @@ export class RequestRentalComponent implements OnInit {
       this.requestRentalService.postRequestRental(this.requestRental).subscribe(res=>{
         let result = res.error;
         if(res.success){
-          // debugger
+          localStorage.setItem('userId',res['result'].userId)
           this.responseRequestData = {
             fromDate:res['result'].fromDate,
             qrCode:res['result'].qrCode,

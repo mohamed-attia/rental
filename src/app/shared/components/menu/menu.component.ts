@@ -10,10 +10,14 @@ import { LanguageUpdateService } from '../../providers/language/language.service
 })
 export class MenuComponent implements OnInit {
  @Input()currentComponent:string;
+  isUser = false;
   constructor(private router: Router, private languageUpdateService:LanguageUpdateService) {
     this.languageUpdateService.getMenuItem().subscribe(res=>{
       this.currentComponent =res
     })
+    if (localStorage.getItem("accessToken")) {
+      this.isUser = true;
+    }
   }
 
   ngOnInit() {}
